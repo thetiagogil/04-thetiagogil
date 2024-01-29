@@ -1,14 +1,13 @@
-import "./App.css";
-import { BrowserRouter as Routes, Route, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/homepage/HomePage";
+import ProjectsPage from "./pages/projectspage/ProjectsPage";
 
 function App() {
   return (
-    <Routes>
-      <Switch>
-        <Route exact path="/" element={HomePage} />
-        <Route path="/about" element={AboutPage} />
-      </Switch>
-    </Routes>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+      </Routes>
   );
 }
 

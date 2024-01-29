@@ -1,0 +1,108 @@
+@import "./../../utils/colors.scss";
+
+#box {
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#main-box,
+#content-box {
+  color: $font1;
+  width: 600px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  overflow: hidden;
+}
+
+#content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+#content::-webkit-scrollbar {
+  width: 6px;
+}
+
+#content::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+#content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+#elements {
+  margin-bottom: 3rem;
+}
+
+#element {
+  margin-bottom: 3rem;
+}
+
+#element {
+  display: flex;
+  padding: 1rem;
+}
+
+.content-left {
+  width: 30%;
+}
+
+.content-right {
+  width: 70%;
+}
+
+.content-title-box {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.content-title {
+  color: $font1;
+  text-decoration: none;
+}
+
+.content-year {
+  color: $font2;
+}
+
+.content-description {
+  margin-top: 0.5rem;
+  color: $font3;
+}
+
+.content-techs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.content-tech {
+  background-color: rgba($lightBlue, 0.2);
+  color: $lightBlue;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem 0.25rem;
+  display: flex;
+  border-radius: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  color: $font2;
+}
