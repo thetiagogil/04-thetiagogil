@@ -47,6 +47,6 @@ export const projects = [
     date: "01/2024",
     img: "project3.jpg",
     description: "This is the description for Project 0.",
-    techs: ["HTML", "CSS", "JavaScript", "React"],
+    techs: ["HTML", "SCSS", "JavaScript", "React"],
   },
 ];

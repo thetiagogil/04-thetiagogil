@@ -12,9 +12,9 @@
 #content-box {
   color: $font1;
   width: 600px;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  overflow: hidden;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  
 }
 
 #content {
@@ -34,19 +34,41 @@
   background-color: transparent;
 }
 
+#line {
+  height: 1px;
+  width: 100%;
+  background-color: rgba($lightBlue, 0.2);
+}
+
 #nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  padding-bottom: 3rem;
   list-style: none;
   gap: 1.5rem;
+  border-bottom: 1px solid rgba($lightBlue, 0.2);
+
+  li {
+    margin-right: 20px;
+    position: relative;
+
+    a {
+      font-weight: bold;
+      color: $font3;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $lightBlue;
+      }
+    }
+  }
 }
 
 #elements {
-  margin-bottom: 3rem;
-}
-
-#element {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
@@ -55,40 +77,39 @@
   padding: 1rem;
 }
 
-.content-left {
+#content-left {
   width: 30%;
 }
 
-.content-right {
+#content-right {
   width: 70%;
 }
 
-.content-title-box {
+#title-box {
   display: flex;
   gap: 0.5rem;
 }
 
-.content-title {
+#title {
   color: $font1;
-  text-decoration: none;
 }
 
-.content-year {
+#year {
   color: $font2;
 }
 
-.content-description {
+#description {
   margin-top: 0.5rem;
   color: $font3;
 }
 
-.content-techs {
+#techs {
   display: flex;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.content-tech {
+#tech {
   background-color: rgba($lightBlue, 0.2);
   color: $lightBlue;
   font-size: 0.75rem;

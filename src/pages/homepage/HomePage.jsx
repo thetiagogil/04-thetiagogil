@@ -14,25 +14,45 @@ const HomePage = () => {
       </div>
 
       <div id="content-box">
-        <ul id="nav">
-          <li>Projects</li>
-          <li>Experience</li>
-          <li>Education</li>
-          <li>Certifications</li>
-        </ul>
+        <div>
+          <ul id="nav">
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#experience">Experience</a>
+            </li>
+            <li>
+              <a href="#education">Education</a>
+            </li>
+            <li>
+              <a href="#certifications">Certifications</a>
+            </li>
+          </ul>
+        </div>
 
         <div id="content">
-          {/* PROJECTS */}
-          <Content type="projects" props={projects} />
+          <section id="projects">
+            <Content type="projects" props={projects} />
+          </section>
 
-          {/* EXPERIENCE */}
-          <Content type="experience" props={experience} />
+          <div id="line"></div>
 
-          {/* EDUCATION */}
-          <Content type="education" props={education} />
+          <section id="experience">
+            <Content type="experience" props={experience} />
+          </section>
 
-          {/* CERTIFICATIONS */}
-          <Content type="certifications" props={certifications} />
+          <div id="line"></div>
+
+          <section id="education">
+            <Content type="education" props={education} />
+          </section>
+
+          <div id="line"></div>
+
+          <section id="certifications">
+            <Content type="certifications" props={certifications} />
+          </section>
         </div>
       </div>
     </div>

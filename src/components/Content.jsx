@@ -19,30 +19,28 @@ const Content = ({ type, props }) => {
   });
 
   return (
-    <ul id="elements">
+    <ol id="elements">
       {filteredData.map((element) => {
         return (
           <li id="element" key={element.id}>
-            <div className="content-left">
+            <div id="content-left">
               {type === "projects" ? element.img : element.date}
             </div>
 
-            <div className="content-right">
-              <div className="content-title-box">
-                <a className="content-title" href={element.link}>
+            <div id="content-right">
+              <div id="title-box">
+                <a id="title" href={element.link}>
                   {element.name}
                 </a>
-                <p className="content-year">
-                  {type === "projects" ? element.date : null}
-                </p>
+                <p id="year">{type === "projects" ? element.date : null}</p>
               </div>
 
-              <p className="content-description">{element.description}</p>
+              <p id="description">{element.description}</p>
 
-              <ul className="content-techs">
+              <ul id="techs">
                 {element.techs?.map((tech, index) => {
                   return (
-                    <p className="content-tech" key={index}>
+                    <p id="tech" key={index}>
                       {tech}
                     </p>
                   );
@@ -52,7 +50,7 @@ const Content = ({ type, props }) => {
           </li>
         );
       })}
-    </ul>
+    </ol>
   );
 };
 
