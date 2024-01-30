@@ -1,13 +1,14 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/homepage/HomePage";
 import ProjectsPage from "./pages/projectspage/ProjectsPage";
 
 function App() {
   return (
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-      </Routes>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/projects" element={<ProjectsPage />} />
+    </Routes>
   );
 }
 

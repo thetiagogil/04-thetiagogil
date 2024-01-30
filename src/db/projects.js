@@ -3,24 +3,19 @@ export const projects = [
     id: "0",
     name: "Giraffes vs Sea",
     date: "09/2023",
-    img: "project0.jpg",
-    description: "This is the description for Project 1.",
+    img: "../assets/01-project.png",
+    description:
+      "Towerdefense videogame where the players use math to win. Independently conceived and executed the game.",
     link: "https://giraffes-vs-sea.netlify.app",
-    techs: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "DOM Manipulation",
-      "DOM Manipulation",
-      "DOM Manipulation",
-    ],
+    techs: ["HTML", "CSS", "JavaScript", "DOM Manipulation"],
   },
   {
     id: "1",
     name: "House of Legends",
     date: "10/2023",
-    img: "project1.jpg",
-    description: "This is the description for Project 2.",
+    img: "../assets/02-project.png",
+    description:
+      "Designed a League of Legends platform enabling users to explore champion and item details and create personalized builds. Applied CRUD operations and integrated League of Legends API to dynamically create, fetch, update and delete game information. Introduced search and filtering functionalities, elevating the website beyond information retrieval to an interactive platform.",
     link: "https://house-of-legends.netlify.app",
     techs: ["HTML", "CSS", "JavaScript", "React", "Node.js", "REST API"],
   },
@@ -28,8 +23,9 @@ export const projects = [
     id: "2",
     name: "FIN/ACE",
     date: "11/2023",
-    img: "project2.jpg",
-    description: "This is the description for Project 3.",
+    img: "../assets/03-project.png",
+    description:
+      "Designed a three-page structure encompassing a dynamic dashboard, insightful overview, and a transaction log, providing users with a comprehensive tool for tracking, planning, and analyzing their incomes and expenses. Implemented user authentication to ensure unique access. Successfully embraced the challenge of incorporating unfamiliar libraries, such as Chart.js, to enhance the visualization of financial data.",
     link: "https://finace.netlify.app",
     techs: [
       "HTML",

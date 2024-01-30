@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
 import "./Content.scss";
+
+import img01 from "../../assets/01-project.png"
 
 const Content = ({ type, props }) => {
   const desiredIds = (() => {
@@ -21,38 +24,57 @@ const Content = ({ type, props }) => {
   });
 
   return (
-    <ol id="elements">
-      {filteredData.map((element) => {
-        return (
-          <li id="element" key={element.id}>
-            <div id="content-left">
-              {type === "projects" ? element.img : element.date}
-            </div>
+    <>
+      <ol id="elements">
+        {filteredData.map((element) => {
+          return (
+            <li key={element.id}>
+              <a
+                id="element"
+                href={element.link}
+                target="_blank"
+                className="link"
+              >
+                <div id="content-left">
+                  {type === "projects" ? (
+                    <img src="../../assets/01-project.png" />
+                  ) : (
+                    element.date
+                  )}
+                </div>
 
-            <div id="content-right">
-              <div id="title-box">
-                <a id="title" href={element.link}>
-                  {element.name}
-                </a>
-                <p id="year">{type === "projects" ? element.date : null}</p>
-              </div>
-
-              <p id="description">{element.description}</p>
-
-              <ul id="techs">
-                {element.techs?.map((tech, index) => {
-                  return (
-                    <p id="tech" key={index}>
-                      {tech}
+                <div id="content-right">
+                  <div id="name-box">
+                    <p id="name" className="element-name">
+                      {element.name}
                     </p>
-                  );
-                })}
-              </ul>
-            </div>
-          </li>
-        );
-      })}
-    </ol>
+                    <p id="date">{type === "projects" ? element.date : null}</p>
+                  </div>
+
+                  <p id="description">{element.description}</p>
+
+                  <ul id="techs">
+                    {element.techs?.map((tech, index) => {
+                      return (
+                        <p id="tech" key={index}>
+                          {tech}
+                        </p>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+
+      {type === "projects" ? (
+        <Link id="link" to="/projects">
+          View all my projects
+        </Link>
+      ) : null}
+    </>
   );
 };
 

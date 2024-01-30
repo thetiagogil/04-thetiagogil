@@ -2,7 +2,42 @@
 
 #main-box {
   color: $font1;
-  width: 600px;
+  width: 35rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#title {
+  font-size: 3rem;
+}
+
+#subtitle {
+  color: $font2;
+}
+
+#img {
+  width: 100%;
+}
+
+#text {
+  color: $font3;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  color: $font3;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $font1;
+  }
 }
