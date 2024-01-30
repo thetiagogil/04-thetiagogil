@@ -1,8 +1,10 @@
+import "./Content.scss";
+
 const Content = ({ type, props }) => {
   const desiredIds = (() => {
     switch (type) {
       case "projects":
-        return [0, 1, 2];
+        return [0, 1, 2, 3, 4];
       case "education":
         return [0, 1, 2];
       case "experience":

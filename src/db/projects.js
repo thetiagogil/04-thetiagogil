@@ -49,4 +49,12 @@ export const projects = [
     description: "This is the description for Project 0.",
     techs: ["HTML", "SCSS", "JavaScript", "React"],
   },
+  {
+    id: "4",
+    name: "TGDESIGN",
+    date: "01/2024",
+    img: "project3.jpg",
+    description: "This is the description for Project 0.",
+    techs: ["HTML", "SCSS", "JavaScript", "React"],
+  },
 ];

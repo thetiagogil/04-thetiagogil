@@ -1,0 +1,57 @@
+@import "./../../utils/colors.scss";
+
+#elements {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+#element {
+  display: flex;
+  padding: 1rem;
+}
+
+#content-left {
+  width: 30%;
+}
+
+#content-right {
+  width: 70%;
+}
+
+#title-box {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#title {
+  color: $font1;
+}
+
+#year {
+  color: $font2;
+}
+
+#description {
+  margin-top: 0.5rem;
+  color: $font3;
+}
+
+#techs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+#tech {
+  background-color: rgba($lightBlue, 0.2);
+  color: $lightBlue;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem 0.25rem;
+  display: flex;
+  border-radius: 0.75rem;
+}
