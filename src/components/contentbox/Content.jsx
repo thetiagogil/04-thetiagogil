@@ -1,8 +1,10 @@
 import "./Content.scss";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Content = ({ type, props }) => {
+  // FILTER ELEMENTS SHOWN FROM DB
   const desiredIds = (() => {
     switch (type) {
       case "projects":
@@ -18,9 +20,20 @@ const Content = ({ type, props }) => {
     }
   })();
 
-  const filteredData = props.filter((element) => {
-    return desiredIds.includes(Number(element.id));
-  });
+  const filteredData = props
+    .filter((element) => {
+      return desiredIds.includes(Number(element.id));
+    })
+    .sort((a, b) => b.id - a.id);
+
+  // COLORS PER TYPE
+  const getColorClass = (type, category) => {
+    return `${type}-${category}`;
+  };
+
+  const nameColors = (type) => getColorClass(type, "name");
+  const techColors = (type) => getColorClass(type, "tech");
+  const linkColors = (type) => getColorClass(type, "link");
 
   return (
     <>
@@ -44,19 +57,23 @@ const Content = ({ type, props }) => {
 
                 <div id="content-right">
                   <div id="name-box">
-                    <p id="name" className="element-name">
-                      {element.name}{" "}
+                    <p id={nameColors(type)}>
+                      {element.name}
                       {element.link && <FaExternalLinkAlt size={8} />}
                     </p>
                     <p id="date">{type === "projects" ? element.date : null}</p>
                   </div>
+
+                  <p id="place">{element.place}</p>
+
+                  <p id="place">{element.subject}</p>
 
                   <p id="description">{element.description}</p>
 
                   <ul id="techs">
                     {element.techs?.map((tech, index) => {
                       return (
-                        <p id="tech" key={index}>
+                        <p id={techColors(type)} key={index}>
                           {tech}
                         </p>
                       );
@@ -69,12 +86,10 @@ const Content = ({ type, props }) => {
         })}
       </ol>
 
-      {type === "projects" ? (
-        <Link id="link" to="/projects">
-          <p>View all my projects</p>
-          <FaExternalLinkAlt size={8} style={{ verticalAlign: "top" }} />
-        </Link>
-      ) : null}
+      <Link id={linkColors(type)} to="/projects">
+        <p>Check out my timeline</p>
+        <FaArrowRightLong size={12} style={{ verticalAlign: "top" }} />
+      </Link>
     </>
   );
 };

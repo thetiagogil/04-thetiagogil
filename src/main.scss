@@ -18,3 +18,13 @@ html {
 a {
   text-decoration: none;
 }
+
+::selection {
+  background-color: $white3;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: $white3;
+  color: white;
+}

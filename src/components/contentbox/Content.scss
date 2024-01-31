@@ -9,21 +9,29 @@
 }
 
 #element {
-  color: $font2;
+  color: $white2;
   display: flex;
   padding: 1rem;
   border-radius: 0.5rem;
   transition: 0.3s;
 
-  #name {
-    color: $font1;
-  }
-
   &:hover {
     background-color: rgba($lighterDarkBlue, 0.8);
 
-    #name {
-      color: $lightBlue;
+    #projects-name {
+      color: $blue;
+    }
+    
+    #experience-name {
+      color: $green;
+    }
+
+    #education-name {
+      color: $yellow;
+    }
+
+    #certifications-name {
+      color: $pink;
     }
   }
 }
@@ -35,7 +43,7 @@
   #img {
     height: 5rem;
     width: 90%;
-    border: 2px solid rgba($font3, 0.2);
+    border: 2px solid rgba($white3, 0.2);
     border-radius: 0.5rem;
   }
 }
@@ -49,19 +57,29 @@
     gap: 0.5rem;
   }
 
-  #name {
+  #projects-name,
+  #experience-name,
+  #education-name,
+  #certifications-name {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    color: $white;
+    margin-right: 0.5rem;
   }
 
   #date {
     font-size: 0.9rem;
   }
 
+  #place {
+    margin-top: 0.25rem;
+    color: $white2;
+  }
+
   #description {
     margin-top: 0.5rem;
-    color: $font3;
+    color: $white3;
   }
 
   #techs {
@@ -70,26 +88,63 @@
     margin-top: 0.5rem;
   }
 
-  #tech {
-    background-color: rgba($lightBlue, 0.2);
-    color: $lightBlue;
+  #projects-tech,
+  #experience-tech,
+  #education-tech,
+  #certifications-tech {
     font-size: 0.75rem;
+    font-weight: bold;
     margin-top: 0.5rem;
     margin-right: 0.5rem;
     padding: 0.25rem 0.5rem 0.25rem;
     display: flex;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  #projects-tech {
+    background-color: rgba($blue, 0.2);
+    color: $blue;
+  }
+  
+  #experience-tech {
+    background-color: rgba($green, 0.2);
+    color: $green;
+  }
+
+  #education-tech {
+    background-color: rgba($yellow, 0.2);
+    color: $yellow;
+  }
+
+  #certifications-tech {
+    background-color: rgba($pink, 0.2);
+    color: $pink;
   }
 }
 
-#link {
-  color: $font1;
+#projects-link,
+#experience-link,
+#education-link,
+#certifications-link {
+  color: $white;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   transition: 0.3s;
+}
 
-  &:hover {
-    color: $lightBlue;
-  }
+#projects-link:hover {
+  color: $blue;
+}
+
+#experience-link:hover {
+  color: $green;
+}
+
+#education-link:hover {
+  color: $yellow;
+}
+
+#certifications-link:hover {
+  color: $pink;
 }

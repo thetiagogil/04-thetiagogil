@@ -1,7 +1,7 @@
 @import "./../../utils/colors.scss";
 
 #main-box {
-  color: $font1;
+  color: $white;
   width: 35rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -15,7 +15,7 @@
 }
 
 #subtitle {
-  color: $font2;
+  color: $white2;
 }
 
 #img {
@@ -23,7 +23,7 @@
 }
 
 #text {
-  color: $font3;
+  color: $white2;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -34,10 +34,10 @@
 }
 
 .icon {
-  color: $font3;
+  color: $white3;
   transition: color 0.3s;
 
   &:hover {
-    color: $font1;
+    color: $white;
   }
 }

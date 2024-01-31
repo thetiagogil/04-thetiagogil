@@ -1,7 +1,7 @@
 @import "./../../utils/colors.scss";
 
 #content-box {
-  color: $font1;
+  color: $white;
   width: 35rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -30,21 +30,21 @@
   padding-bottom: 2rem;
   list-style: none;
   gap: 2rem;
-  border-bottom: 1px solid rgba($lightBlue, 0.2);
+  border-bottom: 1px solid rgba($blue, 0.2);
 
   li {
     a {
       font-weight: bold;
-      color: $font3;
+      color: $white3;
       transition: color 0.3s;
 
       &:hover {
-        color: $font1;
+        color: $white;
       }
     }
 
     &.active a {
-      color: $font1;
+      color: $white;
       padding-bottom: 0.2rem;
     }
   }
