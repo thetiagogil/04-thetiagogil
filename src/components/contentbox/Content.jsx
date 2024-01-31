@@ -1,19 +1,18 @@
-import { Link } from "react-router-dom";
 import "./Content.scss";
-
-import img01 from "../../assets/01-project.png"
+import { Link } from "react-router-dom";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Content = ({ type, props }) => {
   const desiredIds = (() => {
     switch (type) {
       case "projects":
-        return [0, 1, 2, 3, 4];
+        return [0, 1, 2]; // <== change this values for PROJECTS
       case "education":
-        return [0, 1, 2];
+        return [0, 1, 2]; // <== change this values for EDUCATION
       case "experience":
-        return [0, 1, 2];
+        return [0, 1, 2]; // <== change this values for EXPERIENCE
       case "certifications":
-        return [0, 1, 2];
+        return [0, 1, 2]; // <== change this values for CERTIFICATIONS
       default:
         return null;
     }
@@ -36,9 +35,9 @@ const Content = ({ type, props }) => {
                 className="link"
               >
                 <div id="content-left">
-                  {type === "projects" ? (
-                    <img src="../../assets/01-project.png" />
-                  ) : (
+                  {type === "projects" && element.img ? (
+                    <img id="img" src={element.img} alt={element.name} />
+                  ) : type === "projects" && !element.img ? null : (
                     element.date
                   )}
                 </div>
@@ -46,7 +45,8 @@ const Content = ({ type, props }) => {
                 <div id="content-right">
                   <div id="name-box">
                     <p id="name" className="element-name">
-                      {element.name}
+                      {element.name}{" "}
+                      {element.link && <FaExternalLinkAlt size={8} />}
                     </p>
                     <p id="date">{type === "projects" ? element.date : null}</p>
                   </div>
@@ -71,7 +71,8 @@ const Content = ({ type, props }) => {
 
       {type === "projects" ? (
         <Link id="link" to="/projects">
-          View all my projects
+          <p>View all my projects</p>
+          <FaExternalLinkAlt size={8} style={{ verticalAlign: "top" }} />
         </Link>
       ) : null}
     </>
