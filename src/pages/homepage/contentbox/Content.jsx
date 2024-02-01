@@ -37,40 +37,37 @@ const Content = ({ type, props }) => {
 
   return (
     <>
-      <ol id="elements">
+      <ol className="elements">
         {filteredData.map((element) => {
           return (
             <li key={element.id}>
-              <a
-                id="element"
-                href={element.link}
-                target="_blank"
-                className="link"
-              >
-                <div id="content-left">
+              <a className="element link" href={element.link} target="_blank">
+                <div className="content-left">
                   {type === "projects" && element.img ? (
-                    <img id="img" src={element.img} alt={element.name} />
+                    <img className="img" src={element.img} alt={element.name} />
                   ) : type === "projects" && !element.img ? null : (
                     element.date
                   )}
                 </div>
 
-                <div id="content-right">
-                  <div id="name-box">
-                    <p id={nameColors(type)}>
+                <div className="content-right">
+                  <div className="name-box">
+                    <p className={nameColors(type)}>
                       {element.name}
                       {element.link && <FaExternalLinkAlt size={8} />}
                     </p>
-                    <p id="date">{type === "projects" ? element.date : null}</p>
+                    <p className="date">
+                      {type === "projects" ? element.date : null}
+                    </p>
                   </div>
 
-                  <p id="place">{element.place}</p>
+                  <p className="place">{element.place}</p>
 
-                  <p id="place">{element.subject}</p>
+                  <p className="place">{element.subject}</p>
 
-                  <p id="description">{element.description}</p>
+                  <p className="description">{element.description}</p>
 
-                  <ul id="techs">
+                  <ul className="techs">
                     {element.techs?.map((tech, index) => {
                       return (
                         <p id={techColors(type)} key={index}>
@@ -86,9 +83,9 @@ const Content = ({ type, props }) => {
         })}
       </ol>
 
-      <Link id={linkColors(type)} to="/projects">
+      <Link className={linkColors(type)} to="/projects">
         <p>Check out my timeline</p>
-        <FaArrowRightLong size={12} style={{ verticalAlign: "top" }} />
+        <FaArrowRightLong size={12} />
       </Link>
     </>
   );

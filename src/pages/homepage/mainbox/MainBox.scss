@@ -1,34 +1,23 @@
-@import "./../../utils/colors.scss";
+@import "../../../utils/colors.scss";
 
-#main-box {
-  color: $white;
+.main-box {
   width: 35rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
-#title {
-  font-size: 3rem;
-}
-
-#subtitle {
-  color: $white2;
-}
-
-#img {
+.img {
   width: 100%;
 }
 
-#text {
+.text {
   color: $white2;
   text-align: justify;
   text-justify: inter-word;
 }
 
-#icons {
+.icons {
   display: flex;
   gap: 1rem;
 }

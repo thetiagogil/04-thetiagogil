@@ -1,9 +1,9 @@
 import "./ContentBox.scss";
 import Content from "./Content";
-import { projects } from "../../db/projects";
-import { experience } from "../../db/experience";
-import { education } from "../../db/education";
-import { certifications } from "../../db/certifications";
+import { projects } from "../../../db/projects";
+import { experience } from "../../../db/experience";
+import { education } from "../../../db/education";
+import { certifications } from "../../../db/certifications";
 import { useState } from "react";
 
 const ContentBox = () => {
@@ -14,9 +14,9 @@ const ContentBox = () => {
   };
 
   return (
-    <div id="content-box">
+    <div className="content-box">
       <div>
-        <ul id="nav">
+        <ul className="nav">
           <li className={activeTab === "projects" ? "active" : ""}>
             <a href="#projects" onClick={() => handleTabClick("projects")}>
               Projects
@@ -46,30 +46,30 @@ const ContentBox = () => {
         </ul>
       </div>
 
-      <div id="content">
+      <div className="content">
         <section
-          id="projects"
+          className="projects"
           style={{ display: activeTab === "projects" ? "block" : "none" }}
         >
           <Content type="projects" props={projects} />
         </section>
 
         <section
-          id="experience"
+          className="experience"
           style={{ display: activeTab === "experience" ? "block" : "none" }}
         >
           <Content type="experience" props={experience} />
         </section>
 
         <section
-          id="education"
+          className="education"
           style={{ display: activeTab === "education" ? "block" : "none" }}
         >
           <Content type="education" props={education} />
         </section>
 
         <section
-          id="certifications"
+          className="certifications"
           style={{
             display: activeTab === "certifications" ? "block" : "none",
           }}

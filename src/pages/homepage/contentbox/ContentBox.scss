@@ -1,13 +1,11 @@
-@import "./../../utils/colors.scss";
+@import "../../../utils/colors.scss";
 
-#content-box {
+.content-box {
   color: $white;
   width: 35rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 }
 
-#content {
+.content {
   height: 100%;
   overflow-y: auto;
 
@@ -24,7 +22,7 @@
   }
 }
 
-#nav {
+.nav {
   display: flex;
   justify-content: center;
   padding-bottom: 2rem;

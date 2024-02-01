@@ -28,3 +28,56 @@ a {
   background-color: $white3;
   color: white;
 }
+
+#box {
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+h1 {
+  color: $white;
+  font-size: 3rem;
+}
+
+h2 {
+  color: $white2;
+}
+
+// GLOBAL TECHS SCSS
+#projects-tech,
+#experience-tech,
+#education-tech,
+#certifications-tech {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem 0.25rem;
+  display: flex;
+  border-radius: 0.5rem;
+}
+
+#projects-tech {
+  background-color: rgba($blue, 0.2);
+  color: $blue;
+}
+
+#experience-tech {
+  background-color: rgba($green, 0.2);
+  color: $green;
+}
+
+#education-tech {
+  background-color: rgba($yellow, 0.2);
+  color: $yellow;
+}
+
+#certifications-tech {
+  background-color: rgba($pink, 0.2);
+  color: $pink;
+}

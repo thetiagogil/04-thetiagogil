@@ -1,21 +1,21 @@
 import "./MainBox.scss";
-import tg from "./../../assets/tg.png";
+import tg from "../../../assets/tg.png";
 import { FaGithub, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const MainBox = () => {
   return (
-    <div id="main-box">
+    <div className="main-box">
       <section>
-        <h1 id="title">TIAGO GIL</h1>
-        <h2 id="subtitle">Web Developer & Master Architect</h2>
+        <h1>TIAGO GIL</h1>
+        <h2>Web Developer & Master Architect</h2>
       </section>
 
       <section>
-        <img id="img" src={tg} alt="Tiago Gil" />
+        <img className="img" src={tg} alt="Tiago Gil" />
       </section>
 
       <section>
-        <p id="text">
+        <p className="text">
           As a Junior Full Stack Web Developer with a Master's in architecture,
           I leverage my problem-solving skills and keen attention to detail to
           create user-friendly web applications. My architectural background
@@ -25,7 +25,7 @@ const MainBox = () => {
         </p>
       </section>
 
-      <section id="icons">
+      <section className="icons">
         <a href="https://www.linkedin.com/in/thetiagogil/" target="_blank">
           <FaLinkedin className="icon" size={25} />
         </a>

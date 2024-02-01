@@ -1,1 +1,17 @@
-@import "./../../utils/colors.scss";
+@import "../../utils/colors.scss";
+
+#back {
+  color: $white3;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.3s;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+#table-box {
+  width: 80rem;
+}
