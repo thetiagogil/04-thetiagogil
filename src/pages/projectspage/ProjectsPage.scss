@@ -2,9 +2,10 @@
 
 #back {
   color: $white3;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 0.9rem;
   transition: 0.3s;
 
   &:hover {
@@ -12,6 +13,96 @@
   }
 }
 
-#table-box {
+.table-box {
   width: 80rem;
+}
+
+.table {
+  width: 100%;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  border-spacing: 0;
+
+  thead {
+    color: $white;
+    text-align: left;
+
+    th {
+      padding-bottom: 1rem;
+    }
+
+    .head-date {
+      width: 15%;
+    }
+
+    .head-name {
+      width: 20%;
+    }
+
+    .head-place {
+      width: 30%;
+    }
+
+    .head-techs {
+      width: 35%;
+    }
+  }
+
+  tbody {
+    td {
+      border-top: 1px solid rgba($blue, 0.2);
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .body-date {
+      color: $white3;
+    }
+
+    .body-name {
+      color: $white;
+
+      a {
+        color: $white;
+      }
+    }
+
+    .body-place {
+      color: $white3;
+
+      a {
+        color: $white3;
+      }
+    }
+
+    .body-techs {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.body-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.3s;
+
+  &:hover {
+    &.projects-name {
+      color: $blue;
+    }
+
+    &.experience-name {
+      color: $green;
+    }
+
+    &.education-name {
+      color: $yellow;
+    }
+
+    &.certifications-name {
+      color: $pink;
+    }
+  }
 }

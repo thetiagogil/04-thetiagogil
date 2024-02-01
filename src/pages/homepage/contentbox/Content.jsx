@@ -56,6 +56,7 @@ const Content = ({ type, props }) => {
                       {element.name}
                       {element.link && <FaExternalLinkAlt size={8} />}
                     </p>
+                    
                     <p className="date">
                       {type === "projects" ? element.date : null}
                     </p>
@@ -67,7 +68,7 @@ const Content = ({ type, props }) => {
 
                   <p className="description">{element.description}</p>
 
-                  <ul className="techs">
+                  <div className="techs">
                     {element.techs?.map((tech, index) => {
                       return (
                         <p id={techColors(type)} key={index}>
@@ -75,7 +76,7 @@ const Content = ({ type, props }) => {
                         </p>
                       );
                     })}
-                  </ul>
+                  </div>
                 </div>
               </a>
             </li>
