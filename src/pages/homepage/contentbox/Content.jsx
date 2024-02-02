@@ -84,7 +84,7 @@ const Content = ({ type, props }) => {
         })}
       </ol>
 
-      <Link className={linkColors(type)} to="/projects">
+      <Link className={linkColors(type)} to="/timeline">
         <p>Check out my timeline</p>
         <FaArrowRightLong size={12} />
       </Link>

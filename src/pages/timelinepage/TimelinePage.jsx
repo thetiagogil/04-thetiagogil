@@ -1,4 +1,4 @@
-import "./ProjectsPage.scss";
+import "./TimelinePage.scss";
 import { projects } from "../../db/projects";
 import { experience } from "../../db/experience";
 import { education } from "../../db/education";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
-const ProjectsPage = () => {
+const TimelinePage = () => {
   // ARRAY WITH ALL THE DATA - ADDED TYPE TO DATA
   const dataWithType = (data, type) => {
     return data.map((array) => {
@@ -91,7 +91,7 @@ const ProjectsPage = () => {
 
                   <td className="body-place">
                     <a
-                      href={element.link }
+                      href={element.link}
                       className={
                         element.link !== undefined &&
                         (element.type === "experience" ||
@@ -128,4 +128,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default TimelinePage;
