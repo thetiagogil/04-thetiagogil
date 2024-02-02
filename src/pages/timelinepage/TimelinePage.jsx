@@ -10,7 +10,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { useState } from "react";
 
 const TimelinePage = () => {
-  const [typesfilter, setTypesFilter] = useState({
+  const [typesFilter, setTypesFilter] = useState({
     projects: true,
     experience: true,
     education: true,
@@ -42,10 +42,21 @@ const TimelinePage = () => {
   const dataSorted = dateSorter(data);
 
   // TECHS ARRAY
+  const typesArray = () => {
+    let allTypes = new Set();
+
+    data.forEach((data) => {
+      const type = data.type;
+      allTypes.add(type);
+    });
+
+    return Array.from(allTypes);
+  };
+
   const techsArray = () => {
     let allTechs = new Set();
 
-    dataSorted.forEach((data) => {
+    data.forEach((data) => {
       const techs = data.techs;
 
       techs?.forEach((tech) => {
@@ -55,7 +66,6 @@ const TimelinePage = () => {
 
     return Array.from(allTechs);
   };
-  techsArray();
 
   // FILTER ARRAY BY TYPE AND TECHS
   const handleTypeChange = (type) => {
@@ -66,16 +76,17 @@ const TimelinePage = () => {
   };
 
   const handleTechsChange = (tech) => {
-    setTechsFilter((filter) => ({
-      ...filter,
-      techs: filter.techs.includes(tech)
-        ? filter.techs.filter((otherTechs) => otherTechs !== tech) // filter out other techs
-        : [...filter.techs, tech],
-    }));
+    setTechsFilter((filter) => {
+      if (filter.includes(tech)) {
+        return filter.filter((otherTechs) => otherTechs !== tech);
+      } else {
+        return [...filter, tech];
+      }
+    });
   };
 
   const dataFiltered = dataSorted.filter((element) => {
-    const types = typesfilter[element.type]; // changes the state for the selected type
+    const types = typesFilter[element.type]; // changes the state for the selected type
     const techs =
       techsFilter.length === 0 ||
       (element.techs &&
@@ -106,7 +117,22 @@ const TimelinePage = () => {
           <h1>My timeline</h1>
         </section>
 
-        <section className="filters"></section>
+        <section className="filters">
+          {typesArray().map((type, index) => (
+            <label
+              key={index}
+              className={`checkbox ${typesFilter[type] ? "active" : ""}`}
+            >
+              <input
+                type="checkbox"
+                checked={typesFilter[type]}
+                onChange={() => handleTypeChange(type)}
+              />
+              <span className="checkbox-circle"></span>
+              <p>{type}</p>
+            </label>
+          ))}
+        </section>
 
         <table className="table">
           <thead>
@@ -119,7 +145,7 @@ const TimelinePage = () => {
           </thead>
 
           <tbody>
-            {dataSorted.map((element, index) => {
+            {dataFiltered.map((element, index) => {
               return (
                 <tr key={index}>
                   <td className="body-date">{element.date}</td>
