@@ -13,6 +13,13 @@
   }
 }
 
+.filters {
+  margin-top: 2rem;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+}
+
 .table-box {
   width: 80rem;
 }
