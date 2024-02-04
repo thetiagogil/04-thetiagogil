@@ -1,13 +1,19 @@
 import "./TimelinePage.scss";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { dateSorter } from "../../components/dateSorter";
+import {
+  nameColors,
+  techColors,
+  circleColors,
+} from "../../components/colorClass";
+import { capFirstLetter } from "../../components/capFirstLetter";
 import { projects } from "../../db/projects";
 import { experience } from "../../db/experience";
 import { education } from "../../db/education";
 import { certifications } from "../../db/certifications";
-import { dateSorter } from "../../components/DateSorter";
-import { Link } from "react-router-dom";
-import { FaExternalLinkAlt } from "react-icons/fa";
-import { FaArrowLeftLong } from "react-icons/fa6";
-import { useState } from "react";
 
 const TimelinePage = () => {
   const [typesFilter, setTypesFilter] = useState({
@@ -44,6 +50,8 @@ const TimelinePage = () => {
   // TECHS ARRAY
   const typesArray = () => {
     let allTypes = new Set();
+
+    console.log('data :>> ', data);
 
     data.forEach((data) => {
       const type = data.type;
@@ -95,14 +103,6 @@ const TimelinePage = () => {
     return types && techs;
   });
 
-  // COLORS PER TYPE
-  const getColorClass = (type, category) => {
-    return `${type}-${category}`;
-  };
-
-  const nameColors = (type) => getColorClass(type, "name");
-  const techColors = (type) => getColorClass(type, "tech");
-
   return (
     <div id="box">
       <div className="table-box">
@@ -128,8 +128,8 @@ const TimelinePage = () => {
                 checked={typesFilter[type]}
                 onChange={() => handleTypeChange(type)}
               />
-              <span className="checkbox-circle"></span>
-              <p>{type}</p>
+              <span className={`checkbox-circle ${circleColors(type)}`}></span>
+              <p>{capFirstLetter(type)}</p>
             </label>
           ))}
         </section>

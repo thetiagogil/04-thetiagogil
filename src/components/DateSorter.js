@@ -14,7 +14,7 @@ const monthsOrder = {
 };
 
 export const dateSorter = (data) => {
-  const dataSorted = data.sort((a, b) => {
+  const dataSorted = [...data].sort((a, b) => {
     // DECONSTRUCT ELEMENTS
     const [aYear, aMonth] = a.date.split(" "); // EXAMPLE: ["2023", "Sep"]
     const [bYear, bMonth] = b.date.split(" "); // EXAMPLE: ["2023", "Oct"]

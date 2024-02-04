@@ -17,7 +17,51 @@
   margin-top: 2rem;
   color: $white;
   display: flex;
-  justify-content: space-between;
+  gap: 4rem;
+
+  .checkbox {
+    color: $white3;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+
+    .checkbox-circle {
+      background-color: transparent;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%; /* Use 50% for a perfect circle */
+      border: 1px solid $white3;
+      margin-right: 5px;
+    }
+
+    &.active {
+      color: $white;
+
+      .projects-circle {
+        background-color: $blue;
+        border-color: $blue;
+      }
+
+      .experience-circle {
+        background-color: $green;
+        border-color: $green;
+      }
+
+      .education-circle {
+        background-color: $yellow;
+        border-color: $yellow;
+      }
+
+      .certifications-circle {
+        background-color: $pink;
+        border-color: $pink;
+      }
+    }
+  }
 }
 
 .table-box {
@@ -111,33 +155,5 @@
     &.certifications-name {
       color: $pink;
     }
-  }
-}
-
-.checkbox {
-  position: relative;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  margin-right: 10px;
-
-  .checkbox-circle {
-    width: 20px; /* Adjust the size of your circle */
-    height: 20px; /* Adjust the size of your circle */
-    border-radius: 50%;
-    background-color: transparent;
-    border: 2px solid #333; /* Adjust the color of your circle border */
-    margin-right: 5px; /* Adjust the spacing between the circle and text */
-  }
-
-  &.active {
-    .checkbox-circle {
-      background-color: $white; /* Adjust the color when the checkbox is active */
-      border-color: $white; /* Adjust the border color when the checkbox is active */
-    }
-  }
-
-  input {
-    display: none; /* Hide the actual checkbox */
   }
 }

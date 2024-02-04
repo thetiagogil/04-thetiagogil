@@ -2,6 +2,11 @@ import "./Content.scss";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import {
+  nameColors,
+  techColors,
+  linkColors
+} from "../../../components/colorClass";
 
 const Content = ({ type, props }) => {
   // FILTER ELEMENTS SHOWN FROM DB
@@ -25,16 +30,6 @@ const Content = ({ type, props }) => {
       return desiredIds.includes(Number(element.id));
     })
     .sort((a, b) => b.id - a.id);
-
-  // COLORS PER TYPE
-  const getColorClass = (type, category) => {
-    return `${type}-${category}`;
-  };
-
-  const nameColors = (type) => getColorClass(type, "name");
-  const techColors = (type) => getColorClass(type, "tech");
-  const linkColors = (type) => getColorClass(type, "link");
-
   return (
     <>
       <ol className="elements">
@@ -56,7 +51,7 @@ const Content = ({ type, props }) => {
                       {element.name}
                       {element.link && <FaExternalLinkAlt size={8} />}
                     </p>
-                    
+
                     <p className="date">
                       {type === "projects" ? element.date : null}
                     </p>
