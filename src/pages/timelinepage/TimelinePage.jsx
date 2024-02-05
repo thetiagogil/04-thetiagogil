@@ -72,7 +72,7 @@ const TimelinePage = () => {
       });
     });
 
-    return Array.from(allTechs);
+    return Array.from(allTechs).sort((a, b) => a.localeCompare(b));
   };
 
   // FILTER ARRAY BY TYPE AND TECHS
