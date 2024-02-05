@@ -1,4 +1,4 @@
-export const dateSorter = (data) => {
+export const sortData = (data) => {
   const monthsOrder = {
     Jan: 1,
     Feb: 2,
