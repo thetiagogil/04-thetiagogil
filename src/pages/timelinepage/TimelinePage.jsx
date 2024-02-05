@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Select from "react-select";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { dateSorter } from "../../components/dateSorter";
+// import { dateSorter } from "../../components/dateSorter";
 import { capFirstLetter } from "../../components/capFirstLetter";
 import { projects } from "../../db/projects";
 import { experience } from "../../db/experience";
@@ -47,7 +47,7 @@ const TimelinePage = () => {
   ];
 
   // SORT ARRAY BY DATE
-  const dataSorted = dateSorter(data);
+  // const dataSorted = dateSorter(data);
 
   // TECHS ARRAY
   const typesArray = () => {
@@ -88,7 +88,7 @@ const TimelinePage = () => {
     setTechsFilter(selectedTechs);
   };
 
-  const dataFiltered = dataSorted.filter((element) => {
+  const dataFiltered = data.filter((element) => {
     const types = typesFilter[element.type];
 
     const techs =
