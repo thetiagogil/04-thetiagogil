@@ -139,6 +139,7 @@ const TimelinePage = () => {
           <Select
             isMulti
             defaultValue={[]}
+            placeholder="Filter by Tech..."
             closeMenuOnSelect={false}
             options={techsArray().map((tech, index) => ({
               value: tech,
