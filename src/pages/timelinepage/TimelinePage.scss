@@ -79,8 +79,8 @@
       }
 
       &:hover {
-      color: $white2;
-    }
+        color: $white2;
+      }
     }
   }
 }
@@ -152,30 +152,27 @@
       display: flex;
       flex-wrap: wrap;
     }
-  }
-}
 
-.body-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: 0.3s;
+    .body-link {
+      transition: 0.3s;
 
-  &:hover {
-    &.projects-name {
-      color: $blue;
-    }
+      &:hover {
+        &.projects-name {
+          color: $blue;
+        }
 
-    &.experience-name {
-      color: $green;
-    }
+        &.experience-name {
+          color: $green;
+        }
 
-    &.education-name {
-      color: $yellow;
-    }
+        &.education-name {
+          color: $yellow;
+        }
 
-    &.certifications-name {
-      color: $pink;
+        &.certifications-name {
+          color: $pink;
+        }
+      }
     }
   }
 }

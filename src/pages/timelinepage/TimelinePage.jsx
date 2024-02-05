@@ -10,7 +10,7 @@ import { projects } from "../../db/projects";
 import { experience } from "../../db/experience";
 import { education } from "../../db/education";
 import { certifications } from "../../db/certifications";
-import {customSelectStyles} from "../../components/customSelectStyles"
+import { customSelectStyles } from "../../components/customSelectStyles";
 import {
   nameColors,
   techColors,
@@ -94,7 +94,9 @@ const TimelinePage = () => {
     const techs =
       techsFilter.length === 0 ||
       (element.techs &&
-        techsFilter.every((selectedTech) => element.techs.includes(selectedTech)));
+        techsFilter.every((selectedTech) =>
+          element.techs.includes(selectedTech)
+        ));
 
     return types && techs;
   });
@@ -175,8 +177,9 @@ const TimelinePage = () => {
                         href={element.link}
                         className={nameColors(element.type) + " body-link"}
                       >
-                        {element.name}
-                        <FaExternalLinkAlt size={8} />
+                        <p>
+                          {element.name} <FaExternalLinkAlt size={8} />
+                        </p>
                       </a>
                     ) : (
                       <p>{element.name}</p>
@@ -192,8 +195,9 @@ const TimelinePage = () => {
                         href={element.link}
                         className={nameColors(element.type) + " body-link"}
                       >
-                        {element.place}
-                        <FaExternalLinkAlt size={8} />
+                        <p>
+                          {element.place} <FaExternalLinkAlt size={8} />
+                        </p>
                       </a>
                     ) : (
                       <p>{element.place}</p>
