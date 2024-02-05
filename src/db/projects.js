@@ -42,7 +42,7 @@ export const projects = [
   },
   {
     id: "3",
-    name: "TGDESIGN",
+    name: "Tiago Gil Design",
     date: "2024 Jan",
     description: "This is the description for Project 0.",
     techs: ["HTML", "SCSS", "JavaScript", "React"],
