@@ -1,19 +1,21 @@
 import "./TimelinePage.scss";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Select from "react-select";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { dateSorter } from "../../components/dateSorter";
-import {
-  nameColors,
-  techColors,
-  circleColors,
-} from "../../components/colorClass";
 import { capFirstLetter } from "../../components/capFirstLetter";
 import { projects } from "../../db/projects";
 import { experience } from "../../db/experience";
 import { education } from "../../db/education";
 import { certifications } from "../../db/certifications";
+import {customSelectStyles} from "../../components/customSelectStyles"
+import {
+  nameColors,
+  techColors,
+  circleColors,
+} from "../../components/colorClass";
 
 const TimelinePage = () => {
   const [typesFilter, setTypesFilter] = useState({
@@ -51,8 +53,6 @@ const TimelinePage = () => {
   const typesArray = () => {
     let allTypes = new Set();
 
-    console.log('data :>> ', data);
-
     data.forEach((data) => {
       const type = data.type;
       allTypes.add(type);
@@ -77,28 +77,24 @@ const TimelinePage = () => {
 
   // FILTER ARRAY BY TYPE AND TECHS
   const handleTypeChange = (type) => {
-    setTypesFilter((filter) => ({
-      ...filter,
-      [type]: !filter[type], // change selected type to false
+    setTypesFilter((obj) => ({
+      ...obj,
+      [type]: !obj[type], // change selected type to false
     }));
   };
 
   const handleTechsChange = (tech) => {
-    setTechsFilter((filter) => {
-      if (filter.includes(tech)) {
-        return filter.filter((otherTechs) => otherTechs !== tech);
-      } else {
-        return [...filter, tech];
-      }
-    });
+    const selectedTechs = tech.map((option) => option.value);
+    setTechsFilter(selectedTechs);
   };
 
   const dataFiltered = dataSorted.filter((element) => {
-    const types = typesFilter[element.type]; // changes the state for the selected type
+    const types = typesFilter[element.type];
+
     const techs =
       techsFilter.length === 0 ||
       (element.techs &&
-        element.techs.some((tech) => techsFilter.includes(tech)));
+        techsFilter.every((selectedTech) => element.techs.includes(selectedTech)));
 
     return types && techs;
   });
@@ -106,6 +102,7 @@ const TimelinePage = () => {
   return (
     <div id="box">
       <div className="table-box">
+        {/* BACK BUTTON */}
         <section>
           <Link to="/" id="back">
             <FaArrowLeftLong size={12} />
@@ -113,11 +110,14 @@ const TimelinePage = () => {
           </Link>
         </section>
 
+        {/* TITLE */}
         <section>
           <h1>My timeline</h1>
         </section>
 
+        {/* FILTERS */}
         <section className="filters">
+          {/* TYPE FILTER */}
           {typesArray().map((type, index) => (
             <label
               key={index}
@@ -132,8 +132,23 @@ const TimelinePage = () => {
               <p>{capFirstLetter(type)}</p>
             </label>
           ))}
+
+          {/* TECHS FILTER */}
+          <Select
+            isMulti
+            defaultValue={[]}
+            closeMenuOnSelect={false}
+            options={techsArray().map((tech, index) => ({
+              value: tech,
+              label: tech,
+              key: index,
+            }))}
+            onChange={(options) => handleTechsChange(options)}
+            styles={customSelectStyles}
+          />
         </section>
 
+        {/* TABLE */}
         <table className="table">
           <thead>
             <tr>
@@ -148,48 +163,44 @@ const TimelinePage = () => {
             {dataFiltered.map((element, index) => {
               return (
                 <tr key={index}>
+                  {/* DATE */}
                   <td className="body-date">{element.date}</td>
 
+                  {/* NAME */}
                   <td className="body-name">
-                    <a
-                      href={element.link}
-                      className={
-                        element.link !== undefined &&
-                        (element.type === "projects" ||
-                          element.type === "certifications")
-                          ? nameColors(element.type) + " body-link"
-                          : ""
-                      }
-                    >
-                      {element.name}
-                      {element.link &&
-                        (element.type === "projects" ||
-                          element.type === "certifications") && (
-                          <FaExternalLinkAlt size={8} />
-                        )}
-                    </a>
+                    {element.link !== undefined &&
+                    (element.type === "projects" ||
+                      element.type === "certifications") ? (
+                      <a
+                        href={element.link}
+                        className={nameColors(element.type) + " body-link"}
+                      >
+                        {element.name}
+                        <FaExternalLinkAlt size={8} />
+                      </a>
+                    ) : (
+                      <p>{element.name}</p>
+                    )}
                   </td>
 
+                  {/* PLACE */}
                   <td className="body-place">
-                    <a
-                      href={element.link}
-                      className={
-                        element.link !== undefined &&
-                        (element.type === "experience" ||
-                          element.type === "education")
-                          ? nameColors(element.type) + " body-link"
-                          : ""
-                      }
-                    >
-                      {element.place}
-                      {element.link &&
-                        (element.type === "experience" ||
-                          element.type === "education") && (
-                          <FaExternalLinkAlt size={8} />
-                        )}
-                    </a>
+                    {element.link !== undefined &&
+                    (element.type === "experience" ||
+                      element.type === "education") ? (
+                      <a
+                        href={element.link}
+                        className={nameColors(element.type) + " body-link"}
+                      >
+                        {element.place}
+                        <FaExternalLinkAlt size={8} />
+                      </a>
+                    ) : (
+                      <p>{element.place}</p>
+                    )}
                   </td>
 
+                  {/* TECHS */}
                   <td className="body-techs">
                     {element.techs?.map((tech, index) => {
                       return (
