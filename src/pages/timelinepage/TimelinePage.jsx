@@ -130,7 +130,7 @@ const TimelinePage = () => {
                 checked={typesFilter[type]}
                 onChange={() => handleTypeChange(type)}
               />
-              <span className={`checkbox-circle ${circleColors(type)}`}></span>
+              <span className={`checkbox-circle ${circleColors(type)}`}>{typesFilter[type] ? "✔" : null}</span>
               <p>{capFirstLetter(type)}</p>
             </label>
           ))}
