@@ -130,7 +130,9 @@ const TimelinePage = () => {
                 checked={typesFilter[type]}
                 onChange={() => handleTypeChange(type)}
               />
-              <span className={`checkbox-circle ${circleColors(type)}`}>{typesFilter[type] ? "✔" : null}</span>
+              <span className={`checkbox-circle ${circleColors(type)}`}>
+                {typesFilter[type] ? "✔" : null}
+              </span>
               <p>{capFirstLetter(type)}</p>
             </label>
           ))}
@@ -139,7 +141,7 @@ const TimelinePage = () => {
           <Select
             isMulti
             defaultValue={[]}
-            placeholder="Filter by Tech..."
+            placeholder="Filter by tech..."
             closeMenuOnSelect={false}
             options={techsArray().map((tech, index) => ({
               value: tech,
