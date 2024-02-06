@@ -21,10 +21,16 @@ export const customSelectStyles = {
   }),
   option: (provided, state) => ({
     ...provided,
-    backgroundColor: state.isSelected
+    backgroundColor: state.isFocused
+      ? colors.white3
+      : state.isSelected
       ? colors.darkBlue
       : colors.lighterDarkBlue,
-    color: colors.white2,
+    color: state.isFocused
+      ? colors.white
+      : state.isSelected
+      ? colors.white
+      : colors.white2,
   }),
   multiValue: (provided) => ({
     ...provided,
