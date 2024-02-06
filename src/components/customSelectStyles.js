@@ -11,8 +11,9 @@ export const customSelectStyles = {
     ...provided,
     backgroundColor: colors.darkBlue,
     transition: "0.3s",
+    border: `1px solid ${colors.white3}`,
     ":hover": {
-      border: `1px solid ${colors.white3}`,
+      border: `1px solid ${colors.white}`,
     },
   }),
   menu: (provided) => ({
