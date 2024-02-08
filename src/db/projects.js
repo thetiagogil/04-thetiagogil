@@ -19,7 +19,7 @@ export const projects = [
     description:
       "Designed a League of Legends platform enabling users to explore champion and item details and create personalized builds. Applied CRUD operations and integrated League of Legends API to dynamically create, fetch, update and delete game information. Introduced search and filtering functionalities, elevating the website beyond information retrieval to an interactive platform.",
     link: "https://house-of-legends.netlify.app",
-    techs: ["HTML", "CSS", "JavaScript", "React", "Node.js", "REST API"],
+    techs: ["HTML", "CSS", "JavaScript", "React", "Node.js", "RESTful API"],
   },
   {
     id: "2",
