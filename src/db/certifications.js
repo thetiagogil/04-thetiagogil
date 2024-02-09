@@ -19,4 +19,13 @@ export const certifications = [
     link: "https://www.udemy.com/course/build-mobile-apps-with-react-native-from-to-zero-to-expert/",
     techs: ["React Native", "JavaScript", "RESTful API", "Postman"],
   },
+  /* {
+    id: "2",
+    name: "Outsystems Reactive Development Course",
+    place: "Udemy",
+    date: "2024 Fev",
+    description: "",
+    link: "https://www.udemy.com/course/complete-course-on-outsystems-development/",
+    techs: ["OutSystems"],
+  }, */
 ];
