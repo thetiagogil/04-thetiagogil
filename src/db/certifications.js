@@ -23,8 +23,9 @@ export const certifications = [
     id: "2",
     name: "Outsystems Reactive Development Course",
     place: "Udemy",
-    date: "2024 Fev",
-    description: "Acquired expertise in OutSystems through End-To-End Reactive Development, mastering basic to advanced features, best coding practices, application architecture design, and enterprise-grade solutions. Learned how to apply advanced UI widgets, delved into intricate database concepts, and seamlessly integrated Web APIs. Developed proficiency in troubleshooting and optimizing performance, ensuring robust functionality. This journey culminated in a comprehensive understanding of the OutSystems ecosystem, empowering me to contribute effectively to the development of projects as an OutSystems Developer.",
+    date: "2024 Feb",
+    description:
+      "Acquired expertise in OutSystems through End-To-End Reactive Development, mastering basic to advanced features, best coding practices, application architecture design, and enterprise-grade solutions. Learned how to apply advanced UI widgets, delved into intricate database concepts, and seamlessly integrated Web APIs. Developed proficiency in troubleshooting and optimizing performance, ensuring robust functionality. This journey culminated in a comprehensive understanding of the OutSystems ecosystem, empowering me to contribute effectively to the development of projects as an OutSystems Developer.",
     link: "https://www.udemy.com/course/complete-course-on-outsystems-development/",
     techs: ["OutSystems"],
   },
