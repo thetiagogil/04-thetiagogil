@@ -9,4 +9,14 @@ export const experience = [
     link: "https://www.linkedin.com/company/cr-espassos/about/",
       techs: ["Revit", "AutoCAD", "Microsoft Office"],
   },
+  {
+    id: "1",
+    name: "Full-stack Developer",
+    place: "Talent Protocol",
+    date: "2024 April — Present",
+    description:
+      "Millions are wasted every year betting on the wrong talent. Talent Protocol unlocks rich and verifiable reputation data and makes true talent more visible.",
+    link: "https://www.talentprotocol.com/",
+      techs: ["JavaScript", "TypeScript", "CSS", "React", "Next.js", "Ruby", "Ruby on Rails"],
+  },
 ];
