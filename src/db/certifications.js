@@ -21,7 +21,7 @@ export const certifications = [
   },
   {
     id: "2",
-    name: "OutSystems Reactive Development Course",
+    name: "OutSystems Course",
     place: "Udemy",
     date: "2024 Feb",
     description:

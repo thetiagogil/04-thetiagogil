@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 import Select from "react-select";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { sortData } from "../../components/sortData";
-import { capFirstLetter } from "../../components/capFirstLetter";
+import { sortData } from "../../components/variables/sortData";
+import { capFirstLetter } from "../../components/variables/capFirstLetter";
 import { projects } from "../../db/projects";
 import { experience } from "../../db/experience";
 import { education } from "../../db/education";
 import { certifications } from "../../db/certifications";
-import { customSelectStyles } from "../../components/customSelectStyles";
+import { customSelectStyles } from "../../components/variables/customSelectStyles";
 import {
   nameColors,
   techColors,
   circleColors,
-} from "../../components/colorClass";
+} from "../../components/variables/colorClass";
 
 const TimelinePage = () => {
   const [typesFilter, setTypesFilter] = useState({
