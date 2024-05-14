@@ -1,4 +1,4 @@
-import { colors } from "../utils/colors.js";
+import { colors } from "../../components/colors/colors";
 
 export const customSelectStyles = {
   container: (provided) => ({
