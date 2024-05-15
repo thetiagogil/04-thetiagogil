@@ -1,9 +1,6 @@
-import { FaExternalLinkAlt } from "react-icons/fa";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { desiredIds } from "../../../../components/variables/desiredIds";
-import { AspectRatio, List, ListItem, Stack, Typography, Link } from "@mui/joy";
-import ChipTech from "../../../../components/layout/Chip";
-import { hoverColor } from "../../../../components/variables/typeColors";
+import { List, ListItem, Link, Stack } from "@mui/joy";
+import { Section1, Section2, Section3 } from "./content/index";
 
 const Content = ({ type, props }) => {
   const filteredData = props
@@ -11,9 +8,10 @@ const Content = ({ type, props }) => {
       return desiredIds(type).includes(Number(element.id));
     })
     .sort((a, b) => b.id - a.id);
+
   return (
-    <>
-      <List sx={{ gap: 6, pt: 4, pb: 4 }}>
+    <Stack sx={{ gap: 6, py: 4 }}>
+      <List sx={{ gap: 6}}>
         {filteredData.map((element) => {
           return (
             <ListItem key={element.id} sx={{ p: 0 }}>
@@ -21,86 +19,30 @@ const Content = ({ type, props }) => {
                 href={element.link}
                 underline="none"
                 sx={{
+                  bgcolor: { xs: "primary.lighterDarkBlue", md: "transparent" },
+                  display: "flex",
+                  flexDirection: { xs: "column", md: "row" },
                   p: 2,
-                  bgcolor: "transparent",
+                  gap: 2,
                   borderRadius: "8px",
                   transition: "0.3s",
+                  width: { md: "900px" },
                   "&:hover": {
                     bgcolor: "primary.lighterDarkBlue",
                   },
                 }}
               >
-                <Stack sx={{ width: "30%", alignSelf: "baseline" }}>
-                  {type === "projects" && element.img ? (
-                    <AspectRatio
-                      sx={{
-                        width: "90%",
-                        border: "1px solid",
-                        borderColor: "primary.white3",
-                        borderRadius: "8px",
-                      }}
-                    >
-                      <img src={element.img} alt={element.name} />
-                    </AspectRatio>
-                  ) : type === "projects" && !element.img ? null : (
-                    <Typography level="body-sm">{element.date}</Typography>
-                  )}
-                </Stack>
+                <Section1 element={element} type={type} />
 
-                <Stack sx={{ width: "70%" }}>
-                  <Stack
-                    sx={{ flexDirection: "row", alignItems: "center", gap: 2 }}
-                  >
-                    <Typography
-                      level="title-lg"
-                      endDecorator={
-                        element.link && <FaExternalLinkAlt size={8} />
-                      }
-                      sx={{ transition: "0.3s", ...hoverColor(type) }}
-                    >
-                      {element.name}
-                    </Typography>
-
-                    <Typography level="title-sm">
-                      {type === "projects" ? element.date : null}
-                    </Typography>
-                  </Stack>
-
-                  <Typography level="title-md">
-                    {element.place ? element.place : element.subject}
-                  </Typography>
-
-                  <Typography
-                    level="body-sm"
-                    sx={{
-                      mt: 1,
-                    }}
-                  >
-                    {element.description}
-                  </Typography>
-
-                  <Stack sx={{ mt: 1, flexDirection: "row", flexWrap: "wrap" }}>
-                    {element.techs?.map((tech, index) => {
-                      return <ChipTech tech={tech} type={type} key={index} />;
-                    })}
-                  </Stack>
-                </Stack>
+                <Section2 element={element} type={type} />
               </Link>
             </ListItem>
           );
         })}
       </List>
 
-      <Link href="/timeline" underline="none">
-        <Typography
-          level="body-md"
-          endDecorator={<FaArrowRightLong size={12} />}
-          sx={{ transition: "0.3s", ...hoverColor(type) }}
-        >
-          Check out my timeline
-        </Typography>
-      </Link>
-    </>
+      <Section3 type={type} />
+    </Stack>
   );
 };
 

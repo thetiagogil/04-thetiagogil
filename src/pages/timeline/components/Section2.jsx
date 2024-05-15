@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaExternalLinkAlt } from "react-icons/fa";
 import { sortDate } from "../../../components/variables/sortDate";
 import { capFirstLetter } from "../../../components/variables/capFirstLetter";
 import { projects } from "../../../db/projects";
@@ -21,7 +20,13 @@ import {
   Table,
   Link,
   Typography,
+  Dropdown,
+  MenuButton,
+  Menu,
+  MenuItem,
 } from "@mui/joy";
+
+import { FaExternalLinkAlt, FaInfoCircle } from "react-icons/fa";
 
 const Section2 = () => {
   const [typesFilter, setTypesFilter] = useState({
@@ -107,13 +112,21 @@ const Section2 = () => {
   });
 
   return (
-    <Stack component="section">
+    <Stack
+      component="section"
+      sx={{ alignItems: { xs: "center", lg: "baseline" } }}
+    >
       {/* FILTERS */}
       <Stack
         component="section"
-        sx={{ flexDirection: "row", alignItems: "center", gap: 8 }}
+        sx={{
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          justifyContent: { xs: "center", lg: "left" },
+          gap: { xs: 4, lg: 8 },
+        }}
       >
-        <Stack sx={{ flexDirection: "row", gap: 4 }}>
+        <Stack sx={{ flexDirection: { xs: "column", sm: "row" }, gap: 4 }}>
           {/* TYPE FILTER */}
           {typesArray().map((type, index) => (
             <Checkbox
@@ -142,7 +155,7 @@ const Section2 = () => {
           placeholder="Choose a tech..."
           onChange={handleTechsChange}
           renderValue={(selected) => (
-            <Box sx={{ display: "flex", gap: "0.25rem" }}>
+            <Box sx={{ display: "flex", gap: 1 }}>
               {selected.map((selectedOption, index) => (
                 <Chip
                   key={index}
@@ -175,7 +188,7 @@ const Section2 = () => {
       {/* TABLE */}
       <Table
         sx={{
-          width: "100%",
+          width: { xs: "90%", lg: "100%" },
           mt: 8,
           fontSize: "14px",
           th: {
@@ -187,28 +200,34 @@ const Section2 = () => {
             verticalAlign: "top",
           },
           "& th:nth-of-type(1)": {
-            width: "15%",
+            width: { md: "15%" },
           },
           "& th:nth-of-type(2)": {
-            width: "20%",
+            width: { md: "20%" },
           },
           "& th:nth-of-type(3)": {
-            width: "30%",
+            width: { md: "30%" },
           },
           "& th:nth-of-type(4)": {
-            width: "35%",
+            width: { xs: "20%", md: "35%" },
+            textAlign: { xs: "center", sm: "left" },
           },
           "& td:nth-of-type(1)": {
             color: "primary.white3",
+            fontSize: { xs: "12px", sm: "14px" },
           },
           "& td:nth-of-type(2)": {
             color: "primary.white",
+            fontSize: { xs: "12px", sm: "14px" },
           },
           "& td:nth-of-type(3)": {
             color: "primary.white3",
+            fontSize: { xs: "12px", sm: "14px" },
           },
           "& td:nth-of-type(4)": {
             color: "primary.white",
+            fontSize: { xs: "12px", sm: "14px" },
+            textAlign: { xs: "center", sm: "left" },
           },
         }}
       >
@@ -217,7 +236,7 @@ const Section2 = () => {
             <th>Date</th>
             <th>Name</th>
             <th>Place</th>
-            <th>Tech Stack</th>
+            <th>Techs</th>
           </tr>
         </thead>
 
@@ -276,11 +295,48 @@ const Section2 = () => {
 
                 {/* TECHS */}
                 <td>
-                  {element.techs?.map((tech, index) => {
-                    return (
-                      <ChipTech tech={tech} type={element.type} key={index} />
-                    );
-                  })}
+                  <Box sx={{ display: { xs: "none", sm: "inline-block" } }}>
+                    {element.techs?.map((tech, index) => {
+                      return (
+                        <ChipTech tech={tech} type={element.type} key={index} />
+                      );
+                    })}
+                  </Box>
+
+                  <Box sx={{ display: { xs: "inline-block", sm: "none" } }}>
+                    <Dropdown>
+                      <MenuButton
+                        variant="plain"
+                        sx={{
+                          padding: 0,
+                          margin: 0,
+                          cursor: "pointer",
+                          outline: "none",
+                          boxShadow: "none",
+                          "&:hover": {
+                            background: "none",
+                          },
+                          "&:active": {
+                            background: "none",
+                          },
+                          "&:focus": {
+                            outline: "none",
+                          },
+                        }}
+                      >
+                        <FaInfoCircle color="white" size={20} />
+                      </MenuButton>
+                      <Menu sx={{ bgcolor: "primary.darkBlue" }}>
+                        {element.techs?.map((tech, index) => {
+                          return (
+                            <MenuItem key={index}>
+                              <ChipTech tech={tech} type={element.type} />
+                            </MenuItem>
+                          );
+                        })}
+                      </Menu>
+                    </Dropdown>
+                  </Box>
                 </td>
               </tr>
             );

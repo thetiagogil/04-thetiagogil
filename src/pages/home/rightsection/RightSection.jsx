@@ -16,7 +16,7 @@ const tabData = [
 
 const ContentBox = () => {
   return (
-    <Stack sx={{ maxWidth: "600px" }}>
+    <Stack sx={{ maxWidth: { xs: "90%", lg: "600px" } }}>
       <Tabs
         defaultValue={0}
         sx={{
@@ -42,12 +42,12 @@ const ContentBox = () => {
           }}
         >
           {tabData.map((tab, index) => (
-            <Tab key={index} sx={{fontWeight: '700'}}>{tab.label}</Tab>
+            <Tab key={index} sx={{ fontSize: {xs: '14px', md: '16px'}, fontWeight: '700'}}>{tab.label}</Tab>
           ))}
         </TabList>
 
         {tabData.map((tab, index) => (
-          <TabPanel key={index} value={index} sx={{ overflowY: "auto" }}>
+          <TabPanel key={index} value={index} sx={{ overflowY: "auto", p: 0 }}>
             <Content type={tab.type} props={tab.data} />
           </TabPanel>
         ))}
