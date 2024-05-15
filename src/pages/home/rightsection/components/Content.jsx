@@ -56,7 +56,7 @@ const Content = ({ type, props }) => {
                       endDecorator={
                         element.link && <FaExternalLinkAlt size={8} />
                       }
-                      sx={hoverColor(type)}
+                      sx={{ transition: "0.3s", ...hoverColor(type) }}
                     >
                       {element.name}
                     </Typography>
