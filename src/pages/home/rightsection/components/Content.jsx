@@ -3,6 +3,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { desiredIds } from "../../../../components/variables/desiredIds";
 import { AspectRatio, List, ListItem, Stack, Typography, Link } from "@mui/joy";
 import ChipTech from "../../../../components/layout/Chip";
+import { hoverColor } from "../../../../components/variables/typeColors";
 
 const Content = ({ type, props }) => {
   const filteredData = props
@@ -94,7 +95,7 @@ const Content = ({ type, props }) => {
         <Typography
           level="body-md"
           endDecorator={<FaArrowRightLong size={12} />}
-          sx={hoverColor(type)}
+          sx={{ transition: "0.3s", ...hoverColor(type) }}
         >
           Check out my timeline
         </Typography>
@@ -104,36 +105,3 @@ const Content = ({ type, props }) => {
 };
 
 export default Content;
-
-const hoverColor = (type) => {
-  switch (type) {
-    case "projects":
-      return {
-        transition: "0.3s",
-        "&:hover": {
-          color: "primary.blue",
-        },
-      };
-    case "experience":
-      return {
-        transition: "0.3s",
-        "&:hover": {
-          color: "primary.green",
-        },
-      };
-    case "education":
-      return {
-        transition: "0.3s",
-        "&:hover": {
-          color: "primary.yellow",
-        },
-      };
-    case "certifications":
-      return {
-        transition: "0.3s",
-        "&:hover": {
-          color: "primary.pink",
-        },
-      };
-  }
-};

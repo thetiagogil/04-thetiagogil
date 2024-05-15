@@ -23,7 +23,7 @@ const socialMediaLinks = [
 
 const MainBox = () => {
   return (
-    <Stack sx={{ maxWidth: "35rem", gap: 4 }}>
+    <Stack sx={{ maxWidth: "600px", gap: 4 }}>
       <Stack component="section">
         <Typography level="h1">TIAGO GIL</Typography>
         <Typography level="h3">Web Developer & Master Architect</Typography>

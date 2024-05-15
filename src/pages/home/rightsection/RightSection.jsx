@@ -16,11 +16,11 @@ const tabData = [
 
 const ContentBox = () => {
   return (
-    <Stack sx={{ maxWidth: "35rem" }}>
+    <Stack sx={{ maxWidth: "600px" }}>
       <Tabs
         defaultValue={0}
         sx={{
-          backgroundColor: "transparent",
+          bgcolor: "transparent",
           overflowY: "auto",
         }}
       >
