@@ -1,4 +1,4 @@
-export const sortData = (data) => {
+export const sortDate = (data) => {
   const monthsOrder = {
     Jan: 1,
     Feb: 2,
@@ -14,7 +14,7 @@ export const sortData = (data) => {
     Dec: 12,
   };
 
-  const dataSorted = [...data].sort((a, b) => {
+  const dateSorted = [...data].sort((a, b) => {
     // DECONSTRUCT ELEMENTS
     const [aYear, aMonth] = a.date.split(" "); // EXAMPLE: ["2023", "Sep"]
     const [bYear, bMonth] = b.date.split(" "); // EXAMPLE: ["2023", "Oct"]
@@ -28,7 +28,7 @@ export const sortData = (data) => {
     }
 
     // SECOND CHECKS IF MONTH IS THE SAME
-    const monthComparison = bMonth.localeCompare(aMonth);
+    const monthComparison = monthsOrder[bMonth] - monthsOrder[aMonth];
 
     // IF MONTH IS NOT THE SAME, RETURN MONTH DIFFERENCE
     if (monthComparison !== 0) {
@@ -42,5 +42,5 @@ export const sortData = (data) => {
     return nameComparison;
   });
 
-  return dataSorted;
+  return dateSorted;
 };

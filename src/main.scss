@@ -1,4 +1,4 @@
-@import "./utils/colors.scss";
+@import "./components/colors/colors.scss";
 
 * {
   margin: 0;
@@ -8,15 +8,10 @@
 
 body {
   background-color: $darkBlue;
-  font-family: Arial;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-a {
-  text-decoration: none;
 }
 
 ::selection {
@@ -29,54 +24,14 @@ a {
   color: white;
 }
 
-#box {
-  height: 100vh;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  gap: 10rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+::-webkit-scrollbar {
+  width: 0;
 }
 
-h1 {
-  color: $white;
-  font-size: 3rem;
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 
-h2 {
-  color: $white2;
-}
-
-// GLOBAL TECHS SCSS
-#projects-tech,
-#experience-tech,
-#education-tech,
-#certifications-tech {
-  font-size: 0.75rem;
-  font-weight: bold;
-  margin: 0.25rem 0.5rem 0.25rem 0;
-  padding: 0.25rem 0.5rem 0.25rem;
-  display: flex;
-  border-radius: 0.5rem;
-}
-
-#projects-tech {
-  background-color: rgba($blue, 0.2);
-  color: $blue;
-}
-
-#experience-tech {
-  background-color: rgba($green, 0.2);
-  color: $green;
-}
-
-#education-tech {
-  background-color: rgba($yellow, 0.2);
-  color: $yellow;
-}
-
-#certifications-tech {
-  background-color: rgba($pink, 0.2);
-  color: $pink;
+::-webkit-scrollbar-track {
+  background-color: transparent;
 }
