@@ -1,6 +1,6 @@
 import { desiredIds } from "../../../../components/variables/desiredIds";
 import { List, ListItem, Link, Stack } from "@mui/joy";
-import { Section1, Section2, Section3 } from "./content/index";
+import { Section1, Section2 } from "./content/index";
 
 const Content = ({ type, props }) => {
   const filteredData = props
@@ -40,8 +40,6 @@ const Content = ({ type, props }) => {
           );
         })}
       </List>
-
-      <Section3 type={type} />
     </Stack>
   );
 };
