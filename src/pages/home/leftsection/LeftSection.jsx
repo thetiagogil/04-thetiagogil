@@ -23,10 +23,15 @@ const socialMediaLinks = [
 
 const MainBox = () => {
   return (
-    <Stack sx={{ maxWidth: "600px", gap: 4 }}>
-      <Stack component="section">
+    <Stack sx={{ maxWidth: { xs: "90%", lg: "600px" }, gap: 4 }}>
+      <Stack
+        component="section"
+        sx={{ textAlign: { xs: "center", lg: "left" } }}
+      >
         <Typography level="h1">TIAGO GIL</Typography>
-        <Typography level="h3">Web Developer & Master Architect</Typography>
+        <Typography level="h3" sx={{ fontSize: { xs: "20px", lg: "24px" } }}>
+          Web Developer & Master Architect
+        </Typography>
       </Stack>
 
       <Stack>
@@ -44,7 +49,7 @@ const MainBox = () => {
         </Typography>
       </Stack>
 
-      <Stack component="section" sx={{ flexDirection: "row", gap: 2 }}>
+      <Stack component="section" sx={{ flexDirection: "row", gap: 2, justifyContent: { xs: "center", lg: "left" } }}>
         {socialMediaLinks.map((link, index) => (
           <Link
             key={index}

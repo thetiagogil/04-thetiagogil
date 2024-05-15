@@ -142,7 +142,7 @@ const Section2 = () => {
           placeholder="Choose a tech..."
           onChange={handleTechsChange}
           renderValue={(selected) => (
-            <Box sx={{ display: "flex", gap: "0.25rem" }}>
+            <Box sx={{ display: "flex", gap: 1 }}>
               {selected.map((selectedOption, index) => (
                 <Chip
                   key={index}
