@@ -2,7 +2,7 @@ import { Link, Stack, Typography } from "@mui/joy";
 
 import { FaArrowLeftLong } from "react-icons/fa6";
 
-const Section1 = () => {
+export const Section1 = () => {
   return (
     <Stack
       component="section"
@@ -28,5 +28,3 @@ const Section1 = () => {
     </Stack>
   );
 };
-
-export default Section1;

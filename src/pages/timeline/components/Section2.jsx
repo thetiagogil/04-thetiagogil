@@ -28,7 +28,7 @@ import {
 
 import { FaExternalLinkAlt, FaInfoCircle } from "react-icons/fa";
 
-const Section2 = () => {
+export const Section2 = () => {
   const [typesFilter, setTypesFilter] = useState({
     projects: true,
     experience: true,
@@ -346,5 +346,3 @@ const Section2 = () => {
     </Stack>
   );
 };
-
-export default Section2;

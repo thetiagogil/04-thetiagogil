@@ -1,6 +1,5 @@
 import { Stack } from "@mui/joy";
-import Section1 from "./components/Section1";
-import Section2 from "./components/Section2";
+import {Section1, Section2} from "./components/index";
 
 const TimelinePage = () => {
   return (
