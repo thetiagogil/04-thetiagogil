@@ -7,7 +7,7 @@ const HomePage = () => {
     <Stack
       sx={{
         height: { xs: "100%", lg: "100vh" },
-        py: {xs: 5, lg: 10},
+        py: {xs: 4, lg: 10},
         justifyContent: { xs: "normal", lg: "center" },
         alignItems: { xs: "center", lg: "normal" },
         flexDirection: { xs: "column", lg: "row" },

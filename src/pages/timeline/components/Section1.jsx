@@ -4,7 +4,10 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 
 const Section1 = () => {
   return (
-    <Stack component="section">
+    <Stack
+      component="section"
+      sx={{ alignItems: { xs: "center", lg: "baseline" } }}
+    >
       <Link
         href="/"
         underline="none"
