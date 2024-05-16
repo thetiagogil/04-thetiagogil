@@ -198,7 +198,7 @@ export const Section2 = () => {
             verticalAlign: "top",
           },
           "& th:nth-of-type(1)": {
-            width: { md: "15%" },
+            width: { md: "10%" },
           },
           "& th:nth-of-type(2)": {
             width: { md: "20%" },
@@ -244,11 +244,17 @@ export const Section2 = () => {
               <tr key={index}>
                 {/* DATE */}
                 <td>
-                  <Typography>
+                  <Typography level="body-sm">
                     {element.yearStart} {element.monthStart}
                   </Typography>
-                  <Typography>
-                    {element.yearEnd} {element.monthEnd}
+                  <Typography level="body-sm">
+                    {(element.yearEnd !== null ||
+                      element.monthEnd !== null) && (
+                      <>
+                        {" "}
+                        — {element.yearEnd} {element.monthEnd}
+                      </>
+                    )}
                   </Typography>
                 </td>
 
