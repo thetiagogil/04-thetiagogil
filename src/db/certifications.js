@@ -2,7 +2,7 @@ export const certifications = [
   {
     id: "0",
     type: "certifications",
-    name: "Agile Project Management Course",
+    name: "Agile Course",
     place: "Udemy",
     description:
       "Explored the most popular Agile Methodologies such as Scrum, Kanban, DSDM, Extreme Programming (XP) and Lean Software Development.",
