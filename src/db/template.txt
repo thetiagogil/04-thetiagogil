@@ -1,0 +1,13 @@
+{
+  id: "",
+  type: "",
+  name: "",
+  place: "",
+  description: "",
+  link: "",
+  techs: [],
+  yearStart: "",
+  monthStart: "",
+  yearEnd: "",
+  monthEnd: "",
+},
