@@ -5,7 +5,7 @@ export const Section1 = ({ element, type }) => {
     <Stack
       sx={{
         width: { xs: "100%", md: "30%" },
-        alignSelf: { xs: "center", md: "baseline" },
+        alignSelf: { xs: "center", sm: "baseline" },
       }}
     >
       {type === "projects" && element.img ? (

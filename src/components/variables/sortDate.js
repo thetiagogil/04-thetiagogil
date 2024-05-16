@@ -1,4 +1,5 @@
 export const sortDate = (data) => {
+  // Define the order of months to convert them into numerical values
   const monthsOrder = {
     Jan: 1,
     Feb: 2,
@@ -14,33 +15,44 @@ export const sortDate = (data) => {
     Dec: 12,
   };
 
-  const dateSorted = [...data].sort((a, b) => {
-    // DECONSTRUCT ELEMENTS
-    const [aYear, aMonth] = a.date.split(" "); // EXAMPLE: ["2023", "Sep"]
-    const [bYear, bMonth] = b.date.split(" "); // EXAMPLE: ["2023", "Oct"]
+  // Get the current year and month
+  const currentYear = new Date().getFullYear();
+  const currentMonth = new Date().getMonth() + 1;
 
-    // FIRST CHECKS IF YEAR IS THE SAME
-    const yearComparison = bYear.localeCompare(aYear);
+  // Sort the data array
+  return data.sort((a, b) => {
+    // Handle 'Present' and null values for end dates
+    const aYearEnd =
+      a.yearEnd === "Present" || !a.yearEnd ? currentYear : a.yearEnd;
+    const bYearEnd =
+      b.yearEnd === "Present" || !b.yearEnd ? currentYear : b.yearEnd;
+    const aMonthEnd =
+      a.monthEnd === "Present" || !a.monthEnd
+        ? currentMonth
+        : monthsOrder[a.monthEnd];
+    const bMonthEnd =
+      b.monthEnd === "Present" || !b.monthEnd
+        ? currentMonth
+        : monthsOrder[b.monthEnd];
 
-    // IF YEAR IS NOT THE SAME, RETURN YEAR DIFFERENCE
-    if (yearComparison !== 0) {
-      return yearComparison;
+    // Compare end years first
+    if (aYearEnd === bYearEnd) {
+      // If end years are the same, compare end months
+      if (aMonthEnd === bMonthEnd) {
+        // If end months are the same, compare start years
+        const aYearStart = a.yearStart;
+        const bYearStart = b.yearStart;
+        const aMonthStart = monthsOrder[a.monthStart];
+        const bMonthStart = monthsOrder[b.monthStart];
+
+        // If start years are the same, compare start months
+        if (aYearStart === bYearStart) {
+          return bMonthStart - aMonthStart; // Descending order of start months
+        }
+        return bYearStart - aYearStart; // Descending order of start years
+      }
+      return bMonthEnd - aMonthEnd; // Descending order of end months
     }
-
-    // SECOND CHECKS IF MONTH IS THE SAME
-    const monthComparison = monthsOrder[bMonth] - monthsOrder[aMonth];
-
-    // IF MONTH IS NOT THE SAME, RETURN MONTH DIFFERENCE
-    if (monthComparison !== 0) {
-      return monthsOrder[bMonth] - monthsOrder[aMonth];
-    }
-
-    // THIRD CHECKS NAME
-    const nameComparison = b.name.localeCompare(a.name);
-
-    // RETURN NAME DIFFERENCE
-    return nameComparison;
+    return bYearEnd - aYearEnd; // Descending order of end years
   });
-
-  return dateSorted;
 };

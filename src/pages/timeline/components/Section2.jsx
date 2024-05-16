@@ -7,10 +7,7 @@ import {
   education,
   certifications,
 } from "../../../db/index";
-import {
-  hoverColor,
-  fillColor,
-} from "../../../components/variables/typeColors";
+import { fillColor } from "../../../components/variables/typeColors";
 import {
   Checkbox,
   Stack,
@@ -26,8 +23,9 @@ import {
   Menu,
   MenuItem,
 } from "@mui/joy";
+import { sortDate } from "../../../components/variables/sortDate";
 
-import { FaExternalLinkAlt, FaInfoCircle } from "react-icons/fa";
+import { FaInfoCircle } from "react-icons/fa";
 
 export const Section2 = () => {
   const [typesFilter, setTypesFilter] = useState({
@@ -39,26 +37,10 @@ export const Section2 = () => {
 
   const [techsFilter, setTechsFilter] = useState([]);
 
-  // ARRAY WITH ALL THE DATA - ADDED TYPE TO DATA
-  const dataWithType = (data, type) => {
-    return data.map((array) => {
-      return { ...array, type };
-    });
-  };
+  // Array with all the data
+  const data = [...projects, ...experience, ...education, ...certifications];
 
-  const projectsWithType = dataWithType(projects, "projects");
-  const experienceWithType = dataWithType(experience, "experience");
-  const educationWithType = dataWithType(education, "education");
-  const certificationsWithType = dataWithType(certifications, "certifications");
-
-  const data = [
-    ...projectsWithType,
-    ...experienceWithType,
-    ...educationWithType,
-    ...certificationsWithType,
-  ];
-
-  // TECHS ARRAY
+  // Techs array
   const typesArray = () => {
     let allTypes = new Set();
 
@@ -84,19 +66,19 @@ export const Section2 = () => {
     return Array.from(allTechs).sort((a, b) => a.localeCompare(b));
   };
 
-  // FILTER ARRAY BY TYPE AND TECHS
+  // Filter array
   const handleTypeChange = (type) => {
     setTypesFilter((obj) => ({
       ...obj,
-      [type]: !obj[type], // change selected type to false
+      [type]: !obj[type],
     }));
   };
 
   const handleTechsChange = (event, value) => {
     setTechsFilter(value);
   };
-
-  const dataFiltered = data.filter((element) => {
+  
+  const dataFiltered = sortDate(data).filter((element) => {
     const types = typesFilter[element.type];
 
     const techs =
@@ -260,48 +242,12 @@ export const Section2 = () => {
 
                 {/* NAME */}
                 <td>
-                  {element.link !== undefined &&
-                  (element.type === "projects" ||
-                    element.type === "certifications") ? (
-                    <Link
-                      href={element.link}
-                      underline="none"
-                      sx={{
-                        color: "primary.white",
-                        transition: "0.3s",
-                        ...hoverColor(element.type),
-                      }}
-                    >
-                      <Typography>
-                        {element.name} <FaExternalLinkAlt size={8} />
-                      </Typography>
-                    </Link>
-                  ) : (
-                    <Typography>{element.name}</Typography>
-                  )}
+                  <Typography>{element.name}</Typography>
                 </td>
 
                 {/* PLACE */}
                 <td>
-                  {element.link !== undefined &&
-                  (element.type === "experience" ||
-                    element.type === "education") ? (
-                    <Link
-                      href={element.link}
-                      underline="none"
-                      sx={{
-                        color: "primary.white3",
-                        transition: "0.3s",
-                        ...hoverColor(element.type),
-                      }}
-                    >
-                      <Typography>
-                        {element.place} <FaExternalLinkAlt size={8} />
-                      </Typography>
-                    </Link>
-                  ) : (
-                    <Typography>{element.place}</Typography>
-                  )}
+                  <Typography>{element.place}</Typography>
                 </td>
 
                 {/* TECHS */}

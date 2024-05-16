@@ -21,12 +21,12 @@ const Content = ({ type, props }) => {
                 sx={{
                   bgcolor: { xs: "primary.lighterDarkBlue", md: "transparent" },
                   display: "flex",
-                  flexDirection: { xs: "column", md: "row" },
+                  flexDirection: { xs: "column", sm: "row" },
                   p: 2,
                   gap: 2,
                   borderRadius: "8px",
                   transition: "0.3s",
-                  width: { md: "900px" },
+                  width: "100%",
                   "&:hover": {
                     bgcolor: "primary.lighterDarkBlue",
                   },
