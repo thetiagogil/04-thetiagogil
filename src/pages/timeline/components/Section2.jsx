@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { sortDate } from "../../../components/variables/sortDate";
 import { capFirstLetter } from "../../../components/variables/capFirstLetter";
-import { projects } from "../../../db/projects";
-import { experience } from "../../../db/experience";
-import { education } from "../../../db/education";
-import { certifications } from "../../../db/certifications";
 import ChipTech from "../../../components/layout/Chip";
+import {
+  projects,
+  experience,
+  education,
+  certifications,
+} from "../../../db/index";
 import {
   hoverColor,
   fillColor,
@@ -57,9 +58,6 @@ export const Section2 = () => {
     ...certificationsWithType,
   ];
 
-  // SORT ARRAY BY DATE
-  const dateSorted = sortDate(data);
-
   // TECHS ARRAY
   const typesArray = () => {
     let allTypes = new Set();
@@ -98,7 +96,7 @@ export const Section2 = () => {
     setTechsFilter(value);
   };
 
-  const dataFiltered = dateSorted.filter((element) => {
+  const dataFiltered = data.filter((element) => {
     const types = typesFilter[element.type];
 
     const techs =
@@ -200,7 +198,7 @@ export const Section2 = () => {
             verticalAlign: "top",
           },
           "& th:nth-of-type(1)": {
-            width: { md: "15%" },
+            width: { md: "10%" },
           },
           "& th:nth-of-type(2)": {
             width: { md: "20%" },
@@ -245,7 +243,20 @@ export const Section2 = () => {
             return (
               <tr key={index}>
                 {/* DATE */}
-                <td>{element.date}</td>
+                <td>
+                  <Typography level="body-sm">
+                    {element.yearStart} {element.monthStart}
+                  </Typography>
+                  <Typography level="body-sm">
+                    {(element.yearEnd !== null ||
+                      element.monthEnd !== null) && (
+                      <>
+                        {" "}
+                        — {element.yearEnd} {element.monthEnd}
+                      </>
+                    )}
+                  </Typography>
+                </td>
 
                 {/* NAME */}
                 <td>

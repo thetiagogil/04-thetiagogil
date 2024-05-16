@@ -19,8 +19,18 @@ export const Section1 = ({ element, type }) => {
         >
           <img src={element.img} alt={element.name} />
         </AspectRatio>
-      ) : type === "projects" && !element.img ? null : (
-        <Typography level="body-sm">{element.date}</Typography>
+      ) : (
+        <>
+          <Typography level="body-sm">
+            {element.yearStart} {element.monthStart}
+            {(element.yearEnd !== null || element.monthEnd !== null) && (
+              <>
+                {" "}
+                — {element.yearEnd} {element.monthEnd}
+              </>
+            )}
+          </Typography>
+        </>
       )}
     </Stack>
   );
