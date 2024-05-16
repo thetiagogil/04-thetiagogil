@@ -18,14 +18,11 @@ import {
   Table,
   Link,
   Typography,
-  Dropdown,
-  MenuButton,
-  Menu,
-  MenuItem,
 } from "@mui/joy";
 import { sortDate } from "../../../components/variables/sortDate";
+import { hoverColor } from "../../../components/variables/typeColors";
 
-import { FaInfoCircle } from "react-icons/fa";
+import { FaLink } from "react-icons/fa";
 
 export const Section2 = () => {
   const [typesFilter, setTypesFilter] = useState({
@@ -77,7 +74,7 @@ export const Section2 = () => {
   const handleTechsChange = (event, value) => {
     setTechsFilter(value);
   };
-  
+
   const dataFiltered = sortDate(data).filter((element) => {
     const types = typesFilter[element.type];
 
@@ -166,140 +163,122 @@ export const Section2 = () => {
       </Stack>
 
       {/* TABLE */}
-      <Table
-        sx={{
-          width: { xs: "90%", lg: "100%" },
-          mt: 8,
-          fontSize: "14px",
-          th: {
-            bgcolor: "transparent",
-            color: "primary.white",
-          },
-          td: {
-            py: 2,
-            verticalAlign: "top",
-          },
-          "& th:nth-of-type(1)": {
-            width: { md: "10%" },
-          },
-          "& th:nth-of-type(2)": {
-            width: { md: "20%" },
-          },
-          "& th:nth-of-type(3)": {
-            width: { md: "30%" },
-          },
-          "& th:nth-of-type(4)": {
-            width: { xs: "20%", md: "35%" },
-            textAlign: { xs: "center", sm: "left" },
-          },
-          "& td:nth-of-type(1)": {
-            color: "primary.white3",
-            fontSize: { xs: "12px", sm: "14px" },
-          },
-          "& td:nth-of-type(2)": {
-            color: "primary.white",
-            fontSize: { xs: "12px", sm: "14px" },
-          },
-          "& td:nth-of-type(3)": {
-            color: "primary.white3",
-            fontSize: { xs: "12px", sm: "14px" },
-          },
-          "& td:nth-of-type(4)": {
-            color: "primary.white",
-            fontSize: { xs: "12px", sm: "14px" },
-            textAlign: { xs: "center", sm: "left" },
-          },
-        }}
-      >
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Name</th>
-            <th>Place</th>
-            <th>Techs</th>
-          </tr>
-        </thead>
+      <Stack sx={{ overflowX: "auto", width: "90%" }}>
+        <Table
+          sx={{
+            width: { xs: "1200px", sm: "100%" },
+            mt: 8,
+            fontSize: "14px",
+            th: {
+              bgcolor: "transparent",
+              color: "primary.white",
+            },
+            td: {
+              py: 2,
+              verticalAlign: "top",
+            },
+            "& th:nth-of-type(1)": {
+              width: "15%",
+            },
+            "& th:nth-of-type(2)": {
+              width: "20%",
+            },
+            "& th:nth-of-type(3)": {
+              width: "15%",
+            },
+            "& th:nth-of-type(4)": {
+              textAlign: { xs: "center", sm: "left" },
+            },
+            "& th:nth-of-type(5)": {
+              width: "5%",
+              textAlign: "center",
+            },
+          }}
+        >
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Name</th>
+              <th>Place</th>
+              <th>Techs</th>
+              <th>Link</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          {dataFiltered.map((element, index) => {
-            return (
-              <tr key={index}>
-                {/* DATE */}
-                <td>
-                  <Typography level="body-sm">
-                    {element.yearStart} {element.monthStart}
-                  </Typography>
-                  <Typography level="body-sm">
-                    {(element.yearEnd !== null ||
-                      element.monthEnd !== null) && (
-                      <>
-                        {" "}
-                        — {element.yearEnd} {element.monthEnd}
-                      </>
-                    )}
-                  </Typography>
-                </td>
+          <tbody>
+            {dataFiltered.map((element, index) => {
+              return (
+                <tr key={index}>
+                  {/* DATE */}
+                  <td>
+                    <Typography level="body-sm">
+                      {element.yearStart} {element.monthStart}
+                      {(element.yearEnd !== null ||
+                        element.monthEnd !== null) && (
+                        <>
+                          {" "}
+                          — {element.yearEnd} {element.monthEnd}
+                        </>
+                      )}
+                    </Typography>
+                  </td>
 
-                {/* NAME */}
-                <td>
-                  <Typography>{element.name}</Typography>
-                </td>
+                  {/* NAME */}
+                  <td>
+                    <Typography
+                      sx={{
+                        color: "primary.white",
+                        fontSize: { xs: "12px", sm: "14px" },
+                      }}
+                    >
+                      {element.name}
+                    </Typography>
+                  </td>
 
-                {/* PLACE */}
-                <td>
-                  <Typography>{element.place}</Typography>
-                </td>
+                  {/* PLACE */}
+                  <td>
+                    <Typography
+                      sx={{
+                        color: "primary.white3",
+                        fontSize: { xs: "12px", sm: "14px" },
+                      }}
+                    >
+                      {element.place}
+                    </Typography>
+                  </td>
 
-                {/* TECHS */}
-                <td>
-                  <Box sx={{ display: { xs: "none", sm: "inline-block" } }}>
+                  {/* TECHS */}
+                  <td>
                     {element.techs?.map((tech, index) => {
                       return (
                         <ChipTech tech={tech} type={element.type} key={index} />
                       );
                     })}
-                  </Box>
+                  </td>
 
-                  <Box sx={{ display: { xs: "inline-block", sm: "none" } }}>
-                    <Dropdown>
-                      <MenuButton
-                        variant="plain"
-                        sx={{
-                          padding: 0,
-                          margin: 0,
-                          cursor: "pointer",
-                          outline: "none",
-                          boxShadow: "none",
-                          "&:hover": {
-                            background: "none",
-                          },
-                          "&:active": {
-                            background: "none",
-                          },
-                          "&:focus": {
-                            outline: "none",
-                          },
-                        }}
-                      >
-                        <FaInfoCircle color="white" size={20} />
-                      </MenuButton>
-                      <Menu sx={{ bgcolor: "primary.darkBlue" }}>
-                        {element.techs?.map((tech, index) => {
-                          return (
-                            <MenuItem key={index}>
-                              <ChipTech tech={tech} type={element.type} />
-                            </MenuItem>
-                          );
-                        })}
-                      </Menu>
-                    </Dropdown>
-                  </Box>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+                  {/* LINK */}
+                  <td>
+                    <Link
+                      href={element.link}
+                      underline="none"
+                      sx={{
+                        color: "primary.white",
+                        fontSize: { xs: "12px", sm: "14px" },
+                        display: "flex",
+                        justifyContent: "center",
+                        transition: "0.3s",
+                        ...hoverColor(element.type),
+                      }}
+                    >
+                      <FaLink />
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      </Stack>
     </Stack>
   );
 };
