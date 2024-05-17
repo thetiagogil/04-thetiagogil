@@ -21,7 +21,7 @@ export const experience = [
     description:
       "Millions are wasted every year betting on the wrong talent. Talent Protocol unlocks rich and verifiable reputation data and makes true talent more visible.",
     link: "https://www.talentprotocol.com/",
-      techs: ["JavaScript", "TypeScript", "CSS", "React", "Next.js", "Ruby", "Ruby on Rails"],
+      techs: ["JavaScript", "TypeScript", "CSS", "React", "Next.js", "Ruby", "Ruby on Rails", "Notion"],
       yearStart: "2024",
       monthStart: "Apr",
       yearEnd: null,
