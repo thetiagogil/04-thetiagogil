@@ -1,5 +1,4 @@
 import { Link, Stack, Typography } from "@mui/joy";
-
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 export const Section1 = () => {

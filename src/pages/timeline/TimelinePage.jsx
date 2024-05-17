@@ -1,7 +1,18 @@
 import { Stack } from "@mui/joy";
-import {Section1, Section2} from "./components/index";
+import { Section1, Section2, Section3 } from "./components/index";
+import { useState } from "react";
+import {
+  projects,
+  experience,
+  education,
+  certifications,
+} from "../../db/index";
 
 const TimelinePage = () => {
+  const [typesFilter, setTypesFilter] = useState([]);
+  const [techsFilter, setTechsFilter] = useState([]);
+  const data = [...projects, ...experience, ...education, ...certifications];
+
   return (
     <Stack
       sx={{
@@ -10,9 +21,23 @@ const TimelinePage = () => {
         alignItems: "center",
       }}
     >
-      <Stack sx={{ maxWidth: { xs: "100%", md: "1200px" }, gap: {xs: 4, sm: 2} }}>
+      <Stack
+        sx={{ maxWidth: { xs: "100%", md: "1200px" }, gap: 4 }}
+      >
         <Section1 />
-        <Section2 />
+
+        <Section2
+          data={data}
+          setTypesFilter={setTypesFilter}
+          setTechsFilter={setTechsFilter}
+          typesFilter={typesFilter}
+          techsFilter={techsFilter}
+        />
+        <Section3
+          data={data}
+          typesFilter={typesFilter}
+          techsFilter={techsFilter}
+        />
       </Stack>
     </Stack>
   );
