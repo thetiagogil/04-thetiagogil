@@ -7,7 +7,7 @@ export const education = [
     dateEnd: "2014 Jul",
     description: "High School Science and Technology course.",
     link: "https://c-guadalupe.com/en/",
-    techs: [],
+    techs: ["Microsoft Office"],
     yearStart: "2002",
     monthStart: "Sep",
     yearEnd: "2014",
@@ -21,12 +21,7 @@ export const education = [
     description:
       "Graduated as a Master Architect from the Faculty of Architecture, specializing in architecture and urban design. Throughout my academic journey, I developed several architectural and urban projects, collaborating with other students on some of them. My dissertation, titled 'Human centered architecture: Video games as inspiration for the development of architecture', explored aligning architectural design with user needs, inspired by the user-centric approach found in most video game development.",
     link: "https://www.fa.ulisboa.pt/index.php/en/",
-    techs: [
-      "AutoCAD",
-      "SketchUp",
-      "Adobe Photoshop",
-      "Microsoft Office",
-    ],
+    techs: ["AutoCAD", "SketchUp", "Adobe Photoshop", "Microsoft Office"],
     yearStart: "2014",
     monthStart: "Sep",
     yearEnd: "2022",
@@ -37,7 +32,8 @@ export const education = [
     type: "education",
     name: "Web Development Course",
     place: "Ironhack School",
-    description: "Graduated from Ironhack's School 9-week intensive Web Development Bootcamp, where I gained expertise in crafting web applications. The program taught me the foundations of Full-Stack Development, equipping me with valuable skills and technologies to contribute effectively to designing diverse web projects.",
+    description:
+      "Graduated from Ironhack's School 9-week intensive Web Development Bootcamp, where I gained expertise in crafting web applications. The program taught me the foundations of Full-Stack Development, equipping me with valuable skills and technologies to contribute effectively to designing diverse web projects.",
     link: "https://www.ironhack.com",
     techs: [
       "HTML",
