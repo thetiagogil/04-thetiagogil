@@ -34,7 +34,7 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
             },
             td: {
               py: 2,
-              verticalAlign: "top",
+              verticalAlign: "center",
             },
             "& th:nth-of-type(1)": {
               width: "15%",
