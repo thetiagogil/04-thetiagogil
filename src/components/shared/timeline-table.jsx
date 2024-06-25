@@ -1,10 +1,10 @@
 import { Stack, Table, Link, Typography } from "@mui/joy";
 import { FaLink } from "react-icons/fa";
-import { sortDate } from "../../../components/variables/sortDate";
-import { hoverColor } from "../../../components/variables/typeColors";
-import ChipTech from "../../../components/layout/Chip";
+import { sortDate } from "../variables/sortDate";
+import { hoverColor } from "../variables/typeColors";
+import { ChipTech } from "../layout/Chip";
 
-export const Section3 = ({ data, typesFilter, techsFilter }) => {
+export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
   const dataFiltered = sortDate(data).filter((element) => {
     const types =
       typesFilter.length === 0 ||

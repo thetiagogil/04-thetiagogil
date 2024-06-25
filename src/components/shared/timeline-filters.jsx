@@ -1,7 +1,7 @@
 import { Stack, Select, Box, Chip, Option } from "@mui/joy";
-import { capFirstLetter } from "../../../components/variables/capFirstLetter";
+import { capFirstLetter } from "../variables/capFirstLetter";
 
-export const Section2 = ({ data, setTypesFilter, setTechsFilter }) => {
+export const TimelineFilters = ({ data, setTypesFilter, setTechsFilter }) => {
   const typesArray = () => {
     let allTypes = new Set();
     data.forEach((data) => {

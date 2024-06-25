@@ -1,23 +1,21 @@
 import { Stack } from "@mui/joy";
-import LeftSection from "./leftsection/LeftSection";
-import RightSection from "./rightsection/RightSection";
+import { HomeInfoSection } from "../components/shared/home-info-section";
+import { HomeContentSection } from "../components/shared/home-content-section";
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <Stack
       sx={{
         height: { xs: "100%", lg: "100vh" },
-        py: {xs: 4, lg: 10},
+        py: { xs: 4, lg: 10 },
         justifyContent: { xs: "normal", lg: "center" },
         alignItems: { xs: "center", lg: "normal" },
         flexDirection: { xs: "column", lg: "row" },
-        gap: {xs: 8, lg: 16},
+        gap: { xs: 8, lg: 16 },
       }}
     >
-      <LeftSection />
-      <RightSection />
+      <HomeInfoSection />
+      <HomeContentSection />
     </Stack>
   );
 };
-
-export default HomePage;

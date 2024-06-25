@@ -1,29 +1,5 @@
 import { Chip } from "@mui/joy";
 
-const ChipTech = ({ tech, type }) => {
-  const styles = chipColors(type);
-
-  return (
-    <Chip
-      sx={{
-        fontSize: "12px",
-        fontWeight: "700",
-        my: 0.5,
-        mr: 1,
-        py: 0.5,
-        px: 1,
-        borderRadius: "8px",
-        bgcolor: styles.bgcolor,
-        color: styles.color,
-      }}
-    >
-      {tech}
-    </Chip>
-  );
-};
-
-export default ChipTech;
-
 const chipColors = (type) => {
   switch (type) {
     case "projects":
@@ -47,4 +23,26 @@ const chipColors = (type) => {
         color: "primary.pink",
       };
   }
+};
+
+export const ChipTech = ({ tech, type }) => {
+  const styles = chipColors(type);
+
+  return (
+    <Chip
+      sx={{
+        fontSize: "12px",
+        fontWeight: "700",
+        my: 0.5,
+        mr: 1,
+        py: 0.5,
+        px: 1,
+        borderRadius: "8px",
+        bgcolor: styles.bgcolor,
+        color: styles.color,
+      }}
+    >
+      {tech}
+    </Chip>
+  );
 };
