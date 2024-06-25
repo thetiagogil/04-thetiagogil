@@ -6,8 +6,6 @@ export const theme = extendTheme({
     dark: {
       palette: {
         primary: {
-          darkBlue: colors.darkBlue,
-          lighterDarkBlue: colors.lighterDarkBlue,
           white: colors.white,
           white2: colors.white2,
           white3: colors.white3,
@@ -21,6 +19,7 @@ export const theme = extendTheme({
           greenBg: colors.greenBg,
           yellowBg: colors.yellowBg,
           pinkBg: colors.pinkBg,
+          blueHv: colors.blueHv,
         },
       },
     },

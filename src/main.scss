@@ -1,13 +1,7 @@
-@import "./components/colors/colors.scss";
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  background-color: $darkBlue;
 }
 
 html {
@@ -15,12 +9,12 @@ html {
 }
 
 ::selection {
-  background-color: $white3;
+  background-color: rgb(100, 120, 150);
   color: white;
 }
 
 ::-moz-selection {
-  background-color: $white3;
+  background-color: rgb(100, 120, 150);
   color: white;
 }
 

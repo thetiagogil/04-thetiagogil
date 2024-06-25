@@ -1,4 +1,12 @@
-import { Stack, Tab, TabList, TabPanel, Tabs, tabClasses } from "@mui/joy";
+import {
+  List,
+  Stack,
+  Tab,
+  TabList,
+  TabPanel,
+  Tabs,
+  tabClasses,
+} from "@mui/joy";
 import { ContentCard } from "./content-card";
 import {
   projects,
@@ -6,6 +14,7 @@ import {
   education,
   certifications,
 } from "../../db/index";
+import { desiredIds } from "../variables/desiredIds";
 
 const tabData = [
   { label: "Projects", type: "projects", data: projects },
@@ -51,11 +60,34 @@ export const HomeContentSection = () => {
           ))}
         </TabList>
 
-        {tabData.map((tab, index) => (
-          <TabPanel key={index} value={index} sx={{ overflowY: "auto", p: 0 }}>
-            <ContentCard type={tab.type} props={tab.data} />
-          </TabPanel>
-        ))}
+        {tabData.map((tab, index) => {
+          const filteredData = tab.data
+            .filter((element) => {
+              return desiredIds(tab.type).includes(Number(element.id));
+            })
+            .sort((a, b) => b.id - a.id);
+          return (
+            <TabPanel
+              key={index}
+              value={index}
+              sx={{ overflowY: "auto", p: 0 }}
+            >
+              <Stack sx={{ gap: 6, py: 4 }}>
+                <List sx={{ gap: 6 }}>
+                  {filteredData.map((element, index) => {
+                    return (
+                      <ContentCard
+                        key={index}
+                        element={element}
+                        type={tab.type}
+                      />
+                    );
+                  })}
+                </List>
+              </Stack>
+            </TabPanel>
+          );
+        })}
       </Tabs>
     </Stack>
   );
