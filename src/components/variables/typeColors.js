@@ -27,6 +27,35 @@ export const hoverColor = (type) => {
   }
 };
 
+export const hoverBgColor = (type) => {
+  switch (type) {
+    case "projects":
+      return {
+        "&:hover": {
+          bgcolor: "secondary.blueBg",
+        },
+      };
+    case "experience":
+      return {
+        "&:hover": {
+          bgcolor: "secondary.greenBg",
+        },
+      };
+    case "education":
+      return {
+        "&:hover": {
+          bgcolor: "secondary.yellowBg",
+        },
+      };
+    case "certifications":
+      return {
+        "&:hover": {
+          bgcolor: "secondary.pinkBg",
+        },
+      };
+  }
+};
+
 export const fillColor = (type) => {
   switch (type) {
     case "projects":

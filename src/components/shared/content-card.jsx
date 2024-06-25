@@ -1,7 +1,6 @@
-import { desiredIds } from "../variables/desiredIds";
-import { List, ListItem, Link, Stack, Typography, AspectRatio } from "@mui/joy";
+import { ListItem, Link, Stack, Typography, AspectRatio } from "@mui/joy";
 import { ChipTech } from "../layout/Chip";
-import { hoverColor } from "../variables/typeColors";
+import { hoverColor, hoverBgColor } from "../variables/typeColors";
 
 export const ContentCard = ({ element, type }) => {
   return (
@@ -10,17 +9,15 @@ export const ContentCard = ({ element, type }) => {
         href={element.link}
         underline="none"
         sx={{
-          bgcolor: { xs: "secondary.blueHv", md: "transparent" },
+          bgcolor: "transparent",
+          width: "100%",
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
           p: 2,
           gap: 2,
           borderRadius: "8px",
           transition: "0.3s",
-          width: "100%",
-          "&:hover": {
-            bgcolor: "secondary.blueHv",
-          },
+          ...hoverBgColor(type),
         }}
       >
         <Stack

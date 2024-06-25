@@ -10,5 +10,9 @@ export const colors = {
   greenBg: "rgba(32, 176, 177, 0.2)",
   yellowBg: "rgba(247, 243, 131, 0.2)",
   pinkBg: "rgba(221, 120, 174, 0.2)",
-  blueHv: "rgb(20, 30, 50)",
+  baseHv: "rgb(20, 30, 50)",
+  blueHv: "rgba(138, 180, 242, 0.1)",
+  greenHv: "rgba(32, 176, 177, 0.1)",
+  yellowHv: "rgba(247, 243, 131, 0.1)",
+  pinkHv: "rgba(221, 120, 174, 0.1)",
 };

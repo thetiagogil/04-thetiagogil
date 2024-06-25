@@ -54,7 +54,7 @@ export const TimelineFilters = ({ data, setTypesFilter, setTechsFilter }) => {
                   variant="soft"
                   sx={{
                     color: "primary.white",
-                    bgcolor: "secondary.blueHv",
+                    bgcolor: "secondary.baseHv",
                   }}
                 >
                   {selectedOption.label}
@@ -90,7 +90,7 @@ export const TimelineFilters = ({ data, setTypesFilter, setTechsFilter }) => {
                   variant="soft"
                   sx={{
                     color: "primary.white",
-                    bgcolor: "secondary.blueHv",
+                    bgcolor: "secondary.baseHv",
                   }}
                 >
                   {selectedOption.label}
