@@ -1,7 +1,7 @@
 import "./main.scss";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { App } from "./router/router.jsx"
+import { App } from "./router/app.jsx"
 import { BrowserRouter } from "react-router-dom";
 import { theme } from "./components/theme/theme.js";
 import { CssBaseline, CssVarsProvider } from "@mui/joy";

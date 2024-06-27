@@ -2,7 +2,7 @@ import { Stack, Table, Link, Typography } from "@mui/joy";
 import { FaLink } from "react-icons/fa";
 import { sortDate } from "../variables/sortDate";
 import { hoverColor } from "../variables/typeColors";
-import { ChipTech } from "../layout/Chip";
+import { ChipTech } from "../layout/chip-tech";
 
 export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
   const dataFiltered = sortDate(data).filter((element) => {
@@ -57,8 +57,8 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
           <thead>
             <tr>
               <th>Date</th>
-              <th>Name</th>
-              <th>Place</th>
+              <th>Name / Role</th>
+              <th>Company</th>
               <th>Techs</th>
               <th>Link</th>
             </tr>

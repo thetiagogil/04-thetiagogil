@@ -1,14 +1,10 @@
 import { Link, Stack, Typography } from "@mui/joy";
 import { useState } from "react";
-import {
-  projects,
-  experience,
-  education,
-  certifications,
-} from "../db/index";
-import { TimelineFilters } from "../components/shared/timeline-filters";
+import { projects, experience, education, certifications } from "../db/index";
 import { TimelineTable } from "../components/shared/timeline-table";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { TimelineFilterTypes } from "../components/shared/timeline-filter-types";
+import { TimelineFilterTechs } from "../components/shared/timeline-filter-techs";
 
 export const TimelinePage = () => {
   const [typesFilter, setTypesFilter] = useState([]);
@@ -47,13 +43,20 @@ export const TimelinePage = () => {
           <Typography level="h1">My timeline</Typography>
         </Stack>
 
-        <TimelineFilters
-          data={data}
-          setTypesFilter={setTypesFilter}
-          setTechsFilter={setTechsFilter}
-          typesFilter={typesFilter}
-          techsFilter={techsFilter}
-        />
+        <Stack component="section" sx={{ alignItems: "center" }}>
+          <Stack
+            sx={{
+              flexDirection: { xs: "column", md: "row" },
+              justifyContent: { xs: "center", lg: "left" },
+              width: { xs: "90%", lg: "100%" },
+              gap: 2,
+            }}
+          >
+            <TimelineFilterTypes data={data} setTypesFilter={setTypesFilter} />
+            <TimelineFilterTechs data={data} setTechsFilter={setTechsFilter} />
+          </Stack>
+        </Stack>
+
         <TimelineTable
           data={data}
           typesFilter={typesFilter}
