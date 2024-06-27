@@ -60,7 +60,7 @@ export const TimelineFilterTechs = ({ data, setTechsFilter }) => {
     >
       {Object.entries(groupTechs(techs)).map(([name, techs], index) => {
         return (
-          <Fragment key={name}>
+          <Fragment key={index}>
             {index !== 0 && <ListDivider role="none" />}
             {techs.length > 0 && (
               <List>
@@ -69,8 +69,8 @@ export const TimelineFilterTechs = ({ data, setTechsFilter }) => {
                     {name} ({techs.length})
                   </Typography>
                 </ListItem>
-                {techs.sort().map((tech) => (
-                  <Option key={tech} value={tech} sx={{ pl: 3 }}>
+                {techs.sort().map((tech, index) => (
+                  <Option key={index} value={tech} sx={{ pl: 3 }}>
                     {tech}
                   </Option>
                 ))}

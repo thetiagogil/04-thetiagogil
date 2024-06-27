@@ -1,4 +1,5 @@
 import { Link, Stack, Typography } from "@mui/joy";
+import { Link as RouterLink } from "react-router-dom";
 import { useState } from "react";
 import { projects, experience, education, certifications } from "../db/index";
 import { TimelineTable } from "../components/shared/timeline-table";
@@ -25,7 +26,8 @@ export const TimelinePage = () => {
           sx={{ alignItems: { xs: "center", lg: "baseline" } }}
         >
           <Link
-            href="/"
+            component={RouterLink}
+            to="/"
             underline="none"
             startDecorator={<FaArrowLeftLong size={12} />}
             sx={{

@@ -7,6 +7,7 @@ export const ContentCard = ({ element, type }) => {
     <ListItem key={element.id} sx={{ p: 0 }}>
       <Link
         href={element.link}
+        target="_blank"
         underline="none"
         sx={{
           bgcolor: "transparent",

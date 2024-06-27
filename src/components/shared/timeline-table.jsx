@@ -116,6 +116,7 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
                 <td>
                   <Link
                     href={element.link}
+                    target="_blank"
                     underline="none"
                     sx={{
                       color: "primary.white",

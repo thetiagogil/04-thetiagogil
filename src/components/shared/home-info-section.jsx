@@ -1,4 +1,5 @@
 import { Link, Stack, Typography } from "@mui/joy";
+import { Link as RouterLink } from "react-router-dom";
 import tg from "../../assets/tg.png";
 import { FaGithub, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -54,7 +55,7 @@ export const HomeInfoSection = () => {
         component="section"
         sx={{ alignItems: { xs: "center", lg: "baseline" } }}
       >
-        <Link href="/timeline" underline="none">
+        <Link component={RouterLink} to="/timeline" underline="none">
           <Typography
             level="body-md"
             endDecorator={<FaArrowRightLong size={12} />}
@@ -80,6 +81,7 @@ export const HomeInfoSection = () => {
           <Link
             key={index}
             href={link.href}
+            target="_blank"
             sx={{
               color: "primary.white3",
               transition: "color 0.3s",
