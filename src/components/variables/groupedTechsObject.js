@@ -1,6 +1,5 @@
 const groupedTechsObject = {
   "Web Development": [
-    "CSS",
     "DOM Manipulation",
     "Express.js",
     "HTML",
