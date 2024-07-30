@@ -18,6 +18,7 @@ const groupedTechsObject = {
     "Supabase",
     "TypeScript",
     "OutSystems",
+    "Joy UI",
   ],
   Architecture: ["AutoCAD", "Revit", "SketchUp"],
   "Project Management": [
