@@ -23,7 +23,7 @@ export const experience = [
     link: "https://www.talentprotocol.com/",
       techs: ["JavaScript", "TypeScript", "CSS", "React", "Next.js", "Ruby", "Ruby on Rails", "Supabase", "Notion"],
       yearStart: "2024",
-      monthStart: "Feb",
+      monthStart: "Mar",
       yearEnd: null,
       monthEnd: "Present",
   },
