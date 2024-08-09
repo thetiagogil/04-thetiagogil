@@ -20,7 +20,7 @@ export const projects = [
     name: "House of Legends",
     subject: "League of Legends Website",
     description:
-      "Designed a League of Legends platform enabling users to explore champion and item details and create personalized builds. Applied CRUD operations and integrated League of Legends API to dynamically create, fetch, update and delete game information. Introduced search and filtering functionalities, elevating the website beyond information retrieval to an interactive platform.",
+      "Web application that gives information about the video game League of Legends, allowing users to create and customize builds.",
     link: "https://house-of-legends.netlify.app",
     techs: ["HTML", "CSS", "JavaScript", "React", "Node.js", "REST API"],
     yearStart: "2023",
@@ -34,8 +34,6 @@ export const projects = [
     type: "projects",
     name: "FIN/ACE",
     subject: "Personal Finances Website",
-    description:
-      "Designed a three-page structure encompassing a dynamic dashboard, insightful overview, and a transaction log, providing users with a comprehensive tool for tracking, planning, and analyzing their incomes and expenses. Implemented user authentication to ensure unique access. Successfully embraced the challenge of incorporating unfamiliar libraries, such as Chart.js, to enhance the visualization of financial data.",
     link: "https://finace.netlify.app",
     techs: [
       "HTML",
@@ -55,12 +53,36 @@ export const projects = [
   {
     id: "3",
     type: "projects",
-    name: "TGDESIGN",
-    description: "My personal portfolio",
-    techs: ["HTML", "SCSS", "JavaScript", "React"],
+    name: "Personal website",
+    subject: "Personal website",
+    link: "https://thetiagogil.netlify.app/",
+    techs: ["HTML", "JavaScript", "React", "Joy UI"],
     yearStart: "2024",
     monthStart: "Jan",
     yearEnd: null,
     monthEnd: null,
+  },
+  {
+    id: "4",
+    type: "projects",
+    name: "FIN/ACE v2",
+    subject: "Personal Finances Website",
+    description:
+      "Web application designed for financial tracking and analysis. It provides users with tools to manage and visualize their income and expenses over different years and months, as well as offering various features to help users understand their financial data through detailed summaries and visual representations.",
+    link: "https://finace-v2.netlify.app",
+    techs: [
+      "HTML",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Express.js",
+      "Supabase",
+      "Joy UI",
+    ],
+    yearStart: "2024",
+    monthStart: "Jul",
+    yearEnd: null,
+    monthEnd: null,
+    img: "../../../03-project.png",
   },
 ];
