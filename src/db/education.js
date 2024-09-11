@@ -4,7 +4,6 @@ export const education = [
     type: "education",
     name: "High School",
     place: "Colégio Guadalupe",
-    dateEnd: "2014 Jul",
     description: "High School Science and Technology course.",
     link: "https://c-guadalupe.com/en/",
     techs: ["Microsoft Office"],

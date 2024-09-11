@@ -48,7 +48,6 @@ export const projects = [
     monthStart: "Nov",
     yearEnd: null,
     monthEnd: null,
-    img: "../../../03-project.png",
   },
   {
     id: "3",
