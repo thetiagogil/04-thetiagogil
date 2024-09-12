@@ -84,4 +84,26 @@ export const projects = [
     monthEnd: null,
     img: "../../../03-project.png",
   },
+  {
+    id: "5",
+    type: "projects",
+    name: "FIN/ACE v3",
+    subject: "Personal Finances Website",
+    description:
+      "Web application designed for financial tracking and analysis. It provides users with tools to manage and visualize their income and expenses over different years and months, as well as offering various features to help users understand their financial data through detailed summaries and visual representations.",
+    link: "",
+    techs: [
+      "HTML",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Express.js",
+      "Supabase",
+      "Joy UI",
+    ],
+    yearStart: "2024",
+    monthStart: "Sep",
+    yearEnd: null,
+    monthEnd: null,
+  },
 ];

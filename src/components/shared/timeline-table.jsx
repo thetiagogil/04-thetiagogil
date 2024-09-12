@@ -18,7 +18,7 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
     return types && techs;
   });
 
-  console.log(data)
+  console.log(data);
 
   return (
     <Stack
@@ -129,7 +129,7 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
                       ...hoverColor(element.type),
                     }}
                   >
-                    <FaLink />
+                    {element.link.length > 0 ? <FaLink /> : null}
                   </Link>
                 </td>
               </tr>
