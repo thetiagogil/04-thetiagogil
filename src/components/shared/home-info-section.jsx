@@ -25,7 +25,7 @@ export const HomeInfoSection = () => {
   ];
 
   return (
-    <Stack sx={{ maxWidth: { xs: "90%", lg: "600px" }, gap: 4 }}>
+    <Stack sx={{ maxWidth: { xs: "100%", lg: "600px" }, gap: 4 }}>
       <Stack
         component="section"
         sx={{ textAlign: { xs: "center", lg: "left" } }}

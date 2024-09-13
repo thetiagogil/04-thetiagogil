@@ -25,7 +25,7 @@ const tabData = [
 
 export const HomeContentSection = () => {
   return (
-    <Stack sx={{ maxWidth: { xs: "90%", lg: "600px" } }}>
+    <Stack sx={{ maxWidth: { xs: "100%", lg: "600px" } }}>
       <Tabs
         defaultValue={0}
         sx={{
