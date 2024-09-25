@@ -36,6 +36,6 @@ export const experience = [
     yearStart: "2024",
     monthStart: "Mar",
     yearEnd: "2024",
-    monthEnd: "Aug",
+    monthEnd: "Sep",
   },
 ];
