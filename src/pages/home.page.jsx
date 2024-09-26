@@ -1,6 +1,6 @@
 import { Stack } from "@mui/joy";
-import { HomeInfoSection } from "../components/shared/home-info-section";
-import { HomeContentSection } from "../components/shared/home-content-section";
+import { HomeContentSection } from "../components/layout/home-content-section";
+import { HomeInfoSection } from "../components/layout/home-info-section";
 
 export const HomePage = () => {
   return (

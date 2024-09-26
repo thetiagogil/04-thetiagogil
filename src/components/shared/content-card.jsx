@@ -1,6 +1,6 @@
-import { ListItem, Link, Stack, Typography, AspectRatio } from "@mui/joy";
-import { ChipTech } from "../layout/chip-tech";
-import { hoverColor, hoverBgColor } from "../variables/typeColors";
+import { AspectRatio, Link, ListItem, Stack, Typography } from "@mui/joy";
+import { ChipTech } from "../shared/chip-tech";
+import { hoverBgColor, hoverColor } from "../variables/typeColors";
 
 export const ContentCard = ({ element, type }) => {
   return (

@@ -1,30 +1,20 @@
-import { Stack, Table, Link, Typography } from "@mui/joy";
+import { Link, Stack, Table, Typography } from "@mui/joy";
 import { FaLink } from "react-icons/fa";
+import { ChipTech } from "../shared/chip-tech";
 import { sortData } from "../variables/sortData";
 import { hoverColor } from "../variables/typeColors";
-import { ChipTech } from "../layout/chip-tech";
 
 export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
-  const dataFiltered = sortData(data).filter((element) => {
-    const types =
-      typesFilter.length === 0 ||
-      (element.type && typesFilter.includes(element.type));
+  const dataFiltered = sortData(data).filter(element => {
+    const types = typesFilter.length === 0 || (element.type && typesFilter.includes(element.type));
     const techs =
       techsFilter.length === 0 ||
-      (element.techs &&
-        techsFilter.every((selectedTech) =>
-          element.techs.includes(selectedTech)
-        ));
+      (element.techs && techsFilter.every(selectedTech => element.techs.includes(selectedTech)));
     return types && techs;
   });
 
-  console.log(data);
-
   return (
-    <Stack
-      component="section"
-      sx={{ alignItems: { xs: "center", lg: "baseline" } }}
-    >
+    <Stack component="section" sx={{ alignItems: { xs: "center", lg: "baseline" } }}>
       <Stack sx={{ overflowX: "auto", width: { xs: "90%", lg: "100%" } }}>
         <Table
           sx={{
@@ -32,28 +22,28 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
             fontSize: "14px",
             th: {
               bgcolor: "transparent",
-              color: "primary.white",
+              color: "primary.white"
             },
             td: {
               py: 2,
-              verticalAlign: "center",
+              verticalAlign: "center"
             },
             "& th:nth-of-type(1)": {
-              width: "15%",
+              width: "15%"
             },
             "& th:nth-of-type(2)": {
-              width: "20%",
+              width: "20%"
             },
             "& th:nth-of-type(3)": {
-              width: "15%",
+              width: "15%"
             },
             "& th:nth-of-type(4)": {
-              textAlign: { xs: "center", sm: "left" },
+              textAlign: { xs: "center", sm: "left" }
             },
             "& th:nth-of-type(5)": {
               width: "5%",
-              textAlign: "center",
-            },
+              textAlign: "center"
+            }
           }}
         >
           <thead>
@@ -73,8 +63,7 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
                 <td>
                   <Typography level="body-sm">
                     {element.yearStart} {element.monthStart}
-                    {(element.yearEnd !== null ||
-                      element.monthEnd !== null) && (
+                    {(element.yearEnd !== null || element.monthEnd !== null) && (
                       <>
                         {" "}
                         — {element.yearEnd} {element.monthEnd}
@@ -88,7 +77,7 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
                   <Typography
                     sx={{
                       color: "primary.white",
-                      fontSize: { xs: "12px", sm: "14px" },
+                      fontSize: { xs: "12px", sm: "14px" }
                     }}
                   >
                     {element.name}
@@ -100,7 +89,7 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
                   <Typography
                     sx={{
                       color: "primary.white3",
-                      fontSize: { xs: "12px", sm: "14px" },
+                      fontSize: { xs: "12px", sm: "14px" }
                     }}
                   >
                     {element.place}
@@ -126,7 +115,7 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
                       display: "flex",
                       justifyContent: "center",
                       transition: "0.3s",
-                      ...hoverColor(element.type),
+                      ...hoverColor(element.type)
                     }}
                   >
                     {element.link.length > 0 ? <FaLink /> : null}

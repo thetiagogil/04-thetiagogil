@@ -1,10 +1,10 @@
-import "./main.scss";
+import { CssBaseline, CssVarsProvider } from "@mui/joy";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { App } from "./router/app.jsx"
 import { BrowserRouter } from "react-router-dom";
-import { theme } from "./components/theme/theme.js";
-import { CssBaseline, CssVarsProvider } from "@mui/joy";
+import "./main.scss";
+import { App } from "./router/app.jsx";
+import { theme } from "./utils/theme.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -1,11 +1,11 @@
 import { Link, Stack, Typography } from "@mui/joy";
-import { Link as RouterLink } from "react-router-dom";
 import { useState } from "react";
-import { projects, experience, education, certifications } from "../db/index";
-import { TimelineTable } from "../components/shared/timeline-table";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { TimelineFilterTypes } from "../components/shared/timeline-filter-types";
-import { TimelineFilterTechs } from "../components/shared/timeline-filter-techs";
+import { Link as RouterLink } from "react-router-dom";
+import { TimelineFilterTechs } from "../components/layout/timeline-filter-techs";
+import { TimelineFilterTypes } from "../components/layout/timeline-filter-types";
+import { TimelineTable } from "../components/layout/timeline-table";
+import { certifications, education, experience, projects } from "../db/index";
 
 export const TimelinePage = () => {
   const [typesFilter, setTypesFilter] = useState([]);
@@ -17,14 +17,11 @@ export const TimelinePage = () => {
       sx={{
         height: { xs: "100%", lg: "100vh" },
         py: { xs: 4, lg: 10 },
-        alignItems: "center",
+        alignItems: "center"
       }}
     >
       <Stack sx={{ maxWidth: { xs: "100%", md: "1200px" }, gap: 4 }}>
-        <Stack
-          component="section"
-          sx={{ alignItems: { xs: "center", lg: "baseline" } }}
-        >
+        <Stack component="section" sx={{ alignItems: { xs: "center", lg: "baseline" } }}>
           <Link
             component={RouterLink}
             to="/"
@@ -35,8 +32,8 @@ export const TimelinePage = () => {
               fontSize: "14px",
               transition: "0.3s",
               "&:hover": {
-                color: "primary.white",
-              },
+                color: "primary.white"
+              }
             }}
           >
             <Typography>back to homepage</Typography>
@@ -51,7 +48,7 @@ export const TimelinePage = () => {
               flexDirection: { xs: "column", md: "row" },
               justifyContent: { xs: "center", lg: "left" },
               width: { xs: "90%", lg: "100%" },
-              gap: 2,
+              gap: 2
             }}
           >
             <TimelineFilterTypes data={data} setTypesFilter={setTypesFilter} />
@@ -59,11 +56,7 @@ export const TimelinePage = () => {
           </Stack>
         </Stack>
 
-        <TimelineTable
-          data={data}
-          typesFilter={typesFilter}
-          techsFilter={techsFilter}
-        />
+        <TimelineTable data={data} typesFilter={typesFilter} techsFilter={techsFilter} />
       </Stack>
     </Stack>
   );
