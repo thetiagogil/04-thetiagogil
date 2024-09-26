@@ -5,7 +5,7 @@ export const experience = [
     name: "Architect",
     place: "CR espassos",
     description:
-      "Worked in a team of architects and engineers as one of the main architects. Had to adapt myself to collaborate in various areas, including engineering, urbanism, and interior design, to meet project requirements. Led and helped a team of third-year internship engineering students",
+      "Worked with a team of architects and engineers, contributing to projects across engineering, urbanism, and interior design. Led a group of third-year engineering interns, guiding them in project tasks and development.",
     link: "https://www.linkedin.com/company/cr-espassos/about/",
     techs: ["Revit", "AutoCAD", "Microsoft Office"],
     yearStart: "2022",
@@ -19,7 +19,7 @@ export const experience = [
     name: "Full-stack Developer",
     place: "Talent Protocol",
     description:
-      "Millions are wasted every year betting on the wrong talent. Talent Protocol unlocks rich and verifiable reputation data and makes true talent more visible.",
+      "Working in a small team, I build blockchain-based applications for use in Web3. My responsibilities range from implementing Figma designs and integrating APIs to handling user feedback and fixing bugs. I have contributed to key projects like Talent Passport, Build.top, Playground/API, and Builder.fi.",
     link: "https://www.talentprotocol.com/",
     techs: [
       "TypeScript",
