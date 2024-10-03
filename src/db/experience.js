@@ -11,7 +11,7 @@ export const experience = [
     yearStart: "2022",
     monthStart: "Sep",
     yearEnd: "2023",
-    monthEnd: "Aug",
+    monthEnd: "Aug"
   },
   {
     id: "1",
@@ -19,20 +19,12 @@ export const experience = [
     name: "Full-stack Developer",
     place: "Talent Protocol",
     description:
-      "Working in a small team, I build blockchain-based applications for use in Web3. My responsibilities range from implementing Figma designs and integrating APIs to handling user feedback and fixing bugs. I have contributed to key projects like Talent Passport, Build.top, Playground/API, and Builder.fi.",
+      "Worked in a small team, building several applications that utilize blockchain as a core technology and data source. My responsibilities included implementing Figma designs from scratch, integrating APIs, managing user feedback, conducting tests and bug fixes. I have contributed to key projects like Talent Passport, Build.top, Playground/API, and Builder.fi.",
     link: "https://www.talentprotocol.com/",
-    techs: [
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Ruby on Rails",
-      "Joy UI",
-      "Supabase",
-      "Notion",
-    ],
+    techs: ["TypeScript", "React", "Next.js", "Ruby on Rails", "Joy UI", "Supabase", "Notion"],
     yearStart: "2024",
     monthStart: "Mar",
-    yearEnd: "Present",
-    monthEnd: null,
-  },
+    yearEnd: "2024",
+    monthEnd: "Aug"
+  }
 ];

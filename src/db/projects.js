@@ -12,7 +12,7 @@ export const projects = [
     monthStart: "Sep",
     yearEnd: null,
     monthEnd: null,
-    img: "../../../01-project.png",
+    img: "../../../01-project.png"
   },
   {
     id: "1",
@@ -27,7 +27,7 @@ export const projects = [
     monthStart: "Oct",
     yearEnd: null,
     monthEnd: null,
-    img: "../../../02-project.png",
+    img: "../../../02-project.png"
   },
   {
     id: "2",
@@ -35,19 +35,11 @@ export const projects = [
     name: "FIN/ACE",
     subject: "Personal Finances Website",
     link: "https://finace.netlify.app",
-    techs: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-    ],
+    techs: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express.js", "MongoDB"],
     yearStart: "2023",
     monthStart: "Nov",
     yearEnd: "2023",
-    monthEnd: "Dec",
+    monthEnd: "Dec"
   },
   {
     id: "3",
@@ -59,7 +51,7 @@ export const projects = [
     yearStart: "2024",
     monthStart: "Jan",
     yearEnd: "Present",
-    monthEnd: null,
+    monthEnd: null
   },
   {
     id: "4",
@@ -69,20 +61,12 @@ export const projects = [
     description:
       "Web application designed for financial tracking and analysis. It provides users with tools to manage and visualize their income and expenses over different years and months, as well as offering various features to help users understand their financial data through detailed summaries and visual representations.",
     link: "https://finace-v2.netlify.app",
-    techs: [
-      "HTML",
-      "TypeScript",
-      "React",
-      "Node.js",
-      "Express.js",
-      "Supabase",
-      "Joy UI",
-    ],
+    techs: ["HTML", "TypeScript", "React", "Node.js", "Express.js", "Supabase", "Joy UI"],
     yearStart: "2024",
     monthStart: "Jul",
     yearEnd: "2024",
     monthEnd: "Aug",
-    img: "../../../03-project.png",
+    img: "../../../03-project.png"
   },
   {
     id: "5",
@@ -92,19 +76,11 @@ export const projects = [
     description:
       "Web application designed for financial tracking and analysis. It provides users with tools to manage and visualize their income and expenses over different years and months, as well as offering various features to help users understand their financial data through detailed summaries and visual representations.",
     link: "",
-    techs: [
-      "HTML",
-      "TypeScript",
-      "React",
-      "Node.js",
-      "Express.js",
-      "Supabase",
-      "Joy UI",
-    ],
+    techs: ["HTML", "TypeScript", "React", "Node.js", "Express.js", "Supabase", "Joy UI"],
     yearStart: "2024",
     monthStart: "Sep",
     yearEnd: "Present",
-    monthEnd: null,
+    monthEnd: null
   },
   {
     id: "6",
@@ -116,8 +92,8 @@ export const projects = [
     techs: ["TypeScript", "React", "Joy UI"],
     yearStart: "2024",
     monthStart: "Apr",
-    yearEnd: "Present",
-    monthEnd: null,
+    yearEnd: "2024",
+    monthEnd: "Aug"
   },
   {
     id: "7",
@@ -130,7 +106,7 @@ export const projects = [
     yearStart: "2024",
     monthStart: "Apr",
     yearEnd: "2024",
-    monthEnd: "Jun",
+    monthEnd: "Jun"
   },
   {
     id: "8",
@@ -143,6 +119,6 @@ export const projects = [
     yearStart: "2024",
     monthStart: "Apr",
     yearEnd: "2024",
-    monthEnd: "Aug",
-  },
+    monthEnd: "Aug"
+  }
 ];
