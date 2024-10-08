@@ -12,7 +12,7 @@ export const projects = [
     monthStart: "Sep",
     yearEnd: null,
     monthEnd: null,
-    img: "../../../01-project.png"
+    img: "../../../project-0.png"
   },
   {
     id: "1",
@@ -27,7 +27,7 @@ export const projects = [
     monthStart: "Oct",
     yearEnd: null,
     monthEnd: null,
-    img: "../../../02-project.png"
+    img: "../../../project-1.png"
   },
   {
     id: "2",
@@ -66,7 +66,7 @@ export const projects = [
     monthStart: "Jul",
     yearEnd: "2024",
     monthEnd: "Aug",
-    img: "../../../03-project.png"
+    img: "../../../project-4.png"
   },
   {
     id: "5",
@@ -120,5 +120,20 @@ export const projects = [
     monthStart: "Apr",
     yearEnd: "2024",
     monthEnd: "Aug"
+  },
+  {
+    id: "9",
+    type: "projects",
+    name: "EASYQA",
+    subject: "Question and answers website",
+    description:
+      "Q&A app inspired by Builderfi by Talent Protocol. It offers a user-friendly platform for asking and answering questions, with a voting system, allowing users to engage with a community of learners and experts. The design is heavily inspired by Builderfi, ensuring a modern and intuitive interface that enhances user experience.",
+    link: "https://personal-h9qyawdw.outsystemscloud.com/easyqa",
+    techs: ["OutSystems"],
+    yearStart: "2024",
+    monthStart: "Oct",
+    yearEnd: null,
+    monthEnd: null,
+    img: "../../../project-9.png"
   }
 ];
