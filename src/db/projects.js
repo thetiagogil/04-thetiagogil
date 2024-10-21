@@ -34,7 +34,7 @@ export const projects = [
     type: "projects",
     name: "FIN/ACE",
     subject: "Personal Finances Website",
-    link: "https://finace.netlify.app",
+    link: "https://finace.netlify.app/",
     techs: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express.js", "MongoDB"],
     yearStart: "2023",
     monthStart: "Nov",
@@ -60,7 +60,7 @@ export const projects = [
     subject: "Personal Finances Website",
     description:
       "Web application designed for financial tracking and analysis. It provides users with tools to manage and visualize their income and expenses over different years and months, as well as offering various features to help users understand their financial data through detailed summaries and visual representations.",
-    link: "https://finace-v2.netlify.app",
+    link: "https://finace-v2.netlify.app/",
     techs: ["HTML", "TypeScript", "React", "Node.js", "Express.js", "Supabase", "Joy UI"],
     yearStart: "2024",
     monthStart: "Jul",
@@ -128,12 +128,24 @@ export const projects = [
     subject: "Question and answers website",
     description:
       "Q&A app inspired by Builderfi by Talent Protocol. It offers a user-friendly platform for asking and answering questions, with a voting system, allowing users to engage with a community of learners and experts. The design is heavily inspired by Builderfi, ensuring a modern and intuitive interface that enhances user experience.",
-    link: "https://personal-h9qyawdw.outsystemscloud.com/easyqa",
+    link: "https://personal-h9qyawdw.outsystemscloud.com/easyqa/",
     techs: ["OutSystems"],
     yearStart: "2024",
     monthStart: "Oct",
     yearEnd: null,
     monthEnd: null,
     img: "../../../project-9.png"
+  },
+  {
+    id: "10",
+    type: "projects",
+    name: "FIN/ACE OS",
+    subject: "Personal Finances Website",
+    link: "https://personal-h9qyawdw.outsystemscloud.com/finace/",
+    techs: ["OutSystems"],
+    yearStart: "2024",
+    monthStart: "Oct",
+    yearEnd: null,
+    monthEnd: null
   }
 ];
