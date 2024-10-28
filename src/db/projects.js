@@ -141,11 +141,14 @@ export const projects = [
     type: "projects",
     name: "FIN/ACE OS",
     subject: "Personal Finances Website",
+    description:
+      "FIN/ACE OS is a financial management app built in OutSystems, modeled closely after the previous version of FIN/ACE I developed.",
     link: "https://personal-h9qyawdw.outsystemscloud.com/finace/",
     techs: ["OutSystems"],
     yearStart: "2024",
     monthStart: "Oct",
     yearEnd: null,
-    monthEnd: null
+    monthEnd: null,
+    img: "../../../project-10.png"
   }
 ];
