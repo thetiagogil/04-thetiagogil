@@ -125,7 +125,7 @@ export const projects = [
     id: "9",
     type: "projects",
     name: "EASYQA",
-    subject: "Question and answers website",
+    subject: "Question and Answers Website",
     description:
       "Q&A app inspired by Builderfi by Talent Protocol. It offers a user-friendly platform for asking and answering questions, with a voting system, allowing users to engage with a community of learners and experts. The design is heavily inspired by Builderfi, ensuring a modern and intuitive interface that enhances user experience.",
     link: "https://personal-h9qyawdw.outsystemscloud.com/easyqa/",
