@@ -12,6 +12,7 @@ export const projects = [
     monthStart: "Sep",
     yearEnd: null,
     monthEnd: null,
+    status: "completed",
     img: "../../../project-0.png"
   },
   {
@@ -27,6 +28,7 @@ export const projects = [
     monthStart: "Oct",
     yearEnd: null,
     monthEnd: null,
+    status: "outdated",
     img: "../../../project-1.png"
   },
   {
@@ -39,7 +41,8 @@ export const projects = [
     yearStart: "2023",
     monthStart: "Nov",
     yearEnd: "2023",
-    monthEnd: "Dec"
+    monthEnd: "Dec",
+    status: "outdated"
   },
   {
     id: "3",
@@ -51,7 +54,8 @@ export const projects = [
     yearStart: "2024",
     monthStart: "Jan",
     yearEnd: "Present",
-    monthEnd: null
+    monthEnd: null,
+    status: "completed"
   },
   {
     id: "4",
@@ -66,7 +70,8 @@ export const projects = [
     monthStart: "Jul",
     yearEnd: "2024",
     monthEnd: "Aug",
-    img: "../../../project-4.png"
+    img: "../../../project-4.png",
+    status: "outdated"
   },
   {
     id: "5",
@@ -80,46 +85,50 @@ export const projects = [
     yearStart: "2024",
     monthStart: "Sep",
     yearEnd: "Present",
-    monthEnd: null
+    monthEnd: null,
+    status: "open"
   },
   {
     id: "6",
     type: "projects",
     name: "Passport by Talent Protocol",
     place: "Talent Protocol",
-    subject: "Personal website",
+    subject: "",
     link: "https://passport.talentprotocol.com/",
     techs: ["TypeScript", "React", "Joy UI"],
     yearStart: "2024",
     monthStart: "Apr",
     yearEnd: "2024",
-    monthEnd: "Aug"
+    monthEnd: "Aug",
+    status: "completed"
   },
   {
     id: "7",
     type: "projects",
     name: "Build by Talent Protocol",
     place: "Talent Protocol",
-    subject: "Personal website",
+    subject: "",
     link: "https://build.top/",
     techs: ["TypeScript", "Next.js", "Joy UI"],
     yearStart: "2024",
     monthStart: "Apr",
     yearEnd: "2024",
-    monthEnd: "Jun"
+    monthEnd: "Jun",
+    status: "completed"
   },
   {
     id: "8",
     type: "projects",
     name: "Builderfi by Talent Protocol",
     place: "Talent Protocol",
-    subject: "Personal website",
+    subject: "",
     link: "https://mirror.xyz/talentprotocol.eth/dSkw_mNNOgs6GZEjZ3GTJMt0uJ5DjpWGkX3rncF1OD8/",
     techs: ["TypeScript", "Next.js", "Joy UI"],
     yearStart: "2024",
     monthStart: "Apr",
     yearEnd: "2024",
-    monthEnd: "Aug"
+    monthEnd: "Aug",
+    status: "inactive"
   },
   {
     id: "9",
@@ -134,6 +143,7 @@ export const projects = [
     monthStart: "Oct",
     yearEnd: null,
     monthEnd: null,
+    status: "completed",
     img: "../../../project-9.png"
   },
   {
@@ -149,6 +159,7 @@ export const projects = [
     monthStart: "Oct",
     yearEnd: null,
     monthEnd: null,
+    status: "completed",
     img: "../../../project-10.png"
   }
 ];

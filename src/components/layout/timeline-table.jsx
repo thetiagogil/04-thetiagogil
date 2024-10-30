@@ -1,10 +1,15 @@
-import { Link, Stack, Table, Typography } from "@mui/joy";
+import { Button, Link, Stack, Table, Typography } from "@mui/joy";
+import { useState } from "react";
 import { FaLink } from "react-icons/fa";
 import { ChipTech } from "../shared/chip-tech";
 import { sortData } from "../variables/sortData";
 import { hoverColor } from "../variables/typeColors";
 
+const ITEMS_INCREMENT = 7;
+
 export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
+  const [visibleCount, setVisibleCount] = useState(ITEMS_INCREMENT);
+
   const dataFiltered = sortData(data).filter(element => {
     const types = typesFilter.length === 0 || (element.type && typesFilter.includes(element.type));
     const techs =
@@ -13,8 +18,16 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
     return types && techs;
   });
 
+  const dataVisible = dataFiltered.slice(0, visibleCount);
+  const loadMore = () => setVisibleCount(prevCount => prevCount + ITEMS_INCREMENT);
+
+  const footnotes = {
+    outdated: { icon: "~", text: "project needs update." },
+    inactive: { icon: "†", text: "project is temporarily or permanently inactive." }
+  };
+
   return (
-    <Stack component="section" sx={{ alignItems: { xs: "center", lg: "baseline" } }}>
+    <Stack component="section" sx={{ alignItems: { xs: "center", lg: "baseline" }, gap: 4, mb: 6 }}>
       <Stack sx={{ overflowX: "auto", width: { xs: "90%", lg: "100%" } }}>
         <Table
           sx={{
@@ -57,9 +70,8 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
           </thead>
 
           <tbody>
-            {dataFiltered.map((element, index) => (
+            {dataVisible.map((element, index) => (
               <tr key={index}>
-                {/* DATE */}
                 <td>
                   <Typography level="body-sm">
                     {element.yearStart} {element.monthStart}
@@ -72,38 +84,31 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
                   </Typography>
                 </td>
 
-                {/* NAME */}
                 <td>
                   <Typography
-                    sx={{
-                      color: "primary.white",
-                      fontSize: { xs: "12px", sm: "14px" }
-                    }}
+                    sx={{ color: "primary.white", fontSize: { xs: "12px", sm: "14px" } }}
+                    endDecorator={
+                      footnotes[element.status]?.icon ? (
+                        <Typography sx={{ color: "warning.500" }}>{footnotes[element.status].icon}</Typography>
+                      ) : null
+                    }
                   >
                     {element.name}
                   </Typography>
                 </td>
 
-                {/* PLACE */}
                 <td>
-                  <Typography
-                    sx={{
-                      color: "primary.white3",
-                      fontSize: { xs: "12px", sm: "14px" }
-                    }}
-                  >
+                  <Typography sx={{ color: "primary.white3", fontSize: { xs: "12px", sm: "14px" } }}>
                     {element.place}
                   </Typography>
                 </td>
 
-                {/* TECHS */}
                 <td>
                   {element.techs?.map((tech, index) => (
                     <ChipTech tech={tech} type={element.type} key={index} />
                   ))}
                 </td>
 
-                {/* LINK */}
                 <td>
                   <Link
                     href={element.link}
@@ -125,6 +130,38 @@ export const TimelineTable = ({ data, typesFilter, techsFilter }) => {
             ))}
           </tbody>
         </Table>
+      </Stack>
+
+      {visibleCount < dataFiltered.length && (
+        <Stack sx={{ width: "100%", alignItems: "center" }}>
+          <Button
+            variant="outlined"
+            onClick={loadMore}
+            sx={{
+              width: { xs: "100%", lg: "160px" },
+              borderColor: "primary.white3",
+              "&:hover": { bgcolor: "transparent", opacity: "0.8" }
+            }}
+          >
+            Load More
+          </Button>
+        </Stack>
+      )}
+
+      <Stack>
+        {Object.values(footnotes).map((footnote, index) => (
+          <Typography
+            key={index}
+            level="body-sm"
+            startDecorator={
+              <Typography verticalAlign="top" sx={{ color: "warning.500" }}>
+                {footnote.icon}
+              </Typography>
+            }
+          >
+            - {footnote.text}
+          </Typography>
+        ))}
       </Stack>
     </Stack>
   );
