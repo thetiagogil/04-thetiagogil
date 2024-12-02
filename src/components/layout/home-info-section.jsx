@@ -41,9 +41,9 @@ export const HomeInfoSection = () => {
       <Stack component="section">
         <Typography level="body-md" sx={{ textAlign: "justify" }}>
           As a Junior Full-stack Web Developer with a Master's Degree in Architecture, I bring strong problem-solving
-          skills and atention to detail to build user-friendly web applications. My experience in architecture allows me
-          to blend creative design with technical expertise, enabling me to develop innovative solutions that combine
-          design, technology, and data.
+          skills and attention to detail to building user-friendly web applications. My background in architecture
+          allows me to blend creative design with technical expertise, enabling the development of innovative solutions
+          that combine design, technology, and data.
         </Typography>
       </Stack>
 
