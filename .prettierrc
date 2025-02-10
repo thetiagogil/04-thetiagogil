@@ -2,7 +2,7 @@
   "useTabs": true,
   "overrides": [
     {
-      "files": "*.{json,babelrc,eslintrc,remarkrc,prettierrc,js,jsx,scss,ts,tsx}",
+      "files": "*.{json,babelrc,eslintrc,remarkrc,prettierrc,js,jsx,ts,tsx,scss}",
       "options": {
         "printWidth": 120,
         "tabWidth": 2,
