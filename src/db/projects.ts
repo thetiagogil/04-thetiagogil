@@ -62,7 +62,7 @@ export const projects: DataModel[] = [
     img: "../../../project-4.png",
     status: "outdated"
   },
-  {
+  /* {
     id: 5,
     category: "projects",
     name: "FIN/ACE v3",
@@ -73,7 +73,7 @@ export const projects: DataModel[] = [
     techs: ["HTML", "TypeScript", "React", "Node.js", "Express.js", "Supabase", "Joy UI"],
     dateStart: new Date("2024-09"),
     status: "open"
-  },
+  }, */
   {
     id: 6,
     category: "projects",
@@ -120,7 +120,7 @@ export const projects: DataModel[] = [
     link: "https://personal-h9qyawdw.outsystemscloud.com/easyqa/",
     techs: ["OutSystems"],
     dateStart: new Date("2024-10"),
-    status: "completed",
+    status: "inactive",
     img: "../../../project-9.png"
   },
   {
@@ -133,7 +133,6 @@ export const projects: DataModel[] = [
     link: "https://personal-h9qyawdw.outsystemscloud.com/finace/",
     techs: ["OutSystems"],
     dateStart: new Date("2024-10"),
-    status: "completed",
-    img: "../../../project-10.png"
+    status: "inactive"
   }
 ];

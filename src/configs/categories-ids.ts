@@ -5,7 +5,7 @@ export const categoriesIds = (category: CATEGORIES_TYPES) => {
     case "education":
       return [0, 1, 2]; // <== change this values for EDUCATION
     case "projects":
-      return [0, 1, 4]; // <== change this values for PROJECTS
+      return [0, 1]; // <== change this values for PROJECTS
     case "experience":
       return [0, 1, 2]; // <== change this values for EXPERIENCE
     case "certifications":

@@ -26,5 +26,17 @@ export const experience: DataModel[] = [
     dateStart: new Date("2024-03"),
     dateEnd: new Date("2024-08"),
     status: "completed"
+  },
+  {
+    id: 2,
+    category: "experience",
+    name: "Full-stack Developer",
+    place: "Subvisual",
+    description: "",
+    link: "https://subvisual.com/",
+    techs: ["TypeScript", "React", "Solidity", "Joy UI", "Supabase", "Notion"],
+    dateStart: new Date("2024-12"),
+    dateEnd: new Date("2025-02"),
+    status: "completed"
   }
 ];

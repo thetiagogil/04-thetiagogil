@@ -19,8 +19,7 @@ const groupedTechs: Record<Category, string[]> = {
     "TypeScript",
     "OutSystems",
     "Joy UI",
-    "Solidity",
-    "SQL"
+    "Solidity"
   ],
   Architecture: ["AutoCAD", "Revit", "SketchUp"],
   "Project Management": ["Agile Methodologies", "Jira", "Kanban", "Lean Principles", "Notion"],
