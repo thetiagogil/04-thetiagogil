@@ -19,7 +19,7 @@ export const HomeInfoSection = () => (
         TIAGO GIL
       </Typography>
       <Typography level="h3" fontSize={{ xs: 20, lg: 24 }}>
-        Web Developer & Master Architect
+        Full-stack Developer & Master Architect
       </Typography>
     </Stack>
 
@@ -29,10 +29,10 @@ export const HomeInfoSection = () => (
 
     <Stack component="section">
       <Typography level="body-md" textAlign={{ textAlign: "justify" }}>
-        As a Junior Full-stack Web Developer with a Master's Degree in Architecture, I bring strong problem-solving
-        skills and attention to detail to building user-friendly web applications. My background in architecture allows
-        me to blend creative design with technical expertise, enabling the development of innovative solutions that
-        combine design, technology, and data.
+        As a Junior Full-stack Developer with a Master's Degree in Architecture, I bring strong problem-solving skills
+        and attention to detail to building user-friendly web applications. My background in architecture allows me to
+        blend creative design with technical expertise, enabling the development of innovative solutions that combine
+        design, technology, and data.
       </Typography>
     </Stack>
 
