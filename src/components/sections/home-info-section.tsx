@@ -59,7 +59,7 @@ export const HomeInfoSection = () => (
       </Button>
     </Stack>
 
-    <Stack component="section" direction="row" justifyContent={{ xs: "center", lg: "left" }} gap={2}>
+    <Stack component="section" direction="row" justifyContent="center" gap={2}>
       {socialMediaLinks.map((link, index) => (
         <Link
           key={index}
