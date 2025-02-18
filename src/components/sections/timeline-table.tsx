@@ -1,4 +1,4 @@
-import { Button, Link, Stack, Table, Typography } from "@mui/joy";
+import { Button, Grid, Link, Stack, Table, Typography } from "@mui/joy";
 import { useState } from "react";
 import { FaLink } from "react-icons/fa";
 import { CATEGORIES_TYPES } from "../../configs/contants";
@@ -131,21 +131,20 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
         </Stack>
       )}
 
-      <Stack>
+      <Grid container>
         {Object.values(footnotes).map((footnote, index) => (
-          <Typography
-            key={index}
-            level="body-sm"
-            startDecorator={
-              <Typography textColor="warning.500" sx={{ verticalAlign: "top" }}>
-                {footnote.icon}
+          <>
+            <Grid xs={0.75} textAlign="center">
+              <Typography textColor="warning.500">{footnote.icon}</Typography>
+            </Grid>
+            <Grid xs={11.25}>
+              <Typography key={index} level="body-sm">
+                {footnote.text}
               </Typography>
-            }
-          >
-            {footnote.text}
-          </Typography>
+            </Grid>
+          </>
         ))}
-      </Stack>
+      </Grid>
     </Stack>
   );
 };
