@@ -5,7 +5,7 @@ import { CATEGORIES_TYPES } from "../../configs/contants";
 import { DataModel } from "../../models/data.model";
 import { colors } from "../../theme/colors";
 import { getDateMonth, getDateYear } from "../../utils/format-date";
-import { getTypeColor } from "../../utils/get-type-color";
+import { getCategoryColor } from "../../utils/get-category-color";
 import { sortData } from "../../utils/sort-data";
 import { ChipTech } from "../shared/chip-tech";
 
@@ -111,7 +111,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
                       target="_blank"
                       underline="none"
                       textColor={colors.neutral.lightest}
-                      sx={{ fontSize: { xs: 12, sm: 14 }, "&:hover": { color: getTypeColor(element.category) } }}
+                      sx={{ fontSize: { xs: 12, sm: 14 }, "&:hover": { color: getCategoryColor(element.category) } }}
                     >
                       {element.link.length > 0 ? <FaLink /> : null}
                     </Stack>
@@ -142,7 +142,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
               </Typography>
             }
           >
-            - {footnote.text}
+            {footnote.text}
           </Typography>
         ))}
       </Stack>

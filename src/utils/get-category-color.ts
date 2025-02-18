@@ -8,4 +8,4 @@ const categoryColors: Record<CATEGORIES_TYPES, string> = {
   certifications: colors.main.pink
 };
 
-export const getTypeColor = (category: CATEGORIES_TYPES) => categoryColors[category];
+export const getCategoryColor = (category: CATEGORIES_TYPES) => categoryColors[category];

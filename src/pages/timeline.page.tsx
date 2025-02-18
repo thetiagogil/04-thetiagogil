@@ -38,6 +38,7 @@ export const TimelinePage = () => {
 
         <Stack component="section" alignItems="center">
           <Stack
+            height={40}
             width={{ xs: "90%", lg: "100%" }}
             direction={{ xs: "column", md: "row" }}
             justifyContent={{ xs: "center", lg: "left" }}

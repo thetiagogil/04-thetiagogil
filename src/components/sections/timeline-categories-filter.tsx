@@ -1,9 +1,8 @@
 import { Box, Chip, IconButton, Option, Select } from "@mui/joy";
 import { IoMdClose } from "react-icons/io";
 import { CATEGORIES, CATEGORIES_TYPES } from "../../configs/contants";
-import { colors } from "../../theme/colors";
 import { capFirstLetter } from "../../utils/cap-first-letter";
-import { getColorTransparency } from "../../utils/get-color-transparency";
+import { chipColors } from "../shared/chip-tech";
 
 type TimelineCategoriesFilterProps = {
   categories: CATEGORIES_TYPES[];
@@ -20,11 +19,7 @@ export const TimelineCategoriesFilter = ({ categories, setCategories }: Timeline
       renderValue={selected => (
         <Box display="flex" gap={1}>
           {selected.map((selectedOption, index) => (
-            <Chip
-              key={index}
-              variant="soft"
-              sx={{ color: "neutral.lightest", bgcolor: getColorTransparency(colors.neutral.lightest, 10) }}
-            >
+            <Chip key={index} variant="soft" sx={chipColors(selectedOption.value)}>
               {selectedOption.label}
             </Chip>
           ))}

@@ -2,8 +2,8 @@ import { AspectRatio, Link, ListItem, Stack, Typography } from "@mui/joy";
 import { CATEGORIES_TYPES } from "../../configs/contants";
 import { DataModel } from "../../models/data.model";
 import { getDateMonth, getDateYear } from "../../utils/format-date";
+import { getCategoryColor } from "../../utils/get-category-color";
 import { getColorTransparency } from "../../utils/get-color-transparency";
-import { getTypeColor } from "../../utils/get-type-color";
 import { ChipTech } from "./chip-tech";
 
 type ContentCardProps = { element: DataModel; category: CATEGORIES_TYPES };
@@ -23,7 +23,12 @@ export const ContentCard = ({ element, category }: ContentCardProps) => {
         borderRadius={8}
         p={2}
         gap={2}
-        sx={{ "&:hover": { borderColor: getColorTransparency(getTypeColor(category), 50) } }}
+        sx={{
+          "&:hover": {
+            bgcolor: getColorTransparency(getCategoryColor(category), 5),
+            borderColor: getColorTransparency(getCategoryColor(category), 50)
+          }
+        }}
       >
         <Stack sx={{ width: { xs: "100%", md: "30%" }, alignSelf: { xs: "center", sm: "baseline" } }}>
           {category === "projects" && element.img ? (
@@ -49,7 +54,7 @@ export const ContentCard = ({ element, category }: ContentCardProps) => {
 
         <Stack sx={{ width: { xs: "100%", md: "70%" } }}>
           <Stack sx={{ flexDirection: "row", alignItems: "center", gap: 1 }}>
-            <Typography level="title-lg" sx={{ "&:hover": { color: getTypeColor(category) } }}>
+            <Typography level="title-lg" sx={{ "&:hover": { color: getCategoryColor(category) } }}>
               {element.name}
             </Typography>
 

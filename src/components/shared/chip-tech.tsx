@@ -3,9 +3,12 @@ import { CATEGORIES_TYPES } from "../../configs/contants";
 import { colors } from "../../theme/colors";
 import { getColorTransparency } from "../../utils/get-color-transparency";
 
-type ChipTechProps = { tech: string; category: CATEGORIES_TYPES };
+type ChipTechProps = {
+  tech: string;
+  category: CATEGORIES_TYPES;
+};
 
-const chipColors = (category: CATEGORIES_TYPES) => {
+export const chipColors = (category: CATEGORIES_TYPES) => {
   switch (category) {
     case "experience":
       return { bgcolor: getColorTransparency(colors.main.green, 20), color: "main.green" };
