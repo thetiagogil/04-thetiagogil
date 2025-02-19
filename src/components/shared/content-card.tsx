@@ -25,7 +25,7 @@ export const ContentCard = ({ element, category }: ContentCardProps) => {
         gap={2}
         sx={{
           "&:hover": {
-            bgcolor: getColorTransparency(getCategoryColor(category), 5),
+            bgcolor: getColorTransparency(getCategoryColor(category), 10),
             borderColor: getColorTransparency(getCategoryColor(category), 50)
           }
         }}
