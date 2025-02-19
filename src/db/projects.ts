@@ -44,7 +44,7 @@ export const projects: DataModel[] = [
     name: "Personal website",
     subject: "Personal website",
     link: "https://thetiagogil.netlify.app/",
-    techs: ["React", "TypeScript", "Joy UI"],
+    techs: ["React", "TypeScript", "MUI"],
     dateStart: new Date("2024-01"),
     status: "completed"
   },
@@ -56,7 +56,7 @@ export const projects: DataModel[] = [
     description:
       "Web application designed for financial tracking and analysis. It provides users with tools to manage and visualize their income and expenses over different years and months, as well as offering various features to help users understand their financial data through detailed summaries and visual representations.",
     link: "https://finace-v2.netlify.app/",
-    techs: ["React", "TypeScript", "Node.js", "Express.js", "Supabase", "Joy UI"],
+    techs: ["React", "TypeScript", "MUI", "Node.js", "Express.js", "Supabase"],
     dateStart: new Date("2024-07"),
     dateEnd: new Date("2024-08"),
     img: "../../../project-4.png",
@@ -70,7 +70,7 @@ export const projects: DataModel[] = [
     description:
       "Web application designed for financial tracking and analysis. It provides users with tools to manage and visualize their income and expenses over different years and months, as well as offering various features to help users understand their financial data through detailed summaries and visual representations.",
     link: "",
-    techs: ["React", "TypeScript", "Node.js", "Express.js", "Supabase", "Joy UI"],
+    techs: ["React", "TypeScript", "MUI", "Node.js", "Express.js", "Supabase"],
     dateStart: new Date("2024-09"),
     status: "open"
   }, */
@@ -81,7 +81,7 @@ export const projects: DataModel[] = [
     place: "Talent Protocol",
     subject: "",
     link: "https://passport.talentprotocol.com/",
-    techs: ["React", "TypeScript", "Joy UI"],
+    techs: ["React", "TypeScript", "MUI"],
     dateStart: new Date("2024-04"),
     dateEnd: new Date("2024-08"),
     status: "completed"
@@ -93,7 +93,7 @@ export const projects: DataModel[] = [
     place: "Talent Protocol",
     subject: "",
     link: "https://build.top/",
-    techs: ["Next.js", "TypeScript", "Joy UI"],
+    techs: ["Next.js", "TypeScript", "MUI"],
     dateStart: new Date("2024-04"),
     dateEnd: new Date("2024-06"),
     status: "completed"
@@ -105,7 +105,7 @@ export const projects: DataModel[] = [
     place: "Talent Protocol",
     subject: "",
     link: "https://mirror.xyz/talentprotocol.eth/dSkw_mNNOgs6GZEjZ3GTJMt0uJ5DjpWGkX3rncF1OD8/",
-    techs: ["Next.js", "TypeScript", "Joy UI"],
+    techs: ["Next.js", "TypeScript", "MUI"],
     dateStart: new Date("2024-04"),
     dateEnd: new Date("2024-08"),
     status: "inactive"
