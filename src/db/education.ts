@@ -6,10 +6,11 @@ export const education: DataModel[] = [
     category: "education",
     name: "High School",
     place: "Colégio Guadalupe",
-    description: "Completed a Science and Technology course at Colégio Guadalupe.",
+    description:
+      "Graduated from the Science and Technology course at Colégio Guadalupe, where I participated in several Erasmus projects, including Poland (2010-2011), Italy (2011-2012), and Bulgaria (2013-2014). These experiences allowed me to engage in collaborative learning, cultural exchange, and international networking.",
     link: "https://c-guadalupe.com/en/",
     techs: ["Microsoft Office"],
-    dateStart: new Date("2002-09"),
+    dateStart: new Date("2011-09"),
     dateEnd: new Date("2014-07"),
     status: "completed"
   },

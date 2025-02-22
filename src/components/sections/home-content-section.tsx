@@ -1,4 +1,5 @@
 import { List, Stack, Tab, TabList, TabPanel, Tabs, tabClasses } from "@mui/joy";
+import { useMemo } from "react";
 import { categoriesIds } from "../../configs/categories-ids";
 import { CATEGORIES_TYPES } from "../../configs/contants";
 import { certifications } from "../../db/certifications";
@@ -41,11 +42,11 @@ export const HomeContentSection = () => {
         </TabList>
 
         {tabData.map((tab, index) => {
-          const filteredData = tab.data
-            .filter(element => {
-              return categoriesIds(tab.category).includes(Number(element.id));
-            })
-            .sort((a, b) => b.id - a.id);
+          const filteredData = useMemo(() => {
+            return tab.data
+              .filter(element => categoriesIds(tab.category).includes(Number(element.id)))
+              .sort((a, b) => new Date(b.dateStart).getTime() - new Date(a.dateStart).getTime());
+          }, [tab.data, tab.category]);
           return (
             <TabPanel key={index} value={index} sx={{ overflowY: "auto", p: 0 }}>
               <Stack sx={{ gap: 6, py: 4 }}>

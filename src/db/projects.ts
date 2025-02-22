@@ -24,8 +24,7 @@ export const projects: DataModel[] = [
     link: "https://house-of-legends.netlify.app/",
     techs: ["React", "JavaScript", "CSS", "Node.js", "REST API"],
     dateStart: new Date("2023-10"),
-    status: "outdated",
-    img: "../../../project-1.png"
+    status: "outdated"
   },
   {
     id: 2,
@@ -120,8 +119,7 @@ export const projects: DataModel[] = [
     link: "https://personal-h9qyawdw.outsystemscloud.com/easyqa/",
     techs: ["OutSystems"],
     dateStart: new Date("2024-10"),
-    status: "inactive",
-    img: "../../../project-9.png"
+    status: "inactive"
   },
   {
     id: 10,
@@ -134,5 +132,33 @@ export const projects: DataModel[] = [
     techs: ["OutSystems"],
     dateStart: new Date("2024-10"),
     status: "inactive"
+  },
+  {
+    id: 11,
+    category: "projects",
+    name: "Wordlechain",
+    place: "Subvisual",
+    subject: "Wordle Game (Blockchain Edition)",
+    description:
+      "Wordlechain is a blockchain-based version of the classic Wordle game, built for Web3. Players use a custom ERC20 token to make guesses, combining blockchain technology with an interactive web interface.",
+    link: "https://wordlechain.netlify.app/",
+    techs: ["React", "TypeScript", "MUI", "Solidity"],
+    dateStart: new Date("2024-12"),
+    status: "completed",
+    img: "../../../project-11.png"
+  },
+  {
+    id: 11,
+    category: "projects",
+    name: "Talentsy",
+    place: "Subvisual",
+    subject: "Team Talents Visualization App",
+    description:
+      "Talentsy is a team talents visualization tool that helps users discover, track, and compare their top talents. It provides personalized insights into talents, enabling teams to understand how individual skills contribute to collaboration and success. Users can explore their top 10 talents, set goals for growth, and compare team-wide talents to foster a more balanced and effective work environment.",
+    link: "https://talentsy.netlify.app/",
+    techs: ["React", "TypeScript", "MUI"],
+    dateStart: new Date("2025-01"),
+    status: "completed",
+    img: "../../../project-12.png"
   }
 ];

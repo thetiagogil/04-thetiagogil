@@ -75,7 +75,7 @@ export const ContentCard = ({ element, category }: ContentCardProps) => {
             </Typography>
           </Stack>
 
-          <Typography level="title-md">{element.place ? element.place : element.subject}</Typography>
+          <Typography level="title-md">{element.subject ? element.subject : element.place}</Typography>
 
           <Typography level="body-sm" sx={{ mt: 1, textAlign: "justify" }}>
             {element.description}
