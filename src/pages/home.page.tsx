@@ -9,7 +9,7 @@ export const HomePage = () => {
         height: { xs: "100%", lg: "100vh" },
         flexDirection: { xs: "column", lg: "row" },
         justifyContent: { xs: "normal", lg: "space-between" },
-        gap: 10
+        gap: { xs: 6, lg: 10 }
       }}
     >
       <HomeInfoSection />
