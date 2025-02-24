@@ -12,7 +12,8 @@ export const experience: DataModel[] = [
     techs: ["Revit", "AutoCAD", "Microsoft Office"],
     dateStart: new Date("2022-09"),
     dateEnd: new Date("2023-08"),
-    status: "completed"
+    status: "completed",
+    img: "experience/crespassos.jpeg"
   },
   {
     id: 1,
@@ -25,7 +26,8 @@ export const experience: DataModel[] = [
     techs: ["React", "Next.js", "TypeScript", "MUI", "Supabase", "PostgreSQL", "Git", "Notion", "Figma"],
     dateStart: new Date("2024-03"),
     dateEnd: new Date("2024-08"),
-    status: "completed"
+    status: "completed",
+    img: "experience/talentprotocol.jpeg"
   },
   {
     id: 2,
@@ -38,6 +40,7 @@ export const experience: DataModel[] = [
     techs: ["React", "TypeScript", "MUI", "Solidity", "Supabase", "PostgreSQL", "Git", "Notion", "Figma"],
     dateStart: new Date("2024-12"),
     dateEnd: new Date("2025-02"),
-    status: "completed"
+    status: "completed",
+    img: "experience/subvisual.jpeg"
   }
 ];

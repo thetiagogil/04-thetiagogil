@@ -1,4 +1,4 @@
-import { Button, Grid, Link, Stack, Table, Typography } from "@mui/joy";
+import { Button, Link, Stack, Table, Typography } from "@mui/joy";
 import { useState } from "react";
 import { FaLink } from "react-icons/fa";
 import { CATEGORIES_TYPES } from "../../configs/contants";
@@ -29,12 +29,12 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
   const loadMore = () => setVisibleCount(prevCount => prevCount + ITEMS_INCREMENT);
 
   const footnotes: Record<string, Record<string, string>> = {
-    outdated: { icon: "~", text: "project needs update." },
+    outdated: { icon: "~", text: "project needs to be updated." },
     inactive: { icon: "†", text: "project is temporarily or permanently inactive." }
   };
 
   return (
-    <Stack component="section" alignItems={{ xs: "center", lg: "baseline" }} mb={6} gap={4}>
+    <Stack component="section" alignItems={{ xs: "center", lg: "baseline" }} gap={4}>
       <Stack width={{ xs: "90%", lg: "100%" }} overflow="auto">
         <Table
           sx={{
@@ -131,20 +131,19 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
         </Stack>
       )}
 
-      <Grid container>
+      <Stack width="100%">
         {Object.values(footnotes).map((footnote, index) => (
-          <>
-            <Grid xs={0.75} textAlign="center">
+          <Stack direction="row">
+            <Stack width={24} textAlign="center">
               <Typography textColor="warning.500">{footnote.icon}</Typography>
-            </Grid>
-            <Grid xs={11.25}>
-              <Typography key={index} level="body-sm">
-                {footnote.text}
-              </Typography>
-            </Grid>
-          </>
+            </Stack>
+
+            <Typography key={index} level="body-sm">
+              {footnote.text}
+            </Typography>
+          </Stack>
         ))}
-      </Grid>
+      </Stack>
     </Stack>
   );
 };

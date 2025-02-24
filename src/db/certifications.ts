@@ -11,7 +11,8 @@ export const certifications: DataModel[] = [
     link: "https://www.udemy.com/course/agile-project-management-certification/",
     techs: ["Agile Methodologies", "Lean Principles", "Kanban", "Jira"],
     dateStart: new Date("2024-01"),
-    status: "completed"
+    status: "completed",
+    img: "certifications/udemy.jpeg"
   },
   {
     id: 1,
@@ -23,7 +24,8 @@ export const certifications: DataModel[] = [
     link: "https://www.udemy.com/course/build-mobile-apps-with-react-native-from-to-zero-to-expert/",
     techs: ["React Native", "JavaScript", "REST API", "Postman"],
     dateStart: new Date("2024-01"),
-    status: "completed"
+    status: "completed",
+    img: "certifications/udemy.jpeg"
   },
   {
     id: 2,
@@ -35,6 +37,7 @@ export const certifications: DataModel[] = [
     link: "https://www.udemy.com/course/complete-course-on-outsystems-development/",
     techs: ["OutSystems"],
     dateStart: new Date("2024-02"),
-    status: "completed"
+    status: "completed",
+    img: "certifications/udemy.jpeg"
   }
 ];

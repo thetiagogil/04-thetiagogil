@@ -12,7 +12,7 @@ export const projects: DataModel[] = [
     techs: ["JavaScript", "HTML", "CSS", "DOM Manipulation"],
     dateStart: new Date("2023-09"),
     status: "completed",
-    img: "../../../project-0.png"
+    img: "projects/giraffes-vs-sea.png"
   },
   {
     id: 1,
@@ -35,7 +35,7 @@ export const projects: DataModel[] = [
     techs: ["React", "JavaScript", "CSS", "Node.js", "Express.js", "MongoDB"],
     dateStart: new Date("2023-11"),
     dateEnd: new Date("2023-12"),
-    status: "outdated"
+    status: "inactive"
   },
   {
     id: 3,
@@ -145,7 +145,7 @@ export const projects: DataModel[] = [
     techs: ["React", "TypeScript", "MUI", "Solidity"],
     dateStart: new Date("2024-12"),
     status: "completed",
-    img: "../../../project-11.png"
+    img: "projects/wordlechain.png"
   },
   {
     id: 11,
@@ -159,6 +159,6 @@ export const projects: DataModel[] = [
     techs: ["React", "TypeScript", "MUI"],
     dateStart: new Date("2025-01"),
     status: "completed",
-    img: "../../../project-12.png"
+    img: "projects/talentsy.png"
   }
 ];

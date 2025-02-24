@@ -18,7 +18,8 @@ export const ContentCard = ({ element, category }: ContentCardProps) => {
         underline="none"
         bgcolor="transparent"
         width="100%"
-        direction={{ xs: "column", sm: "row" }}
+        direction="row"
+        alignItems="start"
         border="1px solid transparent"
         borderRadius={8}
         p={2}
@@ -30,58 +31,44 @@ export const ContentCard = ({ element, category }: ContentCardProps) => {
           }
         }}
       >
-        <Stack sx={{ width: { xs: "100%", md: "30%" }, alignSelf: { xs: "center", sm: "baseline" } }}>
-          {category === "projects" && element.img ? (
-            <AspectRatio sx={{ width: "100%", border: "1px solid", borderColor: "neutral.light", borderRadius: 8 }}>
+        <Stack>
+          {element.img ? (
+            <AspectRatio variant="outlined" ratio="1" sx={{ width: 64, borderRadius: 8 }}>
               <img src={element.img} alt={element.name} />
             </AspectRatio>
           ) : (
-            <>
-              <Typography level="body-sm">
-                {getDateYear(element.dateStart)} {getDateMonth(element.dateStart)}
+            <AspectRatio variant="outlined" ratio="1" sx={{ width: 64, borderRadius: 8 }} />
+          )}
+        </Stack>
+
+        <Stack gap={1}>
+          <Stack>
+            <Typography level="title-lg" sx={{ "&:hover": { color: getCategoryColor(category) } }}>
+              {element.name}
+            </Typography>
+
+            <Stack gap={0.5}>
+              <Typography level="title-md">{element.subject ? element.subject : element.place}</Typography>
+
+              <Typography level="title-sm" textColor="neutral.light">
+                {getDateMonth(element.dateStart)} {getDateYear(element.dateStart)}
                 {element.dateEnd && (
                   <>
                     {" — "}
                     {typeof element.dateEnd === "string"
                       ? element.dateEnd
-                      : `${getDateYear(element.dateEnd)} ${getDateMonth(element.dateEnd)}`}
+                      : `${getDateMonth(element.dateEnd)} ${getDateYear(element.dateEnd)}`}
                   </>
                 )}
               </Typography>
-            </>
-          )}
-        </Stack>
-
-        <Stack sx={{ width: { xs: "100%", md: "70%" } }}>
-          <Stack sx={{ flexDirection: "row", alignItems: "center", gap: 1 }}>
-            <Typography level="title-lg" sx={{ "&:hover": { color: getCategoryColor(category) } }}>
-              {element.name}
-            </Typography>
-
-            <Typography level="body-sm">
-              {category === "projects" ? (
-                <>
-                  {getDateYear(element.dateStart)} {getDateMonth(element.dateStart)}
-                  {element.dateEnd && (
-                    <>
-                      {" — "}
-                      {typeof element.dateEnd === "string"
-                        ? element.dateEnd
-                        : `${getDateYear(element.dateEnd)} ${getDateMonth(element.dateEnd)}`}
-                    </>
-                  )}
-                </>
-              ) : null}
-            </Typography>
+            </Stack>
           </Stack>
 
-          <Typography level="title-md">{element.subject ? element.subject : element.place}</Typography>
-
-          <Typography level="body-sm" sx={{ mt: 1, textAlign: "justify" }}>
+          <Typography level="body-sm" textAlign="justify">
             {element.description}
           </Typography>
 
-          <Stack sx={{ mt: 1, flexDirection: "row", flexWrap: "wrap" }}>
+          <Stack direction="row" flexWrap="wrap">
             {element.techs?.map((tech, index) => {
               return <ChipTech tech={tech} category={category} key={index} />;
             })}

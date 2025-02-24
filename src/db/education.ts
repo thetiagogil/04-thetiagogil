@@ -12,7 +12,8 @@ export const education: DataModel[] = [
     techs: ["Microsoft Office"],
     dateStart: new Date("2011-09"),
     dateEnd: new Date("2014-07"),
-    status: "completed"
+    status: "completed",
+    img: "education/cg.jpeg"
   },
   {
     id: 1,
@@ -25,7 +26,8 @@ export const education: DataModel[] = [
     techs: ["AutoCAD", "SketchUp", "Adobe Photoshop", "Microsoft Office"],
     dateStart: new Date("2014-09"),
     dateEnd: new Date("2022-07"),
-    status: "completed"
+    status: "completed",
+    img: "education/faul.jpeg"
   },
   {
     id: 2,
@@ -38,6 +40,7 @@ export const education: DataModel[] = [
     techs: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express.js", "MongoDB", "REST API", "DOM Manipulation"],
     dateStart: new Date("2023-08"),
     dateEnd: new Date("2023-11"),
-    status: "completed"
+    status: "completed",
+    img: "education/ironhack.jpeg"
   }
 ];
