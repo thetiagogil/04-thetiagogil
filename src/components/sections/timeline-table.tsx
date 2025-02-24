@@ -111,7 +111,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
                       textColor={colors.neutral.lightest}
                       sx={{ fontSize: { xs: 12, sm: 14 }, "&:hover": { color: getCategoryColor(element.category) } }}
                     >
-                      {element.link.length > 0 ? <FaLink /> : null}
+                      {element.link && element.status !== "inactive" ? <FaLink /> : null}
                     </Stack>
                   </td>
                 </tr>
