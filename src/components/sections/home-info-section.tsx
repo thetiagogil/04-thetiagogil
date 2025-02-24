@@ -1,5 +1,5 @@
 import { Button, Link, Stack, Typography } from "@mui/joy";
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { Link as ReactLink } from "react-router-dom";
@@ -8,7 +8,6 @@ import tg from "../../assets/tg.png";
 const socialMediaLinks = [
   { href: "https://github.com/thetiagogil", icon: <FaGithub className="icon" size={25} /> },
   { href: "https://www.linkedin.com/in/thetiagogil/", icon: <FaLinkedin className="icon" size={25} /> },
-  { href: "https://www.facebook.com/thetiagogil/", icon: <FaFacebook className="icon" size={25} /> },
   { href: "https://www.instagram.com/thetiagogil/", icon: <FaInstagram className="icon" size={25} /> }
 ];
 

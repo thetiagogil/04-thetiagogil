@@ -1,14 +1,14 @@
 import { AspectRatio, Link, ListItem, Stack, Typography } from "@mui/joy";
-import { CATEGORIES_TYPES } from "../../configs/contants";
+import { CategoryType } from "../../configs/contants";
 import { DataModel } from "../../models/data.model";
 import { getDateMonth, getDateYear } from "../../utils/format-date";
 import { getCategoryColor } from "../../utils/get-category-color";
 import { getColorTransparency } from "../../utils/get-color-transparency";
 import { ChipTech } from "./chip-tech";
 
-type ContentCardProps = { element: DataModel; category: CATEGORIES_TYPES };
+type CardContentProps = { element: DataModel; category: CategoryType };
 
-export const ContentCard = ({ element, category }: ContentCardProps) => {
+export const CardContent = ({ element, category }: CardContentProps) => {
   return (
     <ListItem key={element.id} sx={{ p: 0 }}>
       <Stack

@@ -1,15 +1,15 @@
 import { List, Stack, Tab, TabList, TabPanel, Tabs, tabClasses } from "@mui/joy";
 import { useMemo } from "react";
 import { categoriesIds } from "../../configs/categories-ids";
-import { CATEGORIES_TYPES } from "../../configs/contants";
+import { CategoryType } from "../../configs/contants";
 import { certifications } from "../../db/certifications";
 import { education } from "../../db/education";
 import { experience } from "../../db/experience";
 import { projects } from "../../db/projects";
 import { DataModel } from "../../models/data.model";
-import { ContentCard } from "../shared/content-card";
+import { CardContent } from "../shared/card-content";
 
-type TabDataProps = { label: string; category: CATEGORIES_TYPES; data: DataModel[] };
+type TabDataProps = { label: string; category: CategoryType; data: DataModel[] };
 
 const tabData: TabDataProps[] = [
   { label: "Experience", category: "experience", data: experience },
@@ -20,46 +20,44 @@ const tabData: TabDataProps[] = [
 
 export const HomeContentSection = () => {
   return (
-    <Stack width={{ xs: "100%", lg: 600 }}>
-      <Tabs defaultValue={0} sx={{ bgcolor: "transparent", overflowY: "auto" }}>
-        <TabList
-          sx={{
-            justifyContent: "center",
-            [`&& .${tabClasses.root}`]: {
-              color: "neutral.light",
-              bgcolor: "transparent",
-              transition: "0.3s",
-              "&:hover": { color: "neutral.lightest", bgcolor: "transparent" },
-              [`&.${tabClasses.selected}`]: { color: "neutral.lightest" }
-            }
-          }}
-        >
-          {tabData.map((tab, index) => (
-            <Tab key={index} sx={{ fontSize: { xs: 14, md: 16 }, fontWeight: 700 }}>
-              {tab.label}
-            </Tab>
-          ))}
-        </TabList>
+    <Tabs defaultValue={0} sx={{ bgcolor: "transparent", overflowY: "auto" }}>
+      <TabList
+        sx={{
+          justifyContent: "center",
+          [`&& .${tabClasses.root}`]: {
+            color: "neutral.light",
+            bgcolor: "transparent",
+            transition: "0.3s",
+            "&:hover": { color: "neutral.lightest", bgcolor: "transparent" },
+            [`&.${tabClasses.selected}`]: { color: "neutral.lightest" }
+          }
+        }}
+      >
+        {tabData.map((tab, index) => (
+          <Tab key={index} sx={{ fontSize: { xs: 14, md: 16 }, fontWeight: 700 }}>
+            {tab.label}
+          </Tab>
+        ))}
+      </TabList>
 
-        {tabData.map((tab, index) => {
-          const filteredData = useMemo(() => {
-            return tab.data
-              .filter(element => categoriesIds(tab.category).includes(Number(element.id)))
-              .sort((a, b) => new Date(b.dateStart).getTime() - new Date(a.dateStart).getTime());
-          }, [tab.data, tab.category]);
-          return (
-            <TabPanel key={index} value={index} sx={{ overflowY: "auto", p: 0 }}>
-              <Stack py={2}>
-                <List sx={{ gap: 6 }}>
-                  {filteredData.map((element, index) => {
-                    return <ContentCard key={index} element={element} category={tab.category} />;
-                  })}
-                </List>
-              </Stack>
-            </TabPanel>
-          );
-        })}
-      </Tabs>
-    </Stack>
+      {tabData.map((tab, index) => {
+        const filteredData = useMemo(() => {
+          return tab.data
+            .filter(element => categoriesIds(tab.category).includes(Number(element.id)))
+            .sort((a, b) => new Date(b.dateStart).getTime() - new Date(a.dateStart).getTime());
+        }, [tab.data, tab.category]);
+        return (
+          <TabPanel key={index} value={index} sx={{ overflowY: "auto", p: 0 }}>
+            <Stack pt={2}>
+              <List sx={{ gap: 6 }}>
+                {filteredData.map((element, index) => {
+                  return <CardContent key={index} element={element} category={tab.category} />;
+                })}
+              </List>
+            </Stack>
+          </TabPanel>
+        );
+      })}
+    </Tabs>
   );
 };

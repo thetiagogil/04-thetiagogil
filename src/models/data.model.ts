@@ -1,10 +1,10 @@
-import { CATEGORIES_TYPES } from "../configs/contants";
+import { CategoryType } from "../configs/contants";
 
 type Status = "completed" | "outdated" | "inactive" | "open";
 
 export type DataModel = {
   id: number;
-  category: CATEGORIES_TYPES;
+  category: CategoryType;
   name: string;
   place?: string;
   subject?: string;

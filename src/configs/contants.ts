@@ -1,2 +1,3 @@
-export const CATEGORIES = ["experience", "projects", "education", "certifications"];
-export type CATEGORIES_TYPES = (typeof CATEGORIES)[number];
+export type CategoryType = "experience" | "projects" | "education" | "certifications";
+
+export const CATEGORIES: CategoryType[] = ["experience", "projects", "education", "certifications"];

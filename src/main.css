@@ -9,23 +9,26 @@ html {
 }
 
 ::selection {
-	background-color: rgb(100, 120, 150);
+	background-color: #647896;
 	color: white;
 }
 
 ::-moz-selection {
-	background-color: rgb(100, 120, 150);
+	background-color: #647896;
 	color: white;
 }
 
 ::-webkit-scrollbar {
 	width: 0;
+	height: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: transparent;
+	background-color: #647896;
+	border-radius: 8px;
 }
 
 ::-webkit-scrollbar-track {
-	background-color: transparent;
+	background-color: #e6e6e6;
+	border-radius: 8px;
 }

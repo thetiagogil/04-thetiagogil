@@ -1,11 +1,11 @@
-import { CATEGORIES_TYPES } from "../configs/contants";
+import { CategoryType } from "../configs/contants";
 import { colors } from "../theme/colors";
 
-const categoryColors: Record<CATEGORIES_TYPES, string> = {
+const categoryColors: Record<CategoryType, string> = {
   experience: colors.main.green,
   projects: colors.main.blue,
   education: colors.main.yellow,
   certifications: colors.main.pink
 };
 
-export const getCategoryColor = (category: CATEGORIES_TYPES) => categoryColors[category];
+export const getCategoryColor = (category: CategoryType) => categoryColors[category];

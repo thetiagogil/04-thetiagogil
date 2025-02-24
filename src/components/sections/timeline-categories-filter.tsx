@@ -1,12 +1,12 @@
 import { Box, Chip, IconButton, Option, Select } from "@mui/joy";
 import { IoMdClose } from "react-icons/io";
-import { CATEGORIES, CATEGORIES_TYPES } from "../../configs/contants";
+import { CATEGORIES, CategoryType } from "../../configs/contants";
 import { capFirstLetter } from "../../utils/cap-first-letter";
 import { chipColors } from "../shared/chip-tech";
 
 type TimelineCategoriesFilterProps = {
-  categories: CATEGORIES_TYPES[];
-  setCategories: (categories: CATEGORIES_TYPES[]) => void;
+  categories: CategoryType[];
+  setCategories: (categories: CategoryType[]) => void;
 };
 
 export const TimelineCategoriesFilter = ({ categories, setCategories }: TimelineCategoriesFilterProps) => {
@@ -15,7 +15,7 @@ export const TimelineCategoriesFilter = ({ categories, setCategories }: Timeline
       multiple
       value={categories}
       placeholder="Select a category..."
-      onChange={(_event, value: CATEGORIES_TYPES[]) => setCategories(value)}
+      onChange={(_event, value: CategoryType[]) => setCategories(value)}
       renderValue={selected => (
         <Box display="flex" gap={1}>
           {selected.map((selectedOption, index) => (
@@ -37,7 +37,7 @@ export const TimelineCategoriesFilter = ({ categories, setCategories }: Timeline
     >
       {CATEGORIES.map((category, index) => (
         <Option key={index} value={category}>
-          {capFirstLetter(category as CATEGORIES_TYPES)}
+          {capFirstLetter(category as CategoryType)}
         </Option>
       ))}
     </Select>

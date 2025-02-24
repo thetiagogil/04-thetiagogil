@@ -1,7 +1,7 @@
 import { Button, Link, Stack, Table, Typography } from "@mui/joy";
 import { useState } from "react";
 import { FaLink } from "react-icons/fa";
-import { CATEGORIES_TYPES } from "../../configs/contants";
+import { CategoryType } from "../../configs/contants";
 import { DataModel } from "../../models/data.model";
 import { colors } from "../../theme/colors";
 import { getDateMonth, getDateYear } from "../../utils/format-date";
@@ -9,21 +9,19 @@ import { getCategoryColor } from "../../utils/get-category-color";
 import { sortData } from "../../utils/sort-data";
 import { ChipTech } from "../shared/chip-tech";
 
-type TimelineTableProps = { data: DataModel[]; categories: CATEGORIES_TYPES[]; techs: string[] };
+type TimelineTableProps = { data: DataModel[]; categories: CategoryType[]; techs: string[] };
 
 const ITEMS_INCREMENT = 7;
 
 export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) => {
   const [visibleCount, setVisibleCount] = useState<number>(ITEMS_INCREMENT);
 
-  const dataFiltered: DataModel[] = sortData(data).filter(
-    (element: { category: CATEGORIES_TYPES; techs: string[] }) => {
-      const categoriesArray = categories.length === 0 || (element.category && categories.includes(element.category));
-      const techsArray =
-        techs.length === 0 || (element.techs && techs.every(selectedTech => element.techs.includes(selectedTech)));
-      return categoriesArray && techsArray;
-    }
-  );
+  const dataFiltered: DataModel[] = sortData(data).filter((element: { category: CategoryType; techs: string[] }) => {
+    const categoriesArray = categories.length === 0 || (element.category && categories.includes(element.category));
+    const techsArray =
+      techs.length === 0 || (element.techs && techs.every(selectedTech => element.techs.includes(selectedTech)));
+    return categoriesArray && techsArray;
+  });
 
   const dataVisible: DataModel[] = dataFiltered.slice(0, visibleCount);
   const loadMore = () => setVisibleCount(prevCount => prevCount + ITEMS_INCREMENT);
@@ -35,10 +33,10 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
 
   return (
     <Stack component="section" alignItems={{ xs: "center", lg: "baseline" }} gap={4}>
-      <Stack width={{ xs: "90%", lg: "100%" }} overflow="auto">
+      <Stack width="100%" overflow="auto">
         <Table
           sx={{
-            width: { xs: 1200, sm: "100%" },
+            width: { xs: 1200, lg: "100%" },
             fontSize: 14,
             th: { bgcolor: "transparent", color: "neutral.lightest" },
             td: { py: 2, verticalAlign: "center" },
@@ -134,7 +132,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
       <Stack width="100%">
         {Object.values(footnotes).map((footnote, index) => (
           <Stack direction="row">
-            <Stack width={24} textAlign="center">
+            <Stack width={20} textAlign="center">
               <Typography textColor="warning.500">{footnote.icon}</Typography>
             </Stack>
 

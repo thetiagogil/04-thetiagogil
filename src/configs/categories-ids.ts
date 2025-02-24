@@ -1,6 +1,6 @@
-import { CATEGORIES_TYPES } from "./contants";
+import { CategoryType } from "./contants";
 
-export const categoriesIds = (category: CATEGORIES_TYPES) => {
+export const categoriesIds = (category: CategoryType) => {
   switch (category) {
     case "education":
       return [0, 1, 2]; // <== change this values for EDUCATION
