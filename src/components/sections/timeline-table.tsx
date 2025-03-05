@@ -131,7 +131,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
 
       <Stack width="100%">
         {Object.values(footnotes).map((footnote, index) => (
-          <Stack direction="row">
+          <Stack key={index} direction="row">
             <Stack width={20} textAlign="center">
               <Typography textColor="warning.500">{footnote.icon}</Typography>
             </Stack>

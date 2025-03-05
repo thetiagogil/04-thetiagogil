@@ -55,7 +55,7 @@ export const projects: DataModel[] = [
     description:
       "Web application designed for financial tracking and analysis. It provides users with tools to manage and visualize their income and expenses over different years and months, as well as offering various features to help users understand their financial data through detailed summaries and visual representations.",
     link: "https://finace-v2.netlify.app/",
-    techs: ["React", "TypeScript", "MUI", "Node.js", "Express.js", "Supabase"],
+    techs: ["React", "TypeScript", "MUI", "Node.js", "Express.js", "Supabase", "PostgreSQL"],
     dateStart: new Date("2024-07"),
     dateEnd: new Date("2024-08"),
     img: "../../../project-4.png",
@@ -69,7 +69,7 @@ export const projects: DataModel[] = [
     description:
       "Web application designed for financial tracking and analysis. It provides users with tools to manage and visualize their income and expenses over different years and months, as well as offering various features to help users understand their financial data through detailed summaries and visual representations.",
     link: "",
-    techs: ["React", "TypeScript", "MUI", "Node.js", "Express.js", "Supabase"],
+    techs: ["React", "TypeScript", "MUI", "Node.js", "Express.js", "Supabase", "PostgreSQL"],
     dateStart: new Date("2024-09"),
     status: "open"
   }, */
@@ -80,7 +80,7 @@ export const projects: DataModel[] = [
     place: "Talent Protocol",
     subject: "",
     link: "https://passport.talentprotocol.com/",
-    techs: ["React", "TypeScript", "MUI"],
+    techs: ["React", "TypeScript", "MUI", "Wagmi", "Blockchain"],
     dateStart: new Date("2024-04"),
     dateEnd: new Date("2024-08"),
     status: "completed"
@@ -92,7 +92,7 @@ export const projects: DataModel[] = [
     place: "Talent Protocol",
     subject: "",
     link: "https://build.top/",
-    techs: ["Next.js", "TypeScript", "MUI"],
+    techs: ["Next.js", "TypeScript", "MUI", "Wagmi", "PostgreSQL", "Blockchain"],
     dateStart: new Date("2024-04"),
     dateEnd: new Date("2024-06"),
     status: "completed"
@@ -104,7 +104,7 @@ export const projects: DataModel[] = [
     place: "Talent Protocol",
     subject: "",
     link: "https://mirror.xyz/talentprotocol.eth/dSkw_mNNOgs6GZEjZ3GTJMt0uJ5DjpWGkX3rncF1OD8/",
-    techs: ["Next.js", "TypeScript", "MUI"],
+    techs: ["Next.js", "TypeScript", "MUI", "Wagmi", "Blockchain"],
     dateStart: new Date("2024-04"),
     dateEnd: new Date("2024-08"),
     status: "inactive"
@@ -142,7 +142,7 @@ export const projects: DataModel[] = [
     description:
       "Wordlechain is a blockchain-based version of the classic Wordle game, built for Web3. Players use a custom ERC20 token to make guesses, combining blockchain technology with an interactive web interface.",
     link: "https://wordlechain.netlify.app/",
-    techs: ["React", "TypeScript", "MUI", "Solidity"],
+    techs: ["React", "TypeScript", "MUI", "Wagmi", "Solidity", "Blockchain"],
     dateStart: new Date("2024-12"),
     status: "completed",
     img: "projects/wordlechain.png"
@@ -156,7 +156,7 @@ export const projects: DataModel[] = [
     description:
       "Talentsy is a team talents visualization tool that helps users discover, track, and compare their top talents. It provides personalized insights into talents, enabling teams to understand how individual skills contribute to collaboration and success. Users can explore their top 10 talents, set goals for growth, and compare team-wide talents to foster a more balanced and effective work environment.",
     link: "https://talentsy.netlify.app/",
-    techs: ["React", "TypeScript", "MUI"],
+    techs: ["React", "TypeScript", "MUI", "Supabase", "PostgreSQL"],
     dateStart: new Date("2025-01"),
     status: "completed",
     img: "projects/talentsy.png"

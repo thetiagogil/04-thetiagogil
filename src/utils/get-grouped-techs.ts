@@ -1,31 +1,24 @@
 type Category = "Web Development" | "Architecture" | "Project Management" | "Design Tools" | "General Tools" | "Other";
 
-const groupedTechs: Record<Category, string[]> = {
-  "Web Development": [
-    "DOM Manipulation",
-    "Express.js",
+const groupedTechs: Record<string, string[]> = {
+  Frontend: [
     "HTML",
+    "CSS",
     "JavaScript",
-    "MongoDB",
-    "Next.js",
-    "Node.js",
-    "Postman",
+    "TypeScript",
     "React",
     "React Native",
-    "REST API",
-    "CSS",
-    "Supabase",
-    "TypeScript",
-    "OutSystems",
+    "Next.js",
+    "DOM Manipulation",
     "MUI",
-    "PostgreSQL",
-    "Git",
-    "Solidity"
+    "Wagmi"
   ],
+  Backend: ["Node.js", "Express.js", "REST API", "Postman", "Supabase", "Solidity"],
+  Database: ["MongoDB", "PostgreSQL"],
   Architecture: ["AutoCAD", "Revit", "SketchUp"],
   "Project Management": ["Agile Methodologies", "Jira", "Kanban", "Lean Principles", "Notion"],
   "Design Tools": ["Adobe Photoshop", "Figma"],
-  "General Tools": ["Microsoft Office"],
+  "General Tools": ["Microsoft Office", "Git", "OutSystems", "Blockchain"],
   Other: []
 };
 
