@@ -2,11 +2,15 @@ import { Stack, Typography } from "@mui/joy";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import profilePhoto from "../assets/tg.png";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const img = new Image();
+    img.src = profilePhoto;
+
     setTimeout(() => {
       navigate("/home");
     }, 4000);
@@ -43,7 +47,7 @@ export const LandingPage = () => {
       <Typography
         textColor="neutral.lighter"
         textAlign="center"
-        fontSize={{ xs: 24, sm: 32 }}
+        fontSize={{ xs: 24, sm: 36 }}
         component={motion.h3}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

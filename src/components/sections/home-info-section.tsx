@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { Link as ReactLink } from "react-router-dom";
-import tg from "../../assets/tg.png";
+import profilePhoto from "../../assets/tg.png";
 
 const socialMediaLinks = [
   { href: "https://github.com/thetiagogil", icon: <FaGithub className="icon" size={25} /> },
@@ -22,7 +22,7 @@ export const HomeInfoSection = () => (
     </Stack>
 
     <Stack component="section">
-      <img src={tg} alt="Tiago Gil" />
+      <img src={profilePhoto} alt="Tiago Gil" />
     </Stack>
 
     <Stack component="section">
