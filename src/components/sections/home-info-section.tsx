@@ -17,7 +17,7 @@ export const HomeInfoSection = () => (
         TIAGO GIL
       </Typography>
       <Typography level="h3" fontSize={{ xs: 20, lg: 24 }}>
-        Full-stack Developer & Master Architect
+        Full-stack Developer & Architect
       </Typography>
     </Stack>
 

@@ -23,7 +23,7 @@ export const TimelinePage = () => {
         <Stack component="section" alignItems={{ xs: "center", lg: "baseline" }}>
           <Link
             component={ReactLink}
-            to="/"
+            to="/home"
             underline="none"
             startDecorator={<FaArrowLeftLong size={12} />}
             fontSize={14}
