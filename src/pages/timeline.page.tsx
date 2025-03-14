@@ -27,7 +27,7 @@ export const TimelinePage = () => {
             underline="none"
             startDecorator={<FaArrowLeftLong size={12} />}
             fontSize={14}
-            textColor="neutral.light"
+            textColor="neutral.low"
           >
             back to homepage
           </Link>

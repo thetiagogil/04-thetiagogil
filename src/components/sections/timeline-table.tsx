@@ -3,7 +3,6 @@ import { useState } from "react";
 import { FaLink } from "react-icons/fa";
 import { CategoryType } from "../../configs/contants";
 import { DataModel } from "../../models/data.model";
-import { colors } from "../../theme/colors";
 import { getDateMonth, getDateYear } from "../../utils/format-date";
 import { getCategoryColor } from "../../utils/get-category-color";
 import { sortData } from "../../utils/sort-data";
@@ -38,7 +37,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
           sx={{
             width: { xs: 1200, lg: "100%" },
             fontSize: 14,
-            th: { bgcolor: "transparent", color: "neutral.lightest" },
+            th: { bgcolor: "transparent", color: "neutral.high" },
             td: { py: 2, verticalAlign: "center" },
             "& th:nth-of-type(1)": { width: "15%" },
             "& th:nth-of-type(2)": { width: "20%" },
@@ -77,7 +76,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
 
                   <td>
                     <Typography
-                      textColor="neutral.lightest"
+                      textColor="neutral.high"
                       fontSize={{ xs: 12, sm: 14 }}
                       endDecorator={
                         footnotes[element.status]?.icon ? (
@@ -90,7 +89,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
                   </td>
 
                   <td>
-                    <Typography textColor="neutral.lightest" fontSize={{ xs: 12, sm: 14 }}>
+                    <Typography textColor="neutral.high" fontSize={{ xs: 12, sm: 14 }}>
                       {element.place}
                     </Typography>
                   </td>
@@ -108,7 +107,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
                       href={element.link}
                       target="_blank"
                       underline="none"
-                      textColor={colors.neutral.lightest}
+                      textColor="neutral.medium"
                       sx={{ fontSize: { xs: 12, sm: 14 }, "&:hover": { color: getCategoryColor(element.category) } }}
                     >
                       {element.link && element.status !== "inactive" ? <FaLink /> : null}

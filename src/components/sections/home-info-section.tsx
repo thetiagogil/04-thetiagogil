@@ -63,8 +63,8 @@ export const HomeInfoSection = () => (
           key={index}
           href={link.href}
           target="_blank"
-          textColor="neutral.light"
-          sx={{ "&:hover": { color: "neutral.lightest" } }}
+          textColor="neutral.low"
+          sx={{ "&:hover": { color: "neutral.high" } }}
         >
           {link.icon}
         </Link>

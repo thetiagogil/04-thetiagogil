@@ -1,6 +1,5 @@
-import { Chip } from "@mui/joy";
+import { Chip, useTheme } from "@mui/joy";
 import { CategoryType } from "../../configs/contants";
-import { colors } from "../../theme/colors";
 import { getColorTransparency } from "../../utils/get-color-transparency";
 
 type ChipTechProps = {
@@ -9,15 +8,16 @@ type ChipTechProps = {
 };
 
 export const chipColors = (category: CategoryType) => {
+  const theme = useTheme();
   switch (category) {
     case "experience":
-      return { bgcolor: getColorTransparency(colors.main.green, 20), color: "main.green" };
+      return { bgcolor: getColorTransparency(theme.palette.main.green, 20), color: "main.green" };
     case "projects":
-      return { bgcolor: getColorTransparency(colors.main.blue, 20), color: "main.blue" };
+      return { bgcolor: getColorTransparency(theme.palette.main.blue, 20), color: "main.blue" };
     case "education":
-      return { bgcolor: getColorTransparency(colors.main.yellow, 20), color: "main.yellow" };
+      return { bgcolor: getColorTransparency(theme.palette.main.yellow, 20), color: "main.yellow" };
     case "certifications":
-      return { bgcolor: getColorTransparency(colors.main.pink, 20), color: "main.pink" };
+      return { bgcolor: getColorTransparency(theme.palette.main.pink, 20), color: "main.pink" };
   }
 };
 

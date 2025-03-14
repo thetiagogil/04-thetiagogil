@@ -50,7 +50,7 @@ export const CardContent = ({ element, category }: CardContentProps) => {
             <Stack gap={0.5}>
               <Typography level="title-md">{element.subject ? element.subject : element.place}</Typography>
 
-              <Typography level="title-sm" textColor="neutral.light">
+              <Typography level="title-sm" textColor="neutral.low">
                 {getDateMonth(element.dateStart)} {getDateYear(element.dateStart)}
                 {element.dateEnd && (
                   <>

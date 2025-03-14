@@ -25,11 +25,11 @@ export const HomeContentSection = () => {
         sx={{
           justifyContent: "center",
           [`&& .${tabClasses.root}`]: {
-            color: "neutral.light",
+            color: "neutral.low",
             bgcolor: "transparent",
             transition: "0.3s",
-            "&:hover": { color: "neutral.lightest", bgcolor: "transparent" },
-            [`&.${tabClasses.selected}`]: { color: "neutral.lightest" }
+            "&:hover": { color: "neutral.high", bgcolor: "transparent" },
+            [`&.${tabClasses.selected}`]: { color: "neutral.high" }
           }
         }}
       >

@@ -1,11 +1,17 @@
+import { useColorScheme } from "@mui/joy/styles";
 import { CategoryType } from "../configs/contants";
 import { colors } from "../theme/colors";
 
-const categoryColors: Record<CategoryType, string> = {
-  experience: colors.main.green,
-  projects: colors.main.blue,
-  education: colors.main.yellow,
-  certifications: colors.main.pink
-};
+export const getCategoryColor = (category: CategoryType) => {
+  const { mode } = useColorScheme();
+  const themeColors = mode === "light" ? colors.main.light : colors.main.dark;
 
-export const getCategoryColor = (category: CategoryType) => categoryColors[category];
+  const categoryColors: Record<CategoryType, string> = {
+    experience: themeColors.green,
+    projects: themeColors.blue,
+    education: themeColors.yellow,
+    certifications: themeColors.pink
+  };
+
+  return categoryColors[category];
+};

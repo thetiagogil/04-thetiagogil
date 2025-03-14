@@ -1,13 +1,14 @@
-import { Box, Chip, IconButton, List, ListDivider, ListItem, Option, Select, Typography } from "@mui/joy";
+import { Box, Chip, IconButton, List, ListDivider, ListItem, Option, Select, Typography, useTheme } from "@mui/joy";
 import { IoMdClose } from "react-icons/io";
 import { DataModel } from "../../models/data.model";
-import { colors } from "../../theme/colors";
 import { getColorTransparency } from "../../utils/get-color-transparency";
 import { getGroupedTechs } from "../../utils/get-grouped-techs";
 
 type TimelineTechsFilterProps = { data: DataModel[]; techs: string[]; setTechs: (techs: string[]) => void };
 
 export const TimelineTechsFilter = ({ data, techs, setTechs }: TimelineTechsFilterProps) => {
+  const theme = useTheme();
+
   const getTechsArray = (): string[] => {
     const allTechs = new Set<string>();
     data.forEach(data => {
@@ -32,7 +33,7 @@ export const TimelineTechsFilter = ({ data, techs, setTechs }: TimelineTechsFilt
             <Chip
               key={index}
               variant="soft"
-              sx={{ color: "neutral.lightest", bgcolor: getColorTransparency(colors.neutral.lightest, 20) }}
+              sx={{ color: "neutral.high", bgcolor: getColorTransparency(theme.palette.neutral.high, 20) }}
             >
               {selectedOption.label}
             </Chip>

@@ -33,7 +33,7 @@ export const LandingPage = () => {
       transition={{ delay: 3, duration: 1 }}
     >
       <Typography
-        textColor="neutral.lightest"
+        textColor="neutral.high"
         textAlign="center"
         fontWeight="bold"
         fontSize={{ xs: 72, sm: 96 }}
@@ -45,7 +45,7 @@ export const LandingPage = () => {
         TIAGO GIL
       </Typography>
       <Typography
-        textColor="neutral.lighter"
+        textColor="neutral.medium"
         textAlign="center"
         fontSize={{ xs: 24, sm: 36 }}
         component={motion.h3}
