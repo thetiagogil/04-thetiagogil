@@ -37,7 +37,7 @@ export const projects: DataModel[] = [
     id: 3,
     category: "projects",
     name: "Personal website",
-    link: "https://thetiagogil.netlify.app/",
+    link: "https://thetiagogil.com/",
     techs: ["React", "TypeScript", "MUI"],
     dateStart: new Date("2024-01"),
     status: "completed"
