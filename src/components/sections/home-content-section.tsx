@@ -2,6 +2,7 @@ import { List, Stack, Tab, TabList, TabPanel, Tabs, tabClasses } from "@mui/joy"
 import { useMemo } from "react";
 import { categoriesIds } from "../../configs/categories-ids";
 import { CategoryType } from "../../configs/contants";
+import { useLanguageContext } from "../../contexts/language.context";
 import { certifications } from "../../db/certifications";
 import { education } from "../../db/education";
 import { experience } from "../../db/experience";
@@ -11,16 +12,21 @@ import { CardContent } from "../shared/card-content";
 
 type TabDataProps = { label: string; category: CategoryType; data: DataModel[] };
 
-const tabData: TabDataProps[] = [
-  { label: "Experience", category: "experience", data: experience },
-  { label: "Projects", category: "projects", data: projects },
-  { label: "Education", category: "education", data: education },
-  { label: "Certifications", category: "certifications", data: certifications }
-];
-
 export const HomeContentSection = () => {
+  const { t } = useLanguageContext();
+
+  const tabData: TabDataProps[] = useMemo(
+    () => [
+      { label: t("experience"), category: "experience", data: experience },
+      { label: t("projects"), category: "projects", data: projects },
+      { label: t("education"), category: "education", data: education },
+      { label: t("certifications"), category: "certifications", data: certifications }
+    ],
+    [t]
+  );
+
   return (
-    <Tabs defaultValue={0} sx={{ bgcolor: "transparent", overflowY: "auto" }}>
+    <Tabs defaultValue={0} sx={{ bgcolor: "transparent", width: "100%", overflowY: "auto" }}>
       <TabList
         sx={{
           justifyContent: "center",
@@ -46,13 +52,14 @@ export const HomeContentSection = () => {
             .filter(element => categoriesIds(tab.category).includes(Number(element.id)))
             .sort((a, b) => new Date(b.dateStart).getTime() - new Date(a.dateStart).getTime());
         }, [tab.data, tab.category]);
+
         return (
           <TabPanel key={index} value={index} sx={{ overflowY: "auto", p: 0 }}>
             <Stack pt={2}>
               <List sx={{ gap: 6 }}>
-                {filteredData.map((element, index) => {
-                  return <CardContent key={index} element={element} category={tab.category} />;
-                })}
+                {filteredData.map((element, index) => (
+                  <CardContent key={index} element={element} category={tab.category} />
+                ))}
               </List>
             </Stack>
           </TabPanel>

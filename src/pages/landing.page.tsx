@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import profilePhoto from "../assets/tg.png";
+import { useLanguageContext } from "../contexts/language.context";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
+  const { t } = useLanguageContext();
 
   useEffect(() => {
     const img = new Image();
@@ -48,12 +50,12 @@ export const LandingPage = () => {
         textColor="neutral.medium"
         textAlign="center"
         fontSize={{ xs: 24, sm: 36 }}
-        component={motion.h3}
+        component={motion.h1}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
       >
-        Full-stack Developer & Architect
+        {t("title")}
       </Typography>
     </Stack>
   );

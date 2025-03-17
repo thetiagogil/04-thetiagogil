@@ -4,10 +4,9 @@ export const experience: DataModel[] = [
   {
     id: 0,
     category: "experience",
-    name: "Architect",
+    nameKey: "experience_cr_espassos_name",
     place: "CR espassos",
-    description:
-      "Worked with a team of architects and engineers, contributing to projects across engineering, urbanism, and interior design. Led a group of third-year engineering interns, guiding them in project tasks and development.",
+    descriptionKey: "experience_cr_espassos_description",
     link: "https://www.linkedin.com/company/cr-espassos/about/",
     techs: ["Revit", "AutoCAD", "Microsoft Office"],
     dateStart: new Date("2022-09"),
@@ -18,10 +17,9 @@ export const experience: DataModel[] = [
   {
     id: 1,
     category: "experience",
-    name: "Full-stack Developer",
+    nameKey: "Full-stack Developer",
     place: "Talent Protocol",
-    description:
-      "Built and maintained multiple web3 applications that utilize blockchain as a core technology and data source. My responsibilities included implementing Figma designs from scratch, integrating APIs, managing user feedback, conducting tests and bug fixes. I have contributed to key projects like Talent Passport, Build.top, Playground/API, and Builder.fi.",
+    descriptionKey: "experience_talent_protocol_description",
     link: "https://www.talentprotocol.com/",
     techs: [
       "React",
@@ -44,10 +42,9 @@ export const experience: DataModel[] = [
   {
     id: 2,
     category: "experience",
-    name: "Full-stack Developer",
+    nameKey: "Full-stack Developer",
     place: "Subvisual",
-    description:
-      "Built both web3 and web2 applications, using blockchain and PostgreSQL for secure and scalable solutions. Developed and deployed smart contracts using Solidity, ensuring transparency and real-time updates for a decentralized app.",
+    descriptionKey: "experience_subvisual_description",
     link: "https://subvisual.com/",
     techs: [
       "React",

@@ -101,10 +101,29 @@ export const theme = extendTheme({
     JoySelect: {
       styleOverrides: {
         root: ({ theme }) => ({
+          color: theme.palette.neutral.low,
           backgroundColor: "transparent",
           borderColor: theme.palette.neutral.low,
           transition: "0.3s",
-          "&:hover": { backgroundColor: "transparent", borderColor: theme.palette.neutral.high }
+          "&:hover": {
+            color: theme.palette.neutral.high,
+            backgroundColor: "transparent",
+            borderColor: theme.palette.neutral.high
+          }
+        })
+      }
+    },
+    JoyIconButton: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          color: theme.palette.neutral.low,
+          borderColor: theme.palette.neutral.low,
+          transition: "0.3s",
+          "&:hover": {
+            color: theme.palette.neutral.high,
+            backgroundColor: "transparent",
+            borderColor: theme.palette.neutral.high
+          }
         })
       }
     }

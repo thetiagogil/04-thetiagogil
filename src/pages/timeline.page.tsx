@@ -7,16 +7,17 @@ import { TimelineTable } from "../components/sections/timeline-table";
 import { TimelineTechsFilter } from "../components/sections/timeline-techs-filter";
 import { MainContainer } from "../components/shared/main-container";
 import { CategoryType } from "../configs/contants";
+import { useLanguageContext } from "../contexts/language.context";
 import { certifications } from "../db/certifications";
 import { education } from "../db/education";
 import { experience } from "../db/experience";
 import { projects } from "../db/projects";
 
 export const TimelinePage = () => {
+  const { t } = useLanguageContext();
   const [categories, setCategories] = useState<CategoryType[]>([]);
   const [techs, setTechs] = useState<string[]>([]);
   const data = [...experience, ...projects, ...education, ...certifications];
-
   return (
     <MainContainer>
       <Stack gap={{ xs: 6, md: 4 }}>
@@ -29,11 +30,11 @@ export const TimelinePage = () => {
             fontSize={14}
             textColor="neutral.low"
           >
-            back to homepage
+            {t("backToHome")}
           </Link>
 
           <Typography level="h1" fontWeight={700}>
-            My timeline
+            {t("timeline_title")}
           </Typography>
         </Stack>
 

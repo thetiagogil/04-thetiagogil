@@ -1,14 +1,18 @@
 import { AspectRatio, Link, ListItem, Stack, Typography } from "@mui/joy";
 import { CategoryType } from "../../configs/contants";
+import { useLanguageContext } from "../../contexts/language.context";
+import { useCategoryColor } from "../../hooks/use-category-color";
 import { DataModel } from "../../models/data.model";
 import { getDateMonth, getDateYear } from "../../utils/format-date";
-import { getCategoryColor } from "../../utils/get-category-color";
 import { getColorTransparency } from "../../utils/get-color-transparency";
 import { ChipTech } from "./chip-tech";
 
 type CardContentProps = { element: DataModel; category: CategoryType };
 
 export const CardContent = ({ element, category }: CardContentProps) => {
+  const { language, t } = useLanguageContext();
+  const getCategoryColor = useCategoryColor();
+
   return (
     <ListItem key={element.id} sx={{ p: 0 }}>
       <Stack
@@ -44,29 +48,39 @@ export const CardContent = ({ element, category }: CardContentProps) => {
         <Stack gap={1}>
           <Stack>
             <Typography level="title-lg" sx={{ "&:hover": { color: getCategoryColor(category) } }}>
-              {element.name}
+              {element.nameKey ? t(element.nameKey) : element.name}
             </Typography>
 
             <Stack gap={0.5}>
-              <Typography level="title-md">{element.subject ? element.subject : element.place}</Typography>
+              <Typography level="title-md">
+                {element.subjectKey
+                  ? t(element.subjectKey)
+                  : element.subject
+                    ? element.subject
+                    : element.placeKey
+                      ? t(element.placeKey)
+                      : element.place}
+              </Typography>
 
               <Typography level="title-sm" textColor="neutral.low">
-                {getDateMonth(element.dateStart)} {getDateYear(element.dateStart)}
+                {getDateMonth(element.dateStart, language)} {getDateYear(element.dateStart)}
                 {element.dateEnd && (
                   <>
                     {" — "}
                     {typeof element.dateEnd === "string"
                       ? element.dateEnd
-                      : `${getDateMonth(element.dateEnd)} ${getDateYear(element.dateEnd)}`}
+                      : `${getDateMonth(element.dateEnd, language)} ${getDateYear(element.dateEnd)}`}
                   </>
                 )}
               </Typography>
             </Stack>
           </Stack>
 
-          <Typography level="body-sm" textAlign="justify">
-            {element.description}
-          </Typography>
+          {element.descriptionKey && (
+            <Typography level="body-sm" textAlign="justify">
+              {t(element.descriptionKey)}
+            </Typography>
+          )}
 
           <Stack direction="row" flexWrap="wrap">
             {element.techs?.map((tech, index) => {

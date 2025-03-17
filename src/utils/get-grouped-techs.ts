@@ -1,7 +1,14 @@
-type Category = "Web Development" | "Architecture" | "Project Management" | "Design Tools" | "General Tools" | "Other";
+type Category =
+  | "frontend"
+  | "backend"
+  | "architecture"
+  | "projectManagement"
+  | "designTools"
+  | "generalTools"
+  | "other";
 
 const groupedTechs: Record<string, string[]> = {
-  Frontend: [
+  frontend: [
     "HTML",
     "CSS",
     "JavaScript",
@@ -13,18 +20,18 @@ const groupedTechs: Record<string, string[]> = {
     "MUI",
     "Wagmi"
   ],
-  Backend: ["Node.js", "Express.js", "REST API", "Postman", "Supabase", "Solidity"],
-  Database: ["MongoDB", "PostgreSQL"],
-  Architecture: ["AutoCAD", "Revit", "SketchUp"],
-  "Project Management": ["Agile Methodologies", "Jira", "Kanban", "Lean Principles", "Notion"],
-  "Design Tools": ["Adobe Photoshop", "Figma"],
-  "General Tools": ["Microsoft Office", "Git", "OutSystems", "Blockchain"],
-  Other: []
+  backend: ["Node.js", "Express.js", "REST API", "Postman", "Supabase", "Solidity"],
+  database: ["MongoDB", "PostgreSQL"],
+  architecture: ["AutoCAD", "Revit", "SketchUp"],
+  projectManagement: ["Agile Methodologies", "Jira", "Kanban", "Lean Principles", "Notion"],
+  designTools: ["Adobe Photoshop", "Figma"],
+  generalTools: ["Microsoft Office", "Git", "OutSystems", "Blockchain"],
+  other: []
 };
 
 export const getGroupedTechs = (techsArray: string[]) => {
   const allTechs = techsArray;
-  const categorizedTechsObject = { ...groupedTechs, Other: [...groupedTechs.Other] };
+  const categorizedTechsObject = { ...groupedTechs, other: [...groupedTechs.other] };
 
   allTechs.forEach((tech: string) => {
     let found = false;
@@ -35,7 +42,7 @@ export const getGroupedTechs = (techsArray: string[]) => {
       }
     }
     if (!found) {
-      categorizedTechsObject.Other.push(tech);
+      categorizedTechsObject.other.push(tech);
     }
   });
 

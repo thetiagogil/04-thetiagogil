@@ -18,7 +18,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     setMounted(true);
-    const storedMode = (localStorage.getItem("theme-mode") as ThemeMode) || "system";
+    const storedMode = (localStorage.getItem("thetiagogil-theme") as ThemeMode) || "system";
     setMode(storedMode);
   }, [setMode]);
 
@@ -26,7 +26,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   const toggleTheme = (newMode: ThemeMode) => {
     setMode(newMode);
-    localStorage.setItem("theme-mode", newMode);
+    localStorage.setItem("thetiagogil-theme", newMode);
   };
 
   return (
@@ -39,7 +39,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
 export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
   return (
-    <CssVarsProvider theme={theme} defaultMode="system" modeStorageKey="theme-mode">
+    <CssVarsProvider theme={theme} defaultMode="system" modeStorageKey="thetiagogil-theme">
       <ThemeProvider>{children}</ThemeProvider>
     </CssVarsProvider>
   );

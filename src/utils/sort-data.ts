@@ -19,7 +19,7 @@ export const sortData = (data: DataModel[]): DataModel[] => {
     const endDiff = getDateEnd(b.dateEnd) - getDateEnd(a.dateEnd);
     if (endDiff !== 0) return endDiff;
 
-    return a.name.localeCompare(b.name);
+    return (a.name || "").localeCompare(b.name || "");
   });
 
   return data;

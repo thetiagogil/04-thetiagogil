@@ -1,5 +1,6 @@
 import { Box, Chip, IconButton, List, ListDivider, ListItem, Option, Select, Typography, useTheme } from "@mui/joy";
 import { IoMdClose } from "react-icons/io";
+import { useLanguageContext } from "../../contexts/language.context";
 import { DataModel } from "../../models/data.model";
 import { getColorTransparency } from "../../utils/get-color-transparency";
 import { getGroupedTechs } from "../../utils/get-grouped-techs";
@@ -8,6 +9,7 @@ type TimelineTechsFilterProps = { data: DataModel[]; techs: string[]; setTechs: 
 
 export const TimelineTechsFilter = ({ data, techs, setTechs }: TimelineTechsFilterProps) => {
   const theme = useTheme();
+  const { t } = useLanguageContext();
 
   const getTechsArray = (): string[] => {
     const allTechs = new Set<string>();
@@ -23,9 +25,10 @@ export const TimelineTechsFilter = ({ data, techs, setTechs }: TimelineTechsFilt
 
   return (
     <Select
+      color="neutral"
       multiple
       value={techs}
-      placeholder="Select a tech..."
+      placeholder={t("selectTech")}
       onChange={(_event, value: string[]) => setTechs(value)}
       renderValue={selected => (
         <Box display="flex" gap={1}>
@@ -56,7 +59,7 @@ export const TimelineTechsFilter = ({ data, techs, setTechs }: TimelineTechsFilt
         ),
         indicator: null
       })}
-      sx={{ width: { xs: "100%", lg: "60%" } }}
+      sx={{ height: 40, width: { xs: "100%", lg: "60%" } }}
     >
       {Object.entries(getGroupedTechs(techsArray)).map(([name, techs], index) => {
         return (
@@ -66,7 +69,7 @@ export const TimelineTechsFilter = ({ data, techs, setTechs }: TimelineTechsFilt
               <List>
                 <ListItem>
                   <Typography level="body-xs" textTransform="uppercase">
-                    {name} ({techs.length})
+                    {t(name)} ({techs.length})
                   </Typography>
                 </ListItem>
                 {techs.sort().map((tech, index) => (

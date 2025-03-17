@@ -5,10 +5,13 @@ type Status = "completed" | "outdated" | "inactive" | "open";
 export type DataModel = {
   id: number;
   category: CategoryType;
-  name: string;
+  name?: string;
+  nameKey?: string;
   place?: string;
+  placeKey?: string;
   subject?: string;
-  description?: string;
+  subjectKey?: string;
+  descriptionKey?: string;
   link: string;
   techs: string[];
   dateStart: Date;

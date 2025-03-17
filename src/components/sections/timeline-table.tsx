@@ -2,9 +2,10 @@ import { Button, Link, Stack, Table, Typography } from "@mui/joy";
 import { useState } from "react";
 import { FaLink } from "react-icons/fa";
 import { CategoryType } from "../../configs/contants";
+import { useLanguageContext } from "../../contexts/language.context";
+import { useCategoryColor } from "../../hooks/use-category-color";
 import { DataModel } from "../../models/data.model";
 import { getDateMonth, getDateYear } from "../../utils/format-date";
-import { getCategoryColor } from "../../utils/get-category-color";
 import { sortData } from "../../utils/sort-data";
 import { ChipTech } from "../shared/chip-tech";
 
@@ -14,6 +15,8 @@ const ITEMS_INCREMENT = 7;
 
 export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) => {
   const [visibleCount, setVisibleCount] = useState<number>(ITEMS_INCREMENT);
+  const { language, t } = useLanguageContext();
+  const getCategoryColor = useCategoryColor();
 
   const dataFiltered: DataModel[] = sortData(data).filter((element: { category: CategoryType; techs: string[] }) => {
     const categoriesArray = categories.length === 0 || (element.category && categories.includes(element.category));
@@ -26,8 +29,8 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
   const loadMore = () => setVisibleCount(prevCount => prevCount + ITEMS_INCREMENT);
 
   const footnotes: Record<string, Record<string, string>> = {
-    outdated: { icon: "~", text: "project needs to be updated." },
-    inactive: { icon: "†", text: "project is temporarily or permanently inactive." }
+    outdated: { icon: "~", text: t("statusOutdated") },
+    inactive: { icon: "†", text: t("statusInactive") }
   };
 
   return (
@@ -48,11 +51,11 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
         >
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Name / Role</th>
-              <th>Company</th>
-              <th>Techs</th>
-              <th>Link</th>
+              <th>{t("date")}</th>
+              <th>{t("nameRole")}</th>
+              <th>{t("company")}</th>
+              <th>{t("techs")}</th>
+              <th>{t("link")}</th>
             </tr>
           </thead>
 
@@ -62,13 +65,13 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
                 <tr key={index}>
                   <td>
                     <Typography level="body-sm">
-                      {getDateYear(element.dateStart)} {getDateMonth(element.dateStart)}
+                      {getDateYear(element.dateStart)} {getDateMonth(element.dateStart, language)}
                       {element.dateEnd && (
                         <>
                           {" — "}
                           {typeof element.dateEnd === "string"
                             ? element.dateEnd
-                            : `${getDateYear(element.dateEnd)} ${getDateMonth(element.dateEnd)}`}
+                            : `${getDateYear(element.dateEnd)} ${getDateMonth(element.dateEnd, language)}`}
                         </>
                       )}
                     </Typography>
@@ -84,13 +87,13 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
                         ) : null
                       }
                     >
-                      {element.name}
+                      {element.nameKey ? t(element.nameKey) : element.name}
                     </Typography>
                   </td>
 
                   <td>
                     <Typography textColor="neutral.high" fontSize={{ xs: 12, sm: 14 }}>
-                      {element.place}
+                      {element.placeKey ? t(element.placeKey) : element.place}
                     </Typography>
                   </td>
 
@@ -123,7 +126,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
       {visibleCount < dataFiltered.length && (
         <Stack sx={{ width: "100%", alignItems: "center" }}>
           <Button variant="outlined" onClick={loadMore} sx={{ width: { xs: "100%", lg: 160 } }}>
-            Load More
+            {t("loadMore")}
           </Button>
         </Stack>
       )}
@@ -136,7 +139,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
             </Stack>
 
             <Typography key={index} level="body-sm">
-              {footnote.text}
+              {footnote.text.toLocaleLowerCase()}
             </Typography>
           </Stack>
         ))}

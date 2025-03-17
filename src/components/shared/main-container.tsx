@@ -13,7 +13,7 @@ type MainContainerProps = {
 export const MainContainer = ({ children, sx, fullheight }: MainContainerProps) => {
   return (
     <Stack
-      height={fullheight ? "100vh" : "auto"}
+      height={fullheight ? { xs: "auto", lg: "100vh" } : "auto"}
       width="100%"
       minWidth={{ lg: 1200 }}
       maxWidth={{ lg: 1400 }}
