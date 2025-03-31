@@ -11,7 +11,6 @@ export const experience: DataModel[] = [
     techs: ["Revit", "AutoCAD", "Microsoft Office"],
     dateStart: new Date("2022-09"),
     dateEnd: new Date("2023-08"),
-    status: "completed",
     img: "experience/crespassos.jpeg"
   },
   {
@@ -36,7 +35,6 @@ export const experience: DataModel[] = [
     ],
     dateStart: new Date("2024-03"),
     dateEnd: new Date("2024-08"),
-    status: "completed",
     img: "experience/talentprotocol.jpeg"
   },
   {
@@ -61,7 +59,18 @@ export const experience: DataModel[] = [
     ],
     dateStart: new Date("2024-12"),
     dateEnd: new Date("2025-02"),
-    status: "completed",
     img: "experience/subvisual.jpeg"
+  },
+  {
+    id: 2,
+    category: "experience",
+    nameKey: "Frontend Developer",
+    place: "Aquasis",
+    descriptionKey: "",
+    link: "https://www.aquasis.pt/",
+    techs: [],
+    dateStart: new Date("2025-04"),
+    dateEnd: "Present",
+    img: "experience/aquasis.jpeg"
   }
 ];

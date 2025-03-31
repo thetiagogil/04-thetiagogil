@@ -16,6 +16,6 @@ export type DataModel = {
   techs: string[];
   dateStart: Date;
   dateEnd?: Date | "Present";
-  status: Status;
+  status?: Status;
   img?: string;
 };
