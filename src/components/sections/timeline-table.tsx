@@ -82,7 +82,7 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
                       textColor="neutral.high"
                       fontSize={{ xs: 12, sm: 14 }}
                       endDecorator={
-                        footnotes[element.status]?.icon ? (
+                        element.status && footnotes[element.status]?.icon ? (
                           <Typography textColor="warning.500">{footnotes[element.status].icon}</Typography>
                         ) : null
                       }
