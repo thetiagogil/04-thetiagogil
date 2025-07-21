@@ -1,10 +1,8 @@
-import { CategoryType } from "../configs/contants";
+import { DataCategory, DataStatus } from "./common";
 
-type Status = "completed" | "outdated" | "inactive" | "open";
-
-export type DataModel = {
+export interface Data {
   id: number;
-  category: CategoryType;
+  category: DataCategory;
   name?: string;
   nameKey?: string;
   place?: string;
@@ -16,6 +14,6 @@ export type DataModel = {
   techs: string[];
   dateStart: Date;
   dateEnd?: Date | "Present";
-  status?: Status;
+  status?: DataStatus;
   img?: string;
-};
+}

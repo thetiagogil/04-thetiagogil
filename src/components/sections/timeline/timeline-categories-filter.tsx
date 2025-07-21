@@ -1,12 +1,13 @@
 import { Box, Chip, IconButton, Option, Select } from "@mui/joy";
 import { IoMdClose } from "react-icons/io";
-import { CATEGORIES, CategoryType } from "../../configs/contants";
-import { useLanguageContext } from "../../contexts/language.context";
-import { chipColors } from "../shared/chip-tech";
+import { useLanguageContext } from "../../../contexts/language.context";
+import { CATEGORIES } from "../../../lib/contants";
+import { DataCategory } from "../../../types/common";
+import { chipColors } from "../../shared/chip-tech";
 
 type TimelineCategoriesFilterProps = {
-  categories: CategoryType[];
-  setCategories: (categories: CategoryType[]) => void;
+  categories: DataCategory[];
+  setCategories: (categories: DataCategory[]) => void;
 };
 
 export const TimelineCategoriesFilter = ({ categories, setCategories }: TimelineCategoriesFilterProps) => {
@@ -17,7 +18,7 @@ export const TimelineCategoriesFilter = ({ categories, setCategories }: Timeline
       multiple
       value={categories}
       placeholder={t("selectCategory")}
-      onChange={(_event, value: CategoryType[]) => setCategories(value)}
+      onChange={(_event, value: DataCategory[]) => setCategories(value)}
       renderValue={selected => (
         <Box display="flex" gap={1}>
           {selected.map((selectedOption, index) => (

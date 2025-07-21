@@ -1,13 +1,12 @@
 import { AspectRatio, Link, ListItem, Stack, Typography } from "@mui/joy";
-import { CategoryType } from "../../configs/contants";
 import { useLanguageContext } from "../../contexts/language.context";
 import { useCategoryColor } from "../../hooks/use-category-color";
-import { DataModel } from "../../models/data.model";
-import { getDateMonth, getDateYear } from "../../utils/format-date";
-import { getColorTransparency } from "../../utils/get-color-transparency";
+import { getColorTransparency, getDateMonth, getDateYear } from "../../lib/utils";
+import { DataCategory } from "../../types/common";
+import { Data } from "../../types/data";
 import { ChipTech } from "./chip-tech";
 
-type CardContentProps = { element: DataModel; category: CategoryType };
+type CardContentProps = { element: Data; category: DataCategory };
 
 export const CardContent = ({ element, category }: CardContentProps) => {
   const { language, t } = useLanguageContext();

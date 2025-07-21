@@ -1,6 +1,6 @@
-import { HomeContentSection } from "../components/sections/home-content-section";
-import { HomeInfoSection } from "../components/sections/home-info-section";
-import { MainContainer } from "../components/shared/main-container";
+import { MainContainer } from "../components/layout/main-container";
+import { HomeContentSection } from "../components/sections/home/home-content-section";
+import { HomeInfoSection } from "../components/sections/home/home-info-section";
 
 export const HomePage = () => {
   return (

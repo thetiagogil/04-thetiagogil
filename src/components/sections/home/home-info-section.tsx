@@ -3,8 +3,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { Link as ReactLink } from "react-router-dom";
-import profilePhoto from "../../assets/tg.png";
-import { useLanguageContext } from "../../contexts/language.context";
+import profilePhoto from "../../../assets/tg.png";
+import { useLanguageContext } from "../../../contexts/language.context";
 
 const socialMediaLinks = [
   { href: "https://github.com/thetiagogil", icon: <FaGithub className="icon" size={25} /> },

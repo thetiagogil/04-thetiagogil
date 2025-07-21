@@ -1,11 +1,10 @@
 import { Box, Chip, IconButton, List, ListDivider, ListItem, Option, Select, Typography, useTheme } from "@mui/joy";
 import { IoMdClose } from "react-icons/io";
-import { useLanguageContext } from "../../contexts/language.context";
-import { DataModel } from "../../models/data.model";
-import { getColorTransparency } from "../../utils/get-color-transparency";
-import { getGroupedTechs } from "../../utils/get-grouped-techs";
+import { useLanguageContext } from "../../../contexts/language.context";
+import { getColorTransparency, getGroupedTechs } from "../../../lib/utils";
+import { Data } from "../../../types/data";
 
-type TimelineTechsFilterProps = { data: DataModel[]; techs: string[]; setTechs: (techs: string[]) => void };
+type TimelineTechsFilterProps = { data: Data[]; techs: string[]; setTechs: (techs: string[]) => void };
 
 export const TimelineTechsFilter = ({ data, techs, setTechs }: TimelineTechsFilterProps) => {
   const theme = useTheme();

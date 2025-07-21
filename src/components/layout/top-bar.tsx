@@ -1,8 +1,8 @@
 import { IconButton, Option, Select, Stack } from "@mui/joy";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { LANGUAGES } from "../../configs/contants";
 import { useLanguageContext } from "../../contexts/language.context";
 import { useThemeContext } from "../../contexts/theme.context";
+import { LANGUAGES } from "../../lib/contants";
 
 export const TopBar = () => {
   const { mode, toggleTheme } = useThemeContext();

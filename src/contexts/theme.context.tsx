@@ -1,7 +1,7 @@
 import { CssBaseline } from "@mui/joy";
 import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
-import { theme } from "../theme/theme";
+import { theme } from "../styles/theme";
 
 type ThemeMode = "light" | "dark" | "system";
 

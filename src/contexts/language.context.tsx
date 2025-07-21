@@ -1,26 +1,26 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { LanguageType } from "../configs/contants";
-import { translations } from "../configs/translations";
+import { TranslationKeys, translations } from "../lib/translations/index.ts";
+import { Languages } from "../types/common";
 
 type LanguageContextProps = {
-  language: LanguageType;
-  setLanguage: (lang: LanguageType) => void;
+  language: Languages;
+  setLanguage: (lang: Languages) => void;
   t: (key: string) => string;
 };
 
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<LanguageType>(
-    (localStorage.getItem("thetiagogil-language") as LanguageType) || "en"
+  const [language, setLanguage] = useState<Languages>(
+    (localStorage.getItem("thetiagogil-language") as Languages) || "en"
   );
 
-  const changeLanguage = (lang: LanguageType) => {
+  const changeLanguage = (lang: Languages) => {
     setLanguage(lang);
     localStorage.setItem("thetiagogil-language", lang);
   };
 
-  const t = (key: string) => translations[language][key] || key;
+  const t = (key: string) => translations[language][key as TranslationKeys] || key;
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: changeLanguage, t }}>{children}</LanguageContext.Provider>

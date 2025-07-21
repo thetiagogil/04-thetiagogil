@@ -1,16 +1,13 @@
 import { List, Stack, Tab, TabList, TabPanel, Tabs, tabClasses } from "@mui/joy";
 import { useMemo } from "react";
-import { categoriesIds } from "../../configs/categories-ids";
-import { CategoryType } from "../../configs/contants";
-import { useLanguageContext } from "../../contexts/language.context";
-import { certifications } from "../../db/certifications";
-import { education } from "../../db/education";
-import { experience } from "../../db/experience";
-import { projects } from "../../db/projects";
-import { DataModel } from "../../models/data.model";
-import { CardContent } from "../shared/card-content";
+import { certifications, education, experience, projects } from "../../../api";
+import { useLanguageContext } from "../../../contexts/language.context";
+import { categoriesIds } from "../../../lib/categories-ids";
+import { DataCategory } from "../../../types/common";
+import { Data } from "../../../types/data";
+import { CardContent } from "../../shared/card-content";
 
-type TabDataProps = { label: string; category: CategoryType; data: DataModel[] };
+type TabDataProps = { label: string; category: DataCategory; data: Data[] };
 
 export const HomeContentSection = () => {
   const { t } = useLanguageContext();

@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { HomePage } from "../pages/home.page";
-import { LandingPage } from "../pages/landing.page";
-import { TimelinePage } from "../pages/timeline.page";
+import { HomePage } from "./pages/home.page";
+import { LandingPage } from "./pages/landing.page";
+import { TimelinePage } from "./pages/timeline.page";
 
 export const App = () => {
   return (

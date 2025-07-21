@@ -1,13 +1,13 @@
 import { Chip, useTheme } from "@mui/joy";
-import { CategoryType } from "../../configs/contants";
-import { getColorTransparency } from "../../utils/get-color-transparency";
+import { getColorTransparency } from "../../lib/utils";
+import { DataCategory } from "../../types/common";
 
 type ChipTechProps = {
   tech: string;
-  category: CategoryType;
+  category: DataCategory;
 };
 
-export const chipColors = (category: CategoryType) => {
+export const chipColors = (category: DataCategory) => {
   const theme = useTheme();
   switch (category) {
     case "experience":

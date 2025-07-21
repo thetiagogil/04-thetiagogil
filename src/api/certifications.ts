@@ -1,6 +1,6 @@
-import { DataModel } from "../models/data.model";
+import { Data } from "../types/data";
 
-export const certifications: DataModel[] = [
+export const certifications: Data[] = [
   {
     id: 0,
     category: "certifications",

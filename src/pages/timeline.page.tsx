@@ -2,22 +2,23 @@ import { Link, Stack, Typography } from "@mui/joy";
 import { useState } from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link as ReactLink } from "react-router-dom";
-import { TimelineCategoriesFilter } from "../components/sections/timeline-categories-filter";
-import { TimelineTable } from "../components/sections/timeline-table";
-import { TimelineTechsFilter } from "../components/sections/timeline-techs-filter";
-import { MainContainer } from "../components/shared/main-container";
-import { CategoryType } from "../configs/contants";
+import { certifications } from "../api/certifications";
+import { education } from "../api/education";
+import { experience } from "../api/experience";
+import { projects } from "../api/projects";
+import { MainContainer } from "../components/layout/main-container";
+import { TimelineCategoriesFilter } from "../components/sections/timeline/timeline-categories-filter";
+import { TimelineTable } from "../components/sections/timeline/timeline-table";
+import { TimelineTechsFilter } from "../components/sections/timeline/timeline-techs-filter";
 import { useLanguageContext } from "../contexts/language.context";
-import { certifications } from "../db/certifications";
-import { education } from "../db/education";
-import { experience } from "../db/experience";
-import { projects } from "../db/projects";
+import { DataCategory } from "../types/common";
 
 export const TimelinePage = () => {
   const { t } = useLanguageContext();
-  const [categories, setCategories] = useState<CategoryType[]>([]);
+  const [categories, setCategories] = useState<DataCategory[]>([]);
   const [techs, setTechs] = useState<string[]>([]);
   const data = [...experience, ...projects, ...education, ...certifications];
+
   return (
     <MainContainer>
       <Stack gap={{ xs: 6, md: 4 }}>

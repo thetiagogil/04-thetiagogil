@@ -1,15 +1,14 @@
 import { Button, Link, Stack, Table, Typography } from "@mui/joy";
 import { useState } from "react";
 import { FaLink } from "react-icons/fa";
-import { CategoryType } from "../../configs/contants";
-import { useLanguageContext } from "../../contexts/language.context";
-import { useCategoryColor } from "../../hooks/use-category-color";
-import { DataModel } from "../../models/data.model";
-import { getDateMonth, getDateYear } from "../../utils/format-date";
-import { sortData } from "../../utils/sort-data";
-import { ChipTech } from "../shared/chip-tech";
+import { useLanguageContext } from "../../../contexts/language.context";
+import { useCategoryColor } from "../../../hooks/use-category-color";
+import { getDateMonth, getDateYear, sortData } from "../../../lib/utils";
+import { DataCategory } from "../../../types/common";
+import { Data } from "../../../types/data";
+import { ChipTech } from "../../shared/chip-tech";
 
-type TimelineTableProps = { data: DataModel[]; categories: CategoryType[]; techs: string[] };
+type TimelineTableProps = { data: Data[]; categories: DataCategory[]; techs: string[] };
 
 const ITEMS_INCREMENT = 7;
 
@@ -18,14 +17,14 @@ export const TimelineTable = ({ data, categories, techs }: TimelineTableProps) =
   const { language, t } = useLanguageContext();
   const getCategoryColor = useCategoryColor();
 
-  const dataFiltered: DataModel[] = sortData(data).filter((element: { category: CategoryType; techs: string[] }) => {
+  const dataFiltered: Data[] = sortData(data).filter((element: { category: DataCategory; techs: string[] }) => {
     const categoriesArray = categories.length === 0 || (element.category && categories.includes(element.category));
     const techsArray =
       techs.length === 0 || (element.techs && techs.every(selectedTech => element.techs.includes(selectedTech)));
     return categoriesArray && techsArray;
   });
 
-  const dataVisible: DataModel[] = dataFiltered.slice(0, visibleCount);
+  const dataVisible: Data[] = dataFiltered.slice(0, visibleCount);
   const loadMore = () => setVisibleCount(prevCount => prevCount + ITEMS_INCREMENT);
 
   const footnotes: Record<string, Record<string, string>> = {
