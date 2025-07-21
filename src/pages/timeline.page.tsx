@@ -19,9 +19,14 @@ export const TimelinePage = () => {
   const [techs, setTechs] = useState<string[]>([]);
   const data = [...experience, ...projects, ...education, ...certifications];
 
+  const footnotes: Record<string, Record<string, string>> = {
+    outdated: { icon: "~", text: t("statusOutdated") },
+    inactive: { icon: "†", text: t("statusInactive") }
+  };
+
   return (
     <MainContainer>
-      <Stack gap={{ xs: 6, md: 4 }}>
+      <Stack overflow="hidden" gap={{ xs: 6, md: 4 }}>
         <Stack component="section" alignItems={{ xs: "center", lg: "baseline" }}>
           <Link
             component={ReactLink}
@@ -52,7 +57,23 @@ export const TimelinePage = () => {
           <TimelineTechsFilter data={data} techs={techs} setTechs={setTechs} />
         </Stack>
 
-        <TimelineTable data={data} categories={categories} techs={techs} />
+        <Stack component="section" overflow="auto" alignItems={{ xs: "center", lg: "baseline" }} gap={4}>
+          <TimelineTable data={data} categories={categories} techs={techs} footnotes={footnotes} />
+        </Stack>
+
+        <Stack width="100%">
+          {Object.values(footnotes).map((footnote, index) => (
+            <Stack key={index} direction="row">
+              <Stack width={20} textAlign="center">
+                <Typography textColor="warning.500">{footnote.icon}</Typography>
+              </Stack>
+
+              <Typography key={index} level="body-sm">
+                {footnote.text.toLocaleLowerCase()}
+              </Typography>
+            </Stack>
+          ))}
+        </Stack>
       </Stack>
     </MainContainer>
   );

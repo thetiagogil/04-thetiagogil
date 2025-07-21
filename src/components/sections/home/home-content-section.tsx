@@ -23,7 +23,7 @@ export const HomeContentSection = () => {
   );
 
   return (
-    <Tabs defaultValue={0} sx={{ bgcolor: "transparent", width: "100%", overflowY: "auto" }}>
+    <Tabs defaultValue={0} sx={{ bgcolor: "transparent", width: "100%" }}>
       <TabList
         sx={{
           justifyContent: "center",

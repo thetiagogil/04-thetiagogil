@@ -1,30 +1,27 @@
 import { Stack } from "@mui/joy";
-import { SxProps } from "@mui/joy/styles/types";
 import { ReactNode } from "react";
-import { TopBar } from "../layout/top-bar";
+import { FloatMenu } from "../ui/float-button";
 
 type MainContainerProps = {
   children: ReactNode;
-  sx?: SxProps;
-  fullheight?: boolean;
 };
 
-export const MainContainer = ({ children, sx, fullheight }: MainContainerProps) => {
+export const MainContainer = ({ children }: MainContainerProps) => {
   return (
     <Stack
       className="fade-in"
-      height={fullheight ? { xs: "auto", lg: "100vh" } : "auto"}
+      height="100vh"
       width="100%"
       minWidth={{ lg: 1200 }}
       maxWidth={{ lg: 1400 }}
       justifySelf="center"
-      px={{ xs: 2, md: 6 }}
-      pb={{ xs: 2, lg: 4 }}
+      overflow="hidden"
+      p={{ xs: 2, md: 6 }}
     >
-      <TopBar />
-      <Stack flex={1} sx={{ ...sx }}>
+      <Stack flex={1} height="100vh" overflow="hidden">
         {children}
       </Stack>
+      <FloatMenu />
     </Stack>
   );
 };

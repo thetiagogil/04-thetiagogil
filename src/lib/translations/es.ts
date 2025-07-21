@@ -1,4 +1,8 @@
 export const es = {
+  settings: "Configuración",
+  theme: "Tema",
+  language: "Idioma",
+
   title: "Full-stack Developer & Arquitecto",
   home_bio:
     "Como Full-stack Developer con un Máster Integrado en Arquitectura, combino creatividad y precisión técnica para desarrollar aplicaciones web intuitivas y eficientes. Mi formación en arquitectura me permite fusionar diseño innovador con tecnología, creando soluciones digitales que equilibran funcionalidad, estética y datos.",
