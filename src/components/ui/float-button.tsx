@@ -3,14 +3,15 @@ import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { useLanguageContext } from "../../contexts/language.context";
 import { useThemeContext } from "../../contexts/theme.context";
-import { LANGUAGES } from "../../lib/contants";
-import { Languages } from "../../types/common";
+import { LANGUAGES, THEMES } from "../../lib/contants";
+import { capFirstLetter } from "../../lib/utils";
+import { LanguagesType, ThemeType } from "../../types/common";
 
 export const FloatMenu = () => {
   const { t } = useLanguageContext();
   const [open, setOpen] = useState(false);
-  const { mode, toggleTheme } = useThemeContext();
-  const { language, setLanguage } = useLanguageContext();
+  const { theme, changeTheme } = useThemeContext();
+  const { language, changeLanguage } = useLanguageContext();
 
   return (
     <>
@@ -44,9 +45,10 @@ export const FloatMenu = () => {
             <Typography level="body-sm" textColor="neutral.medium">
               {t("theme")}
             </Typography>
-            <RadioGroup name="theme" value={mode} onChange={e => toggleTheme(e.target.value as "light" | "dark")}>
-              <Radio label="Light" value="light" />
-              <Radio label="Dark" value="dark" />
+            <RadioGroup name="theme" value={theme} onChange={e => changeTheme(e.target.value as ThemeType)}>
+              {THEMES.map(t => (
+                <Radio key={t} value={t.toLocaleLowerCase()} label={capFirstLetter(t)} />
+              ))}
             </RadioGroup>
           </Stack>
 
@@ -56,9 +58,13 @@ export const FloatMenu = () => {
             <Typography level="body-sm" textColor="neutral.medium">
               {t("language")}
             </Typography>
-            <RadioGroup name="language" value={language} onChange={e => setLanguage(e.target.value as Languages)}>
-              {LANGUAGES.map(lang => (
-                <Radio key={lang} value={lang} label={lang.toUpperCase()} />
+            <RadioGroup
+              name="language"
+              value={language}
+              onChange={e => changeLanguage(e.target.value as LanguagesType)}
+            >
+              {LANGUAGES.map(l => (
+                <Radio key={l} value={l} label={capFirstLetter(l)} />
               ))}
             </RadioGroup>
           </Stack>

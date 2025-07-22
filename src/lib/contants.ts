@@ -1,7 +1,8 @@
-import { DataCategory, Languages, TechsCategory } from "../types/common";
+import { DataCategory, LanguagesType, TechsCategory, ThemeType } from "../types/common";
 
-export const CATEGORIES: DataCategory[] = ["experience", "projects", "education", "certifications"];
-export const LANGUAGES: Languages[] = ["en", "pt", "es"];
+export const DATA_CATEGORIES: DataCategory[] = ["experience", "projects", "education", "certifications"];
+export const THEMES: ThemeType[] = ["dark", "light", "system"];
+export const LANGUAGES: LanguagesType[] = ["en", "pt", "es"];
 export const GROUPED_TECHS: Record<TechsCategory, string[]> = {
   frontend: [
     "HTML",

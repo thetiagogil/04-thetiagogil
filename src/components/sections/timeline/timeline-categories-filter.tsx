@@ -1,7 +1,7 @@
 import { Box, Chip, IconButton, Option, Select } from "@mui/joy";
 import { IoMdClose } from "react-icons/io";
 import { useLanguageContext } from "../../../contexts/language.context";
-import { CATEGORIES } from "../../../lib/contants";
+import { DATA_CATEGORIES } from "../../../lib/contants";
 import { DataCategory } from "../../../types/common";
 import { chipColors } from "../../shared/chip-tech";
 
@@ -38,7 +38,7 @@ export const TimelineCategoriesFilter = ({ categories, setCategories }: Timeline
       })}
       sx={{ height: 40, width: { xs: "100%", lg: "40%" } }}
     >
-      {CATEGORIES.map((category, index) => (
+      {DATA_CATEGORIES.map((category, index) => (
         <Option key={index} value={category}>
           {t(category)}
         </Option>

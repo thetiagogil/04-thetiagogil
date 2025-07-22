@@ -2,53 +2,48 @@ import { CssBaseline } from "@mui/joy";
 import { CssVarsProvider, useColorScheme } from "@mui/joy/styles";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import { theme } from "../styles/theme";
-
-type ThemeMode = "light" | "dark" | "system";
+import { ThemeType } from "../types/common";
 
 type ThemeContextProps = {
-  mode: ThemeMode;
-  toggleTheme: (newMode: ThemeMode) => void;
+  theme: ThemeType;
+  changeTheme: (newMode: ThemeType) => void;
 };
 
-export const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
+const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
-const ThemeProvider = ({ children }: { children: ReactNode }) => {
+const ThemeProviderInner = ({ children }: { children: ReactNode }) => {
   const { mode, setMode } = useColorScheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const storedMode = (localStorage.getItem("thetiagogil-theme") as ThemeMode) || "system";
+    const storedMode = (localStorage.getItem("thetiagogil-theme") as ThemeType) || "dark";
     setMode(storedMode);
+    setMounted(true);
   }, [setMode]);
 
-  if (!mounted) return null;
-
-  const toggleTheme = (newMode: ThemeMode) => {
+  const changeTheme = (newMode: ThemeType) => {
     setMode(newMode);
     localStorage.setItem("thetiagogil-theme", newMode);
   };
 
+  if (!mounted) return null;
+
   return (
-    <ThemeContext.Provider value={{ mode: mode ?? "light", toggleTheme }}>
+    <ThemeContext.Provider value={{ theme: mode ?? "dark", changeTheme }}>
       <CssBaseline />
       {children}
     </ThemeContext.Provider>
   );
 };
 
-export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
-  return (
-    <CssVarsProvider theme={theme} defaultMode="system" modeStorageKey="thetiagogil-theme">
-      <ThemeProvider>{children}</ThemeProvider>
-    </CssVarsProvider>
-  );
-};
+export const ThemeContextProvider = ({ children }: { children: ReactNode }) => (
+  <CssVarsProvider theme={theme} defaultMode="dark" modeStorageKey="thetiagogil-theme">
+    <ThemeProviderInner>{children}</ThemeProviderInner>
+  </CssVarsProvider>
+);
 
 export const useThemeContext = () => {
   const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error("useTheme must be used within ThemeContextProvider");
-  }
+  if (!context) throw new Error("useThemeContext must be used within ThemeContextProvider");
   return context;
 };
