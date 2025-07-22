@@ -33,11 +33,12 @@ export const TimelineTable = ({ data, categories, techs, footnotes }: TimelineTa
   const loadMore = () => setVisibleCount(prevCount => prevCount + ITEMS_INCREMENT);
 
   return (
-    <Stack width="100%" alignItems="center" gap={2}>
+    <Stack width="100%" gap={2}>
       <Table
         stickyHeader
         sx={{
-          width: { xs: 1200, lg: "100%" },
+          minWidth: { xs: 1200, lg: "100%" },
+          tableLayout: "auto",
           fontSize: 14,
           th: { bgcolor: "background.body", color: "neutral.high" },
           td: { py: 2, verticalAlign: "center" },
@@ -122,7 +123,7 @@ export const TimelineTable = ({ data, categories, techs, footnotes }: TimelineTa
       </Table>
 
       {visibleCount < dataFiltered.length && (
-        <Button variant="outlined" onClick={loadMore} sx={{ width: { xs: "100%", lg: 160 } }}>
+        <Button variant="outlined" onClick={loadMore} sx={{ width: { xs: "100%", lg: 160 }, mb: 2 }}>
           {t("loadMore")}
         </Button>
       )}
