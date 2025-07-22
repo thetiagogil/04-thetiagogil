@@ -53,7 +53,7 @@ export const HomeContentSection = () => {
         return (
           <TabPanel key={index} value={index} sx={{ overflowY: "auto", p: 0 }}>
             <Stack pt={2}>
-              <List sx={{ gap: 6 }}>
+              <List sx={{ gap: { xs: 2, sm: 6 } }}>
                 {filteredData.map((element, index) => (
                   <CardContent key={index} element={element} category={tab.category} />
                 ))}
