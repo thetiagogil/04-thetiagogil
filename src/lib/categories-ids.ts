@@ -7,7 +7,7 @@ export const categoriesIds = (category: DataCategory) => {
     case "projects":
       return [0, 11, 12];
     case "experience":
-      return [0, 1, 2];
+      return [0, 1, 2, 3];
     case "certifications":
       return [0, 1, 2];
   }

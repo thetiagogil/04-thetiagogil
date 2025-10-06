@@ -14,13 +14,14 @@ export const GROUPED_TECHS: Record<TechsCategory, string[]> = {
     "Next.js",
     "DOM Manipulation",
     "MUI",
-    "Wagmi"
+    "Wagmi",
+    "Bootstrap"
   ],
   backend: ["Node.js", "Express.js", "REST API", "Postman", "Supabase", "Solidity"],
   database: ["MongoDB", "PostgreSQL"],
   architecture: ["AutoCAD", "Revit", "SketchUp"],
   projectManagement: ["Agile Methodologies", "Jira", "Kanban", "Lean Principles", "Notion"],
   designTools: ["Adobe Photoshop", "Figma"],
-  generalTools: ["Microsoft Office", "Git", "OutSystems", "Blockchain"],
+  generalTools: ["Microsoft Office", "Git", "GitHub", "OutSystems", "Blockchain", "Web3"],
   other: []
 };
