@@ -33,7 +33,7 @@ export const FloatMenu = () => {
           position: "fixed",
           bottom: 24,
           right: 16,
-          borderRadius: "lg",
+          borderRadius: "50%",
           zIndex: 2000,
           boxShadow: "lg",
         }}
