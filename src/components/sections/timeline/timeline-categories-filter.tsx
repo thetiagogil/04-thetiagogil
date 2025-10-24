@@ -1,16 +1,20 @@
-import { Box, Chip, IconButton, Option, Select } from "@mui/joy";
+import { useLanguageContext } from "@/hooks/use-language-context";
+import { DATA_CATEGORIES } from "@/lib/contants";
+import { chipColors } from "@/lib/utils";
+import type { DataCategoryType } from "@/types/common";
+import { Box, Chip, IconButton, Option, Select, useTheme } from "@mui/joy";
 import { IoMdClose } from "react-icons/io";
-import { useLanguageContext } from "../../../contexts/language.context";
-import { DATA_CATEGORIES } from "../../../lib/contants";
-import { DataCategory } from "../../../types/common";
-import { chipColors } from "../../shared/chip-tech";
 
 type TimelineCategoriesFilterProps = {
-  categories: DataCategory[];
-  setCategories: (categories: DataCategory[]) => void;
+  categories: DataCategoryType[];
+  setCategories: (categories: DataCategoryType[]) => void;
 };
 
-export const TimelineCategoriesFilter = ({ categories, setCategories }: TimelineCategoriesFilterProps) => {
+export const TimelineCategoriesFilter = ({
+  categories,
+  setCategories,
+}: TimelineCategoriesFilterProps) => {
+  const theme = useTheme();
   const { t } = useLanguageContext();
   return (
     <Select
@@ -18,11 +22,15 @@ export const TimelineCategoriesFilter = ({ categories, setCategories }: Timeline
       multiple
       value={categories}
       placeholder={t("selectCategory")}
-      onChange={(_event, value: DataCategory[]) => setCategories(value)}
-      renderValue={selected => (
+      onChange={(_event, value: DataCategoryType[]) => setCategories(value)}
+      renderValue={(selected) => (
         <Box display="flex" gap={1}>
           {selected.map((selectedOption, index) => (
-            <Chip key={index} variant="soft" sx={chipColors(selectedOption.value)}>
+            <Chip
+              key={index}
+              variant="soft"
+              sx={chipColors(selectedOption.value, theme)}
+            >
               {selectedOption.label}
             </Chip>
           ))}
@@ -30,11 +38,16 @@ export const TimelineCategoriesFilter = ({ categories, setCategories }: Timeline
       )}
       {...(categories.length > 0 && {
         endDecorator: (
-          <IconButton size="sm" variant="plain" color="neutral" onClick={() => setCategories([])}>
+          <IconButton
+            size="sm"
+            variant="plain"
+            color="neutral"
+            onClick={() => setCategories([])}
+          >
             <IoMdClose />
           </IconButton>
         ),
-        indicator: null
+        indicator: null,
       })}
       sx={{ height: 40, width: { xs: "100%", lg: "40%" } }}
     >

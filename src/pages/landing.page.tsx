@@ -1,8 +1,8 @@
+import profilePhoto from "@/assets/tg.png";
+import { useLanguageContext } from "@/hooks/use-language-context";
 import { Stack, Typography } from "@mui/joy";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import profilePhoto from "../assets/tg.png";
-import { useLanguageContext } from "../contexts/language.context";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ export const LandingPage = () => {
         animationTimingFunction: "ease",
         animationFillMode: "forwards",
         animationDelay: "3s",
-        willChange: "opacity"
+        willChange: "opacity",
       }}
     >
       <Typography
@@ -48,7 +48,7 @@ export const LandingPage = () => {
           animationName: "fadeIn",
           animationDuration: "1s",
           animationTimingFunction: "ease",
-          animationFillMode: "forwards"
+          animationFillMode: "forwards",
         }}
       >
         TIAGO GIL
@@ -63,7 +63,7 @@ export const LandingPage = () => {
           animationDuration: "1s",
           animationTimingFunction: "ease",
           animationDelay: "1s",
-          animationFillMode: "forwards"
+          animationFillMode: "forwards",
         }}
       >
         {t("title")}

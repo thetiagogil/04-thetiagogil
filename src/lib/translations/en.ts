@@ -2,26 +2,20 @@ export const en = {
   settings: "Settings",
   theme: "Theme",
   language: "Language",
-
   title: "Full-stack Developer & Architect",
   home_bio:
     "As a Full-stack Developer with a Master's Degree in Architecture, I bring strong problem-solving skills and attention to detail to building user-friendly web applications. My background in architecture allows me to blend creative design with technical expertise, enabling the development of innovative solutions that combine design, technology, and data.",
   timeline_title: "My Timeline",
   backToHome: "Back to homepage",
-
   arquitect: "Architect",
-
   projects: "Projects",
   experience: "Experience",
   education: "Education",
   certifications: "Certifications",
-
   checkTimeline: "Check out my timeline",
   downloadResume: "Download my resume",
-
   selectCategory: "Select a category...",
   selectTech: "Select a tech...",
-
   frontend: "Frontend",
   backend: "Backend",
   database: "Database",
@@ -30,17 +24,14 @@ export const en = {
   designTools: "Design Tools",
   generalTools: "General Tools",
   other: "Other",
-
   date: "Date",
   nameRole: "Name / Role",
   company: "Company",
   techs: "Techs",
   link: "Link",
-
   loadMore: "Load More",
   statusOutdated: "Project needs to be updated.",
   statusInactive: "Project is temporarily or permanently inactive.",
-
   experience_cr_espassos_name: "Architect",
   experience_cr_espassos_description:
     "Worked with a team of architects and engineers, contributing to projects across architecture, engineering, urbanism, and interior design. Led a group of third-year engineering interns, guiding them in project tasks and development.",
@@ -48,7 +39,6 @@ export const en = {
     "Built and maintained multiple web3 applications that utilize blockchain as a core technology and data source. My responsibilities included implementing Figma designs from scratch, integrating APIs, managing user feedback, conducting tests and bug fixes. I have contributed to key projects like Talent Passport, Build.top, Playground/API, and Builder.fi.",
   experience_subvisual_description:
     "Built both web3 and web2 applications, using blockchain and PostgreSQL for secure and scalable solutions. Developed and deployed smart contracts using Solidity, ensuring transparency and real-time updates for a decentralized app.",
-
   project_giraffes_vs_sea_subject: "2D Tower Defense Game",
   project_giraffes_vs_sea_description:
     "Tower defense videogame where the players use math to win. Independently conceived and executed the game.",
@@ -61,7 +51,6 @@ export const en = {
   project_talentsy_subject: "Team Talents Visualization App",
   project_talentsy_description:
     "Talentsy is a team talents visualization tool that helps users discover, track, and compare their top talents. It provides personalized insights into talents, enabling teams to understand how individual skills contribute to collaboration and success. Users can explore their top 10 talents, set goals for growth, and compare team-wide talents to foster a more balanced and effective work environment.",
-
   education_guadalupe_name: "High School",
   education_guadalupe_description:
     "Graduated from the Science and Technology course at Colégio Guadalupe, where I participated in several Erasmus projects, including Poland (2010-2011), Italy (2011-2012), and Bulgaria (2013-2014). These experiences allowed me to engage in collaborative learning, cultural exchange, and international networking.",
@@ -72,7 +61,6 @@ export const en = {
   education_ironhack_name: "Web Development Course",
   education_ironhack_description:
     "Graduated from the 9-week intensive Web Development Bootcamp at Ironhack, where I learned the fundamentals of Full-stack Development and gained the skills necessary to build web applications.",
-
   certification_agile_name: "Agile Project Management Course",
   certification_agile_description:
     "This course provided a comprehensive understanding of popular Agile methodologies like Scrum, Kanban, DSDM, XP, and Lean Software Development.",
@@ -81,5 +69,5 @@ export const en = {
     "This course covered essential concepts of React Native, from beginner to advanced, with hands-on experience building a mobile app.",
   certification_outsystems_name: "OutSystems Course",
   certification_outsystems_description:
-    "This course taught me everything I need to know to create successful web apps using OutSystems, from basic to advanced tools and concepts."
+    "This course taught me everything I need to know to create successful web apps using OutSystems, from basic to advanced tools and concepts.",
 };

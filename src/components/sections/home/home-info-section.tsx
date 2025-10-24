@@ -1,14 +1,19 @@
+import profilePhoto from "@/assets/tg.png";
+import { useLanguageContext } from "@/hooks/use-language-context";
 import { Button, Link, Stack, Typography } from "@mui/joy";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaGithub, FaLinkedin } from "react-icons/fa6";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { Link as ReactLink } from "react-router-dom";
-import profilePhoto from "../../../assets/tg.png";
-import { useLanguageContext } from "../../../contexts/language.context";
 
 const socialMediaLinks = [
-  { href: "https://github.com/thetiagogil", icon: <FaGithub className="icon" size={25} /> },
-  { href: "https://www.linkedin.com/in/thetiagogil/", icon: <FaLinkedin className="icon" size={25} /> }
+  {
+    href: "https://github.com/thetiagogil",
+    icon: <FaGithub className="icon" size={25} />,
+  },
+  {
+    href: "https://www.linkedin.com/in/thetiagogil/",
+    icon: <FaLinkedin className="icon" size={25} />,
+  },
 ];
 
 export const HomeInfoSection = () => {
@@ -35,7 +40,11 @@ export const HomeInfoSection = () => {
         </Typography>
       </Stack>
 
-      <Stack component="section" direction={{ xs: "column", sm: "row" }} gap={1}>
+      <Stack
+        component="section"
+        direction={{ xs: "column", sm: "row" }}
+        gap={1}
+      >
         <Button
           variant="outlined"
           component={ReactLink}
@@ -58,7 +67,12 @@ export const HomeInfoSection = () => {
         </Button>
       </Stack>
 
-      <Stack component="section" direction="row" justifyContent="center" gap={2}>
+      <Stack
+        component="section"
+        direction="row"
+        justifyContent="center"
+        gap={2}
+      >
         {socialMediaLinks.map((link, index) => (
           <Link
             key={index}

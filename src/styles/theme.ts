@@ -1,5 +1,5 @@
+import { colors } from "@/styles/colors";
 import { extendTheme } from "@mui/joy/styles";
-import { colors } from "./colors";
 
 declare module "@mui/joy/styles" {
   interface Palette {
@@ -17,9 +17,9 @@ export const theme = extendTheme({
         text: {
           primary: colors.neutral.light.high,
           secondary: colors.neutral.light.medium,
-          tertiary: colors.neutral.light.low
-        }
-      }
+          tertiary: colors.neutral.light.low,
+        },
+      },
     },
     dark: {
       palette: {
@@ -28,13 +28,13 @@ export const theme = extendTheme({
         text: {
           primary: colors.neutral.dark.high,
           secondary: colors.neutral.dark.medium,
-          tertiary: colors.neutral.dark.low
-        }
-      }
-    }
+          tertiary: colors.neutral.dark.low,
+        },
+      },
+    },
   },
   typography: {
-    h1: { fontSize: "48px" }
+    h1: { fontSize: "48px" },
   },
   components: {
     JoyTypography: {
@@ -70,19 +70,19 @@ export const theme = extendTheme({
             transition: "0.3s",
             lineHeight: 1.2,
             fontWeight: 400,
-            color
+            color,
           };
-        }
-      }
+        },
+      },
     },
     JoyLink: {
       styleOverrides: {
         root: ({ theme }) => ({
           color: theme.palette.text.secondary,
           transition: "0.3s",
-          "&:hover": { color: theme.palette.text.primary }
-        })
-      }
+          "&:hover": { color: theme.palette.text.primary },
+        }),
+      },
     },
     JoyButton: {
       styleOverrides: {
@@ -93,10 +93,10 @@ export const theme = extendTheme({
           "&:hover": {
             color: theme.palette.neutral.high,
             backgroundColor: "transparent",
-            borderColor: theme.palette.neutral.high
-          }
-        })
-      }
+            borderColor: theme.palette.neutral.high,
+          },
+        }),
+      },
     },
     JoySelect: {
       styleOverrides: {
@@ -108,10 +108,10 @@ export const theme = extendTheme({
           "&:hover": {
             color: theme.palette.neutral.high,
             backgroundColor: "transparent",
-            borderColor: theme.palette.neutral.high
-          }
-        })
-      }
+            borderColor: theme.palette.neutral.high,
+          },
+        }),
+      },
     },
     JoyIconButton: {
       styleOverrides: {
@@ -122,10 +122,10 @@ export const theme = extendTheme({
           "&:hover": {
             color: theme.palette.neutral.high,
             backgroundColor: "transparent",
-            borderColor: theme.palette.neutral.high
-          }
-        })
-      }
-    }
-  }
+            borderColor: theme.palette.neutral.high,
+          },
+        }),
+      },
+    },
+  },
 });

@@ -1,6 +1,6 @@
-import { DataCategory } from "../types/common";
+import { type DataCategoryType } from "@/types/common";
 
-export const categoriesIds = (category: DataCategory) => {
+export const categoriesIds = (category: DataCategoryType) => {
   switch (category) {
     case "education":
       return [0, 1, 2];

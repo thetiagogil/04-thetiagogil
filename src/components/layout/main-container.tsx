@@ -1,6 +1,6 @@
+import { FloatMenu } from "@/components/ui/float-button";
 import { Stack } from "@mui/joy";
-import { ReactNode } from "react";
-import { FloatMenu } from "../ui/float-button";
+import { type ReactNode } from "react";
 
 type MainContainerProps = {
   children: ReactNode;

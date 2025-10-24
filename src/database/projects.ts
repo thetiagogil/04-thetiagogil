@@ -1,6 +1,6 @@
-import { Data } from "../types/data";
+import type { DataType } from "@/types/data";
 
-export const projects: Data[] = [
+export const projects: DataType[] = [
   {
     id: 0,
     category: "projects",
@@ -11,7 +11,7 @@ export const projects: Data[] = [
     techs: ["JavaScript", "HTML", "CSS", "DOM Manipulation"],
     dateStart: new Date("2023-09"),
     status: "completed",
-    img: "projects/giraffes-vs-sea.png"
+    img: "projects/giraffes-vs-sea.png",
   },
   {
     id: 1,
@@ -20,7 +20,7 @@ export const projects: Data[] = [
     link: "https://house-of-legends.netlify.app/",
     techs: ["React", "JavaScript", "CSS", "Node.js", "REST API"],
     dateStart: new Date("2023-10"),
-    status: "outdated"
+    status: "outdated",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ export const projects: Data[] = [
     techs: ["React", "JavaScript", "CSS", "Node.js", "Express.js", "MongoDB"],
     dateStart: new Date("2023-11"),
     dateEnd: new Date("2023-12"),
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ export const projects: Data[] = [
     link: "https://thetiagogil.com/",
     techs: ["React", "TypeScript", "MUI"],
     dateStart: new Date("2024-01"),
-    status: "completed"
+    status: "completed",
   },
   {
     id: 4,
@@ -48,11 +48,19 @@ export const projects: Data[] = [
     name: "FIN/ACE v2",
     descriptionKey: "project_finace_description",
     link: "https://finace-v2.netlify.app/",
-    techs: ["React", "TypeScript", "MUI", "Node.js", "Express.js", "Supabase", "PostgreSQL"],
+    techs: [
+      "React",
+      "TypeScript",
+      "MUI",
+      "Node.js",
+      "Express.js",
+      "Supabase",
+      "PostgreSQL",
+    ],
     dateStart: new Date("2024-07"),
     dateEnd: new Date("2024-08"),
     img: "../../../project-4.png",
-    status: "outdated"
+    status: "outdated",
   },
   /* {
     id: 5,
@@ -72,7 +80,7 @@ export const projects: Data[] = [
     techs: ["React", "TypeScript", "MUI", "Wagmi", "Blockchain"],
     dateStart: new Date("2024-04"),
     dateEnd: new Date("2024-08"),
-    status: "completed"
+    status: "completed",
   },
   {
     id: 7,
@@ -80,10 +88,17 @@ export const projects: Data[] = [
     name: "Build by Talent Protocol",
     place: "Talent Protocol",
     link: "https://build.top/",
-    techs: ["Next.js", "TypeScript", "MUI", "Wagmi", "PostgreSQL", "Blockchain"],
+    techs: [
+      "Next.js",
+      "TypeScript",
+      "MUI",
+      "Wagmi",
+      "PostgreSQL",
+      "Blockchain",
+    ],
     dateStart: new Date("2024-04"),
     dateEnd: new Date("2024-06"),
-    status: "completed"
+    status: "completed",
   },
   {
     id: 8,
@@ -94,7 +109,7 @@ export const projects: Data[] = [
     techs: ["Next.js", "TypeScript", "MUI", "Wagmi", "Blockchain"],
     dateStart: new Date("2024-04"),
     dateEnd: new Date("2024-08"),
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: 9,
@@ -103,7 +118,7 @@ export const projects: Data[] = [
     link: "https://personal-h9qyawdw.outsystemscloud.com/easyqa/",
     techs: ["OutSystems"],
     dateStart: new Date("2024-10"),
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: 10,
@@ -112,7 +127,7 @@ export const projects: Data[] = [
     link: "https://personal-h9qyawdw.outsystemscloud.com/finace/",
     techs: ["OutSystems"],
     dateStart: new Date("2024-10"),
-    status: "inactive"
+    status: "inactive",
   },
   {
     id: 11,
@@ -125,7 +140,7 @@ export const projects: Data[] = [
     techs: ["React", "TypeScript", "MUI", "Wagmi", "Solidity", "Blockchain"],
     dateStart: new Date("2024-12"),
     status: "completed",
-    img: "projects/wordlechain.png"
+    img: "projects/wordlechain.png",
   },
   {
     id: 11,
@@ -138,6 +153,6 @@ export const projects: Data[] = [
     techs: ["React", "TypeScript", "MUI", "Supabase", "PostgreSQL"],
     dateStart: new Date("2025-01"),
     status: "completed",
-    img: "projects/talentsy.png"
-  }
+    img: "projects/talentsy.png",
+  },
 ];

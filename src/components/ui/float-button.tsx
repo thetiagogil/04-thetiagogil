@@ -1,11 +1,19 @@
-import { Divider, Drawer, IconButton, Radio, RadioGroup, Stack, Typography } from "@mui/joy";
+import { useLanguageContext } from "@/hooks/use-language-context";
+import { useThemeContext } from "@/hooks/use-theme-context";
+import { LANGUAGES, THEMES } from "@/lib/contants";
+import { capFirstLetter } from "@/lib/utils";
+import type { LanguagesType, ThemeType } from "@/types/common";
+import {
+  Divider,
+  Drawer,
+  IconButton,
+  Radio,
+  RadioGroup,
+  Stack,
+  Typography,
+} from "@mui/joy";
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
-import { useLanguageContext } from "../../contexts/language.context";
-import { useThemeContext } from "../../contexts/theme.context";
-import { LANGUAGES, THEMES } from "../../lib/contants";
-import { capFirstLetter } from "../../lib/utils";
-import { LanguagesType, ThemeType } from "../../types/common";
 
 export const FloatMenu = () => {
   const { t } = useLanguageContext();
@@ -27,13 +35,18 @@ export const FloatMenu = () => {
           right: 16,
           borderRadius: "lg",
           zIndex: 2000,
-          boxShadow: "lg"
+          boxShadow: "lg",
         }}
       >
         <IoMdMenu size={20} />
       </IconButton>
 
-      <Drawer open={open} onClose={() => setOpen(false)} anchor="right" size="sm">
+      <Drawer
+        open={open}
+        onClose={() => setOpen(false)}
+        anchor="right"
+        size="sm"
+      >
         <Stack width="100%" py={3} px={2} gap={2}>
           <Typography level="title-lg" fontWeight="lg">
             {t("settings")}
@@ -45,9 +58,17 @@ export const FloatMenu = () => {
             <Typography level="body-sm" textColor="neutral.medium">
               {t("theme")}
             </Typography>
-            <RadioGroup name="theme" value={theme} onChange={e => changeTheme(e.target.value as ThemeType)}>
-              {THEMES.map(t => (
-                <Radio key={t} value={t.toLocaleLowerCase()} label={capFirstLetter(t)} />
+            <RadioGroup
+              name="theme"
+              value={theme}
+              onChange={(e) => changeTheme(e.target.value as ThemeType)}
+            >
+              {THEMES.map((t) => (
+                <Radio
+                  key={t}
+                  value={t.toLocaleLowerCase()}
+                  label={capFirstLetter(t)}
+                />
               ))}
             </RadioGroup>
           </Stack>
@@ -61,9 +82,9 @@ export const FloatMenu = () => {
             <RadioGroup
               name="language"
               value={language}
-              onChange={e => changeLanguage(e.target.value as LanguagesType)}
+              onChange={(e) => changeLanguage(e.target.value as LanguagesType)}
             >
-              {LANGUAGES.map(l => (
+              {LANGUAGES.map((l) => (
                 <Radio key={l} value={l} label={capFirstLetter(l)} />
               ))}
             </RadioGroup>

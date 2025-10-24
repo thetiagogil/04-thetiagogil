@@ -1,7 +1,7 @@
+import { MainContainer } from "@/components/layout/main-container";
+import { HomeContentSection } from "@/components/sections/home/home-content-section";
+import { HomeInfoSection } from "@/components/sections/home/home-info-section";
 import { Stack } from "@mui/joy";
-import { MainContainer } from "../components/layout/main-container";
-import { HomeContentSection } from "../components/sections/home/home-content-section";
-import { HomeInfoSection } from "../components/sections/home/home-info-section";
 
 export const HomePage = () => {
   return (

@@ -1,6 +1,6 @@
-import { Data } from "../types/data";
+import type { DataType } from "@/types/data";
 
-export const experience: Data[] = [
+export const experience: DataType[] = [
   {
     id: 0,
     category: "experience",
@@ -11,7 +11,7 @@ export const experience: Data[] = [
     techs: ["Revit", "AutoCAD", "Microsoft Office"],
     dateStart: new Date("2022-09"),
     dateEnd: new Date("2023-08"),
-    img: "experience/crespassos.jpeg"
+    img: "experience/crespassos.jpeg",
   },
   {
     id: 1,
@@ -33,11 +33,11 @@ export const experience: Data[] = [
       "Notion",
       "Blockchain",
       "Web3",
-      "Figma"
+      "Figma",
     ],
     dateStart: new Date("2023-12"),
     dateEnd: new Date("2024-02"),
-    img: "experience/subvisual.jpeg"
+    img: "experience/subvisual.jpeg",
   },
   {
     id: 2,
@@ -62,11 +62,11 @@ export const experience: Data[] = [
       "Notion",
       "Blockchain",
       "Web3",
-      "Figma"
+      "Figma",
     ],
     dateStart: new Date("2024-03"),
     dateEnd: new Date("2025-02"),
-    img: "experience/talentprotocol.jpeg"
+    img: "experience/talentprotocol.jpeg",
   },
 
   {
@@ -86,10 +86,10 @@ export const experience: Data[] = [
       "CSS",
       "PostgreSQL",
       "Git",
-      "GitHub"
+      "GitHub",
     ],
     dateStart: new Date("2025-04"),
     dateEnd: "Present",
-    img: "experience/aquasis.jpeg"
-  }
+    img: "experience/aquasis.jpeg",
+  },
 ];

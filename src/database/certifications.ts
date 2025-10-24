@@ -1,6 +1,6 @@
-import { Data } from "../types/data";
+import type { DataType } from "@/types/data";
 
-export const certifications: Data[] = [
+export const certifications: DataType[] = [
   {
     id: 0,
     category: "certifications",
@@ -11,7 +11,7 @@ export const certifications: Data[] = [
     techs: ["Agile Methodologies", "Lean Principles", "Kanban", "Jira"],
     dateStart: new Date("2024-01"),
     status: "completed",
-    img: "certifications/udemy.jpeg"
+    img: "certifications/udemy.jpeg",
   },
   {
     id: 1,
@@ -23,7 +23,7 @@ export const certifications: Data[] = [
     techs: ["React Native", "JavaScript", "REST API", "Postman"],
     dateStart: new Date("2024-01"),
     status: "completed",
-    img: "certifications/udemy.jpeg"
+    img: "certifications/udemy.jpeg",
   },
   {
     id: 2,
@@ -35,6 +35,6 @@ export const certifications: Data[] = [
     techs: ["OutSystems"],
     dateStart: new Date("2024-02"),
     status: "completed",
-    img: "certifications/udemy.jpeg"
-  }
+    img: "certifications/udemy.jpeg",
+  },
 ];

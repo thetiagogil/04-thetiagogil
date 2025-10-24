@@ -1,12 +1,12 @@
+import { useLanguageContext } from "@/hooks/use-language-context";
+import { useThemeContext } from "@/hooks/use-theme-context";
+import { LANGUAGES } from "@/lib/contants";
 import { IconButton, Option, Select, Stack } from "@mui/joy";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { useLanguageContext } from "../../contexts/language.context";
-import { useThemeContext } from "../../contexts/theme.context";
-import { LANGUAGES } from "../../lib/contants";
 
 export const TopBar = () => {
-  const { mode, toggleTheme } = useThemeContext();
-  const { language, setLanguage } = useLanguageContext();
+  const { theme, changeTheme } = useThemeContext();
+  const { language, changeLanguage } = useLanguageContext();
 
   return (
     <Stack direction="row" justifyContent="end" py={2} gap={2}>
@@ -14,18 +14,22 @@ export const TopBar = () => {
         variant="outlined"
         color="neutral"
         value={language}
-        onChange={(_, value) => setLanguage(value as any)}
+        onChange={(_, value) => value && changeLanguage(value)}
         indicator={false}
         sx={{
           width: 40,
           ".MuiSelect-button": {
             justifyContent: "center",
-            fontSize: 12
-          }
+            fontSize: 12,
+          },
         }}
       >
-        {LANGUAGES.map(language => (
-          <Option key={language} value={language} sx={{ justifyContent: "center", fontSize: 12 }}>
+        {LANGUAGES.map((language) => (
+          <Option
+            key={language}
+            value={language}
+            sx={{ justifyContent: "center", fontSize: 12 }}
+          >
             {language.toLocaleUpperCase()}
           </Option>
         ))}
@@ -34,10 +38,10 @@ export const TopBar = () => {
       <IconButton
         variant="outlined"
         color="neutral"
-        onClick={() => toggleTheme(mode === "light" ? "dark" : "light")}
+        onClick={() => changeTheme(theme === "light" ? "dark" : "light")}
         sx={{ width: 40 }}
       >
-        {mode === "dark" ? <MdLightMode /> : <MdDarkMode />}
+        {theme === "dark" ? <MdLightMode /> : <MdDarkMode />}
       </IconButton>
     </Stack>
   );

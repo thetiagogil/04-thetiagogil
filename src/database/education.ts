@@ -1,6 +1,6 @@
-import { Data } from "../types/data";
+import type { DataType } from "@/types/data";
 
-export const education: Data[] = [
+export const education: DataType[] = [
   {
     id: 0,
     category: "education",
@@ -12,7 +12,7 @@ export const education: Data[] = [
     dateStart: new Date("2011-09"),
     dateEnd: new Date("2014-07"),
     status: "completed",
-    img: "education/cg.jpeg"
+    img: "education/cg.jpeg",
   },
   {
     id: 1,
@@ -25,7 +25,7 @@ export const education: Data[] = [
     dateStart: new Date("2014-09"),
     dateEnd: new Date("2022-07"),
     status: "completed",
-    img: "education/faul.jpeg"
+    img: "education/faul.jpeg",
   },
   {
     id: 2,
@@ -34,10 +34,20 @@ export const education: Data[] = [
     place: "Ironhack",
     descriptionKey: "education_ironhack_description",
     link: "https://www.ironhack.com",
-    techs: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express.js", "MongoDB", "REST API", "DOM Manipulation"],
+    techs: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "REST API",
+      "DOM Manipulation",
+    ],
     dateStart: new Date("2023-08"),
     dateEnd: new Date("2023-11"),
     status: "completed",
-    img: "education/ironhack.jpeg"
-  }
+    img: "education/ironhack.jpeg",
+  },
 ];

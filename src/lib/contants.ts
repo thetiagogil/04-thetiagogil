@@ -1,9 +1,19 @@
-import { DataCategory, LanguagesType, TechsCategory, ThemeType } from "../types/common";
+import type {
+  DataCategoryType,
+  LanguagesType,
+  TechsCategoryType,
+  ThemeType,
+} from "@/types/common";
 
-export const DATA_CATEGORIES: DataCategory[] = ["experience", "projects", "education", "certifications"];
+export const DATA_CATEGORIES: DataCategoryType[] = [
+  "experience",
+  "projects",
+  "education",
+  "certifications",
+];
 export const THEMES: ThemeType[] = ["dark", "light", "system"];
 export const LANGUAGES: LanguagesType[] = ["en", "pt", "es"];
-export const GROUPED_TECHS: Record<TechsCategory, string[]> = {
+export const GROUPED_TECHS: Record<TechsCategoryType, string[]> = {
   frontend: [
     "HTML",
     "CSS",
@@ -15,13 +25,33 @@ export const GROUPED_TECHS: Record<TechsCategory, string[]> = {
     "DOM Manipulation",
     "MUI",
     "Wagmi",
-    "Bootstrap"
+    "Bootstrap",
   ],
-  backend: ["Node.js", "Express.js", "REST API", "Postman", "Supabase", "Solidity"],
+  backend: [
+    "Node.js",
+    "Express.js",
+    "REST API",
+    "Postman",
+    "Supabase",
+    "Solidity",
+  ],
   database: ["MongoDB", "PostgreSQL"],
   architecture: ["AutoCAD", "Revit", "SketchUp"],
-  projectManagement: ["Agile Methodologies", "Jira", "Kanban", "Lean Principles", "Notion"],
+  projectManagement: [
+    "Agile Methodologies",
+    "Jira",
+    "Kanban",
+    "Lean Principles",
+    "Notion",
+  ],
   designTools: ["Adobe Photoshop", "Figma"],
-  generalTools: ["Microsoft Office", "Git", "GitHub", "OutSystems", "Blockchain", "Web3"],
-  other: []
+  generalTools: [
+    "Microsoft Office",
+    "Git",
+    "GitHub",
+    "OutSystems",
+    "Blockchain",
+    "Web3",
+  ],
+  other: [],
 };

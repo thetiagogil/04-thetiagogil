@@ -1,8 +1,8 @@
-import { DataCategory, DataStatus } from "./common";
+import type { DataCategoryType, DataStatusType } from "@/types/common";
 
-export interface Data {
+export interface DataType {
   id: number;
-  category: DataCategory;
+  category: DataCategoryType;
   name?: string;
   nameKey?: string;
   place?: string;
@@ -14,6 +14,6 @@ export interface Data {
   techs: string[];
   dateStart: Date;
   dateEnd?: Date | "Present";
-  status?: DataStatus;
+  status?: DataStatusType;
   img?: string;
 }

@@ -1,33 +1,33 @@
+import { MainContainer } from "@/components/layout/main-container";
+import { TimelineCategoriesFilter } from "@/components/sections/timeline/timeline-categories-filter";
+import { TimelineTable } from "@/components/sections/timeline/timeline-table";
+import { TimelineTechsFilter } from "@/components/sections/timeline/timeline-techs-filter";
+import { certifications, education, experience, projects } from "@/database";
+import { useLanguageContext } from "@/hooks/use-language-context";
+import type { DataCategoryType } from "@/types/common";
 import { Link, Stack, Typography } from "@mui/joy";
 import { useState } from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link as ReactLink } from "react-router-dom";
-import { certifications } from "../api/certifications";
-import { education } from "../api/education";
-import { experience } from "../api/experience";
-import { projects } from "../api/projects";
-import { MainContainer } from "../components/layout/main-container";
-import { TimelineCategoriesFilter } from "../components/sections/timeline/timeline-categories-filter";
-import { TimelineTable } from "../components/sections/timeline/timeline-table";
-import { TimelineTechsFilter } from "../components/sections/timeline/timeline-techs-filter";
-import { useLanguageContext } from "../contexts/language.context";
-import { DataCategory } from "../types/common";
 
 export const TimelinePage = () => {
   const { t } = useLanguageContext();
-  const [categories, setCategories] = useState<DataCategory[]>([]);
+  const [categories, setCategories] = useState<DataCategoryType[]>([]);
   const [techs, setTechs] = useState<string[]>([]);
   const data = [...experience, ...projects, ...education, ...certifications];
 
   const footnotes: Record<string, Record<string, string>> = {
     outdated: { icon: "~", text: t("statusOutdated") },
-    inactive: { icon: "†", text: t("statusInactive") }
+    inactive: { icon: "†", text: t("statusInactive") },
   };
 
   return (
     <MainContainer>
       <Stack overflow="hidden" gap={{ xs: 6, md: 4 }}>
-        <Stack component="section" alignItems={{ xs: "center", lg: "baseline" }}>
+        <Stack
+          component="section"
+          alignItems={{ xs: "center", lg: "baseline" }}
+        >
           <Link
             component={ReactLink}
             to="/home"
@@ -53,12 +53,25 @@ export const TimelinePage = () => {
           justifyContent={{ xs: "center", lg: "left" }}
           gap={2}
         >
-          <TimelineCategoriesFilter categories={categories} setCategories={setCategories} />
+          <TimelineCategoriesFilter
+            categories={categories}
+            setCategories={setCategories}
+          />
           <TimelineTechsFilter data={data} techs={techs} setTechs={setTechs} />
         </Stack>
 
-        <Stack component="section" overflow="auto" alignItems={{ xs: "center", lg: "baseline" }} gap={4}>
-          <TimelineTable data={data} categories={categories} techs={techs} footnotes={footnotes} />
+        <Stack
+          component="section"
+          overflow="auto"
+          alignItems={{ xs: "center", lg: "baseline" }}
+          gap={4}
+        >
+          <TimelineTable
+            data={data}
+            categories={categories}
+            techs={techs}
+            footnotes={footnotes}
+          />
         </Stack>
 
         <Stack width="100%">
