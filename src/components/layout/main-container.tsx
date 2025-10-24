@@ -13,10 +13,10 @@ export const MainContainer = ({ children }: MainContainerProps) => {
       height="100vh"
       width="100%"
       minWidth={{ lg: 1200 }}
-      maxWidth={{ lg: 1400 }}
+      maxWidth={{ lg: 1500 }}
       justifySelf="center"
       overflow="hidden"
-      p={{ xs: 2, md: 6 }}
+      p={{ xs: 2, md: 4, lg: 6 }}
     >
       <Stack flex={1} height="100vh" overflow="hidden">
         {children}

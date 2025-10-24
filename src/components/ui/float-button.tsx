@@ -31,8 +31,8 @@ export const FloatMenu = () => {
         sx={{
           bgcolor: "background.body",
           position: "fixed",
-          bottom: 24,
-          right: 16,
+          bottom: 12,
+          right: 12,
           borderRadius: "50%",
           zIndex: 2000,
           boxShadow: "lg",
