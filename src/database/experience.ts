@@ -74,7 +74,7 @@ export const experience: DataType[] = [
     category: "experience",
     nameKey: "Frontend Developer",
     place: "Aquasis",
-    descriptionKey: "",
+    descriptionKey: "experience_aquasis_description",
     link: "https://www.aquasis.pt/",
     techs: [
       "React",

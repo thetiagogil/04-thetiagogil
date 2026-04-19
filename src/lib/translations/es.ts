@@ -2,9 +2,9 @@ export const es = {
   settings: "Configuración",
   theme: "Tema",
   language: "Idioma",
-  title: "Full-stack Developer & Arquitecto",
+  title: "Frontend Developer & Arquitecto",
   home_bio:
-    "Como Full-stack Developer con un Máster Integrado en Arquitectura, combino creatividad y precisión técnica para desarrollar aplicaciones web intuitivas y eficientes. Mi formación en arquitectura me permite fusionar diseño innovador con tecnología, creando soluciones digitales que equilibran funcionalidad, estética y datos.",
+    "Soy un Frontend Developer enfocado en construir aplicaciones web modernas con React, Next.js y TypeScript. Me gusta crear interfaces que no solo sean limpias y eficientes, sino también bien estructuradas y fáciles de escalar. Mi formación en arquitectura ha influido en cómo pienso el diseño, la usabilidad y los sistemas, y aplico ese enfoque en los productos que desarrollo. Aunque mi foco principal es el frontend, me siento cómodo contribuyendo en otras partes del stack cuando es necesario.",
   timeline_title: "Mi trayectoria",
   backToHome: "Volver a la página de inicio",
   arquitect: "Arquitecto",
@@ -34,11 +34,13 @@ export const es = {
   statusInactive: "Este proyecto está temporal o permanentemente inactivo.",
   experience_cr_espassos_name: "Arquitecto",
   experience_cr_espassos_description:
-    "Colaboré con un equipo de arquitectos e ingenieros, participando en proyectos de arquitectura, ingeniería, urbanismo y diseño de interiores. Lideré un grupo de estudiantes en prácticas de tercer año de ingeniería, guiándolos en el desarrollo y ejecución de proyectos.",
+    "En CR Espassos, trabajé como arquitecto en un equipo multidisciplinar, contribuyendo a proyectos en las áreas de arquitectura, ingeniería y diseño de interiores. Esta experiencia requirió adaptarme a distintos tipos de requisitos y colaborar estrechamente con profesionales de diferentes áreas para ofrecer soluciones coherentes. También asumí un rol de liderazgo, guiando a miembros junior, asignando tareas y apoyando su trabajo y desarrollo diario. Esta experiencia influyó en mi forma de abordar problemas, la estructura y el diseño, algo que posteriormente apliqué en el desarrollo de software.",
   experience_talent_protocol_description:
-    "Desarrollé y mantuve diversas aplicaciones Web3 que utilizan blockchain como tecnología central y fuente de datos. Entre mis responsabilidades se incluían la implementación de diseños en Figma desde cero, la integración de APIs, la gestión de feedback de los usuarios, pruebas y corrección de errores. Contribuí a proyectos clave como Talent Passport, Build.top, Playground/API y Builder.fi.",
+    "En Talent Protocol, trabajé como Frontend Developer en varios productos dentro de un ecosistema web3, con un enfoque principal en el desarrollo frontend. Fui responsable de desarrollar el frontend de Build.top desde cero, traduciendo diseños de Figma en una aplicación completamente funcional. También contribuí a otros productos clave, como Talent Passport, implementando nuevas funcionalidades, mejorando la UI/UX y respondiendo al feedback de los usuarios. Durante esta experiencia, trabajé en el mantenimiento y evolución de un design system compartido, asegurando la consistencia entre diferentes aplicaciones. Este rol me permitió trabajar en un entorno dinámico, donde la iteración, el feedback de producto y la mejora continua eran fundamentales.",
   experience_subvisual_description:
-    "Desarrollé aplicaciones Web3 y Web2, utilizando blockchain y PostgreSQL para garantizar soluciones seguras y escalables. Implementé smart contracts en Solidity, asegurando transparencia y actualizaciones en tiempo real para aplicaciones descentralizadas.",
+    "En Subvisual, trabajé como Full-Stack Developer en un programa de aprendizaje, contribuyendo a proyectos web2 y web3 en un entorno colaborativo. Durante esta experiencia, desarrollé una plataforma interna full-stack centrada en la gestión de equipos y habilidades, así como una aplicación web3 que integraba desarrollo frontend con smart contracts. Este rol me permitió trabajar de cerca con desarrolladores experimentados y adquirir experiencia práctica en un entorno similar a producción, contribuyendo en diferentes áreas del stack, con mayor enfoque en frontend.",
+  experience_aquasis_description:
+    "En Aquasis, trabajo como Frontend Developer en la plataforma principal de la empresa, contribuyendo al desarrollo de nuevas funcionalidades en colaboración con un equipo multidisciplinar. Mi trabajo se centra en el desarrollo de funcionalidades frontend escalables con React, al mismo tiempo que participo en la modernización de la plataforma mediante la migración de un sistema legado basado en jQuery a una arquitectura más moderna y mantenible en React. Gracias a mi formación en arquitectura, también tengo un papel activo en las decisiones de UI/UX, traduciendo los requisitos del producto en interfaces claras, estructuradas y fáciles de usar. Busco siempre equilibrar usabilidad, rendimiento y mantenibilidad a largo plazo.",
   project_giraffes_vs_sea_subject: "Juego de Defensa de Torres 2D",
   project_giraffes_vs_sea_description:
     "Videojuego de defensa de torres en el que los jugadores usan matemáticas para ganar. Concebido y desarrollado de forma independiente.",
@@ -51,23 +53,29 @@ export const es = {
   project_talentsy_subject: "Aplicación de Visualización de Talentos de Equipo",
   project_talentsy_description:
     "Talentsy es una plataforma que permite visualizar y comparar los talentos dentro de un equipo. Ayuda a los usuarios a identificar y desarrollar sus habilidades clave, proporcionando información personalizada para fomentar un entorno de trabajo más equilibrado y productivo.",
+  project_poketracker_subject: "Aplicación de Acompañamiento de Pokémon",
+  project_poketracker_description:
+    "Poketracker es una plataforma full-stack que estoy desarrollando para seguir la progresión en juegos mediante sistemas de datos estructurados. El proyecto se centra en diseñar una arquitectura de base de datos escalable y en definir una lógica de seguimiento capaz de soportar relaciones de datos complejas. También busca equilibrar rendimiento, usabilidad y mantenibilidad a largo plazo.",
+  project_uparque_subject: "Plataforma Web para cafetería Uparque",
+  project_uparque_description:
+    "Uparque es una plataforma web que estoy desarrollando para una cafetería, enfocada en ofrecer una experiencia de usuario moderna y limpia. El proyecto está guiado por requisitos reales de negocio, con el objetivo de traducir esas necesidades en una aplicación funcional y responsiva, preparada para su uso en un entorno real.",
   education_guadalupe_name: "Educación Secundaria",
   education_guadalupe_description:
-    "Graduado en el Bachillerato de Ciencias y Tecnología en el Colégio Guadalupe, donde participé en varios proyectos Erasmus en Polonia (2010-2011), Italia (2011-2012) y Bulgaria (2013-2014). Estas experiencias me permitieron aprender en entornos colaborativos, realizar intercambios culturales y desarrollar una red internacional.",
+    "Finalización del itinerario de Ciencias y Tecnología, con participación en programas Erasmus centrados en la colaboración y el intercambio cultural.",
   education_faul_name: "Máster Integrado en Arquitectura",
   education_faul_place: "Facultad de Arquitectura, Universidad de Lisboa",
   education_faul_description:
-    "Graduado con un Máster Integrado en Arquitectura en la Facultad de Arquitectura de la Universidad de Lisboa, especializado en arquitectura y design urbano. Mi tesis, titulada 'Arquitectura centrada en el ser humano: Los videojuegos como inspiración para el desarrollo de la arquitectura', exploró cómo los principios del diseño de videojuegos pueden aplicarse en la creación de espacios arquitectónicos más interactivos e intuitivos.",
-  education_ironhack_name: "Curso de Web Development",
+    "Finalización del Máster Integrado en Arquitectura, con enfoque en arquitectura y urbanismo. Tesis centrada en el diseño centrado en el usuario, inspirada en sistemas de videojuegos.",
+  education_ironhack_name: "Bootcamp de Desarrollo Web Full-Stack",
   education_ironhack_description:
-    "Graduado en un bootcamp intensivo de 9 semanas en Web Development en Ironhack, donde adquirí conocimientos fundamentales en Full-stack Development y perfeccioné mis habilidades en la creación de aplicaciones web.",
-  certification_agile_name: "Curso de Gestión de Proyectos Agile",
+    "Finalización de un bootcamp intensivo enfocado en desarrollo full-stack, cubriendo tecnologías modernas para la creación de aplicaciones web.",
+  certification_agile_name: "Gestión de Proyectos Agile",
   certification_agile_description:
-    "Curso sobre metodologías Agile como Scrum, Kanban, DSDM, XP y Lean Software Development.",
-  certification_react_native_name: "Curso de React Native",
+    "Introducción a metodologías Agile, incluyendo Scrum, Kanban y Lean.",
+  certification_react_native_name: "React Native",
   certification_react_native_description:
-    "Curso de React Native que abarca desde conceptos básicos hasta funcionalidades avanzadas, con un enfoque práctico en la creación de aplicaciones móviles.",
-  certification_outsystems_name: "Curso de OutSystems",
+    "Fundamentos del desarrollo móvil con React Native, incluyendo la creación de aplicaciones multiplataforma.",
+  certification_outsystems_name: "OutSystems",
   certification_outsystems_description:
-    "Curso sobre desarrollo de aplicaciones web con OutSystems, desde herramientas fundamentales hasta conceptos avanzados para la creación de soluciones eficientes.",
+    "Introducción al desarrollo low-code con OutSystems para la creación de aplicaciones web.",
 };
