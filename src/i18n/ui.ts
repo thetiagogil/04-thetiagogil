@@ -114,4 +114,21 @@ export const uiTranslations: TranslationDictionary = {
     es: "Ver repositorio",
   },
   "project.viewCase": { en: "Read case", pt: "Ler caso", es: "Leer caso" },
+  "experience.back": {
+    en: "Back to timeline",
+    pt: "Voltar ao percurso",
+    es: "Volver a trayectoria",
+  },
+  "experience.relatedProjects": {
+    en: "Related projects",
+    pt: "Projetos relacionados",
+    es: "Proyectos relacionados",
+  },
+  "experience.visit": {
+    en: "Visit company",
+    pt: "Visitar empresa",
+    es: "Visitar empresa",
+  },
+  "status.current": { en: "Current", pt: "Atual", es: "Actual" },
+  "detail.back": { en: "Go back", pt: "Voltar", es: "Volver" },
 };

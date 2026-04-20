@@ -19,6 +19,7 @@ export const HomeFeaturedSection = ({
         item.featured &&
         (!item.status ||
           item.status === "ongoing" ||
+          item.status === "current" ||
           item.status === "completed"),
     ),
   );
