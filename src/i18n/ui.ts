@@ -1,0 +1,117 @@
+import type { TranslationDictionary } from "@/i18n/types";
+
+export const uiTranslations: TranslationDictionary = {
+  "nav.home": { en: "Home", pt: "Início", es: "Inicio" },
+  "nav.timeline": { en: "Timeline", pt: "Percurso", es: "Trayectoria" },
+  "home.title": {
+    en: "Frontend Developer & Architect",
+    pt: "Frontend Developer & Arquiteto",
+    es: "Frontend Developer & Arquitecto",
+  },
+  "home.bio": {
+    en: "I'm a Frontend Developer focused on building modern web applications with React, Next.js, and TypeScript. I enjoy creating interfaces that are not only clean and performant, but also well-structured and easy to scale. My background in architecture shaped the way I think about design, usability, and systems, and I bring that mindset into the products I build. While frontend is my main focus, I'm also comfortable contributing across the stack when needed.",
+    pt: "Sou um Frontend Developer focado em construir aplicações web modernas com React, Next.js e TypeScript. Gosto de criar interfaces que não são apenas limpas e performantes, mas também bem estruturadas e fáceis de escalar. A minha formação em arquitetura influenciou a forma como penso design, usabilidade e sistemas, e levo essa abordagem para os produtos que desenvolvo. Apesar do meu foco ser frontend, sinto-me confortável a contribuir em outras partes do stack quando necessário.",
+    es: "Soy un Frontend Developer enfocado en construir aplicaciones web modernas con React, Next.js y TypeScript. Me gusta crear interfaces que no solo sean limpias y eficientes, sino también bien estructuradas y fáciles de escalar. Mi formación en arquitectura ha influido en cómo pienso el diseño, la usabilidad y los sistemas, y aplico ese enfoque en los productos que desarrollo. Aunque mi foco principal es el frontend, me siento cómodo contribuyendo en otras partes del stack cuando es necesario.",
+  },
+  "home.role": {
+    en: "Frontend Developer & Architect",
+    pt: "Frontend Developer & Arquiteto",
+    es: "Frontend Developer & Arquitecto",
+  },
+  "home.based": { en: "Based in", pt: "Baseado em", es: "Ubicado en" },
+  "home.location": {
+    en: "Lisbon, Portugal",
+    pt: "Lisboa, Portugal",
+    es: "Lisboa, Portugal",
+  },
+  "home.viewTimeline": {
+    en: "View full timeline",
+    pt: "Explorar o meu percurso",
+    es: "Explorar mi trayectoria",
+  },
+  "home.downloadCv": {
+    en: "Download CV",
+    pt: "Descarregar o meu currículo",
+    es: "Descargar mi currículum",
+  },
+  "home.selected": {
+    en: "Selected work",
+    pt: "Trabalho selecionado",
+    es: "Trabajo seleccionado",
+  },
+  "home.subtitle": {
+    en: "A curated cross-section of practice. Full record available on the timeline.",
+    pt: "Uma seleção curada do meu percurso. Registo completo disponível no percurso.",
+    es: "Una selección curada de mi trayectoria. Registro completo disponible en la línea temporal.",
+  },
+  "section.experience": {
+    en: "Experience",
+    pt: "Experiência",
+    es: "Experiencia",
+  },
+  "section.projects": { en: "Projects", pt: "Projetos", es: "Proyectos" },
+  "section.education": { en: "Education", pt: "Educação", es: "Educación" },
+  "section.certifications": {
+    en: "Certifications",
+    pt: "Certificações",
+    es: "Certificaciones",
+  },
+  "timeline.title": {
+    en: "Trajectory",
+    pt: "O meu percurso",
+    es: "Mi trayectoria",
+  },
+  "timeline.subtitle": {
+    en: "The complete record, every chapter, in chronological order.",
+    pt: "O registo completo, cada capítulo, por ordem cronológica.",
+    es: "El registro completo, cada capítulo, en orden cronológico.",
+  },
+  "timeline.all": { en: "All", pt: "Todos", es: "Todos" },
+  "timeline.advancedFilters": {
+    en: "Advanced filters",
+    pt: "Filtros avançados",
+    es: "Filtros avanzados",
+  },
+  "timeline.present": { en: "Present", pt: "Presente", es: "Presente" },
+  "common.from": { en: "from", pt: "desde", es: "desde" },
+  "common.soon": { en: "Soon", pt: "Breve", es: "Pronto" },
+  "settings.title": { en: "Settings", pt: "Definições", es: "Configuración" },
+  "settings.language": { en: "Language", pt: "Idioma", es: "Idioma" },
+  "settings.theme": { en: "Appearance", pt: "Tema", es: "Tema" },
+  "settings.light": { en: "Light", pt: "Claro", es: "Claro" },
+  "settings.dark": { en: "Dark", pt: "Escuro", es: "Oscuro" },
+  "settings.system": { en: "System", pt: "Sistema", es: "Sistema" },
+  "settings.open": {
+    en: "Open settings",
+    pt: "Abrir definições",
+    es: "Abrir configuración",
+  },
+  "status.completed": { en: "Completed", pt: "Concluído", es: "Completado" },
+  "status.outdated": {
+    en: "Outdated",
+    pt: "Desatualizado",
+    es: "Desactualizado",
+  },
+  "status.inactive": { en: "Inactive", pt: "Inativo", es: "Inactivo" },
+  "status.ongoing": { en: "Ongoing", pt: "Em curso", es: "En curso" },
+  "project.back": {
+    en: "← Back to timeline",
+    pt: "← Voltar ao percurso",
+    es: "← Volver a trayectoria",
+  },
+  "project.role": { en: "Role", pt: "Função", es: "Rol" },
+  "project.years": { en: "Years", pt: "Período", es: "Período" },
+  "project.dates": { en: "Dates", pt: "Período", es: "Período" },
+  "project.stack": { en: "Stack", pt: "Tecnologias", es: "Tecnologías" },
+  "project.visit": {
+    en: "Visit project",
+    pt: "Visitar projeto",
+    es: "Visitar proyecto",
+  },
+  "project.repo": {
+    en: "View repository",
+    pt: "Ver repositório",
+    es: "Ver repositorio",
+  },
+  "project.viewCase": { en: "Read case", pt: "Ler caso", es: "Leer caso" },
+};
