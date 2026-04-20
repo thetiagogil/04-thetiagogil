@@ -52,7 +52,7 @@ export const TimelinePage = () => {
 
       <ol className="relative">
         <div
-          className="absolute bottom-2 left-[5.0625rem] top-2 w-px bg-border md:left-[11.5625rem]"
+          className="absolute bottom-2 left-20.25 top-2 w-px bg-border md:left-46.25"
           aria-hidden
         />
 
