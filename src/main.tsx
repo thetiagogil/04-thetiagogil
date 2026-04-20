@@ -1,19 +1,19 @@
 import { App } from "@/app";
-import { LanguageContextProvider } from "@/providers/language/language-provider";
-import { ThemeContextProvider } from "@/providers/theme/theme-provider";
-import "@/styles/main.css";
+import "@/index.css";
+import { I18nProvider } from "@/providers/I18nProvider";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeContextProvider>
-      <LanguageContextProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+      <ThemeProvider>
+        <I18nProvider>
           <App />
-        </BrowserRouter>
-      </LanguageContextProvider>
-    </ThemeContextProvider>
-  </StrictMode>
+        </I18nProvider>
+      </ThemeProvider>
+    </BrowserRouter>
+  </StrictMode>,
 );

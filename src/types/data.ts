@@ -1,19 +1,25 @@
-import type { DataCategoryType, DataStatusType } from "@/types/common";
+import type { Category, ItemStatus, Lang } from "@/types/common";
 
-export interface DataType {
-  id: number;
-  category: DataCategoryType;
-  name?: string;
-  nameKey?: string;
-  place?: string;
-  placeKey?: string;
-  subject?: string;
+export type Localized = Record<Lang, string>;
+
+export interface DataItem {
+  id: string;
+  category: Category;
+  slug?: string;
+  title: string;
+  titleKey?: string;
+  org: string;
+  orgKey?: string;
   subjectKey?: string;
   descriptionKey?: string;
-  link: string;
+  link?: string;
+  repo?: string;
   techs: string[];
   dateStart: Date;
-  dateEnd?: Date | "Present";
-  status?: DataStatusType;
+  dateEnd?: Date | null;
+  status?: ItemStatus;
+  featured?: boolean;
   img?: string;
+  longDescriptionKey?: string;
+  roleKey?: string;
 }

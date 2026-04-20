@@ -1,17 +1,8 @@
-export type ThemeType = "dark" | "light" | "system";
-export type LanguagesType = "en" | "pt" | "es";
-export type DataCategoryType =
+export type ThemeMode = "light" | "dark" | "system";
+export type Lang = "en" | "pt" | "es";
+export type Category =
   | "experience"
   | "projects"
   | "education"
   | "certifications";
-export type DataStatusType = "completed" | "outdated" | "inactive" | "open";
-export type TechsCategoryType =
-  | "frontend"
-  | "backend"
-  | "database"
-  | "architecture"
-  | "projectManagement"
-  | "designTools"
-  | "generalTools"
-  | "other";
+export type ItemStatus = "completed" | "outdated" | "inactive" | "ongoing";

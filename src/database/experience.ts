@@ -1,11 +1,12 @@
-import type { DataType } from "@/types/data";
+import type { DataItem } from "@/types/data";
 
-export const experience: DataType[] = [
+export const experience: DataItem[] = [
   {
-    id: 0,
+    id: "exp-crespassos",
     category: "experience",
-    nameKey: "experience_cr_espassos_name",
-    place: "CR espassos",
+    title: "",
+    titleKey: "experience_cr_espassos_name",
+    org: "CR espassos",
     descriptionKey: "experience_cr_espassos_description",
     link: "https://www.linkedin.com/company/cr-espassos/about/",
     techs: ["Revit", "AutoCAD", "Microsoft Office"],
@@ -14,10 +15,10 @@ export const experience: DataType[] = [
     img: "experience/crespassos.jpeg",
   },
   {
-    id: 1,
+    id: "exp-subvisual",
     category: "experience",
-    nameKey: "Full-stack Developer",
-    place: "Subvisual",
+    title: "Full-stack Developer",
+    org: "Subvisual",
     descriptionKey: "experience_subvisual_description",
     link: "https://subvisual.com/",
     techs: [
@@ -38,12 +39,13 @@ export const experience: DataType[] = [
     dateStart: new Date("2023-12"),
     dateEnd: new Date("2024-02"),
     img: "experience/subvisual.jpeg",
+    featured: true,
   },
   {
-    id: 2,
+    id: "exp-talent-protocol",
     category: "experience",
-    nameKey: "Full-stack Developer",
-    place: "Talent Protocol",
+    title: "Full-stack Developer",
+    org: "Talent Protocol",
     descriptionKey: "experience_talent_protocol_description",
     link: "https://www.talentprotocol.com/",
     techs: [
@@ -67,13 +69,13 @@ export const experience: DataType[] = [
     dateStart: new Date("2024-03"),
     dateEnd: new Date("2025-02"),
     img: "experience/talentprotocol.jpeg",
+    featured: true,
   },
-
   {
-    id: 3,
+    id: "exp-aquasis",
     category: "experience",
-    nameKey: "Frontend Developer",
-    place: "Aquasis",
+    title: "Frontend Developer",
+    org: "Aquasis",
     descriptionKey: "experience_aquasis_description",
     link: "https://www.aquasis.pt/",
     techs: [
@@ -89,7 +91,9 @@ export const experience: DataType[] = [
       "GitHub",
     ],
     dateStart: new Date("2025-04"),
-    dateEnd: "Present",
+    dateEnd: null,
     img: "experience/aquasis.jpeg",
+    featured: true,
+    status: "ongoing",
   },
 ];

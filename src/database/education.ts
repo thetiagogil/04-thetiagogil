@@ -1,11 +1,12 @@
-import type { DataType } from "@/types/data";
+import type { DataItem } from "@/types/data";
 
-export const education: DataType[] = [
+export const education: DataItem[] = [
   {
-    id: 0,
+    id: "edu-guadalupe",
     category: "education",
-    nameKey: "education_guadalupe_name",
-    place: "Colégio Guadalupe",
+    title: "",
+    titleKey: "education_guadalupe_name",
+    org: "Colégio Guadalupe",
     descriptionKey: "education_guadalupe_description",
     link: "https://c-guadalupe.com/en/",
     techs: ["Microsoft Office"],
@@ -13,12 +14,15 @@ export const education: DataType[] = [
     dateEnd: new Date("2014-07"),
     status: "completed",
     img: "education/cg.jpeg",
+    featured: true,
   },
   {
-    id: 1,
+    id: "edu-faul",
     category: "education",
-    nameKey: "education_faul_name",
-    placeKey: "education_faul_place",
+    title: "",
+    titleKey: "education_faul_name",
+    org: "",
+    orgKey: "education_faul_place",
     descriptionKey: "education_faul_description",
     link: "https://www.fa.ulisboa.pt/index.php/en/",
     techs: ["AutoCAD", "SketchUp", "Adobe Photoshop", "Microsoft Office"],
@@ -26,12 +30,14 @@ export const education: DataType[] = [
     dateEnd: new Date("2022-07"),
     status: "completed",
     img: "education/faul.jpeg",
+    featured: true,
   },
   {
-    id: 2,
+    id: "edu-ironhack",
     category: "education",
-    nameKey: "education_ironhack_name",
-    place: "Ironhack",
+    title: "",
+    titleKey: "education_ironhack_name",
+    org: "Ironhack",
     descriptionKey: "education_ironhack_description",
     link: "https://www.ironhack.com",
     techs: [
@@ -49,5 +55,6 @@ export const education: DataType[] = [
     dateEnd: new Date("2023-11"),
     status: "completed",
     img: "education/ironhack.jpeg",
+    featured: true,
   },
 ];
