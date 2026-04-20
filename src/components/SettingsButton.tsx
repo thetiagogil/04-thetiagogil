@@ -1,5 +1,5 @@
-import { useI18n } from "@/providers/I18nProvider";
-import { useTheme } from "@/providers/ThemeProvider";
+import { useI18n } from "@/providers/i18n-context";
+import { useTheme } from "@/providers/theme-context";
 import type { Lang, ThemeMode } from "@/types/common";
 import { Settings } from "lucide-react";
 import { useState } from "react";
@@ -55,7 +55,7 @@ export const SettingsButton = () => {
                     <button
                       key={l.value}
                       onClick={() => setLang(l.value)}
-                      className={`px-3 py-1.5 text-xs font-mono tracking-wider rounded-[2px] transition-colors cursor-pointer ${
+                      className={`cursor-pointer rounded-[2px] px-3 py-1.5 font-mono text-xs tracking-wider transition-colors duration-300 ${
                         lang === l.value
                           ? "bg-background text-foreground shadow-sm"
                           : "text-muted-foreground hover:text-foreground"
@@ -77,7 +77,7 @@ export const SettingsButton = () => {
                     <button
                       key={m.value}
                       onClick={() => setMode(m.value)}
-                      className={`px-2 py-1.5 text-xs rounded-[2px] transition-colors cursor-pointer ${
+                      className={`cursor-pointer rounded-[2px] px-2 py-1.5 text-xs transition-colors duration-300 ${
                         mode === m.value
                           ? "bg-background text-foreground shadow-sm"
                           : "text-muted-foreground hover:text-foreground"
@@ -97,7 +97,7 @@ export const SettingsButton = () => {
           onClick={() => setOpen((v) => !v)}
           aria-label={t("settings.open")}
           aria-expanded={open}
-          className="h-12 w-12 rounded-full bg-foreground text-background shadow-xl flex items-center justify-center cursor-pointer"
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-foreground text-background shadow-xl transition-colors duration-300 hover:bg-primary"
         >
           <Settings
             size={18}

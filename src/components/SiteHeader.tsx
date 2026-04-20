@@ -1,4 +1,4 @@
-import { useI18n } from "@/providers/I18nProvider";
+import { useI18n } from "@/providers/i18n-context";
 import { Link, useLocation } from "react-router-dom";
 
 export const SiteHeader = () => {
@@ -18,7 +18,7 @@ export const SiteHeader = () => {
         <nav className="flex items-center gap-1">
           <Link
             to="/"
-            className={`px-3 py-1.5 text-sm font-mono tracking-wide transition-colors ${
+            className={`px-3 py-1.5 text-sm font-mono tracking-wide transition-colors duration-300 ${
               location.pathname === "/"
                 ? "text-foreground"
                 : "text-muted-foreground hover:text-foreground"
@@ -28,7 +28,7 @@ export const SiteHeader = () => {
           </Link>
           <Link
             to="/timeline"
-            className={`px-3 py-1.5 text-sm font-mono tracking-wide transition-colors ${
+            className={`px-3 py-1.5 text-sm font-mono tracking-wide transition-colors duration-300 ${
               location.pathname === "/timeline"
                 ? "text-foreground"
                 : "text-muted-foreground hover:text-foreground"

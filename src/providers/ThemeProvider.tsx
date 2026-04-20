@@ -1,8 +1,7 @@
 import type { ThemeMode } from "@/types/common";
+import { ThemeContext } from "@/providers/theme-context";
 import {
-  createContext,
   useCallback,
-  useContext,
   useEffect,
   useMemo,
   useState,
@@ -10,14 +9,6 @@ import {
 } from "react";
 
 const STORAGE_KEY = "thetiagogil-theme";
-
-type ThemeContextType = {
-  mode: ThemeMode;
-  resolved: "light" | "dark";
-  setMode: (mode: ThemeMode) => void;
-};
-
-const ThemeContext = createContext<ThemeContextType | null>(null);
 
 const getSystemTheme = (): "light" | "dark" =>
   window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
@@ -63,10 +54,4 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
-};
-
-export const useTheme = () => {
-  const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
-  return ctx;
 };

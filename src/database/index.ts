@@ -27,8 +27,17 @@ export const getProjectBySlug = (slug: string) =>
 
 export const getSorted = (items: DataItem[]) =>
   [...items].sort((a, b) => {
-    const aEnd = a.dateEnd ? a.dateEnd.getFullYear() : 9999;
-    const bEnd = b.dateEnd ? b.dateEnd.getFullYear() : 9999;
-    if (bEnd !== aEnd) return bEnd - aEnd;
-    return b.dateStart.getFullYear() - a.dateStart.getFullYear();
+    const aStart = a.dateStart.getTime();
+    const bStart = b.dateStart.getTime();
+    if (bStart !== aStart) return bStart - aStart;
+
+    const aEnd =
+      a.dateEnd === null
+        ? Number.POSITIVE_INFINITY
+        : (a.dateEnd?.getTime() ?? a.dateStart.getTime());
+    const bEnd =
+      b.dateEnd === null
+        ? Number.POSITIVE_INFINITY
+        : (b.dateEnd?.getTime() ?? b.dateStart.getTime());
+    return bEnd - aEnd;
   });

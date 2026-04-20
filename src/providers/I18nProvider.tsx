@@ -1,8 +1,7 @@
+import { I18nContext } from "@/providers/i18n-context";
 import type { Lang } from "@/types/common";
 import {
-  createContext,
   useCallback,
-  useContext,
   useEffect,
   useMemo,
   useState,
@@ -80,12 +79,19 @@ const dictionary: Record<string, Record<Lang, string>> = {
     es: "Mi trayectoria",
   },
   "timeline.subtitle": {
-    en: "The complete record — every chapter, in chronological order.",
-    pt: "O registo completo — cada capítulo, por ordem cronológica.",
-    es: "El registro completo — cada capítulo, en orden cronológico.",
+    en: "The complete record, every chapter, in chronological order.",
+    pt: "O registo completo, cada capítulo, por ordem cronológica.",
+    es: "El registro completo, cada capítulo, en orden cronológico.",
   },
   "timeline.all": { en: "All", pt: "Todos", es: "Todos" },
+  "timeline.advancedFilters": {
+    en: "Advanced filters",
+    pt: "Filtros avançados",
+    es: "Filtros avanzados",
+  },
   "timeline.present": { en: "Present", pt: "Presente", es: "Presente" },
+  "common.from": { en: "from", pt: "desde", es: "desde" },
+  "common.soon": { en: "Soon", pt: "Breve", es: "Pronto" },
 
   // Settings
   "settings.title": { en: "Settings", pt: "Definições", es: "Configuración" },
@@ -118,6 +124,7 @@ const dictionary: Record<string, Record<Lang, string>> = {
   },
   "project.role": { en: "Role", pt: "Função", es: "Rol" },
   "project.years": { en: "Years", pt: "Período", es: "Período" },
+  "project.dates": { en: "Dates", pt: "Período", es: "Período" },
   "project.stack": { en: "Stack", pt: "Tecnologias", es: "Tecnologías" },
   "project.visit": {
     en: "Visit project",
@@ -153,9 +160,9 @@ const dictionary: Record<string, Record<Lang, string>> = {
     es: "En Talent Protocol, trabajé como Frontend Developer en varios productos dentro de un ecosistema web3, con un enfoque principal en el desarrollo frontend. Fui responsable de desarrollar el frontend de Build.top desde cero, traduciendo diseños de Figma en una aplicación completamente funcional. También contribuí a otros productos clave, como Talent Passport, implementando nuevas funcionalidades, mejorando la UI/UX y respondiendo al feedback de los usuarios. Durante esta experiencia, trabajé en el mantenimiento y evolución de un design system compartido, asegurando la consistencia entre diferentes aplicaciones. Este rol me permitió trabajar en un entorno dinámico, donde la iteración, el feedback de producto y la mejora continua eran fundamentales.",
   },
   experience_aquasis_description: {
-    en: "At Aquasis, I work as a Frontend Developer on the company's main platform, contributing to the development of new product functionality in a cross-functional team. My work focuses on building scalable frontend features using React, while helping modernize the platform by migrating from a legacy jQuery-based system to a more maintainable React architecture. Given my background in architecture, I also take an active role in UI/UX decisions, translating product requirements into clear, structured, and usable interface designs. I focus on creating solutions that balance usability, performance, and long-term maintainability.",
-    pt: "Na Aquasis, trabalho como Frontend Developer na principal plataforma da empresa, contribuindo para o desenvolvimento de novas funcionalidades em colaboração com uma equipa multidisciplinar. O meu trabalho foca-se no desenvolvimento de funcionalidades frontend escaláveis com React, ao mesmo tempo que participo na modernização da plataforma através da migração de um sistema legado baseado em jQuery para uma arquitetura mais moderna e sustentável em React. Com a minha formação em arquitetura, tenho também um papel ativo nas decisões de UI/UX, traduzindo requisitos de produto em interfaces claras, estruturadas e fáceis de utilizar. Procuro sempre equilibrar usabilidade, performance e manutenibilidade a longo prazo.",
-    es: "En Aquasis, trabajo como Frontend Developer en la plataforma principal de la empresa, contribuyendo al desarrollo de nuevas funcionalidades en colaboración con un equipo multidisciplinar. Mi trabajo se centra en el desarrollo de funcionalidades frontend escalables con React, al mismo tiempo que participo en la modernización de la plataforma mediante la migración de un sistema legado basado en jQuery a una arquitectura más moderna y mantenible en React. Gracias a mi formación en arquitectura, también tengo un papel activo en las decisiones de UI/UX, traduciendo los requisitos del producto en interfaces claras, estructuradas y fáciles de usar. Busco siempre equilibrar usabilidad, rendimiento y mantenibilidad a largo plazo.",
+    en: "At Aquasis, I work as a Frontend Developer on the company's main platform, contributing to the development of new product functionality in a cross-functional team. My work focuses on building scalable frontend features using React, while helping modernize the platform by migrating from a legacy jQuery-based system to a more maintainable React architecture. Given my background in architecture, I also take an active role in UI/UX decisions, translating product requirements into clear, structured, and usable interface designs.",
+    pt: "Na Aquasis, trabalho como Frontend Developer na principal plataforma da empresa, contribuindo para o desenvolvimento de novas funcionalidades em colaboração com uma equipa multidisciplinar. O meu trabalho foca-se no desenvolvimento de funcionalidades frontend escaláveis com React, ao mesmo tempo que participo na modernização da plataforma através da migração de um sistema legado baseado em jQuery para uma arquitetura mais moderna e sustentável em React. Com a minha formação em arquitetura, tenho também um papel ativo nas decisões de UI/UX, traduzindo requisitos de produto em interfaces claras, estruturadas e fáceis de utilizar.",
+    es: "En Aquasis, trabajo como Frontend Developer en la plataforma principal de la empresa, contribuyendo al desarrollo de nuevas funcionalidades en colaboración con un equipo multidisciplinar. Mi trabajo se centra en el desarrollo de funcionalidades frontend escalables con React, al mismo tiempo que participo en la modernización de la plataforma mediante la migración de un sistema legado basado en jQuery a una arquitectura más moderna y mantenible en React. Gracias a mi formación en arquitectura, también tengo un papel activo en las decisiones de UI/UX, traduciendo los requisitos del producto en interfaces claras, estructuradas y fáciles de usar.",
   },
 
   // Data translations — Projects
@@ -290,15 +297,6 @@ const dictionary: Record<string, Record<Lang, string>> = {
   },
 };
 
-type I18nContextType = {
-  lang: Lang;
-  setLang: (lang: Lang) => void;
-  t: (key: string) => string;
-  tr: (key: string | undefined) => string;
-};
-
-const I18nContext = createContext<I18nContextType | null>(null);
-
 const getInitialLang = (): Lang => {
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored === "en" || stored === "pt" || stored === "es") return stored;
@@ -340,10 +338,4 @@ export const I18nProvider = ({ children }: { children: ReactNode }) => {
   );
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
-};
-
-export const useI18n = () => {
-  const ctx = useContext(I18nContext);
-  if (!ctx) throw new Error("useI18n must be used within I18nProvider");
-  return ctx;
 };

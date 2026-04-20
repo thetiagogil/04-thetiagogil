@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { useI18n } from "@/providers/I18nProvider";
+import { useI18n } from "@/providers/i18n-context";
 import type { ItemStatus } from "@/types/common";
 
 const colorMap: Record<ItemStatus, string> = {
