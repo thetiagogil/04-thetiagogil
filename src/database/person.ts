@@ -5,6 +5,6 @@ export const person = {
   resumeHref: "/CV_TiagoGil.pdf",
   socials: [
     { label: "GitHub", href: "https://github.com/thetiagogil" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/tiagogil-dev/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/thetiagogil/" },
   ],
 };
