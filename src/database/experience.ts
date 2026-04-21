@@ -6,7 +6,7 @@ export const experience: ExperienceItem[] = [
     category: "experience",
     title: "",
     titleKey: "experience_cr_espassos_name",
-    org: "CR espassos",
+    org: "CR Espassos",
     descriptionKey: "experience_cr_espassos_description",
     link: "https://www.linkedin.com/company/cr-espassos/about/",
     techs: ["Revit", "AutoCAD", "Microsoft Office"],
