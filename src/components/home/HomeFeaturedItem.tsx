@@ -1,8 +1,8 @@
 import { StatusPill } from "@/components/StatusPill";
 import { TechBadge } from "@/components/TechBadge";
 import { getItemOrg, getItemTitle } from "@/lib/data-helpers";
-import { getItemHref } from "@/lib/details";
 import { getYearDateParts } from "@/lib/date";
+import { getItemHref } from "@/lib/details";
 import { useI18n } from "@/providers/i18n-context";
 import type { DataItem } from "@/types/data";
 import { Link } from "react-router-dom";
@@ -35,7 +35,9 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
           <h3 className="font-display text-base text-balance transition-colors duration-300 group-hover:text-primary md:text-xl">
             {getItemTitle(item, tr)}
             {isLinkable && (
-              <span className="ml-2 text-muted-foreground">{"\u2192"}</span>
+              <span className="ml-2 text-muted-foreground group-hover:text-primary transition-colors duration-300 ">
+                {"\u2192"}
+              </span>
             )}
           </h3>
           {org && (
@@ -68,10 +70,7 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
   return (
     <li className="group py-5">
       {isLinkable ? (
-        <Link
-          to={itemHref!}
-          className="block transition-colors duration-300"
-        >
+        <Link to={itemHref!} className="block transition-colors duration-300">
           {inner}
         </Link>
       ) : (

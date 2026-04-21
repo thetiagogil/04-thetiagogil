@@ -37,8 +37,8 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
     presentLabel: t("timeline.present"),
   });
 
-  return (
-    <li className="relative grid grid-cols-[52px_1fr] gap-3 py-6 md:grid-cols-[152px_1fr] md:gap-8">
+  const inner = (
+    <div className="relative grid grid-cols-[52px_1fr] gap-3 py-6 md:grid-cols-[152px_1fr] md:gap-8">
       <div className="text-right" aria-label={fullDateRange}>
         <div className="font-mono text-[10px] leading-tight text-foreground md:hidden">
           {mobileDate.primary}
@@ -53,7 +53,6 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
           {date.secondary}
         </div>
       </div>
-
       <div className="relative pl-8 md:pl-10">
         <CategoryGlyph
           category={item.category}
@@ -67,17 +66,12 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
           {item.status && <StatusPill status={item.status} />}
         </div>
 
-        <h2 className="mt-1.5 font-display text-lg tracking-tight text-balance md:text-2xl">
-          {isLinkable ? (
-            <Link
-              to={itemHref!}
-              className="transition-colors duration-300 hover:text-primary"
-            >
-              {getItemTitle(item, tr)}{" "}
-              <span className="text-muted-foreground">{"\u2192"}</span>
-            </Link>
-          ) : (
-            getItemTitle(item, tr)
+        <h2 className="mt-1.5 font-display text-lg tracking-tight text-balance md:text-2xl transition-colors duration-300 group-hover:text-primary">
+          {getItemTitle(item, tr)}
+          {isLinkable && (
+            <span className="ml-2 text-muted-foreground group-hover:text-primary transition-colors duration-300 ">
+              {"\u2192"}
+            </span>
           )}
         </h2>
 
@@ -101,6 +95,18 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
           </div>
         )}
       </div>
+    </div>
+  );
+
+  return (
+    <li className="group">
+      {isLinkable ? (
+        <Link to={itemHref!} className="block transition-colors duration-300">
+          {inner}
+        </Link>
+      ) : (
+        inner
+      )}
     </li>
   );
 };
