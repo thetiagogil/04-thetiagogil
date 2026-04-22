@@ -44,7 +44,11 @@ const RichTextInline = ({ content }: { content: RichText }) => (
       }
 
       if (!part.href) {
-        return <Fragment key={index}>{inner}</Fragment>;
+        return (
+          <span key={index} className="text-foreground">
+            {inner}
+          </span>
+        );
       }
 
       const isExternalHref = /^https?:\/\//.test(part.href);

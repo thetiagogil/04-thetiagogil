@@ -121,10 +121,9 @@ export const uiTranslations: TranslationDictionary = {
     pt: "Ver certificado",
   },
   "status.current": { en: "Current", pt: "Atual" },
-  "detail.back": { en: "Go back", pt: "Voltar" },
+  "detail.back": { en: "Back", pt: "Voltar" },
   "detail.contributions": {
     en: "Key contributions",
     pt: "Principais contribuiÃ§Ãµes",
   },
 };
-

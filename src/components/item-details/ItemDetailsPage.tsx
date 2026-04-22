@@ -1,7 +1,7 @@
+import { ItemDetailsContent } from "@/components/item-details/ItemDetailsContent";
 import { ProjectImage } from "@/components/project/ProjectImage";
 import { StatusPill } from "@/components/StatusPill";
 import { TechBadge } from "@/components/TechBadge";
-import { ItemDetailsContent } from "@/components/item-details/ItemDetailsContent";
 import { getDetailItemByCategoryAndSlug } from "@/database";
 import { getItemOrg, getItemTitle } from "@/lib/data-helpers";
 import { formatMonthYearRange } from "@/lib/date";
@@ -13,8 +13,7 @@ import { ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 
-const blockClassName =
-  "mt-10 border-t border-border/60 pt-7 md:mt-12 md:pt-8";
+const blockClassName = "mt-10 border-t border-border/60 pt-7 md:mt-12 md:pt-8";
 
 const defaultLinkLabelKey: Record<Category, string> = {
   experience: "experience.visit",
@@ -94,15 +93,15 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
       <button
         type="button"
         onClick={handleBack}
-        className="inline-flex cursor-pointer items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-300 hover:text-foreground md:text-[11px]"
+        className="inline-flex cursor-pointer items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-300 hover:text-foreground"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
         <span>{t("detail.back")}</span>
       </button>
 
-      <header className="mt-8 space-y-5 md:mt-10">
+      <header className="mt-8 space-y-2 md:mt-10">
         {org && (
-          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground md:text-[11px]">
+          <p className="font-mono text-[12px] uppercase tracking-[0.22em] text-muted-foreground md:text-[14px]">
             {org}
           </p>
         )}

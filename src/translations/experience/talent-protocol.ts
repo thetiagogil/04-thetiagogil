@@ -1,9 +1,13 @@
-﻿import type { TranslationDictionary } from "@/translations/types";
+import type { TranslationDictionary } from "@/translations/types";
 
 export const talentProtocolTranslations: TranslationDictionary = {
+  experience_talent_protocol_name: {
+    en: "Full-Stack Developer",
+    pt: "Full-Stack Developer",
+  },
   experience_talent_protocol_description: {
-    en: "Worked across multiple products in a web3 ecosystem, contributing mainly on frontend. Built a full application from scratch, improved existing platforms, and collaborated closely with product and design.",
-    pt: "Trabalhei em vÃ¡rios produtos dentro de um ecossistema web3, com foco principal no frontend. Desenvolvi uma aplicaÃ§Ã£o de raiz, melhorei plataformas existentes e colaborei de perto com produto e design.",
+    en: "Worked across multiple products in a web3 ecosystem, contributing mainly on frontend. Built the first version of the Build.top frontend from Figma designs, worked on core features of the main platform, and adapted quickly to new technologies in a fast-paced environment.",
+    pt: "Trabalhei em vários produtos dentro de um ecossistema web3, com foco principal no frontend. Desenvolvi a primeira versão do frontend do Build.top a partir de designs em Figma, contribuí para funcionalidades core da plataforma principal e adaptei-me rapidamente a novas tecnologias num ambiente dinâmico.",
   },
   experience_talent_protocol_details: {
     en: {
@@ -15,16 +19,19 @@ export const talentProtocolTranslations: TranslationDictionary = {
             type: "paragraphs",
             paragraphs: [
               [
-                "At Talent Protocol, I worked across several products within a web3 ecosystem, focusing mainly on the frontend while collaborating closely with product and backend teams.",
+                "Talent Protocol was building a broader ecosystem of products around reputation, visibility, and participation in web3, with different platforms serving different parts of that goal.",
               ],
               [
-                "Instead of being tied to a single product, I moved between different applications depending on priorities. This meant constantly adapting to new contexts, codebases, and requirements, while building features that were clear, consistent, and ready for real users.",
+                "I worked across multiple products within this ecosystem, contributing almost entirely on the frontend. My day-to-day focused on building new features, improving existing ones, and responding to user feedback across different applications.",
+              ],
+              [
+                "This was my first professional experience in web development, and I joined with limited exposure to web3 and most of the stack being used. A large part of the experience was adapting quickly, learning new tools, and becoming comfortable working in a real production environment.",
               ],
             ],
           },
         },
         {
-          title: "Projects",
+          title: "Products",
           content: {
             type: "list",
             items: [
@@ -36,7 +43,7 @@ export const talentProtocolTranslations: TranslationDictionary = {
                     itemId: "proj-passport",
                     href: "https://passport.talentprotocol.com/",
                   },
-                  " - main platform for managing on-chain reputation and user identity.",
+                  " - main platform for managing user reputation and ranking based on activity",
                 ],
               },
               {
@@ -47,13 +54,13 @@ export const talentProtocolTranslations: TranslationDictionary = {
                     itemId: "proj-build",
                     href: "https://build.top/",
                   },
-                  " - builder discovery and nomination platform (frontend built from scratch).",
+                  " - builder discovery and nomination platform",
                 ],
               },
               {
                 text: [
-                  { text: "Playground / API", bold: true },
-                  " - platform supporting user goals, voting, and reward systems.",
+                  { text: "Playground", bold: true },
+                  " - goals and interaction platform where users could engage around shared objectives",
                 ],
               },
               {
@@ -62,9 +69,9 @@ export const talentProtocolTranslations: TranslationDictionary = {
                     text: "Builder.fi",
                     bold: true,
                     itemId: "proj-builderfi",
-                    href: "https://mirror.xyz/talentprotocol.eth/dSkw_mNNOgs6GZEjZ3GTJMt0uJ5DjpWGkX3rncF1OD8/",
+                    href: "",
                   },
-                  " - Q&A platform (maintenance and iteration until deprecation).",
+                  " - Q&A platform (maintained until deprecation)",
                 ],
               },
             ],
@@ -77,39 +84,46 @@ export const talentProtocolTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "Built the ",
+                  "Built the first version of the ",
                   {
                     text: "Build.top",
                     bold: true,
                     itemId: "proj-build",
                     href: "https://build.top/",
                   },
-                  " frontend from scratch based on Figma designs.",
+                  " frontend based on Figma designs, implementing the full user flow and interface",
                 ],
               },
               {
                 text: [
-                  "Worked across multiple applications, implementing features, improving UI, and fixing issues.",
+                  "Worked across multiple applications, developing features, improving UI, and fixing issues based on user feedback",
                 ],
               },
               {
                 text: [
-                  "Contributed to the internal design system, helping keep consistency across products.",
+                  "Contributed to core parts of ",
+                  {
+                    text: "Talent Passport",
+                    bold: true,
+                    itemId: "proj-passport",
+                    href: "https://passport.talentprotocol.com/",
+                  },
+                  ", including iterations of the wallet page and integration of new scoring parameters",
                 ],
               },
               {
                 text: [
-                  "Collaborated closely with product and backend teams to deliver end-to-end features.",
+                  "Integrated the builder score system across different products as it evolved",
                 ],
               },
               {
                 text: [
-                  "Translated product requirements into interfaces that were simple, clear, and usable.",
+                  "Collaborated closely with product and backend in a small team, contributing to end-to-end feature delivery",
                 ],
               },
               {
                 text: [
-                  "Worked in a fast-paced environment, balancing speed with maintainability.",
+                  "Tested applications manually to validate functionality and usability before release",
                 ],
               },
             ],
@@ -122,27 +136,27 @@ export const talentProtocolTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "First experience working professionally in web3, requiring me to quickly understand concepts around blockchain, crypto, and on-chain data.",
+                  "First real experience working in web development, while simultaneously learning Next.js, TypeScript, and a new ecosystem",
                 ],
               },
               {
                 text: [
-                  "Adapting to new tools, libraries, and patterns specific to the web3 space.",
+                  "Entering the web3 space with little prior knowledge, requiring a fast understanding of wallets, on-chain data, and related tools",
                 ],
               },
               {
                 text: [
-                  "Constant context switching between different products and codebases.",
+                  "Working in a fast-paced environment with frequent changes in product direction and requirements",
                 ],
               },
               {
                 text: [
-                  "Keeping consistency across platforms while allowing flexibility for each product.",
+                  "Adapting to a large and unfamiliar codebase combining frontend, backend, and blockchain-related logic",
                 ],
               },
               {
                 text: [
-                  "Knowing when to move fast and when to take a step back and structure things properly.",
+                  "Balancing learning and delivery while contributing to real production features",
                 ],
               },
             ],
@@ -154,21 +168,24 @@ export const talentProtocolTranslations: TranslationDictionary = {
       type: "sections",
       sections: [
         {
-          title: "VisÃ£o Geral",
+          title: "Visão Geral",
           content: {
             type: "paragraphs",
             paragraphs: [
               [
-                "Na Talent Protocol, trabalhei em vÃ¡rios produtos dentro de um ecossistema web3, com foco principal no frontend e em colaboraÃ§Ã£o prÃ³xima com equipas de produto e backend.",
+                "A Talent Protocol estava a desenvolver um ecossistema de produtos ligado a reputação, visibilidade e participação no espaço web3, com diferentes plataformas a responder a diferentes partes desse objetivo.",
               ],
               [
-                "Em vez de estar ligado a um Ãºnico produto, fui passando por diferentes aplicaÃ§Ãµes conforme as prioridades. Isso obrigou-me a adaptar constantemente a novos contextos, codebases e requisitos, sempre com foco em criar funcionalidades claras, consistentes e prontas para utilizadores reais.",
+                "Trabalhei em vários produtos dentro desse ecossistema, contribuindo quase exclusivamente no frontend. O meu dia-a-dia passou por desenvolver novas funcionalidades, melhorar as existentes e responder a feedback dos utilizadores em diferentes aplicações.",
+              ],
+              [
+                "Esta foi a minha primeira experiência profissional em desenvolvimento web, tendo entrado com pouca experiência em web3 e em grande parte das tecnologias utilizadas. Uma parte importante do trabalho foi adaptar-me rapidamente, aprender novas ferramentas e ganhar confiança num ambiente real de produção.",
               ],
             ],
           },
         },
         {
-          title: "Projetos",
+          title: "Produtos",
           content: {
             type: "list",
             items: [
@@ -180,7 +197,7 @@ export const talentProtocolTranslations: TranslationDictionary = {
                     itemId: "proj-passport",
                     href: "https://passport.talentprotocol.com/",
                   },
-                  " - plataforma principal para gestÃ£o de reputaÃ§Ã£o on-chain.",
+                  " - plataforma principal para gestão de reputação e ranking de utilizadores",
                 ],
               },
               {
@@ -191,13 +208,13 @@ export const talentProtocolTranslations: TranslationDictionary = {
                     itemId: "proj-build",
                     href: "https://build.top/",
                   },
-                  " - plataforma de descoberta e nomeaÃ§Ã£o de builders (frontend desenvolvido de raiz).",
+                  " - plataforma de descoberta e nomeação de builders",
                 ],
               },
               {
                 text: [
-                  { text: "Playground / API", bold: true },
-                  " - sistema de objetivos, votaÃ§Ã£o e recompensas.",
+                  { text: "Playground", bold: true },
+                  " - plataforma de objetivos e interação entre utilizadores",
                 ],
               },
               {
@@ -208,7 +225,7 @@ export const talentProtocolTranslations: TranslationDictionary = {
                     itemId: "proj-builderfi",
                     href: "https://mirror.xyz/talentprotocol.eth/dSkw_mNNOgs6GZEjZ3GTJMt0uJ5DjpWGkX3rncF1OD8/",
                   },
-                  " - plataforma de Q&A (manutenÃ§Ã£o atÃ© descontinuaÃ§Ã£o).",
+                  " - plataforma de Q&A (mantida até ser descontinuada)",
                 ],
               },
             ],
@@ -221,39 +238,46 @@ export const talentProtocolTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "Desenvolvimento do frontend do ",
+                  "Desenvolvi a primeira versão do frontend do ",
                   {
                     text: "Build.top",
                     bold: true,
                     itemId: "proj-build",
                     href: "https://build.top/",
                   },
-                  " de raiz com base em designs em Figma.",
+                  " com base em designs em Figma, implementando o fluxo completo da aplicação",
                 ],
               },
               {
                 text: [
-                  "Trabalho em vÃ¡rias aplicaÃ§Ãµes, implementando funcionalidades, melhorando interfaces e resolvendo problemas.",
+                  "Trabalhei em várias aplicações, desenvolvendo funcionalidades, melhorando interfaces e corrigindo problemas com base em feedback de utilizadores",
                 ],
               },
               {
                 text: [
-                  "ContribuiÃ§Ã£o para o design system interno, garantindo consistÃªncia entre produtos.",
+                  "Contribuí para partes core do ",
+                  {
+                    text: "Talent Passport",
+                    bold: true,
+                    itemId: "proj-passport",
+                    href: "https://passport.talentprotocol.com/",
+                  },
+                  ", incluindo iterações da página de wallet e integração de novos parâmetros de scoring",
                 ],
               },
               {
                 text: [
-                  "ColaboraÃ§Ã£o prÃ³xima com produto e backend para entregar funcionalidades completas.",
+                  "Integrei o sistema de builder score em diferentes produtos à medida que foi sendo desenvolvido",
                 ],
               },
               {
                 text: [
-                  "TraduÃ§Ã£o de requisitos de produto em interfaces simples, claras e utilizÃ¡veis.",
+                  "Colaborei de perto com produto e backend numa equipa pequena, contribuindo para funcionalidades completas",
                 ],
               },
               {
                 text: [
-                  "Trabalho num ambiente rÃ¡pido, equilibrando velocidade com qualidade e manutenÃ§Ã£o.",
+                  "Testei aplicações manualmente para validar comportamento e usabilidade antes de lançamento",
                 ],
               },
             ],
@@ -266,27 +290,27 @@ export const talentProtocolTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "Primeira experiÃªncia profissional em web3, exigindo aprendizagem rÃ¡pida de conceitos como blockchain, crypto e dados on-chain.",
+                  "Primeira experiência real em desenvolvimento web, ao mesmo tempo que aprendia Next.js, TypeScript e novas ferramentas",
                 ],
               },
               {
                 text: [
-                  "AdaptaÃ§Ã£o a ferramentas, bibliotecas e padrÃµes especÃ­ficos deste ecossistema.",
+                  "Entrada no ecossistema web3 com pouca experiência prévia, exigindo aprendizagem rápida de conceitos e ferramentas",
                 ],
               },
               {
                 text: [
-                  "MudanÃ§a constante de contexto entre diferentes produtos e codebases.",
+                  "Trabalho num ambiente rápido, com mudanças frequentes de direção e requisitos",
                 ],
               },
               {
                 text: [
-                  "Manter consistÃªncia entre plataformas sem comprometer a flexibilidade de cada produto.",
+                  "Adaptação a uma codebase grande e complexa, envolvendo frontend, backend e lógica ligada a blockchain",
                 ],
               },
               {
                 text: [
-                  "Saber quando avanÃ§ar rapidamente e quando estruturar melhor a soluÃ§Ã£o.",
+                  "Equilibrar aprendizagem com entrega em contexto real de produto",
                 ],
               },
             ],
@@ -296,4 +320,3 @@ export const talentProtocolTranslations: TranslationDictionary = {
     },
   },
 };
-
