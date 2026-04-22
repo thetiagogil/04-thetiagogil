@@ -12,7 +12,6 @@ export const SettingsButton = () => {
   const langs: { value: Lang; label: string }[] = [
     { value: "en", label: "EN" },
     { value: "pt", label: "PT" },
-    { value: "es", label: "ES" },
   ];
 
   const modes: { value: ThemeMode; label: string }[] = [
@@ -50,7 +49,7 @@ export const SettingsButton = () => {
                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
                   {t("settings.language")}
                 </p>
-                <div className="grid grid-cols-3 gap-1 p-1 rounded-sm bg-muted">
+                <div className="grid grid-cols-2 gap-1 rounded-sm bg-muted p-1">
                   {langs.map((l) => (
                     <button
                       key={l.value}

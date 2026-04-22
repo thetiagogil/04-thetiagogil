@@ -14,6 +14,7 @@ export const certifications: CertificationItem[] = [
     status: "completed",
     img: "certifications/udemy.jpeg",
     featured: true,
+    hasDetailsPage: true,
   },
   {
     id: "cert-agile",
@@ -28,6 +29,7 @@ export const certifications: CertificationItem[] = [
     status: "completed",
     img: "certifications/udemy.jpeg",
     featured: true,
+    hasDetailsPage: true,
   },
   {
     id: "cert-outsystems",
@@ -42,5 +44,6 @@ export const certifications: CertificationItem[] = [
     status: "completed",
     img: "certifications/udemy.jpeg",
     featured: true,
+    hasDetailsPage: true,
   },
 ];

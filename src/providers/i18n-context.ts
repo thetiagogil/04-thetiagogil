@@ -1,3 +1,4 @@
+import type { TranslationValue } from "@/translations/types";
 import type { Lang } from "@/types/common";
 import { createContext, useContext } from "react";
 
@@ -6,6 +7,7 @@ export type I18nContextType = {
   setLang: (lang: Lang) => void;
   t: (key: string) => string;
   tr: (key: string | undefined) => string;
+  tv: (key: string | undefined) => TranslationValue | undefined;
 };
 
 export const I18nContext = createContext<I18nContextType | null>(null);

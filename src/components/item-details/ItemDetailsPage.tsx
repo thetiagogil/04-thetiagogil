@@ -1,0 +1,197 @@
+import { ProjectImage } from "@/components/project/ProjectImage";
+import { StatusPill } from "@/components/StatusPill";
+import { TechBadge } from "@/components/TechBadge";
+import { ItemDetailsContent } from "@/components/item-details/ItemDetailsContent";
+import { getDetailItemByCategoryAndSlug } from "@/database";
+import { getItemOrg, getItemTitle } from "@/lib/data-helpers";
+import { formatMonthYearRange } from "@/lib/date";
+import { isProjectItem } from "@/lib/details";
+import { cn } from "@/lib/utils";
+import { useI18n } from "@/providers/i18n-context";
+import type { Category } from "@/types/common";
+import { ArrowLeft } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+
+const blockClassName =
+  "mt-10 border-t border-border/60 pt-7 md:mt-12 md:pt-8";
+
+const defaultLinkLabelKey: Record<Category, string> = {
+  experience: "experience.visit",
+  education: "education.visit",
+  certifications: "certification.visit",
+  projects: "project.visit",
+};
+
+export const ItemDetailsPage = ({ category }: { category: Category }) => {
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+  const { lang, t, tr, tv } = useI18n();
+  const [hasImageError, setHasImageError] = useState(false);
+
+  const item = slug
+    ? getDetailItemByCategoryAndSlug(category, slug)
+    : undefined;
+
+  useEffect(() => {
+    setHasImageError(false);
+  }, [item?.img]);
+
+  if (!item) return <Navigate to="/" replace />;
+
+  const title = getItemTitle(item, tr);
+  const org = getItemOrg(item, tr);
+  const dateLabel = formatMonthYearRange({
+    dateStart: item.dateStart,
+    dateEnd: item.dateEnd,
+    lang,
+    presentLabel: t("timeline.present"),
+  });
+  const details = tv(item.detailsKey);
+  const actionLinks = [
+    ...(item.link
+      ? [
+          {
+            href: item.link,
+            label: t(defaultLinkLabelKey[item.category]),
+            variant: "primary" as const,
+          },
+        ]
+      : []),
+    ...(item.repo
+      ? [
+          {
+            href: item.repo,
+            label: t("project.repo"),
+            variant: item.link ? ("secondary" as const) : ("primary" as const),
+          },
+        ]
+      : []),
+    ...(item.detailLinks ?? [])
+      .filter((entry) => entry.href)
+      .map((entry, index) => ({
+        href: entry.href,
+        label: entry.labelKey ? t(entry.labelKey) : entry.label,
+        variant:
+          entry.variant ??
+          (!item.link && !item.repo && index === 0 ? "primary" : "secondary"),
+      })),
+  ];
+
+  const handleBack = () => {
+    const historyState = window.history.state as { idx?: number } | null;
+
+    if (typeof historyState?.idx === "number" && historyState.idx > 0) {
+      navigate(-1);
+      return;
+    }
+
+    navigate("/timeline", { replace: true });
+  };
+
+  return (
+    <article className="mx-auto max-w-215 px-6 py-10 md:px-12 md:py-14">
+      <button
+        type="button"
+        onClick={handleBack}
+        className="inline-flex cursor-pointer items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-300 hover:text-foreground md:text-[11px]"
+      >
+        <ArrowLeft className="h-3.5 w-3.5" />
+        <span>{t("detail.back")}</span>
+      </button>
+
+      <header className="mt-8 space-y-5 md:mt-10">
+        {org && (
+          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground md:text-[11px]">
+            {org}
+          </p>
+        )}
+
+        <div className="space-y-3">
+          <h1 className="font-display text-2xl tracking-tight text-balance md:text-5xl">
+            {title}
+          </h1>
+
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span className="font-mono text-[10px] text-muted-foreground md:text-[11px]">
+              {dateLabel}
+            </span>
+            {item.status && <StatusPill status={item.status} />}
+          </div>
+        </div>
+      </header>
+
+      {isProjectItem(item) ? (
+        item.images.length > 0 ? (
+          <div className="mt-8 md:mt-10">
+            <ProjectImage images={item.images} alt={`${title} preview`} />
+          </div>
+        ) : null
+      ) : item.img && !hasImageError ? (
+        <figure className="mt-8 overflow-hidden rounded-sm border border-border bg-muted/40 md:mt-10">
+          <img
+            src={`/${item.img}`}
+            alt={`${org || title} preview`}
+            className="aspect-video w-full object-cover object-center"
+            loading="eager"
+            onError={() => setHasImageError(true)}
+          />
+        </figure>
+      ) : null}
+
+      {item.techs.length > 0 && (
+        <section className={blockClassName}>
+          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground md:text-[11px]">
+            {t("project.stack")}
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {item.techs.map((tag) => (
+              <TechBadge key={tag} label={tag} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {(item.subjectKey || item.descriptionKey || details) && (
+        <section className={cn(blockClassName, "space-y-6")}>
+          {item.subjectKey && (
+            <p className="font-display text-lg leading-snug text-balance md:text-2xl">
+              {tr(item.subjectKey)}
+            </p>
+          )}
+
+          {details ? (
+            <ItemDetailsContent value={details} />
+          ) : item.descriptionKey ? (
+            <p className="text-sm leading-relaxed text-muted-foreground text-pretty md:text-lg">
+              {tr(item.descriptionKey)}
+            </p>
+          ) : null}
+        </section>
+      )}
+
+      {actionLinks.length > 0 && (
+        <section className={blockClassName}>
+          <div className="flex flex-wrap gap-3">
+            {actionLinks.map((entry) => (
+              <a
+                key={`${entry.href}-${entry.label}`}
+                href={entry.href}
+                target="_blank"
+                rel="noreferrer"
+                className={cn(
+                  "inline-flex items-center gap-2 px-5 py-3 font-mono text-xs uppercase tracking-[0.18em] transition-colors duration-300",
+                  entry.variant === "primary"
+                    ? "bg-foreground text-background hover:bg-primary"
+                    : "border border-foreground hover:bg-foreground hover:text-background",
+                )}
+              >
+                {entry.label} {"\u2197"}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </article>
+  );
+};

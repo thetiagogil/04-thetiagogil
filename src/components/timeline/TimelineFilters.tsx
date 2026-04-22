@@ -47,7 +47,7 @@ export const TimelineFilters = ({
         type="button"
         disabled
         title={t("timeline.advancedFilters")}
-        className="inline-flex min-h-9 w-full  items-center justify-between gap-2 self-start rounded-full border border-dashed border-border px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground opacity-80 md:w-auto md:justify-start"
+        className="inline-flex  w-full  items-center justify-between gap-2 self-start rounded-full border border-dashed border-border px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground opacity-80 md:w-auto md:justify-start"
       >
         <SlidersHorizontal className="size-3.5" strokeWidth={1.8} />
         <span>{t("timeline.advancedFilters")}</span>

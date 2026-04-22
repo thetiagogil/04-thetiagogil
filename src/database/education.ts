@@ -15,6 +15,7 @@ export const education: EducationItem[] = [
     status: "completed",
     img: "education/cg.jpeg",
     featured: true,
+    hasDetailsPage: true,
   },
   {
     id: "edu-faul",
@@ -31,6 +32,7 @@ export const education: EducationItem[] = [
     status: "completed",
     img: "education/faul.jpeg",
     featured: true,
+    hasDetailsPage: true,
   },
   {
     id: "edu-ironhack",
@@ -56,5 +58,6 @@ export const education: EducationItem[] = [
     status: "completed",
     img: "education/ironhack.jpeg",
     featured: true,
+    hasDetailsPage: true,
   },
 ];

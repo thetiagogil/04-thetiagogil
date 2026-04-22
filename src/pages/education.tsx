@@ -1,3 +1,3 @@
 import { ItemDetailsPage } from "@/components/item-details/ItemDetailsPage";
 
-export const ProjectPage = () => <ItemDetailsPage category="projects" />;
+export const EducationPage = () => <ItemDetailsPage category="education" />;

@@ -1,6 +1,8 @@
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { SettingsButton } from "@/components/SettingsButton";
 import { SiteHeader } from "@/components/SiteHeader";
+import { CertificationsPage } from "@/pages/certifications";
+import { EducationPage } from "@/pages/education";
 import { ExperiencePage } from "@/pages/experience";
 import { HomePage } from "@/pages/home";
 import { ProjectPage } from "@/pages/project";
@@ -17,6 +19,11 @@ export const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/experience/:slug" element={<ExperiencePage />} />
+          <Route path="/education/:slug" element={<EducationPage />} />
+          <Route
+            path="/certifications/:slug"
+            element={<CertificationsPage />}
+          />
           <Route path="/projects/:slug" element={<ProjectPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

@@ -5,7 +5,6 @@ type MonthStyle = "long" | "short";
 const localeMap: Record<Lang, string> = {
   en: "en-US",
   pt: "pt-PT",
-  es: "es-ES",
 };
 
 const formatterCache = new Map<string, Intl.DateTimeFormat>();
