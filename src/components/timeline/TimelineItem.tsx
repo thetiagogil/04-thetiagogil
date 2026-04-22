@@ -7,6 +7,7 @@ import {
   getTimelineDateParts,
   getYearDateParts,
 } from "@/lib/date";
+import { getItemHref } from "@/lib/details";
 import { useI18n } from "@/providers/i18n-context";
 import type { DataItem } from "@/types/data";
 import { Link } from "react-router-dom";
@@ -14,7 +15,8 @@ import { Link } from "react-router-dom";
 export const TimelineItem = ({ item }: { item: DataItem }) => {
   const { lang, t, tr } = useI18n();
 
-  const isLinkable = item.category === "projects" && Boolean(item.slug);
+  const itemHref = getItemHref(item);
+  const isLinkable = Boolean(itemHref);
   const org = getItemOrg(item, tr);
   const date = getTimelineDateParts({
     dateStart: item.dateStart,
@@ -68,7 +70,7 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
         <h2 className="mt-1.5 font-display text-lg tracking-tight text-balance md:text-2xl">
           {isLinkable ? (
             <Link
-              to={`/projects/${item.slug}`}
+              to={itemHref!}
               className="transition-colors duration-300 hover:text-primary"
             >
               {getItemTitle(item, tr)}{" "}

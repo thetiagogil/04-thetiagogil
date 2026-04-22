@@ -1,6 +1,7 @@
 import { StatusPill } from "@/components/StatusPill";
 import { TechBadge } from "@/components/TechBadge";
 import { getItemOrg, getItemTitle } from "@/lib/data-helpers";
+import { getItemHref } from "@/lib/details";
 import { getYearDateParts } from "@/lib/date";
 import { useI18n } from "@/providers/i18n-context";
 import type { DataItem } from "@/types/data";
@@ -9,7 +10,8 @@ import { Link } from "react-router-dom";
 export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
   const { t, tr } = useI18n();
 
-  const isLinkable = item.category === "projects" && Boolean(item.slug);
+  const itemHref = getItemHref(item);
+  const isLinkable = Boolean(itemHref);
   const date = getYearDateParts({
     dateStart: item.dateStart,
     dateEnd: item.dateEnd,
@@ -41,7 +43,9 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
               {org}
             </span>
           )}
-          {item.status === "ongoing" && <StatusPill status={item.status} />}
+          {(item.status === "ongoing" || item.status === "current") && (
+            <StatusPill status={item.status} />
+          )}
         </div>
 
         {item.descriptionKey && (
@@ -65,7 +69,7 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
     <li className="group py-5">
       {isLinkable ? (
         <Link
-          to={`/projects/${item.slug}`}
+          to={itemHref!}
           className="block transition-colors duration-300"
         >
           {inner}

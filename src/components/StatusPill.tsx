@@ -4,6 +4,7 @@ import type { ItemStatus } from "@/types/common";
 
 const colorMap: Record<ItemStatus, string> = {
   ongoing: "bg-status-active/15 text-status-active",
+  current: "bg-status-active/15 text-status-active",
   completed: "bg-status-completed/15 text-status-completed",
   outdated: "bg-status-outdated/15 text-status-outdated",
   inactive: "bg-status-inactive/15 text-status-inactive",

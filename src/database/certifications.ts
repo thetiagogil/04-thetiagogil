@@ -1,20 +1,6 @@
-import type { DataItem } from "@/types/data";
+import type { CertificationItem } from "@/types/data";
 
-export const certifications: DataItem[] = [
-  {
-    id: "cert-agile",
-    category: "certifications",
-    title: "",
-    titleKey: "certification_agile_name",
-    org: "Udemy",
-    descriptionKey: "certification_agile_description",
-    link: "https://www.udemy.com/course/agile-project-management-certification/",
-    techs: ["Agile Methodologies", "Lean Principles", "Kanban", "Jira"],
-    dateStart: new Date("2024-01"),
-    status: "completed",
-    img: "certifications/udemy.jpeg",
-    featured: true,
-  },
+export const certifications: CertificationItem[] = [
   {
     id: "cert-react-native",
     category: "certifications",
@@ -24,7 +10,21 @@ export const certifications: DataItem[] = [
     descriptionKey: "certification_react_native_description",
     link: "https://www.udemy.com/course/build-mobile-apps-with-react-native-from-to-zero-to-expert/",
     techs: ["React Native", "JavaScript", "REST API", "Postman"],
-    dateStart: new Date("2024-01"),
+    dateStart: new Date("2024-01-05"),
+    status: "completed",
+    img: "certifications/udemy.jpeg",
+    featured: true,
+  },
+  {
+    id: "cert-agile",
+    category: "certifications",
+    title: "",
+    titleKey: "certification_agile_name",
+    org: "Udemy",
+    descriptionKey: "certification_agile_description",
+    link: "https://www.udemy.com/course/agile-project-management-certification/",
+    techs: ["Agile Methodologies", "Lean Principles", "Kanban", "Jira"],
+    dateStart: new Date("2024-02-01"),
     status: "completed",
     img: "certifications/udemy.jpeg",
     featured: true,
@@ -38,7 +38,7 @@ export const certifications: DataItem[] = [
     descriptionKey: "certification_outsystems_description",
     link: "https://www.udemy.com/course/complete-course-on-outsystems-development/",
     techs: ["OutSystems"],
-    dateStart: new Date("2024-02"),
+    dateStart: new Date("2024-02-05"),
     status: "completed",
     img: "certifications/udemy.jpeg",
     featured: true,

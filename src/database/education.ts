@@ -1,6 +1,6 @@
-import type { DataItem } from "@/types/data";
+import type { EducationItem } from "@/types/data";
 
-export const education: DataItem[] = [
+export const education: EducationItem[] = [
   {
     id: "edu-guadalupe",
     category: "education",
@@ -9,9 +9,9 @@ export const education: DataItem[] = [
     org: "Colégio Guadalupe",
     descriptionKey: "education_guadalupe_description",
     link: "https://c-guadalupe.com/en/",
-    techs: ["Microsoft Office"],
-    dateStart: new Date("2011-09"),
-    dateEnd: new Date("2014-07"),
+    techs: [],
+    dateStart: new Date("2011-09-01"),
+    dateEnd: new Date("2014-07-31"),
     status: "completed",
     img: "education/cg.jpeg",
     featured: true,
@@ -26,8 +26,8 @@ export const education: DataItem[] = [
     descriptionKey: "education_faul_description",
     link: "https://www.fa.ulisboa.pt/index.php/en/",
     techs: ["AutoCAD", "SketchUp", "Adobe Photoshop", "Microsoft Office"],
-    dateStart: new Date("2014-09"),
-    dateEnd: new Date("2022-07"),
+    dateStart: new Date("2014-09-01"),
+    dateEnd: new Date("2022-07-31"),
     status: "completed",
     img: "education/faul.jpeg",
     featured: true,
@@ -51,8 +51,8 @@ export const education: DataItem[] = [
       "REST API",
       "DOM Manipulation",
     ],
-    dateStart: new Date("2023-08"),
-    dateEnd: new Date("2023-11"),
+    dateStart: new Date("2023-08-01"),
+    dateEnd: new Date("2023-11-30"),
     status: "completed",
     img: "education/ironhack.jpeg",
     featured: true,

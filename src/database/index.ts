@@ -2,6 +2,7 @@ import { certifications } from "@/database/certifications";
 import { education } from "@/database/education";
 import { experience } from "@/database/experience";
 import { projects } from "@/database/projects";
+import { getExperienceSlug, getProjectSlug } from "@/lib/details";
 import type { DataItem } from "@/types/data";
 
 export { certifications } from "@/database/certifications";
@@ -23,7 +24,14 @@ export const getByCategory = (category: string) =>
   allItems.filter((i) => i.category === category);
 
 export const getProjectBySlug = (slug: string) =>
-  projects.find((p) => p.slug === slug);
+  projects.find(
+    (project) => project.hasDetailsPage && getProjectSlug(project) === slug,
+  );
+
+export const getExperienceBySlug = (slug: string) =>
+  experience.find(
+    (item) => item.hasDetailsPage && getExperienceSlug(item) === slug,
+  );
 
 export const getSorted = (items: DataItem[]) =>
   [...items].sort((a, b) => {
@@ -39,5 +47,7 @@ export const getSorted = (items: DataItem[]) =>
       b.dateEnd === null
         ? Number.POSITIVE_INFINITY
         : (b.dateEnd?.getTime() ?? b.dateStart.getTime());
-    return bEnd - aEnd;
+    if (bEnd !== aEnd) return bEnd - aEnd;
+
+    return a.id.localeCompare(b.id);
   });

@@ -15,8 +15,11 @@ const getSystemTheme = (): "light" | "dark" =>
 
 const getInitialMode = (): ThemeMode => {
   const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "light" || stored === "dark" || stored === "system")
+
+  if (stored === "light" || stored === "dark" || stored === "system") {
     return stored;
+  }
+
   return "system";
 };
 
@@ -26,9 +29,9 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     getSystemTheme,
   );
 
-  const setMode = useCallback((m: ThemeMode) => {
-    setModeState(m);
-    localStorage.setItem(STORAGE_KEY, m);
+  const setMode = useCallback((nextMode: ThemeMode) => {
+    setModeState(nextMode);
+    localStorage.setItem(STORAGE_KEY, nextMode);
   }, []);
 
   useEffect(() => {
@@ -44,6 +47,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const root = document.documentElement;
     root.classList.toggle("dark", resolved === "dark");
+    root.style.colorScheme = resolved;
   }, [resolved]);
 
   const value = useMemo(
