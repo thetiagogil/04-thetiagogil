@@ -53,10 +53,11 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
           {date.secondary}
         </div>
       </div>
+
       <div className="relative pl-8 md:pl-10">
         <CategoryGlyph
           category={item.category}
-          className="absolute left-1.5 top-0.5 h-5.5 w-5.5 md:-left-2 md:top-1 md:h-4.5 md:w-4.5"
+          className="absolute left-1.5 h-5.5 w-5.5 md:-left-2 md:h-4.5 md:w-4.5"
         />
 
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
