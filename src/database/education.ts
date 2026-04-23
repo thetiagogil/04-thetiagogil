@@ -2,22 +2,6 @@ import type { EducationItem } from "@/types/data";
 
 export const education: EducationItem[] = [
   {
-    id: "edu-guadalupe",
-    category: "education",
-    title: "",
-    titleKey: "education_guadalupe_name",
-    org: "Colégio Guadalupe",
-    descriptionKey: "education_guadalupe_description",
-    link: "https://c-guadalupe.com/en/",
-    techs: [],
-    dateStart: new Date("2011-09-01"),
-    dateEnd: new Date("2014-07-31"),
-    status: "completed",
-    img: "education/cg.jpeg",
-    featured: true,
-    hasDetailsPage: true,
-  },
-  {
     id: "edu-faul",
     category: "education",
     title: "",
