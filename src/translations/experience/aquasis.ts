@@ -1,9 +1,9 @@
-﻿import type { TranslationDictionary } from "@/translations/types";
+import type { TranslationDictionary } from "@/translations/types";
 
 export const aquasisTranslations: TranslationDictionary = {
   experience_aquasis_description: {
-    en: "Work on Aquaworks, the company's main product, focusing on frontend development while collaborating closely with backend and product.",
-    pt: "Trabalho no Aquaworks, o principal produto da empresa, com foco no frontend e em colaboraÃ§Ã£o prÃ³xima com backend e produto.",
+    en: "Working on Aquaworks, an enterprise platform used to manage water systems and operational workflows. Focused on building and migrating core parts of the application to a modern React-based architecture, contributing across the frontend and shaping UI/UX decisions in a complex domain.",
+    pt: "Trabalho no Aquaworks, uma plataforma empresarial utilizada na gestão de sistemas de água e operações. Foco no desenvolvimento e migração de partes core da aplicação para uma arquitetura moderna em React, contribuindo em todo o frontend e participando em decisões de UI/UX num domínio complexo.",
   },
   experience_aquasis_details: {
     en: {
@@ -15,16 +15,19 @@ export const aquasisTranslations: TranslationDictionary = {
             type: "paragraphs",
             paragraphs: [
               [
-                "At Aquasis, I work on ",
+                "Aquasis develops enterprise software used by utilities and municipalities to manage water systems, operations, and maintenance workflows.",
+              ],
+              [
+                "I work on ",
                 {
                   text: "Aquaworks",
                   bold: true,
                   href: "https://www.aquasis.pt/pt/solucoes/aquaworks",
                 },
-                ", the company's main product, focusing on frontend development while collaborating closely with backend and product.",
+                ", a platform that supports the day-to-day management of operational processes such as work orders, scheduling, asset tracking, and georeferenced data across multiple systems and locations.",
               ],
               [
-                "My work is centered around building and evolving core parts of the platform, contributing to its transition to a modern React-based architecture, and ensuring the interface remains clear, consistent, and usable as the product grows.",
+                "My role focuses on frontend development across the platform, contributing to both new modules and the ongoing migration of the application to a modern React-based architecture.",
               ],
             ],
           },
@@ -41,7 +44,7 @@ export const aquasisTranslations: TranslationDictionary = {
                     bold: true,
                     href: "https://www.aquasis.pt/pt/solucoes/aquaworks",
                   },
-                  " - platform used to manage and optimize water systems and infrastructure.",
+                  " - platform for managing operational workflows in water systems, including task planning, asset management, and georeferenced data analysis",
                 ],
               },
             ],
@@ -54,32 +57,34 @@ export const aquasisTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "Built and contributed to core parts of Aquaworks as part of a cross-functional team.",
+                  "Built and delivered a full ",
+                  { text: "Laboratory module", bold: true },
+                  ", handling configuration flows, task planning, and sample and reports generation",
                 ],
               },
               {
                 text: [
-                  "Worked on different modules within Aquaworks, contributing to their development and integration into the main platform.",
+                  "Worked across the entire frontend, contributing to forms, dashboards, tables, workflows, and data-driven interfaces",
                 ],
               },
               {
                 text: [
-                  "Contributed to the migration from a legacy architecture to a modern React-based stack.",
+                  "Contributed to the migration of the platform from a legacy architecture to a modern React + TypeScript stack",
                 ],
               },
               {
                 text: [
-                  "Developed frontend features with a focus on maintainability, performance, and clarity.",
+                  "Took an active role in UI/UX decisions, improving clarity and usability within existing constraints",
                 ],
               },
               {
                 text: [
-                  "Took ownership of UI/UX decisions, translating requirements into clear and usable interfaces.",
+                  "Developed data-heavy interfaces, including dashboards with charts, reports, and complex relational data",
                 ],
               },
               {
                 text: [
-                  "Collaborated closely with backend and product to deliver end-to-end features.",
+                  "Worked directly with clients during the Laboratory module development, iterating based on real usage and feedback",
                 ],
               },
             ],
@@ -92,24 +97,28 @@ export const aquasisTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "Working on an evolving product while migrating it to a new architecture.",
+                  "Understanding a complex domain related to water systems, operations, and infrastructure management",
                 ],
               },
               {
                 text: [
-                  "Balancing new development with ongoing integration into the main platform.",
+                  "Working with a large and deeply structured data model with many interdependent entities",
                 ],
               },
               {
                 text: [
-                  "Taking responsibility for UI/UX decisions without a dedicated design role.",
+                  "Building features with limited documentation, requiring exploration and validation of requirements",
                 ],
               },
               {
-                text: ["Ensuring consistency across different parts of the system."],
+                text: [
+                  "Designing and implementing interfaces that balance usability with existing system constraints",
+                ],
               },
               {
-                text: ["Aligning technical decisions with real product needs."],
+                text: [
+                  "Contributing to a large-scale application while maintaining consistency across different parts of the system",
+                ],
               },
             ],
           },
@@ -120,21 +129,24 @@ export const aquasisTranslations: TranslationDictionary = {
       type: "sections",
       sections: [
         {
-          title: "VisÃ£o Geral",
+          title: "Visão Geral",
           content: {
             type: "paragraphs",
             paragraphs: [
               [
-                "Na Aquasis, trabalho no ",
+                "A Aquasis desenvolve software empresarial utilizado por entidades gestoras e municípios para a gestão de sistemas de abastecimento de água, operações e manutenção.",
+              ],
+              [
+                "Trabalho no ",
                 {
                   text: "Aquaworks",
                   bold: true,
                   href: "https://www.aquasis.pt/pt/solucoes/aquaworks",
                 },
-                ", o principal produto da empresa, com foco no frontend e em colaboraÃ§Ã£o prÃ³xima com backend e produto.",
+                ", uma plataforma que suporta a gestão diária de processos operacionais, como ordens de trabalho, planeamento de tarefas, gestão de ativos e dados georreferenciados em múltiplos sistemas e localizações.",
               ],
               [
-                "O meu trabalho passa por desenvolver e evoluir partes core da plataforma, contribuir para a sua transiÃ§Ã£o para uma arquitetura moderna em React e garantir que a interface se mantÃ©m clara, consistente e fÃ¡cil de usar Ã  medida que o produto cresce.",
+                "O meu papel está focado no desenvolvimento frontend, contribuindo tanto para novos módulos como para a migração contínua da aplicação para uma arquitetura moderna em React.",
               ],
             ],
           },
@@ -151,7 +163,7 @@ export const aquasisTranslations: TranslationDictionary = {
                     bold: true,
                     href: "https://www.aquasis.pt/pt/solucoes/aquaworks",
                   },
-                  " - plataforma utilizada para gestÃ£o e otimizaÃ§Ã£o de sistemas e infraestruturas de Ã¡gua.",
+                  " - plataforma para gestão de processos operacionais em sistemas de água, incluindo planeamento de tarefas, gestão de ativos e análise de dados georreferenciados",
                 ],
               },
             ],
@@ -164,32 +176,34 @@ export const aquasisTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "Desenvolvi e contribuÃ­ para partes core do Aquaworks como parte de uma equipa multidisciplinar.",
+                  "Desenvolvi e entreguei um módulo completo de ",
+                  { text: "Laboratório", bold: true },
+                  ", incluindo configurações, planeamento de tarefas, geração de amostras e relatórios",
                 ],
               },
               {
                 text: [
-                  "Trabalhei em diferentes mÃ³dulos do Aquaworks, contribuindo para o seu desenvolvimento e integraÃ§Ã£o na plataforma principal.",
+                  "Trabalhei em todo o frontend da aplicação, incluindo formulários, dashboards, tabelas e fluxos de trabalho",
                 ],
               },
               {
                 text: [
-                  "ContribuÃ­ para a migraÃ§Ã£o de uma arquitetura legacy para uma stack moderna em React.",
+                  "Contribuí para a migração da aplicação para uma stack moderna baseada em React e TypeScript",
                 ],
               },
               {
                 text: [
-                  "Desenvolvi funcionalidades frontend com foco em manutenÃ§Ã£o, performance e clareza.",
+                  "Participei ativamente em decisões de UI/UX, melhorando clareza e usabilidade dentro das limitações existentes",
                 ],
               },
               {
                 text: [
-                  "Assumi decisÃµes de UI/UX, traduzindo requisitos em interfaces claras e utilizÃ¡veis.",
+                  "Desenvolvi interfaces orientadas a dados, incluindo dashboards com gráficos, relatórios e estruturas complexas",
                 ],
               },
               {
                 text: [
-                  "Colaborei de perto com backend e produto para entregar funcionalidades completas.",
+                  "Trabalhei diretamente com clientes durante o desenvolvimento do módulo de Laboratório, iterando com base em feedback real",
                 ],
               },
             ],
@@ -202,25 +216,27 @@ export const aquasisTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "Trabalhar num produto em evoluÃ§Ã£o enquanto se faz a migraÃ§Ã£o para uma nova arquitetura.",
+                  "Compreensão de um domínio complexo relacionado com sistemas de água e gestão operacional",
                 ],
               },
               {
                 text: [
-                  "Equilibrar desenvolvimento novo com integraÃ§Ã£o contÃ­nua na plataforma.",
+                  "Trabalho com um modelo de dados extenso e altamente interligado",
                 ],
               },
               {
                 text: [
-                  "Tomar decisÃµes de UI/UX sem um papel dedicado de design.",
+                  "Desenvolvimento de funcionalidades com pouca documentação disponível",
                 ],
               },
               {
-                text: ["Garantir consistÃªncia entre diferentes partes do sistema."],
+                text: [
+                  "Equilíbrio entre usabilidade e limitações do sistema existente",
+                ],
               },
               {
                 text: [
-                  "Alinhar decisÃµes tÃ©cnicas com necessidades reais do produto.",
+                  "Contribuição para uma aplicação de grande escala mantendo consistência entre diferentes áreas",
                 ],
               },
             ],
@@ -230,4 +246,3 @@ export const aquasisTranslations: TranslationDictionary = {
     },
   },
 };
-
