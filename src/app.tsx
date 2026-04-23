@@ -1,5 +1,5 @@
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { SettingsButton } from "@/components/SettingsButton";
+import { FloatingControls } from "@/components/FloatingControls";
 import { SiteHeader } from "@/components/SiteHeader";
 import { CertificationsPage } from "@/pages/certifications";
 import { EducationPage } from "@/pages/education";
@@ -28,7 +28,7 @@ export const App = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
-      <SettingsButton />
+      <FloatingControls />
     </div>
   );
 };
