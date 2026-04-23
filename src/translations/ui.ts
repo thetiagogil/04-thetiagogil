@@ -1,7 +1,7 @@
 ﻿import type { TranslationDictionary } from "@/translations/types";
 
 export const uiTranslations: TranslationDictionary = {
-  "nav.home": { en: "Home", pt: "InÃ­cio" },
+  "nav.home": { en: "Home", pt: "Início" },
   "nav.timeline": { en: "Timeline", pt: "Percurso" },
   "home.title": {
     en: "Frontend Developer & Architect",
@@ -9,7 +9,7 @@ export const uiTranslations: TranslationDictionary = {
   },
   "home.bio": {
     en: "I'm a Frontend Developer focused on building modern web applications with React, Next.js, and TypeScript. I enjoy creating interfaces that are not only clean and performant, but also well-structured and easy to scale. My background in architecture shaped the way I think about design, usability, and systems, and I bring that mindset into the products I build. While frontend is my main focus, I'm also comfortable contributing across the stack when needed.",
-    pt: "Sou um Frontend Developer focado em construir aplicaÃ§Ãµes web modernas com React, Next.js e TypeScript. Gosto de criar interfaces que nÃ£o sÃ£o apenas limpas e performantes, mas tambÃ©m bem estruturadas e fÃ¡ceis de escalar. A minha formaÃ§Ã£o em arquitetura influenciou a forma como penso design, usabilidade e sistemas, e levo essa abordagem para os produtos que desenvolvo. Apesar do meu foco ser frontend, sinto-me confortÃ¡vel a contribuir em outras partes do stack quando necessÃ¡rio.",
+    pt: "Sou um Frontend Developer focado em construir aplicações web modernas com React, Next.js e TypeScript. Gosto de criar interfaces que não são apenas limpas e performantes, mas também bem estruturadas e fáceis de escalar. A minha formação em arquitetura influenciou a forma como penso design, usabilidade e sistemas, e levo essa abordagem para os produtos que desenvolvo. Apesar do meu foco ser frontend, sinto-me confortável a contribuir em outras partes do stack quando necessário.",
   },
   "home.role": {
     en: "Frontend Developer & Architect",
@@ -26,7 +26,7 @@ export const uiTranslations: TranslationDictionary = {
   },
   "home.downloadCv": {
     en: "Download CV",
-    pt: "Descarregar o meu currÃ­culo",
+    pt: "Descarregar o meu currículo",
   },
   "home.selected": {
     en: "Selected work",
@@ -34,17 +34,17 @@ export const uiTranslations: TranslationDictionary = {
   },
   "home.subtitle": {
     en: "A curated cross-section of practice. Full record available on the timeline.",
-    pt: "Uma seleÃ§Ã£o curada do meu percurso. Registo completo disponÃ­vel no percurso.",
+    pt: "Uma seleção curada do meu percurso. Registo completo disponível no percurso.",
   },
   "section.experience": {
     en: "Experience",
-    pt: "ExperiÃªncia",
+    pt: "Experiência",
   },
   "section.projects": { en: "Projects", pt: "Projetos" },
-  "section.education": { en: "Education", pt: "EducaÃ§Ã£o" },
+  "section.education": { en: "Education", pt: "Educação" },
   "section.certifications": {
     en: "Certifications",
-    pt: "CertificaÃ§Ãµes",
+    pt: "Certificações",
   },
   "timeline.title": {
     en: "Trajectory",
@@ -52,17 +52,18 @@ export const uiTranslations: TranslationDictionary = {
   },
   "timeline.subtitle": {
     en: "The complete record, every chapter, in chronological order.",
-    pt: "O registo completo, cada capÃ­tulo, por ordem cronolÃ³gica.",
+    pt: "O registo completo, cada capítulo, por ordem cronológica.",
   },
   "timeline.all": { en: "All", pt: "Todos" },
   "timeline.advancedFilters": {
     en: "Advanced filters",
-    pt: "Filtros avanÃ§ados",
+    pt: "Filtros avançados",
   },
   "timeline.present": { en: "Present", pt: "Presente" },
   "common.from": { en: "from", pt: "desde" },
+  "common.backToTop": { en: "Back to top", pt: "Voltar ao topo" },
   "common.soon": { en: "Soon", pt: "Breve" },
-  "settings.title": { en: "Settings", pt: "DefiniÃ§Ãµes" },
+  "settings.title": { en: "Settings", pt: "Definições" },
   "settings.language": { en: "Language", pt: "Idioma" },
   "settings.theme": { en: "Appearance", pt: "Tema" },
   "settings.light": { en: "Light", pt: "Claro" },
@@ -70,9 +71,9 @@ export const uiTranslations: TranslationDictionary = {
   "settings.system": { en: "System", pt: "Sistema" },
   "settings.open": {
     en: "Open settings",
-    pt: "Abrir definiÃ§Ãµes",
+    pt: "Abrir definições",
   },
-  "status.completed": { en: "Completed", pt: "ConcluÃ­do" },
+  "status.completed": { en: "Completed", pt: "Concluído" },
   "status.outdated": {
     en: "Outdated",
     pt: "Desatualizado",
@@ -83,9 +84,9 @@ export const uiTranslations: TranslationDictionary = {
     en: "Back to timeline",
     pt: "Voltar ao percurso",
   },
-  "project.role": { en: "Role", pt: "FunÃ§Ã£o" },
-  "project.years": { en: "Years", pt: "PerÃ­odo" },
-  "project.dates": { en: "Dates", pt: "PerÃ­odo" },
+  "project.role": { en: "Role", pt: "Função" },
+  "project.years": { en: "Years", pt: "Período" },
+  "project.dates": { en: "Dates", pt: "Período" },
   "project.stack": { en: "Stack", pt: "Tecnologias" },
   "project.visit": {
     en: "Visit project",
@@ -93,7 +94,7 @@ export const uiTranslations: TranslationDictionary = {
   },
   "project.repo": {
     en: "View repository",
-    pt: "Ver repositÃ³rio",
+    pt: "Ver repositório",
   },
   "project.viewCase": { en: "Read case", pt: "Ler caso" },
   "experience.back": {
@@ -110,7 +111,7 @@ export const uiTranslations: TranslationDictionary = {
   },
   "education.visit": {
     en: "Visit institution",
-    pt: "Visitar instituiÃ§Ã£o",
+    pt: "Visitar instituição",
   },
   "certification.visit": {
     en: "View course",
@@ -124,6 +125,6 @@ export const uiTranslations: TranslationDictionary = {
   "detail.back": { en: "Back", pt: "Voltar" },
   "detail.contributions": {
     en: "Key contributions",
-    pt: "Principais contribuiÃ§Ãµes",
+    pt: "Principais contribuições",
   },
 };
