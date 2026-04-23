@@ -113,6 +113,14 @@ export const uiTranslations: TranslationDictionary = {
     en: "Visit institution",
     pt: "Visitar instituição",
   },
+  "education.thesis": {
+    en: "View thesis",
+    pt: "Ver tese",
+  },
+  "education.certificate": {
+    en: "View certificate",
+    pt: "Ver certificado",
+  },
   "certification.visit": {
     en: "View course",
     pt: "Ver curso",
