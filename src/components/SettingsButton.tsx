@@ -21,19 +21,21 @@ export const SettingsButton = () => {
   ];
 
   return (
-    <>
+    <div className="relative flex flex-col items-end">
       {open && (
         <button
+          type="button"
           aria-label="Close settings"
           onClick={() => setOpen(false)}
-          className="fixed inset-0 z-40 bg-foreground/10 backdrop-blur-[2px]"
+          className="fixed inset-0 z-40 bg-foreground/10"
         />
       )}
 
       {open && (
         <div
-          className="w-72 rounded-md border border-border bg-card text-card-foreground shadow-2xl"
+          className="absolute bottom-full right-0 z-50 mb-3 w-72 rounded-md border border-border bg-card text-card-foreground shadow-2xl"
           role="dialog"
+          aria-modal="true"
         >
           <div className="border-b border-border px-5 py-4">
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
@@ -49,6 +51,7 @@ export const SettingsButton = () => {
                 {langs.map((entry) => (
                   <button
                     key={entry.value}
+                    type="button"
                     onClick={() => setLang(entry.value)}
                     className={`cursor-pointer rounded-[2px] px-3 py-1.5 font-mono text-xs tracking-wider transition-colors duration-300 ${
                       lang === entry.value
@@ -70,6 +73,7 @@ export const SettingsButton = () => {
                 {modes.map((entry) => (
                   <button
                     key={entry.value}
+                    type="button"
                     onClick={() => setMode(entry.value)}
                     className={`cursor-pointer rounded-[2px] px-2 py-1.5 text-xs transition-colors duration-300 ${
                       mode === entry.value
@@ -87,10 +91,11 @@ export const SettingsButton = () => {
       )}
 
       <button
+        type="button"
         onClick={() => setOpen((current) => !current)}
         aria-label={t("settings.open")}
         aria-expanded={open}
-        className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-foreground text-background shadow-xl transition-colors duration-300 hover:bg-primary"
+        className="relative z-50 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-foreground text-background shadow-xl transition-colors duration-300 hover:bg-primary"
       >
         <Settings
           size={18}
@@ -101,6 +106,6 @@ export const SettingsButton = () => {
           }}
         />
       </button>
-    </>
+    </div>
   );
 };
