@@ -4,9 +4,7 @@ export const education: EducationItem[] = [
   {
     id: "edu-faul",
     category: "education",
-    title: "",
     titleKey: "education_faul_name",
-    org: "",
     orgKey: "education_faul_place",
     descriptionKey: "education_faul_description",
     detailsKey: "education_faul_details",
@@ -14,7 +12,6 @@ export const education: EducationItem[] = [
     techs: ["Revit", "AutoCAD", "Adobe Photoshop"],
     dateStart: new Date("2014-09-01"),
     dateEnd: new Date("2022-07-31"),
-    status: "completed",
     img: "education/faul.jpeg",
     detailLinks: [
       {
@@ -30,7 +27,6 @@ export const education: EducationItem[] = [
   {
     id: "edu-ironhack",
     category: "education",
-    title: "",
     titleKey: "education_ironhack_name",
     org: "Ironhack",
     descriptionKey: "education_ironhack_description",
@@ -39,7 +35,6 @@ export const education: EducationItem[] = [
     techs: ["JavaScript", "React", "Node.js", "Express", "MongoDB"],
     dateStart: new Date("2023-08-01"),
     dateEnd: new Date("2023-11-30"),
-    status: "completed",
     img: "education/ironhack.jpeg",
     detailLinks: [
       {

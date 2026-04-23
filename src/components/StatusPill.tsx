@@ -3,11 +3,9 @@ import { useI18n } from "@/providers/i18n-context";
 import type { ItemStatus } from "@/types/common";
 
 const colorMap: Record<ItemStatus, string> = {
-  ongoing: "bg-status-active/15 text-status-active",
-  current: "bg-status-active/15 text-status-active",
-  completed: "bg-status-completed/15 text-status-completed",
-  outdated: "bg-status-outdated/15 text-status-outdated",
-  inactive: "bg-status-inactive/15 text-status-inactive",
+  "in progress": "bg-status-in-progress/15 text-status-in-progress",
+  live: "bg-status-live/15 text-status-live",
+  archived: "bg-status-archived/15 text-status-archived",
 };
 
 export const StatusPill = ({ status }: { status: ItemStatus }) => {

@@ -5,11 +5,7 @@ import type { Category } from "@/types/common";
 
 import { HomeFeaturedItem } from "./HomeFeaturedItem";
 
-export const HomeFeaturedSection = ({
-  category,
-}: {
-  category: Category;
-}) => {
+export const HomeFeaturedSection = ({ category }: { category: Category }) => {
   const { t } = useI18n();
 
   const items = getSorted(
@@ -18,9 +14,8 @@ export const HomeFeaturedSection = ({
         item.category === category &&
         item.featured &&
         (!item.status ||
-          item.status === "ongoing" ||
-          item.status === "current" ||
-          item.status === "completed"),
+          item.status === "in progress" ||
+          item.status === "live"),
     ),
   );
 

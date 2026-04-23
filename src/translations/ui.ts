@@ -73,13 +73,12 @@ export const uiTranslations: TranslationDictionary = {
     en: "Open settings",
     pt: "Abrir definições",
   },
-  "status.completed": { en: "Completed", pt: "Concluído" },
-  "status.outdated": {
-    en: "Outdated",
-    pt: "Desatualizado",
+  "status.in progress": { en: "In Progress", pt: "Em progresso" },
+  "status.live": { en: "Live", pt: "Ativo" },
+  "status.archived": {
+    en: "Archived",
+    pt: "Arquivado",
   },
-  "status.inactive": { en: "Inactive", pt: "Inativo" },
-  "status.ongoing": { en: "Ongoing", pt: "Em curso" },
   "project.back": {
     en: "Back to timeline",
     pt: "Voltar ao percurso",

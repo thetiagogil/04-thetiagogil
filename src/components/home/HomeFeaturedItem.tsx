@@ -48,9 +48,7 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
             )}
           </h3>
 
-          {(item.status === "ongoing" || item.status === "current") && (
-            <StatusPill status={item.status} />
-          )}
+          {item.status && <StatusPill status={item.status} />}
         </div>
 
         {org && (

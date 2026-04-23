@@ -23,7 +23,7 @@ export const getItemOrg = (
 // Returns a year string from a Date.
 export const getYear = (date: Date): number => date.getFullYear();
 
-// Returns end year or null for ongoing items.
+// Returns end year or null for in progress items.
 export const getEndYear = (item: DataItem): number | null => {
   if (item.dateEnd === null || item.dateEnd === undefined) return null;
   return item.dateEnd.getFullYear();

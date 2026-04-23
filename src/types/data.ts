@@ -9,15 +9,14 @@ export interface DetailLink {
 
 export interface BaseDataItem {
   id: string;
-  title: string;
+  title?: string;
   titleKey?: string;
-  org: string;
+  org?: string;
   orgKey?: string;
   subjectKey?: string;
   descriptionKey?: string;
   detailsKey?: string;
   link?: string;
-  repo?: string;
   detailLinks?: DetailLink[];
   techs: string[];
   dateStart: Date;
@@ -33,10 +32,11 @@ export interface ExperienceItem extends BaseDataItem {
   roleKey?: string;
 }
 
-export interface ProjectItem extends BaseDataItem {
+export interface ProjectItem extends Omit<BaseDataItem, "img"> {
   category: "projects";
-  img?: never;
+  repo?: string;
   images: string[];
+  img?: never;
 }
 
 export interface EducationItem extends BaseDataItem {

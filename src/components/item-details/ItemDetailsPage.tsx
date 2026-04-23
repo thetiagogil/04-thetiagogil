@@ -54,6 +54,7 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
   const hasMedia = isProjectItem(item)
     ? item.images.length > 0
     : Boolean(item.img && !hasImageError);
+  const projectRepo = isProjectItem(item) ? item.repo : undefined;
   const actionLinks = [
     ...(item.link
       ? [
@@ -64,10 +65,10 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
           },
         ]
       : []),
-    ...(item.repo
+    ...(projectRepo
       ? [
           {
-            href: item.repo,
+            href: projectRepo,
             label: t("project.repo"),
             variant: item.link ? ("secondary" as const) : ("primary" as const),
           },
@@ -80,7 +81,7 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
         label: entry.labelKey ? t(entry.labelKey) : entry.label,
         variant:
           entry.variant ??
-          (!item.link && !item.repo && index === 0 ? "primary" : "secondary"),
+          (!item.link && !projectRepo && index === 0 ? "primary" : "secondary"),
       })),
   ];
 

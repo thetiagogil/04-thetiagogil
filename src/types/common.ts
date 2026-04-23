@@ -5,9 +5,4 @@ export type Category =
   | "projects"
   | "education"
   | "certifications";
-export type ItemStatus =
-  | "completed"
-  | "outdated"
-  | "inactive"
-  | "ongoing"
-  | "current";
+export type ItemStatus = "in progress" | "live" | "archived";
