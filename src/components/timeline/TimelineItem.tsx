@@ -10,13 +10,19 @@ import {
 import { getItemHref } from "@/lib/details";
 import { useI18n } from "@/providers/i18n-context";
 import type { DataItem } from "@/types/data";
-import { Link } from "react-router-dom";
+import { ExternalLink, Link as LinkIcon } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
 
 export const TimelineItem = ({ item }: { item: DataItem }) => {
   const { lang, t, tr } = useI18n();
 
   const itemHref = getItemHref(item);
-  const isLinkable = Boolean(itemHref);
+  const externalHref = !itemHref && item.link ? item.link : null;
+  const LinkIndicator = itemHref
+    ? LinkIcon
+    : externalHref
+      ? ExternalLink
+      : null;
   const org = getItemOrg(item, tr);
   const date = getTimelineDateParts({
     dateStart: item.dateStart,
@@ -69,10 +75,11 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
 
         <h2 className="mt-1.5 font-display text-lg tracking-tight text-balance md:text-2xl transition-colors duration-300 group-hover:text-primary">
           {getItemTitle(item, tr)}
-          {isLinkable && (
-            <span className="ml-2 text-muted-foreground group-hover:text-primary transition-colors duration-300 ">
-              {"\u2192"}
-            </span>
+          {LinkIndicator && (
+            <LinkIndicator
+              className="ml-2 inline-block h-4 w-4 text-muted-foreground transition-colors duration-300 group-hover:text-primary"
+              strokeWidth={1.8}
+            />
           )}
         </h2>
 
@@ -101,10 +108,22 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
 
   return (
     <li className="group">
-      {isLinkable ? (
-        <Link to={itemHref!} className="block transition-colors duration-300">
+      {itemHref ? (
+        <RouterLink
+          to={itemHref!}
+          className="block transition-colors duration-300"
+        >
           {inner}
-        </Link>
+        </RouterLink>
+      ) : externalHref ? (
+        <a
+          href={externalHref}
+          target="_blank"
+          rel="noreferrer"
+          className="block transition-colors duration-300"
+        >
+          {inner}
+        </a>
       ) : (
         inner
       )}

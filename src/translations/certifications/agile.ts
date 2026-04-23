@@ -1,13 +1,8 @@
 ﻿import type { TranslationDictionary } from "@/translations/types";
 
 export const agileTranslations: TranslationDictionary = {
-  certification_agile_name: {
-    en: "Agile Project Management",
-    pt: "GestÃ£o de Projetos Agile",
-  },
   certification_agile_description: {
-    en: "Covered core Agile methodologies, including Scrum, Kanban, and Lean.",
-    pt: "Abordagem Ã s principais metodologias Agile, incluindo Scrum, Kanban e Lean.",
+    en: "Overview of agile methodologies, including principles of iterative development, team workflows, and tools such as Kanban and Scrum.",
+    pt: "Visão geral de metodologias ágeis, incluindo princípios de desenvolvimento iterativo, organização de equipas e utilização de ferramentas como Kanban e Scrum.",
   },
 };
-

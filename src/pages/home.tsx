@@ -3,7 +3,8 @@ import { HomeFeaturedSection } from "@/components/home/HomeFeaturedSection";
 import { person } from "@/database";
 import { useI18n } from "@/providers/i18n-context";
 import type { Category } from "@/types/common";
-import { Link } from "react-router-dom";
+import { ArrowRight, Download, ExternalLink } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
 
 const sectionOrder: Category[] = [
   "experience",
@@ -66,28 +67,30 @@ export const HomePage = () => {
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                className="font-mono text-xs uppercase tracking-[0.18em] text-foreground transition-colors duration-300 hover:text-primary"
+                className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.18em] text-foreground transition-colors duration-300 hover:text-primary"
               >
-                {social.label} {"\u2197"}
+                <span>{social.label}</span>
+                <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.8} />
               </a>
             ))}
           </div>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link
+            <RouterLink
               to="/timeline"
               className="inline-flex items-center gap-2 bg-foreground px-5 py-3 font-mono text-xs uppercase tracking-[0.18em] text-background transition-colors duration-300 hover:bg-primary"
             >
               {t("home.viewTimeline")}
-              <span>{"\u2192"}</span>
-            </Link>
+              <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.8} />
+            </RouterLink>
             <a
               href={person.resumeHref}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 border border-foreground px-5 py-3 font-mono text-xs uppercase tracking-[0.18em] text-foreground transition-colors duration-300 hover:bg-foreground hover:text-background"
             >
-              {t("home.downloadCv")} {"\u2193"}
+              <span>{t("home.downloadCv")}</span>
+              <Download className="h-3.5 w-3.5" strokeWidth={1.8} />
             </a>
           </div>
         </aside>
@@ -98,13 +101,13 @@ export const HomePage = () => {
           ))}
 
           <div className="pt-4 text-center">
-            <Link
+            <RouterLink
               to="/timeline"
               className="inline-flex items-center gap-2 font-display text-base italic text-muted-foreground transition-colors duration-300 hover:text-primary md:text-lg"
             >
               {t("home.viewTimeline")}
-              <span>{"\u2192"}</span>
-            </Link>
+              <ArrowRight className="h-4 w-4" strokeWidth={1.8} />
+            </RouterLink>
           </div>
         </section>
       </div>

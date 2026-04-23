@@ -1,10 +1,6 @@
 import type { TranslationDictionary } from "@/translations/types";
 
 export const subvisualTranslations: TranslationDictionary = {
-  experience_subvisual_name: {
-    en: "Full-Stack Developer Apprentice",
-    pt: "Aprendiz Full-Stack Developer",
-  },
   experience_subvisual_description: {
     en: "Built two full applications independently during an apprenticeship, including a web3 game with smart contracts and a web2 internal team platform. Gained hands-on experience with modern frontend tools and worked with web3 concepts for the first time.",
     pt: "Desenvolvi duas aplicações completas de forma independente durante um período de aprendizagem, incluindo um jogo web3 com smart contracts e uma plataforma interna de equipas. Ganhei experiência prática com ferramentas modernas de frontend e tive o primeiro contacto com conceitos de web3.",

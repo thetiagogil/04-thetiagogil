@@ -9,7 +9,7 @@ import { isProjectItem } from "@/lib/details";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/providers/i18n-context";
 import type { Category } from "@/types/common";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 
@@ -197,7 +197,8 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
                         : "border border-foreground hover:bg-foreground hover:text-background",
                     )}
                   >
-                    {entry.label} {"\u2197"}
+                    <span>{entry.label}</span>
+                    <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.8} />
                   </a>
                 ))}
               </div>

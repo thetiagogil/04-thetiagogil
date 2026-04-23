@@ -1,10 +1,6 @@
 import type { TranslationDictionary } from "@/translations/types";
 
 export const talentProtocolTranslations: TranslationDictionary = {
-  experience_talent_protocol_name: {
-    en: "Full-Stack Developer",
-    pt: "Full-Stack Developer",
-  },
   experience_talent_protocol_description: {
     en: "Worked across multiple products in a web3 ecosystem, contributing mainly on frontend. Built the first version of the Build.top frontend from Figma designs, worked on core features of the main platform, and adapted quickly to new technologies in a fast-paced environment.",
     pt: "Trabalhei em vários produtos dentro de um ecossistema web3, com foco principal no frontend. Desenvolvi a primeira versão do frontend do Build.top a partir de designs em Figma, contribuí para funcionalidades core da plataforma principal e adaptei-me rapidamente a novas tecnologias num ambiente dinâmico.",
