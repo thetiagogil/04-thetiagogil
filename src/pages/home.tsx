@@ -1,5 +1,6 @@
 import portrait from "@/assets/tg.png";
 import { HomeFeaturedSection } from "@/components/home/HomeFeaturedSection";
+import { ItemDetailsContent } from "@/components/item-details/ItemDetailsContent";
 import { person } from "@/database";
 import { useI18n } from "@/providers/i18n-context";
 import type { Category } from "@/types/common";
@@ -14,7 +15,8 @@ const sectionOrder: Category[] = [
 ];
 
 export const HomePage = () => {
-  const { t } = useI18n();
+  const { t, tv } = useI18n();
+  const homeBio = tv("home.bio") ?? t("home.bio");
 
   return (
     <div className="mx-auto max-w-350 px-6 py-10 md:px-12 md:py-16">
@@ -40,9 +42,10 @@ export const HomePage = () => {
             <h1 className="mt-2 font-display text-3xl tracking-tight text-balance md:text-5xl">
               {person.name}
             </h1>
-            <p className="mt-5 max-w-xl text-justify text-sm leading-relaxed text-muted-foreground md:text-base">
-              {t("home.bio")}
-            </p>
+            <ItemDetailsContent
+              value={homeBio}
+              className="mt-5 max-w-xl [&_p]:text-justify [&_p]:md:text-base!"
+            />
           </div>
 
           <div className="space-y-2 font-mono text-[11px] uppercase tracking-[0.18em]">

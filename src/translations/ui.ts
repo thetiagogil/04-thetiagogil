@@ -8,8 +8,34 @@ export const uiTranslations: TranslationDictionary = {
     pt: "Frontend Developer & Arquiteto",
   },
   "home.bio": {
-    en: "I'm a Frontend Developer focused on building modern web applications with React, Next.js, and TypeScript. I enjoy creating interfaces that are not only clean and performant, but also well-structured and easy to scale. My background in architecture shaped the way I think about design, usability, and systems, and I bring that mindset into the products I build. While frontend is my main focus, I'm also comfortable contributing across the stack when needed.",
-    pt: "Sou um Frontend Developer focado em construir aplicações web modernas com React, Next.js e TypeScript. Gosto de criar interfaces que não são apenas limpas e performantes, mas também bem estruturadas e fáceis de escalar. A minha formação em arquitetura influenciou a forma como penso design, usabilidade e sistemas, e levo essa abordagem para os produtos que desenvolvo. Apesar do meu foco ser frontend, sinto-me confortável a contribuir em outras partes do stack quando necessário.",
+    en: {
+      type: "paragraphs",
+      paragraphs: [
+        [
+          "I'm a Frontend Developer working mainly with React, Next.js, and TypeScript. I focus on building interfaces that are clear, scalable, and easy to maintain.",
+        ],
+        [
+          "My background in architecture shaped how I approach structure, usability, and systems, and I bring that way of thinking into the products I build.",
+        ],
+        [
+          "While frontend is my main focus, I'm comfortable contributing across the stack when needed.",
+        ],
+      ],
+    },
+    pt: {
+      type: "paragraphs",
+      paragraphs: [
+        [
+          "Sou um Frontend Developer que trabalha principalmente com React, Next.js e TypeScript, com foco em construir interfaces claras, escaláveis e fáceis de manter.",
+        ],
+        [
+          "A minha formação em arquitetura influenciou a forma como penso  em estrutura, usabilidade e sistemas, e levo essa abordagem para os produtos que desenvolvo.",
+        ],
+        [
+          "Apesar do foco em frontend, sinto-me confortável em contribuir para as outras áreas do stack quando necessário.",
+        ],
+      ],
+    },
   },
   "home.role": {
     en: "Frontend Developer & Architect",
@@ -22,11 +48,11 @@ export const uiTranslations: TranslationDictionary = {
   },
   "home.viewTimeline": {
     en: "View full timeline",
-    pt: "Explorar o meu percurso",
+    pt: "Ver o meu percurso",
   },
   "home.downloadCv": {
     en: "Download CV",
-    pt: "Descarregar o meu currículo",
+    pt: "Download CV",
   },
   "home.selected": {
     en: "Selected work",
