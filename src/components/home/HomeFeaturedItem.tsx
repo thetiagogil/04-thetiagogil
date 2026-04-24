@@ -5,13 +5,19 @@ import { getYearDateParts } from "@/lib/date";
 import { getItemHref } from "@/lib/details";
 import { useI18n } from "@/providers/i18n-context";
 import type { DataItem } from "@/types/data";
-import { Link } from "react-router-dom";
+import { ExternalLink, Link as LinkIcon } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
 
 export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
   const { t, tr } = useI18n();
 
   const itemHref = getItemHref(item);
-  const isLinkable = Boolean(itemHref);
+  const externalHref = !itemHref && item.link ? item.link : null;
+  const LinkIndicator = itemHref
+    ? LinkIcon
+    : externalHref
+      ? ExternalLink
+      : null;
   const date = getYearDateParts({
     dateStart: item.dateStart,
     dateEnd: item.dateEnd,
@@ -34,21 +40,22 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <h3 className="font-display text-base text-balance transition-colors duration-300 group-hover:text-primary md:text-xl">
             {getItemTitle(item, tr)}
-            {isLinkable && (
-              <span className="ml-2 text-muted-foreground group-hover:text-primary transition-colors duration-300 ">
-                {"\u2192"}
-              </span>
+            {LinkIndicator && (
+              <LinkIndicator
+                className="ml-2 inline-block h-3.5 w-3.5 text-muted-foreground transition-colors duration-300 group-hover:text-primary"
+                strokeWidth={1.8}
+              />
             )}
           </h3>
-          {org && (
-            <span className="text-xs italic text-muted-foreground md:text-sm">
-              {org}
-            </span>
-          )}
-          {(item.status === "ongoing" || item.status === "current") && (
-            <StatusPill status={item.status} />
-          )}
+
+          {item.status && <StatusPill status={item.status} />}
         </div>
+
+        {org && (
+          <span className="text-xs italic text-muted-foreground md:text-sm">
+            {org}
+          </span>
+        )}
 
         {item.descriptionKey && (
           <p className="mt-2 text-xs leading-relaxed text-muted-foreground text-pretty md:text-sm">
@@ -69,10 +76,22 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
 
   return (
     <li className="group py-5">
-      {isLinkable ? (
-        <Link to={itemHref!} className="block transition-colors duration-300">
+      {itemHref ? (
+        <RouterLink
+          to={itemHref!}
+          className="block transition-colors duration-300"
+        >
           {inner}
-        </Link>
+        </RouterLink>
+      ) : externalHref ? (
+        <a
+          href={externalHref}
+          target="_blank"
+          rel="noreferrer"
+          className="block transition-colors duration-300"
+        >
+          {inner}
+        </a>
       ) : (
         inner
       )}

@@ -15,7 +15,7 @@ export const CategoryGlyph = ({
   return (
     <span
       className={cn(
-        "relative inline-grid shrink-0 place-items-center overflow-hidden rounded-full bg-background",
+        "relative inline-grid shrink-0 place-items-center overflow-hidden bg-background",
         meta.colorClassName,
         className,
       )}

@@ -1,4 +1,5 @@
-import { dictionary } from "@/i18n";
+import { dictionary } from "@/translations";
+import type { TranslationValue } from "@/translations/types";
 import { I18nContext } from "@/providers/i18n-context";
 import type { Lang } from "@/types/common";
 import {
@@ -14,7 +15,7 @@ const STORAGE_KEY = "thetiagogil-lang";
 const getInitialLang = (): Lang => {
   const stored = localStorage.getItem(STORAGE_KEY);
 
-  if (stored === "en" || stored === "pt" || stored === "es") {
+  if (stored === "en" || stored === "pt") {
     return stored;
   }
 
@@ -23,6 +24,16 @@ const getInitialLang = (): Lang => {
 
 export const I18nProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Lang>(getInitialLang);
+
+  const getTranslationValue = useCallback(
+    (key: string | undefined): TranslationValue | undefined => {
+      if (!key) return undefined;
+
+      const entry = dictionary[key];
+      return entry?.[lang] ?? entry?.en;
+    },
+    [lang],
+  );
 
   const setLang = useCallback((nextLang: Lang) => {
     setLangState(nextLang);
@@ -35,21 +46,31 @@ export const I18nProvider = ({ children }: { children: ReactNode }) => {
   }, [lang]);
 
   const t = useCallback(
-    (key: string) => dictionary[key]?.[lang] ?? key,
-    [lang],
+    (key: string) => {
+      const value = getTranslationValue(key);
+      return typeof value === "string" ? value : key;
+    },
+    [getTranslationValue],
   );
 
   const tr = useCallback(
     (key: string | undefined) => {
       if (!key) return "";
-      return dictionary[key]?.[lang] ?? key;
+
+      const value = getTranslationValue(key);
+      return typeof value === "string" ? value : key;
     },
-    [lang],
+    [getTranslationValue],
+  );
+
+  const tv = useCallback(
+    (key: string | undefined) => getTranslationValue(key),
+    [getTranslationValue],
   );
 
   const value = useMemo(
-    () => ({ lang, setLang, t, tr }),
-    [lang, setLang, t, tr],
+    () => ({ lang, setLang, t, tr, tv }),
+    [lang, setLang, t, tr, tv],
   );
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;

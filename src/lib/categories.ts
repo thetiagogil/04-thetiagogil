@@ -6,19 +6,19 @@ export const categoryMeta: Record<
   { icon: LucideIcon; colorClassName: string }
 > = {
   experience: {
-    icon: Heart,
-    colorClassName: "text-primary",
-  },
-  projects: {
     icon: Spade,
     colorClassName: "text-foreground",
   },
-  education: {
-    icon: Diamond,
+  projects: {
+    icon: Heart,
     colorClassName: "text-primary",
   },
-  certifications: {
+  education: {
     icon: Club,
     colorClassName: "text-foreground",
+  },
+  certifications: {
+    icon: Diamond,
+    colorClassName: "text-primary",
   },
 };

@@ -1,37 +1,42 @@
-import type { ItemStatus, Lang } from "@/types/common";
+import type { ItemStatus } from "@/types/common";
 
-export type Localized = Record<Lang, string>;
+export interface DetailLink {
+  href: string;
+  label: string;
+  labelKey?: string;
+  variant?: "primary" | "secondary";
+}
 
 export interface BaseDataItem {
   id: string;
-  title: string;
+  title?: string;
   titleKey?: string;
-  org: string;
+  org?: string;
   orgKey?: string;
   subjectKey?: string;
   descriptionKey?: string;
+  detailsKey?: string;
   link?: string;
-  repo?: string;
+  detailLinks?: DetailLink[];
   techs: string[];
   dateStart: Date;
   dateEnd?: Date | null;
   status?: ItemStatus;
   featured?: boolean;
   img?: string;
-  longDescriptionKey?: string;
+  hasDetailsPage: boolean;
 }
 
 export interface ExperienceItem extends BaseDataItem {
   category: "experience";
   roleKey?: string;
-  hasDetailsPage: boolean;
 }
 
-export interface ProjectItem extends BaseDataItem {
+export interface ProjectItem extends Omit<BaseDataItem, "img"> {
   category: "projects";
-  img?: never;
-  hasDetailsPage: boolean;
+  repo?: string;
   images: string[];
+  img?: never;
 }
 
 export interface EducationItem extends BaseDataItem {
@@ -48,4 +53,4 @@ export type DataItem =
   | EducationItem
   | CertificationItem;
 
-export type DetailItem = ExperienceItem | ProjectItem;
+export type DetailItem = DataItem & { hasDetailsPage: true };

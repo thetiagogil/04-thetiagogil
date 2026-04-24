@@ -2,8 +2,9 @@ import { certifications } from "@/database/certifications";
 import { education } from "@/database/education";
 import { experience } from "@/database/experience";
 import { projects } from "@/database/projects";
-import { getExperienceSlug, getProjectSlug } from "@/lib/details";
-import type { DataItem } from "@/types/data";
+import { getItemSlug } from "@/lib/details";
+import type { Category } from "@/types/common";
+import type { DataItem, DetailItem } from "@/types/data";
 
 export { certifications } from "@/database/certifications";
 export { education } from "@/database/education";
@@ -23,14 +24,18 @@ export const getFeatured = () => allItems.filter((i) => i.featured);
 export const getByCategory = (category: string) =>
   allItems.filter((i) => i.category === category);
 
-export const getProjectBySlug = (slug: string) =>
-  projects.find(
-    (project) => project.hasDetailsPage && getProjectSlug(project) === slug,
-  );
+export const getItemById = (id: string) =>
+  allItems.find((item) => item.id === id);
 
-export const getExperienceBySlug = (slug: string) =>
-  experience.find(
-    (item) => item.hasDetailsPage && getExperienceSlug(item) === slug,
+export const getDetailItemByCategoryAndSlug = (
+  category: Category,
+  slug: string,
+) =>
+  allItems.find(
+    (item): item is DetailItem =>
+      item.category === category &&
+      item.hasDetailsPage &&
+      getItemSlug(item) === slug,
   );
 
 export const getSorted = (items: DataItem[]) =>

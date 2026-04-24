@@ -65,7 +65,7 @@ export const ProjectImage = ({
     const [image] = visibleImages;
 
     return (
-      <figure className="mt-10 overflow-hidden rounded-sm border border-border bg-muted/40">
+      <figure className="overflow-hidden rounded-sm border border-border bg-muted/40">
         <img
           src={`/${image}`}
           alt={alt}
@@ -78,7 +78,7 @@ export const ProjectImage = ({
   }
 
   return (
-    <figure className="mt-10 overflow-hidden rounded-sm border border-border bg-muted/40">
+    <figure className="overflow-hidden rounded-sm border border-border bg-muted/40">
       <Carousel setApi={setApi} className="w-full">
         <div className="absolute right-3 top-3 z-10 rounded-full bg-background/85 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-foreground backdrop-blur-sm">
           {selectedIndex + 1} / {visibleImages.length}
