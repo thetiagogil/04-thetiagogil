@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { useI18n } from "@/providers/i18n-context";
 import type { Category } from "@/types/common";
 import { ArrowLeft, ExternalLink } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 const articleContentClassName = "mt-8 space-y-8 md:mt-10 md:space-y-10";
@@ -27,18 +27,15 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const { lang, t, tr, tv } = useI18n();
-  const [hasImageError, setHasImageError] = useState(false);
+  const [failedImageSrc, setFailedImageSrc] = useState<string | null>(null);
 
   const item = slug
     ? getDetailItemByCategoryAndSlug(category, slug)
     : undefined;
 
-  useEffect(() => {
-    setHasImageError(false);
-  }, [item?.img]);
-
   if (!item) return <Navigate to="/" replace />;
 
+  const hasImageError = Boolean(item.img && failedImageSrc === item.img);
   const title = getItemTitle(item, tr);
   const org = getItemOrg(item, tr);
   const dateLabel = formatMonthYearRange({
@@ -146,7 +143,7 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
                 alt={`${org || title} preview`}
                 className="aspect-video w-full object-cover object-center"
                 loading="eager"
-                onError={() => setHasImageError(true)}
+                onError={() => setFailedImageSrc(item.img ?? null)}
               />
             </figure>
           ) : null}
