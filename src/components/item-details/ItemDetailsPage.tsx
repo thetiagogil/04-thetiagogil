@@ -1,4 +1,5 @@
 import { ItemDetailsContent } from "@/components/item-details/ItemDetailsContent";
+import { LoadableImage } from "@/components/LoadableImage";
 import { ProjectImage } from "@/components/project/ProjectImage";
 import { StatusPill } from "@/components/StatusPill";
 import { TechBadge } from "@/components/TechBadge";
@@ -138,7 +139,8 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
             ) : null
           ) : item.img && !hasImageError ? (
             <figure className="overflow-hidden rounded-sm border border-border bg-muted/40">
-              <img
+              <LoadableImage
+                key={item.img}
                 src={`/${item.img}`}
                 alt={`${org || title} preview`}
                 className="aspect-video w-full object-cover object-center"

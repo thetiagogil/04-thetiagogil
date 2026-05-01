@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { LoadableImage } from "@/components/LoadableImage";
 import {
   Carousel,
   CarouselContent,
@@ -66,7 +67,8 @@ export const ProjectImage = ({
 
     return (
       <figure className="overflow-hidden rounded-sm border border-border bg-muted/40">
-        <img
+        <LoadableImage
+          key={image}
           src={`/${image}`}
           alt={alt}
           className="aspect-video w-full object-cover object-top"
@@ -87,7 +89,8 @@ export const ProjectImage = ({
         <CarouselContent className="ml-0">
           {visibleImages.map((image, index) => (
             <CarouselItem key={image} className="pl-0">
-              <img
+              <LoadableImage
+                key={image}
                 src={`/${image}`}
                 alt={`${alt} ${index + 1} of ${visibleImages.length}`}
                 className="aspect-video w-full object-cover object-top"

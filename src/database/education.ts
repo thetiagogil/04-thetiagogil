@@ -12,7 +12,6 @@ export const education: EducationItem[] = [
     techs: ["Revit", "AutoCAD", "Adobe Photoshop"],
     dateStart: new Date("2014-09-01"),
     dateEnd: new Date("2022-07-31"),
-    img: "education/faul.jpeg",
     detailLinks: [
       {
         href: "/education/faul/thesis.pdf",
@@ -35,7 +34,6 @@ export const education: EducationItem[] = [
     techs: ["JavaScript", "React", "Node.js", "Express", "MongoDB"],
     dateStart: new Date("2023-08-01"),
     dateEnd: new Date("2023-11-30"),
-    img: "education/ironhack.jpeg",
     detailLinks: [
       {
         href: "/education/ironhack/certification.pdf",
