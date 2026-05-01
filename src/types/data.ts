@@ -1,5 +1,12 @@
 import type { ItemStatus } from "@/types/common";
 
+export type ProjectType =
+  | "core"
+  | "product"
+  | "experiment"
+  | "early work"
+  | "design";
+
 export interface DetailLink {
   href: string;
   label: string;
@@ -23,6 +30,7 @@ export interface BaseDataItem {
   dateEnd?: Date | null;
   status?: ItemStatus;
   featured?: boolean;
+  visible?: boolean;
   img?: string;
   hasDetailsPage: boolean;
 }
@@ -32,10 +40,14 @@ export interface ExperienceItem extends BaseDataItem {
   roleKey?: string;
 }
 
-export interface ProjectItem extends Omit<BaseDataItem, "img"> {
+export interface ProjectItem
+  extends Omit<BaseDataItem, "hasDetailsPage" | "img" | "status"> {
   category: "projects";
   repo?: string;
-  images: string[];
+  status: ItemStatus;
+  type: ProjectType;
+  hasDetailsPage?: boolean;
+  images?: string[];
   img?: never;
 }
 

@@ -4,6 +4,7 @@ import {
 } from "@/components/timeline/TimelineFilters";
 import { TimelineItem } from "@/components/timeline/TimelineItem";
 import { allItems, getSorted } from "@/database";
+import { isVisibleItem } from "@/lib/projects";
 import { useI18n } from "@/providers/i18n-context";
 import { useMemo, useState } from "react";
 
@@ -12,26 +13,32 @@ export const TimelinePage = () => {
   const [filter, setFilter] = useState<TimelineFilter>("all");
 
   const sorted = useMemo(() => {
+    const visibleItems = allItems.filter(isVisibleItem);
     const list =
       filter === "all"
-        ? allItems
-        : allItems.filter((item) => item.category === filter);
+        ? visibleItems
+        : visibleItems.filter((item) => item.category === filter);
 
     return getSorted(list);
   }, [filter]);
 
   const counts = useMemo(
-    () => ({
-      all: allItems.length,
-      experience: allItems.filter((item) => item.category === "experience")
-        .length,
-      projects: allItems.filter((item) => item.category === "projects").length,
-      education: allItems.filter((item) => item.category === "education")
-        .length,
-      certifications: allItems.filter(
-        (item) => item.category === "certifications",
-      ).length,
-    }),
+    () => {
+      const visibleItems = allItems.filter(isVisibleItem);
+
+      return {
+        all: visibleItems.length,
+        experience: visibleItems.filter((item) => item.category === "experience")
+          .length,
+        projects: visibleItems.filter((item) => item.category === "projects")
+          .length,
+        education: visibleItems.filter((item) => item.category === "education")
+          .length,
+        certifications: visibleItems.filter(
+          (item) => item.category === "certifications",
+        ).length,
+      };
+    },
     [],
   );
 

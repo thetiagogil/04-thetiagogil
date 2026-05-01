@@ -31,6 +31,9 @@ export const formatMonthYear = (
   monthStyle: MonthStyle = "short",
 ) => getMonthYearFormatter(lang, monthStyle).format(date);
 
+export const formatProjectOriginDate = (date: Date, lang: Lang) =>
+  formatMonthYear(date, lang);
+
 export const formatMonthYearRange = ({
   dateStart,
   dateEnd,

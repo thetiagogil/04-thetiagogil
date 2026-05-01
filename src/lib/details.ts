@@ -19,7 +19,7 @@ export const isProjectItem = (item: DataItem): item is ProjectItem =>
   item.category === "projects";
 
 export const hasItemDetails = (item: DataItem): item is DetailItem =>
-  item.hasDetailsPage;
+  item.hasDetailsPage === true;
 
 export const getItemSlug = (item: DataItem) =>
   stripPrefix(item.id, detailPrefixes[item.category]);

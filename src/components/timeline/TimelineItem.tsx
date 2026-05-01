@@ -1,13 +1,16 @@
 import { CategoryGlyph } from "@/components/CategoryGlyph";
+import { ProjectTypePill } from "@/components/project/ProjectTypePill";
 import { StatusPill } from "@/components/StatusPill";
 import { TechBadge } from "@/components/TechBadge";
 import { getItemOrg, getItemTitle } from "@/lib/data-helpers";
 import {
+  formatProjectOriginDate,
   formatMonthYearRange,
   getTimelineDateParts,
   getYearDateParts,
 } from "@/lib/date";
-import { getItemHref } from "@/lib/details";
+import { getItemHref, isProjectItem } from "@/lib/details";
+import { shouldShowProjectStatus } from "@/lib/projects";
 import { useI18n } from "@/providers/i18n-context";
 import type { DataItem } from "@/types/data";
 import { ExternalLink, Link as LinkIcon } from "lucide-react";
@@ -23,41 +26,58 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
     : externalHref
       ? ExternalLink
       : null;
+  const isProject = isProjectItem(item);
   const org = getItemOrg(item, tr);
-  const date = getTimelineDateParts({
-    dateStart: item.dateStart,
-    dateEnd: item.dateEnd,
-    lang,
-    presentLabel: t("timeline.present"),
-    fromLabel: t("common.from"),
-  });
-  const fullDateRange = formatMonthYearRange({
-    dateStart: item.dateStart,
-    dateEnd: item.dateEnd,
-    lang,
-    presentLabel: t("timeline.present"),
-  });
-  const mobileDate = getYearDateParts({
-    dateStart: item.dateStart,
-    dateEnd: item.dateEnd,
-    presentLabel: t("timeline.present"),
-  });
+  const projectDate = isProject
+    ? formatProjectOriginDate(item.dateStart, lang)
+    : null;
+  const date = isProject
+    ? null
+    : getTimelineDateParts({
+        dateStart: item.dateStart,
+        dateEnd: item.dateEnd,
+        lang,
+        presentLabel: t("timeline.present"),
+        fromLabel: t("common.from"),
+      });
+  const fullDateRange =
+    projectDate ??
+    formatMonthYearRange({
+      dateStart: item.dateStart,
+      dateEnd: item.dateEnd,
+      lang,
+      presentLabel: t("timeline.present"),
+    });
+  const mobileDate = isProject
+    ? null
+    : getYearDateParts({
+        dateStart: item.dateStart,
+        dateEnd: item.dateEnd,
+        presentLabel: t("timeline.present"),
+      });
+  const showStatus =
+    item.status &&
+    (!isProject || shouldShowProjectStatus(item, "summary"));
 
   const inner = (
     <div className="relative grid grid-cols-[52px_1fr] gap-3 py-6 md:grid-cols-[152px_1fr] md:gap-8">
       <div className="text-right" aria-label={fullDateRange}>
         <div className="font-mono text-[10px] leading-tight text-foreground md:hidden">
-          {mobileDate.primary}
+          {projectDate ?? mobileDate?.primary}
         </div>
-        <div className="mt-1 font-mono text-[9px] leading-tight text-muted-foreground md:hidden">
-          {mobileDate.secondary}
-        </div>
+        {mobileDate?.secondary && (
+          <div className="mt-1 font-mono text-[9px] leading-tight text-muted-foreground md:hidden">
+            {mobileDate.secondary}
+          </div>
+        )}
         <div className="hidden font-mono text-xs leading-tight text-foreground md:block">
-          {date.primary}
+          {projectDate ?? date?.primary}
         </div>
-        <div className="mt-1 hidden font-mono text-[10px] leading-tight text-muted-foreground md:block">
-          {date.secondary}
-        </div>
+        {date?.secondary && (
+          <div className="mt-1 hidden font-mono text-[10px] leading-tight text-muted-foreground md:block">
+            {date.secondary}
+          </div>
+        )}
       </div>
 
       <div className="relative pl-8 md:pl-10">
@@ -70,7 +90,8 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
           <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground md:text-[10px]">
             {t(`section.${item.category}`)}
           </span>
-          {item.status && <StatusPill status={item.status} />}
+          {isProject && <ProjectTypePill type={item.type} />}
+          {showStatus && item.status && <StatusPill status={item.status} />}
         </div>
 
         <h2 className="mt-1.5 font-display text-lg tracking-tight text-balance md:text-2xl transition-colors duration-300 group-hover:text-primary">

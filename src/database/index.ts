@@ -34,7 +34,7 @@ export const getDetailItemByCategoryAndSlug = (
   allItems.find(
     (item): item is DetailItem =>
       item.category === category &&
-      item.hasDetailsPage &&
+      item.hasDetailsPage === true &&
       getItemSlug(item) === slug,
   );
 

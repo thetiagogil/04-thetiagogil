@@ -1,5 +1,6 @@
 import { CategoryGlyph } from "@/components/CategoryGlyph";
 import { allItems, getSorted } from "@/database";
+import { isVisibleItem } from "@/lib/projects";
 import { useI18n } from "@/providers/i18n-context";
 import type { Category } from "@/types/common";
 
@@ -13,11 +14,9 @@ export const HomeFeaturedSection = ({ category }: { category: Category }) => {
       (item) =>
         item.category === category &&
         item.featured &&
-        (!item.status ||
-          item.status === "in progress" ||
-          item.status === "live"),
+        isVisibleItem(item),
     ),
-  );
+  ).slice(0, category === "projects" ? 4 : undefined);
 
   if (!items.length) return null;
 

@@ -1,15 +1,17 @@
 import { StatusPill } from "@/components/StatusPill";
 import { TechBadge } from "@/components/TechBadge";
+import { ProjectTypePill } from "@/components/project/ProjectTypePill";
 import { getItemOrg, getItemTitle } from "@/lib/data-helpers";
-import { getYearDateParts } from "@/lib/date";
-import { getItemHref } from "@/lib/details";
+import { formatProjectOriginDate, getYearDateParts } from "@/lib/date";
+import { getItemHref, isProjectItem } from "@/lib/details";
+import { shouldShowProjectStatus } from "@/lib/projects";
 import { useI18n } from "@/providers/i18n-context";
 import type { DataItem } from "@/types/data";
 import { ExternalLink, Link as LinkIcon } from "lucide-react";
 import { Link as RouterLink } from "react-router-dom";
 
 export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
-  const { t, tr } = useI18n();
+  const { lang, t, tr } = useI18n();
 
   const itemHref = getItemHref(item);
   const externalHref = !itemHref && item.link ? item.link : null;
@@ -18,25 +20,43 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
     : externalHref
       ? ExternalLink
       : null;
-  const date = getYearDateParts({
-    dateStart: item.dateStart,
-    dateEnd: item.dateEnd,
-    presentLabel: t("timeline.present"),
-  });
+  const isProject = isProjectItem(item);
+  const projectDate = isProject
+    ? formatProjectOriginDate(item.dateStart, lang)
+    : null;
+  const date = isProject
+    ? null
+    : getYearDateParts({
+        dateStart: item.dateStart,
+        dateEnd: item.dateEnd,
+        presentLabel: t("timeline.present"),
+      });
   const org = getItemOrg(item, tr);
+  const showStatus =
+    item.status &&
+    (!isProject || shouldShowProjectStatus(item, "summary"));
 
   const inner = (
     <div className="flex gap-3 md:gap-4">
       <div className="w-12 shrink-0 text-right md:w-20 mt-1">
         <div className="font-mono text-[10px] leading-tight text-foreground md:text-[11px]">
-          {date.primary}
+          {projectDate ?? date?.primary}
         </div>
-        <div className="mt-1 font-mono text-[9px] leading-tight text-muted-foreground md:text-[10px]">
-          {date.secondary}
-        </div>
+        {date?.secondary && (
+          <div className="mt-1 font-mono text-[9px] leading-tight text-muted-foreground md:text-[10px]">
+            {date.secondary}
+          </div>
+        )}
       </div>
 
       <div className="min-w-0 flex-1">
+        {isProject && (
+          <div className="mb-2 flex flex-wrap items-center gap-2">
+            <ProjectTypePill type={item.type} />
+            {showStatus && item.status && <StatusPill status={item.status} />}
+          </div>
+        )}
+
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <h3 className="font-display text-base text-balance transition-colors duration-300 group-hover:text-primary md:text-xl">
             {getItemTitle(item, tr)}
@@ -48,7 +68,9 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
             )}
           </h3>
 
-          {item.status && <StatusPill status={item.status} />}
+          {!isProject && showStatus && item.status && (
+            <StatusPill status={item.status} />
+          )}
         </div>
 
         {org && (

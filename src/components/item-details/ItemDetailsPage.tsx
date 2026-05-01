@@ -2,12 +2,14 @@ import { ImageLightbox } from "@/components/ImageLightbox";
 import { ItemDetailsContent } from "@/components/item-details/ItemDetailsContent";
 import { LoadableImage } from "@/components/LoadableImage";
 import { ProjectImage } from "@/components/project/ProjectImage";
+import { ProjectTypePill } from "@/components/project/ProjectTypePill";
 import { StatusPill } from "@/components/StatusPill";
 import { TechBadge } from "@/components/TechBadge";
 import { getDetailItemByCategoryAndSlug } from "@/database";
 import { getItemOrg, getItemTitle } from "@/lib/data-helpers";
-import { formatMonthYearRange } from "@/lib/date";
+import { formatMonthYearRange, formatProjectOriginDate } from "@/lib/date";
 import { isProjectItem } from "@/lib/details";
+import { getProjectImages } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/providers/i18n-context";
 import type { Category } from "@/types/common";
@@ -39,23 +41,27 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
   if (!item) return <Navigate to="/" replace />;
 
   const hasImageError = Boolean(item.img && failedImageSrc === item.img);
+  const isProject = isProjectItem(item);
+  const projectImages = isProject ? getProjectImages(item) : [];
   const title = getItemTitle(item, tr);
   const org = getItemOrg(item, tr);
-  const dateLabel = formatMonthYearRange({
-    dateStart: item.dateStart,
-    dateEnd: item.dateEnd,
-    lang,
-    presentLabel: t("timeline.present"),
-  });
+  const dateLabel = isProject
+    ? formatProjectOriginDate(item.dateStart, lang)
+    : formatMonthYearRange({
+        dateStart: item.dateStart,
+        dateEnd: item.dateEnd,
+        lang,
+        presentLabel: t("timeline.present"),
+      });
   const details = tv(item.detailsKey);
   const imageAlt = `${org || title} preview`;
   const hasDetailsContent = Boolean(
     item.subjectKey || item.descriptionKey || details,
   );
   const hasMedia = isProjectItem(item)
-    ? item.images.length > 0
+    ? projectImages.length > 0
     : Boolean(item.img && !hasImageError);
-  const projectRepo = isProjectItem(item) ? item.repo : undefined;
+  const projectRepo = isProject ? item.repo : undefined;
   const actionLinks = [
     ...(item.link
       ? [
@@ -124,6 +130,7 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
             <span className="font-mono text-[10px] text-muted-foreground md:text-[11px]">
               {dateLabel}
             </span>
+            {isProject && <ProjectTypePill type={item.type} />}
             {item.status && <StatusPill status={item.status} />}
           </div>
         </div>
@@ -134,10 +141,10 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
         hasDetailsContent ||
         actionLinks.length > 0) && (
         <div className={articleContentClassName}>
-          {isProjectItem(item) ? (
-            item.images.length > 0 ? (
+          {isProject ? (
+            projectImages.length > 0 ? (
               <div>
-                <ProjectImage images={item.images} alt={`${title} preview`} />
+                <ProjectImage images={projectImages} alt={`${title} preview`} />
               </div>
             ) : null
           ) : item.img && !hasImageError ? (

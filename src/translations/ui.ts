@@ -100,11 +100,8 @@ export const uiTranslations: TranslationDictionary = {
     pt: "Abrir definições",
   },
   "status.in progress": { en: "In Progress", pt: "Em progresso" },
-  "status.live": { en: "Live", pt: "Ativo" },
-  "status.archived": {
-    en: "Archived",
-    pt: "Arquivado",
-  },
+  "status.completed": { en: "Completed", pt: "Concluído" },
+  "status.unavailable": { en: "Unavailable", pt: "Indisponível" },
   "project.back": {
     en: "Back to timeline",
     pt: "Voltar ao percurso",
@@ -121,6 +118,11 @@ export const uiTranslations: TranslationDictionary = {
     en: "View repository",
     pt: "Ver repositório",
   },
+  "project.type.core": { en: "Core", pt: "Core" },
+  "project.type.product": { en: "Product", pt: "Produto" },
+  "project.type.experiment": { en: "Experiment", pt: "Experiência" },
+  "project.type.early work": { en: "Early Work", pt: "Trabalho inicial" },
+  "project.type.design": { en: "Design", pt: "Design" },
   "project.viewCase": { en: "Read case", pt: "Ler caso" },
   "experience.back": {
     en: "Back to timeline",
@@ -154,7 +156,6 @@ export const uiTranslations: TranslationDictionary = {
     en: "View certificate",
     pt: "Ver certificado",
   },
-  "status.current": { en: "Current", pt: "Atual" },
   "detail.back": { en: "Back", pt: "Voltar" },
   "detail.contributions": {
     en: "Key contributions",
