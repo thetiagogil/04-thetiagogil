@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { ImageLightbox } from "@/components/ImageLightbox";
 import { LoadableImage } from "@/components/LoadableImage";
 import {
   Carousel,
@@ -10,6 +11,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { sortProjectImages } from "@/lib/projects";
+import { Maximize2 } from "lucide-react";
 
 export const ProjectImage = ({
   images,
@@ -20,6 +22,8 @@ export const ProjectImage = ({
 }) => {
   const [failedImages, setFailedImages] = useState<string[]>([]);
   const [api, setApi] = useState<CarouselApi>();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxInitialIndex, setLightboxInitialIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const resolvedImages = sortProjectImages(images);
   const visibleImages = resolvedImages.filter(
@@ -60,50 +64,97 @@ export const ProjectImage = ({
     );
   };
 
+  const openLightbox = (index: number) => {
+    setLightboxInitialIndex(index);
+    setLightboxOpen(true);
+  };
+
   if (!visibleImages.length) return null;
 
   if (visibleImages.length === 1) {
     const [image] = visibleImages;
 
     return (
-      <figure className="overflow-hidden rounded-sm border border-border bg-muted/40">
-        <LoadableImage
-          key={image}
-          src={`/${image}`}
+      <>
+        <figure className="overflow-hidden rounded-sm border border-border bg-muted/40">
+          <button
+            type="button"
+            aria-label="Open image viewer"
+            onClick={() => openLightbox(0)}
+            className="group relative block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <LoadableImage
+              key={image}
+              src={`/${image}`}
+              alt={alt}
+              className="aspect-video w-full object-cover object-top"
+              loading="eager"
+              onError={() => handleImageError(image)}
+            />
+            <span className="absolute top-3 left-3 flex h-8 w-8 items-center justify-center rounded-full bg-background/85 text-foreground opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+              <Maximize2 className="h-4 w-4" strokeWidth={1.8} />
+            </span>
+          </button>
+        </figure>
+
+        <ImageLightbox
           alt={alt}
-          className="aspect-video w-full object-cover object-top"
-          loading="eager"
-          onError={() => handleImageError(image)}
+          images={visibleImages}
+          initialIndex={lightboxInitialIndex}
+          open={lightboxOpen}
+          onImageError={handleImageError}
+          onOpenChange={setLightboxOpen}
         />
-      </figure>
+      </>
     );
   }
 
   return (
-    <figure className="overflow-hidden rounded-sm border border-border bg-muted/40">
-      <Carousel setApi={setApi} className="w-full">
-        <div className="absolute right-3 top-3 z-10 rounded-full bg-background/85 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-foreground backdrop-blur-sm">
-          {selectedIndex + 1} / {visibleImages.length}
-        </div>
+    <>
+      <figure className="overflow-hidden rounded-sm border border-border bg-muted/40">
+        <Carousel setApi={setApi} className="w-full">
+          <div className="absolute right-3 top-3 z-10 rounded-full bg-background/85 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-foreground backdrop-blur-sm">
+            {selectedIndex + 1} / {visibleImages.length}
+          </div>
 
-        <CarouselContent className="ml-0">
-          {visibleImages.map((image, index) => (
-            <CarouselItem key={image} className="pl-0">
-              <LoadableImage
-                key={image}
-                src={`/${image}`}
-                alt={`${alt} ${index + 1} of ${visibleImages.length}`}
-                className="aspect-video w-full object-cover object-top"
-                loading={index === 0 ? "eager" : "lazy"}
-                onError={() => handleImageError(image)}
-              />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
+          <CarouselContent className="ml-0">
+            {visibleImages.map((image, index) => (
+              <CarouselItem key={image} className="pl-0">
+                <button
+                  type="button"
+                  aria-label={`Open image ${index + 1} of ${visibleImages.length}`}
+                  onClick={() => openLightbox(index)}
+                  className="group relative block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <LoadableImage
+                    key={image}
+                    src={`/${image}`}
+                    alt={`${alt} ${index + 1} of ${visibleImages.length}`}
+                    className="aspect-video w-full object-cover object-top"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    onError={() => handleImageError(image)}
+                  />
+                  <span className="absolute top-3 left-3 flex h-8 w-8 items-center justify-center rounded-full bg-background/85 text-foreground opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <Maximize2 className="h-4 w-4" strokeWidth={1.8} />
+                  </span>
+                </button>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
 
-        <CarouselPrevious className="left-3 top-auto bottom-3 translate-y-0 bg-background/85 backdrop-blur-sm hover:bg-background" />
-        <CarouselNext className="right-3 top-auto bottom-3 translate-y-0 bg-background/85 backdrop-blur-sm hover:bg-background" />
-      </Carousel>
-    </figure>
+          <CarouselPrevious className="left-3 top-auto bottom-3 translate-y-0 bg-background/85 backdrop-blur-sm hover:bg-background" />
+          <CarouselNext className="right-3 top-auto bottom-3 translate-y-0 bg-background/85 backdrop-blur-sm hover:bg-background" />
+        </Carousel>
+      </figure>
+
+      <ImageLightbox
+        alt={alt}
+        images={visibleImages}
+        initialIndex={lightboxInitialIndex}
+        open={lightboxOpen}
+        onImageError={handleImageError}
+        onOpenChange={setLightboxOpen}
+      />
+    </>
   );
 };

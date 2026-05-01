@@ -1,3 +1,4 @@
+import { ImageLightbox } from "@/components/ImageLightbox";
 import { ItemDetailsContent } from "@/components/item-details/ItemDetailsContent";
 import { LoadableImage } from "@/components/LoadableImage";
 import { ProjectImage } from "@/components/project/ProjectImage";
@@ -10,7 +11,7 @@ import { isProjectItem } from "@/lib/details";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/providers/i18n-context";
 import type { Category } from "@/types/common";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, Maximize2 } from "lucide-react";
 import { useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 
@@ -29,6 +30,7 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
   const navigate = useNavigate();
   const { lang, t, tr, tv } = useI18n();
   const [failedImageSrc, setFailedImageSrc] = useState<string | null>(null);
+  const [imageLightboxOpen, setImageLightboxOpen] = useState(false);
 
   const item = slug
     ? getDetailItemByCategoryAndSlug(category, slug)
@@ -46,6 +48,7 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
     presentLabel: t("timeline.present"),
   });
   const details = tv(item.detailsKey);
+  const imageAlt = `${org || title} preview`;
   const hasDetailsContent = Boolean(
     item.subjectKey || item.descriptionKey || details,
   );
@@ -138,16 +141,36 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
               </div>
             ) : null
           ) : item.img && !hasImageError ? (
-            <figure className="overflow-hidden rounded-sm border border-border bg-muted/40">
-              <LoadableImage
-                key={item.img}
-                src={`/${item.img}`}
-                alt={`${org || title} preview`}
-                className="aspect-video w-full object-cover object-center"
-                loading="eager"
-                onError={() => setFailedImageSrc(item.img ?? null)}
+            <>
+              <figure className="overflow-hidden rounded-sm border border-border bg-muted/40">
+                <button
+                  type="button"
+                  aria-label="Open image viewer"
+                  onClick={() => setImageLightboxOpen(true)}
+                  className="group relative block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <LoadableImage
+                    key={item.img}
+                    src={`/${item.img}`}
+                    alt={imageAlt}
+                    className="aspect-video w-full object-cover object-center"
+                    loading="eager"
+                    onError={() => setFailedImageSrc(item.img ?? null)}
+                  />
+                  <span className="absolute top-3 left-3 flex h-8 w-8 items-center justify-center rounded-full bg-background/85 text-foreground opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                    <Maximize2 className="h-4 w-4" strokeWidth={1.8} />
+                  </span>
+                </button>
+              </figure>
+
+              <ImageLightbox
+                alt={imageAlt}
+                images={[item.img]}
+                open={imageLightboxOpen}
+                onImageError={() => setFailedImageSrc(item.img ?? null)}
+                onOpenChange={setImageLightboxOpen}
               />
-            </figure>
+            </>
           ) : null}
 
           {item.techs.length > 0 && (
