@@ -8,6 +8,7 @@ export const projects: ProjectItem[] = [
     org: "Subvisual",
     subjectKey: "project_wordlechain_subject",
     descriptionKey: "project_wordlechain_description",
+    detailsKey: "project_wordlechain_details",
     link: "https://wordlechain.netlify.app/",
     techs: ["React", "TypeScript", "MUI", "Wagmi", "Solidity", "Blockchain"],
     dateStart: new Date("2023-12-05"),
