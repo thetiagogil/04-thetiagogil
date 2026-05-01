@@ -44,7 +44,7 @@ export const aquasisTranslations: TranslationDictionary = {
                     bold: true,
                     href: "https://www.aquasis.pt/pt/solucoes/aquaworks",
                   },
-                  " - platform for managing operational workflows in water systems, including task planning, asset management, and georeferenced data analysis",
+                  " - enterprise platform for managing operational workflows in water systems",
                 ],
               },
             ],
@@ -59,17 +59,17 @@ export const aquasisTranslations: TranslationDictionary = {
                 text: [
                   "Built and delivered a full ",
                   { text: "Laboratory module", bold: true },
-                  ", handling configuration flows, task planning, and sample and reports generation",
+                  ", covering configuration flows, task planning, and sample and reports generation",
                 ],
               },
               {
                 text: [
-                  "Worked across the entire frontend, contributing to forms, dashboards, tables, workflows, and data-driven interfaces",
+                  "Worked across the frontend, contributing to forms, dashboards, tables, workflows, and data-driven interfaces",
                 ],
               },
               {
                 text: [
-                  "Contributed to the migration of the platform from a legacy architecture to a modern React + TypeScript stack",
+                  "Contributed to the migration from a legacy architecture to a modern React + TypeScript stack",
                 ],
               },
               {
@@ -79,12 +79,7 @@ export const aquasisTranslations: TranslationDictionary = {
               },
               {
                 text: [
-                  "Developed data-heavy interfaces, including dashboards with charts, reports, and complex relational data",
-                ],
-              },
-              {
-                text: [
-                  "Worked directly with clients during the Laboratory module development, iterating based on real usage and feedback",
+                  "Worked directly with clients, iterating based on real usage and feedback",
                 ],
               },
             ],
@@ -163,7 +158,7 @@ export const aquasisTranslations: TranslationDictionary = {
                     bold: true,
                     href: "https://www.aquasis.pt/pt/solucoes/aquaworks",
                   },
-                  " - plataforma para gestão de processos operacionais em sistemas de água, incluindo planeamento de tarefas, gestão de ativos e análise de dados georreferenciados",
+                  " - plataforma empresarial para gestão de operações em sistemas de água",
                 ],
               },
             ],
@@ -178,17 +173,17 @@ export const aquasisTranslations: TranslationDictionary = {
                 text: [
                   "Desenvolvi e entreguei um módulo completo de ",
                   { text: "Laboratório", bold: true },
-                  ", incluindo configurações, planeamento de tarefas, geração de amostras e relatórios",
+                  ", incluindo configurações, planeamento de tarefas e geração de amostras e relatórios",
                 ],
               },
               {
                 text: [
-                  "Trabalhei em todo o frontend da aplicação, incluindo formulários, dashboards, tabelas e fluxos de trabalho",
+                  "Trabalhei em várias áreas do frontend, incluindo formulários, dashboards, tabelas, fluxos de trabalho e interfaces orientadas a dados",
                 ],
               },
               {
                 text: [
-                  "Contribuí para a migração da aplicação para uma stack moderna baseada em React e TypeScript",
+                  "Contribuí para a migração de uma arquitetura legacy para uma stack moderna em React + TypeScript",
                 ],
               },
               {
@@ -198,12 +193,7 @@ export const aquasisTranslations: TranslationDictionary = {
               },
               {
                 text: [
-                  "Desenvolvi interfaces orientadas a dados, incluindo dashboards com gráficos, relatórios e estruturas complexas",
-                ],
-              },
-              {
-                text: [
-                  "Trabalhei diretamente com clientes durante o desenvolvimento do módulo de Laboratório, iterando com base em feedback real",
+                  "Trabalhei diretamente com clientes, iterando com base em utilização e feedback real",
                 ],
               },
             ],

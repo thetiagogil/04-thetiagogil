@@ -6,8 +6,8 @@ export const crEspassosTranslations: TranslationDictionary = {
     pt: "Arquiteto",
   },
   experience_cr_espassos_description: {
-    en: "Worked on a wide range of architectural projects, from residential housing to large-scale developments. Developed strong design thinking, spatial awareness, and experience translating requirements into structured solutions across complex projects.",
-    pt: "Trabalhei em diversos projetos de arquitetura, desde habitação a projetos de maior escala. Desenvolvi forte capacidade de pensamento de design, visão espacial e experiência na tradução de requisitos em soluções estruturadas.",
+    en: "Worked on a wide range of architectural projects, from residential housing to larger developments. Built strong design thinking, spatial awareness, and experience translating requirements into structured solutions.",
+    pt: "Trabalhei em diversos projetos de arquitetura, desde habitação a projetos de maior escala. Desenvolvi visão espacial, pensamento de design e experiência a transformar requisitos em soluções estruturadas.",
   },
   experience_cr_espassos_details: {
     en: {
@@ -19,7 +19,7 @@ export const crEspassosTranslations: TranslationDictionary = {
             type: "paragraphs",
             paragraphs: [
               [
-                "CR Espassos is an architecture studio focused on guiding projects from initial concept through to construction, covering multiple scales from urban planning to interior design.",
+                "CR Espassos was an architecture studio focused on guiding projects from concept to construction, across scales from urban planning to interior design.",
               ],
               [
                 "I worked as an architect across a wide range of projects, contributing mainly through design development and technical execution. My work was almost entirely computer-based, using tools like Revit and AutoCAD to develop full architectural solutions from early concepts to detailed plans.",
@@ -68,11 +68,6 @@ export const crEspassosTranslations: TranslationDictionary = {
           content: {
             type: "list",
             items: [
-              {
-                text: [
-                  "Worked across a wide variety of project types, scales, and requirements",
-                ],
-              },
               {
                 text: [
                   "Developed full architectural deliverables, including plans, sections, facades, and detailed drawings",
@@ -135,7 +130,7 @@ export const crEspassosTranslations: TranslationDictionary = {
           },
         },
         {
-          title: "Lessons",
+          title: "Learnings",
           content: {
             type: "list",
             items: [
@@ -195,9 +190,7 @@ export const crEspassosTranslations: TranslationDictionary = {
             type: "list",
             items: [
               {
-                text: [
-                  "Habitação - moradias unifamiliares e reabilitações",
-                ],
+                text: ["Habitação - moradias unifamiliares e reabilitações"],
               },
               {
                 text: [
@@ -227,11 +220,6 @@ export const crEspassosTranslations: TranslationDictionary = {
           content: {
             type: "list",
             items: [
-              {
-                text: [
-                  "Trabalhei em projetos de diferentes tipologias, escalas e requisitos",
-                ],
-              },
               {
                 text: [
                   "Desenvolvi entregáveis completos de arquitetura, incluindo plantas, cortes, alçados e detalhes construtivos",
@@ -271,9 +259,7 @@ export const crEspassosTranslations: TranslationDictionary = {
                 ],
               },
               {
-                text: [
-                  "Gestão de projetos complexos e multidisciplinares",
-                ],
+                text: ["Gestão de projetos complexos e multidisciplinares"],
               },
               {
                 text: [
@@ -281,9 +267,7 @@ export const crEspassosTranslations: TranslationDictionary = {
                 ],
               },
               {
-                text: [
-                  "Adaptação a normas e regulamentos exigentes (RGEU)",
-                ],
+                text: ["Adaptação a normas e regulamentos exigentes (RGEU)"],
               },
               {
                 text: [
@@ -294,7 +278,7 @@ export const crEspassosTranslations: TranslationDictionary = {
           },
         },
         {
-          title: "Lessons",
+          title: "Aprendizagens",
           content: {
             type: "list",
             items: [
@@ -314,9 +298,7 @@ export const crEspassosTranslations: TranslationDictionary = {
                 ],
               },
               {
-                text: [
-                  "Melhoria do pensamento crítico e tomada de decisão",
-                ],
+                text: ["Melhoria do pensamento crítico e tomada de decisão"],
               },
               {
                 text: [

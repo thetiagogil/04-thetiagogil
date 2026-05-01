@@ -8,7 +8,7 @@ export const experience: ExperienceItem[] = [
     org: "CR Espassos",
     descriptionKey: "experience_cr_espassos_description",
     detailsKey: "experience_cr_espassos_details",
-    link: "https://www.linkedin.com/company/cr-espassos/about/",
+    link: "https://crespassos.com/",
     techs: ["Revit", "AutoCAD"],
     dateStart: new Date("2022-09-01"),
     dateEnd: new Date("2023-08-31"),

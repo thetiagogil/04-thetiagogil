@@ -15,14 +15,34 @@ export const subvisualTranslations: TranslationDictionary = {
             type: "paragraphs",
             paragraphs: [
               [
-                "Subvisual was a digital product studio and consultancy focused on building and exploring new ideas across web2 and web3.",
+                "Subvisual was a digital product studio and consultancy working across web2 and web3 products.",
               ],
               [
-                "I joined as part of an apprenticeship shortly after finishing my full-stack development bootcamp, where I worked closely with experienced developers but was given a high level of autonomy. During this time, I built two complete applications from scratch, handling both frontend and part of the backend logic depending on the project.",
+                "I joined shortly after finishing my full-stack development bootcamp, in a three-month apprenticeship focused on building and learning through real project work.",
               ],
-              [
-                "This experience served as a bridge between learning and real-world development, helping me become comfortable building applications independently and working with unfamiliar technologies.",
-              ],
+            ],
+          },
+        },
+        {
+          title: "Context",
+          content: {
+            type: "list",
+            items: [
+              {
+                text: [
+                  "Built two applications from scratch with a high level of autonomy",
+                ],
+              },
+              {
+                text: [
+                  "Worked remotely, with regular check-ins and code reviews from experienced developers",
+                ],
+              },
+              {
+                text: [
+                  "Used the experience as a bridge between bootcamp learning and professional development",
+                ],
+              },
             ],
           },
         },
@@ -61,22 +81,25 @@ export const subvisualTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "Built two complete applications independently, from initial setup to working prototypes",
+                  "Developed ",
+                  {
+                    text: "Wordlechain",
+                    bold: true,
+                    itemId: "proj-wordlechain",
+                  },
+                  ", integrating smart contracts with a React frontend",
                 ],
               },
               {
                 text: [
-                  "Developed a web3 application integrating smart contracts with a React frontend",
+                  "Created a test token and used it as part of the gameplay logic",
                 ],
               },
               {
                 text: [
-                  "Created a token on a test network and used it as part of the gameplay logic",
-                ],
-              },
-              {
-                text: [
-                  "Built a data-driven web application with charts, comparisons, and team organization features",
+                  "Built ",
+                  { text: "Talentsy", bold: true, itemId: "proj-talentsy" },
+                  ", with charts, comparisons, and team organization features",
                 ],
               },
               {
@@ -112,16 +135,11 @@ export const subvisualTranslations: TranslationDictionary = {
                   "Building full applications independently while still learning core concepts",
                 ],
               },
-              {
-                text: [
-                  "Understanding how to structure and deliver real applications beyond tutorial-level projects",
-                ],
-              },
             ],
           },
         },
         {
-          title: "Lessons",
+          title: "Learnings",
           content: {
             type: "list",
             items: [
@@ -164,14 +182,34 @@ export const subvisualTranslations: TranslationDictionary = {
             type: "paragraphs",
             paragraphs: [
               [
-                "A Subvisual era um estúdio e consultoria de produto digital focado na criação e exploração de soluções em web2 e web3.",
+                "A Subvisual era um estúdio e consultora de produto digital com trabalho em produtos web2 e web3.",
               ],
               [
-                "Entrei como parte de uma apprenticeship após terminar o bootcamp de full-stack development, trabalhando próximo de developers mais experientes, mas com bastante autonomia. Durante este tempo, desenvolvi duas aplicações completas de raiz, tratando tanto do frontend como de parte da lógica de backend, dependendo do projeto.",
+                "Entrei pouco depois de terminar o bootcamp de desenvolvimento web, num período de aprendizagem de três meses focado em construir e aprender através de projetos práticos.",
               ],
-              [
-                "Esta experiência serviu como ponte entre aprendizagem e trabalho real, ajudando-me a ganhar confiança a construir aplicações de forma independente e a trabalhar com tecnologias novas.",
-              ],
+            ],
+          },
+        },
+        {
+          title: "Contexto",
+          content: {
+            type: "list",
+            items: [
+              {
+                text: [
+                  "Desenvolvi duas aplicações de raiz com bastante autonomia",
+                ],
+              },
+              {
+                text: [
+                  "Trabalhei remotamente, com check-ins regulares e code reviews de developers experientes",
+                ],
+              },
+              {
+                text: [
+                  "Usei esta experiência como ponte entre o bootcamp e o desenvolvimento profissional",
+                ],
+              },
             ],
           },
         },
@@ -210,12 +248,13 @@ export const subvisualTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "Desenvolvi duas aplicações completas de forma independente, desde a estrutura inicial até protótipos funcionais",
-                ],
-              },
-              {
-                text: [
-                  "Desenvolvi uma aplicação web3 com integração entre smart contracts e frontend em React",
+                  "Desenvolvi o ",
+                  {
+                    text: "Wordlechain",
+                    bold: true,
+                    itemId: "proj-wordlechain",
+                  },
+                  ", integrando smart contracts com um frontend em React",
                 ],
               },
               {
@@ -225,12 +264,14 @@ export const subvisualTranslations: TranslationDictionary = {
               },
               {
                 text: [
-                  "Desenvolvi uma aplicação baseada em dados com gráficos, comparações e funcionalidades de organização de equipas",
+                  "Desenvolvi o ",
+                  { text: "Talentsy", bold: true, itemId: "proj-talentsy" },
+                  ", com gráficos, comparações e funcionalidades de organização de equipas",
                 ],
               },
               {
                 text: [
-                  "Trabalhei com code reviews e feedback de developers mais experientes",
+                  "Trabalhei com code reviews e ciclos de feedback com developers mais experientes",
                 ],
               },
             ],
@@ -261,16 +302,11 @@ export const subvisualTranslations: TranslationDictionary = {
                   "Desenvolvimento de aplicações completas de forma independente enquanto ainda estava a aprender",
                 ],
               },
-              {
-                text: [
-                  "Compreender como estruturar aplicações reais para além de projetos de aprendizagem",
-                ],
-              },
             ],
           },
         },
         {
-          title: "Lessons",
+          title: "Aprendizagens",
           content: {
             type: "list",
             items: [

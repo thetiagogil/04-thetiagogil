@@ -18,11 +18,25 @@ export const talentProtocolTranslations: TranslationDictionary = {
                 "Talent Protocol was building a broader ecosystem of products around reputation, visibility, and participation in web3, with different platforms serving different parts of that goal.",
               ],
               [
-                "I worked across multiple products within this ecosystem, contributing almost entirely on the frontend. My day-to-day focused on building new features, improving existing ones, and responding to user feedback across different applications.",
+                "I worked across multiple products within this ecosystem, contributing mainly on the frontend — building features, improving UI, and responding to user feedback across different applications.",
               ],
-              [
-                "This was my first professional experience in web development, and I joined with limited exposure to web3 and most of the stack being used. A large part of the experience was adapting quickly, learning new tools, and becoming comfortable working in a real production environment.",
-              ],
+            ],
+          },
+        },
+        {
+          title: "Context",
+          content: {
+            type: "list",
+            items: [
+              { text: ["First professional experience in web development"] },
+              {
+                text: ["Limited prior exposure to web3 and most of the stack"],
+              },
+              {
+                text: [
+                  "Adapted quickly to new tools and a production environment",
+                ],
+              },
             ],
           },
         },
@@ -39,7 +53,7 @@ export const talentProtocolTranslations: TranslationDictionary = {
                     itemId: "proj-passport",
                     href: "https://passport.talentprotocol.com/",
                   },
-                  " - main platform for managing user reputation and ranking based on activity",
+                  " - main platform for managing user reputation and ranking",
                 ],
               },
               {
@@ -174,9 +188,29 @@ export const talentProtocolTranslations: TranslationDictionary = {
               [
                 "Trabalhei em vários produtos dentro desse ecossistema, contribuindo quase exclusivamente no frontend. O meu dia-a-dia passou por desenvolver novas funcionalidades, melhorar as existentes e responder a feedback dos utilizadores em diferentes aplicações.",
               ],
-              [
-                "Esta foi a minha primeira experiência profissional em desenvolvimento web, tendo entrado com pouca experiência em web3 e em grande parte das tecnologias utilizadas. Uma parte importante do trabalho foi adaptar-me rapidamente, aprender novas ferramentas e ganhar confiança num ambiente real de produção.",
-              ],
+            ],
+          },
+        },
+        {
+          title: "Contexto",
+          content: {
+            type: "list",
+            items: [
+              {
+                text: [
+                  "Primeira experiência profissional em desenvolvimento web",
+                ],
+              },
+              {
+                text: [
+                  "Pouca experiência prévia em web3 e nas tecnologias utilizadas",
+                ],
+              },
+              {
+                text: [
+                  "Adaptação rápida a novas ferramentas e ambiente de produção",
+                ],
+              },
             ],
           },
         },

@@ -26,7 +26,7 @@ export const faulTranslations: TranslationDictionary = {
                 "This degree focused on architectural design across different scales, from individual buildings to larger urban systems, combining creative thinking with technical constraints.",
               ],
               [
-                "Throughout the course, I worked on a wide range of projects, from housing and renovations to larger complexes and urban proposals, always approaching them with a structured and system-oriented mindset.",
+                "Throughout the course, I worked on a wide range of projects, from housing and renovations to larger complexes and urban proposals, always with a structured, system-oriented approach.",
               ],
             ],
           },
@@ -66,16 +66,13 @@ export const faulTranslations: TranslationDictionary = {
                 "My thesis explored how architectural design could benefit from a more user-centered approach, inspired by methodologies commonly used in video game design.",
               ],
               [
-                "While architecture often follows a top-down process driven by the architect's vision, video games tend to adopt a bottom-up approach, where user needs and interaction heavily influence design decisions.",
-              ],
-              [
-                "The work analyzed how these principles could be applied to architecture, concluding that although user needs are highly valued, they are not always fully integrated into the design process, and that a more structured user-centered approach could improve architectural outcomes.",
+                "Architecture often follows a top-down process driven by the architect, while video games tend to adopt a bottom-up approach shaped by user interaction. This work explored how these principles could be applied to architecture, showing that user needs are valued but not always fully integrated, and that a more structured user-centered approach could improve outcomes.",
               ],
             ],
           },
         },
         {
-          title: "Lessons",
+          title: "Learnings",
           content: {
             type: "list",
             items: [
@@ -161,16 +158,13 @@ export const faulTranslations: TranslationDictionary = {
                 "A tese explorou como o processo de projeto em arquitetura poderia beneficiar de uma abordagem mais centrada no utilizador, inspirada em metodologias utilizadas no desenvolvimento de videojogos.",
               ],
               [
-                "Enquanto a arquitetura tende a seguir uma abordagem top-down, guiada pela visão do arquiteto, os videojogos utilizam frequentemente uma abordagem bottom-up, onde as necessidades e interações do utilizador têm um papel central.",
-              ],
-              [
-                "O trabalho concluiu que, apesar de as necessidades dos utilizadores serem valorizadas, nem sempre são totalmente integradas no processo de projeto, e que uma abordagem mais estruturada poderia melhorar os resultados arquitetónicos.",
+                "A arquitetura tende a seguir um processo top-down, orientado pelo arquiteto, enquanto os videojogos adotam uma abordagem bottom-up, moldada pela interação do utilizador. Este trabalho explorou como esses princípios poderiam ser aplicados à arquitetura, mostrando que as necessidades dos utilizadores são valorizadas mas nem sempre totalmente integradas, e que uma abordagem mais estruturada e centrada no utilizador poderia melhorar projetos.",
               ],
             ],
           },
         },
         {
-          title: "Lessons",
+          title: "Aprendizagens",
           content: {
             type: "list",
             items: [

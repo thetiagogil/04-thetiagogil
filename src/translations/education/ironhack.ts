@@ -103,7 +103,7 @@ export const ironhackTranslations: TranslationDictionary = {
           },
         },
         {
-          title: "Lessons",
+          title: "Learnings",
           content: {
             type: "list",
             items: [
@@ -164,7 +164,7 @@ export const ironhackTranslations: TranslationDictionary = {
                 text: ["Desenvolvimento backend com Node.js e Express"],
               },
               {
-                text: ["Integração com bases de dados com MongoDB"],
+                text: ["Integração com bases de dados em MongoDB"],
               },
             ],
           },
@@ -228,7 +228,7 @@ export const ironhackTranslations: TranslationDictionary = {
           },
         },
         {
-          title: "Lessons",
+          title: "Aprendizagens",
           content: {
             type: "list",
             items: [
