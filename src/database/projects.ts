@@ -27,6 +27,7 @@ export const projects: ProjectItem[] = [
     title: "Poketracker",
     subjectKey: "project_poketracker_subject",
     descriptionKey: "project_poketracker_description",
+    detailsKey: "project_poketracker_details",
     techs: [
       "Next.js",
       "TypeScript",
