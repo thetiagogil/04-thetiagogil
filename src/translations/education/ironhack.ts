@@ -99,8 +99,12 @@ export const ironhackTranslations: TranslationDictionary = {
               },
               {
                 text: [
-                  { text: "Fin/Ace", bold: true },
-                  " - full-stack application for tracking finances, managing and comparing income and expenses",
+                  {
+                    text: "Fin/Ace",
+                    bold: true,
+                    itemId: "proj-fin-ace",
+                  },
+                  " - personal finance tracking app exploring full-stack development",
                 ],
               },
             ],
@@ -228,8 +232,12 @@ export const ironhackTranslations: TranslationDictionary = {
               },
               {
                 text: [
-                  { text: "Fin/Ace", bold: true },
-                  " - aplicação full-stack para gestão financeira, acompanhamento e comparação de rendimentos e despesas",
+                  {
+                    text: "Fin/Ace",
+                    bold: true,
+                    itemId: "proj-fin-ace",
+                  },
+                  " - aplicação de gestão financeira pessoal focada em desenvolvimento full-stack",
                 ],
               },
             ],

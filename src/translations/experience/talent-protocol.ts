@@ -18,7 +18,7 @@ export const talentProtocolTranslations: TranslationDictionary = {
                 "Talent Protocol was building a broader ecosystem of products around reputation, visibility, and participation in web3, with different platforms serving different parts of that goal.",
               ],
               [
-                "I worked across multiple products within this ecosystem, contributing mainly on the frontend — building features, improving UI, and responding to user feedback across different applications.",
+                "I worked across multiple products within this ecosystem, contributing mainly on the frontend, building features, improving UI, and responding to user feedback across different applications.",
               ],
             ],
           },

@@ -22,7 +22,7 @@ export const poketrackerTranslations: TranslationDictionary = {
                 "Poketracker is a full-stack platform for tracking Pokémon playthroughs across games, saves, and teams.",
               ],
               [
-                "Instead of focusing only on Pokédex completion, it is designed to capture full playthrough history — including progression, team usage, story milestones, collectibles, and other save-specific data.",
+                "Instead of focusing only on Pokédex completion, it is designed to capture full playthrough history, including progression, team usage, story milestones, collectibles, and other save-specific data.",
               ],
             ],
           },
@@ -183,7 +183,7 @@ export const poketrackerTranslations: TranslationDictionary = {
                 "O Poketracker é uma plataforma full-stack para acompanhar saves de Pokémon ao longo de diferentes jogos, equipas e playthroughs.",
               ],
               [
-                "Em vez de se focar apenas na conclusão da Pokédex, foi pensado para registar o histórico completo de cada save — incluindo progresso, equipas utilizadas, momentos da história, colecionáveis e outros dados específicos de cada jogo.",
+                "Em vez de se focar apenas na conclusão da Pokédex, foi pensado para registar o histórico completo de cada save, incluindo progresso, equipas utilizadas, momentos da história, colecionáveis e outros dados específicos de cada jogo.",
               ],
             ],
           },
