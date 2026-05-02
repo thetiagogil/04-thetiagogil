@@ -82,7 +82,7 @@ export const ironhackTranslations: TranslationDictionary = {
                   {
                     text: "Giraffes vs Sea",
                     bold: true,
-                    itemId: "proj-giraffes",
+                    itemId: "proj-giraffes-vs-sea",
                   },
                   " - a browser game where players solve math problems to overcome obstacles",
                 ],
@@ -207,7 +207,7 @@ export const ironhackTranslations: TranslationDictionary = {
                   {
                     text: "Giraffes vs Sea",
                     bold: true,
-                    itemId: "proj-giraffes",
+                    itemId: "proj-giraffes-vs-sea",
                   },
                   " - jogo de navegador onde os jogadores resolvem problemas matemáticos para superar obstáculos",
                 ],

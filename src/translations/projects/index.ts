@@ -1,10 +1,12 @@
-﻿import { poketrackerTranslations } from "@/translations/projects/poketracker";
+import { giraffesTranslations } from "@/translations/projects/giraffes-vs-sea";
+import { poketrackerTranslations } from "@/translations/projects/poketracker";
 import { uparqueTranslations } from "@/translations/projects/uparque";
 import { wordlechainTranslations } from "@/translations/projects/wordlechain";
 import type { TranslationDictionary } from "@/translations/types";
 
 export const projectTranslations: TranslationDictionary = {
   ...wordlechainTranslations,
+  ...giraffesTranslations,
   ...poketrackerTranslations,
   ...uparqueTranslations,
 };
