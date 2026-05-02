@@ -131,7 +131,7 @@ export const ImageLightbox = ({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[100] bg-background/95 text-foreground backdrop-blur-md"
+      className="fixed inset-0 z-100 bg-background/95 text-foreground backdrop-blur-md"
       role="dialog"
       aria-modal="true"
       aria-label={`${alt} image viewer`}

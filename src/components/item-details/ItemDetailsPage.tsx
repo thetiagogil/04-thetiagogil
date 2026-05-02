@@ -1,9 +1,8 @@
 import { ImageLightbox } from "@/components/ImageLightbox";
 import { ItemDetailsContent } from "@/components/item-details/ItemDetailsContent";
 import { LoadableImage } from "@/components/LoadableImage";
+import { MetaPill } from "@/components/MetaPill";
 import { ProjectImage } from "@/components/project/ProjectImage";
-import { ProjectTypePill } from "@/components/project/ProjectTypePill";
-import { StatusPill } from "@/components/StatusPill";
 import { TechBadge } from "@/components/TechBadge";
 import { getDetailItemByCategoryAndSlug } from "@/database";
 import { getItemOrg, getItemTitle } from "@/lib/data-helpers";
@@ -130,8 +129,8 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
             <span className="font-mono text-[10px] text-muted-foreground md:text-[11px]">
               {dateLabel}
             </span>
-            {isProject && <ProjectTypePill type={item.type} />}
-            {item.status && <StatusPill status={item.status} />}
+            {isProject && <MetaPill kind="project" value={item.type} />}
+            {item.status && <MetaPill kind="status" value={item.status} />}
           </div>
         </div>
       </header>

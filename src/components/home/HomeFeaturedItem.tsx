@@ -1,6 +1,5 @@
-import { StatusPill } from "@/components/StatusPill";
+import { MetaPill } from "@/components/MetaPill";
 import { TechBadge } from "@/components/TechBadge";
-import { ProjectTypePill } from "@/components/project/ProjectTypePill";
 import { getItemOrg, getItemTitle } from "@/lib/data-helpers";
 import { formatProjectOriginDate, getYearDateParts } from "@/lib/date";
 import { getItemHref, isProjectItem } from "@/lib/details";
@@ -33,8 +32,7 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
       });
   const org = getItemOrg(item, tr);
   const showStatus =
-    item.status &&
-    (!isProject || shouldShowProjectStatus(item, "summary"));
+    item.status && (!isProject || shouldShowProjectStatus(item, "summary"));
 
   const inner = (
     <div className="flex gap-3 md:gap-4">
@@ -52,8 +50,10 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
       <div className="min-w-0 flex-1">
         {isProject && (
           <div className="mb-2 flex flex-wrap items-center gap-2">
-            <ProjectTypePill type={item.type} />
-            {showStatus && item.status && <StatusPill status={item.status} />}
+            <MetaPill kind="project" value={item.type} />
+            {showStatus && item.status && (
+              <MetaPill kind="status" value={item.status} />
+            )}
           </div>
         )}
 
@@ -69,7 +69,7 @@ export const HomeFeaturedItem = ({ item }: { item: DataItem }) => {
           </h3>
 
           {!isProject && showStatus && item.status && (
-            <StatusPill status={item.status} />
+            <MetaPill kind="status" value={item.status} />
           )}
         </div>
 

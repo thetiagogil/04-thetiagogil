@@ -1,11 +1,10 @@
 import { CategoryGlyph } from "@/components/CategoryGlyph";
-import { ProjectTypePill } from "@/components/project/ProjectTypePill";
-import { StatusPill } from "@/components/StatusPill";
+import { MetaPill } from "@/components/MetaPill";
 import { TechBadge } from "@/components/TechBadge";
 import { getItemOrg, getItemTitle } from "@/lib/data-helpers";
 import {
-  formatProjectOriginDate,
   formatMonthYearRange,
+  formatProjectOriginDate,
   getTimelineDateParts,
   getYearDateParts,
 } from "@/lib/date";
@@ -56,8 +55,7 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
         presentLabel: t("timeline.present"),
       });
   const showStatus =
-    item.status &&
-    (!isProject || shouldShowProjectStatus(item, "summary"));
+    item.status && (!isProject || shouldShowProjectStatus(item, "summary"));
 
   const inner = (
     <div className="relative grid grid-cols-[52px_1fr] gap-3 py-6 md:grid-cols-[152px_1fr] md:gap-8">
@@ -90,8 +88,10 @@ export const TimelineItem = ({ item }: { item: DataItem }) => {
           <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground md:text-[10px]">
             {t(`section.${item.category}`)}
           </span>
-          {isProject && <ProjectTypePill type={item.type} />}
-          {showStatus && item.status && <StatusPill status={item.status} />}
+          {isProject && <MetaPill kind="project" value={item.type} />}
+          {showStatus && item.status && (
+            <MetaPill kind="status" value={item.status} />
+          )}
         </div>
 
         <h2 className="mt-1.5 font-display text-lg tracking-tight text-balance md:text-2xl transition-colors duration-300 group-hover:text-primary">
