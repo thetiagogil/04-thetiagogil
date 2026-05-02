@@ -2,8 +2,8 @@
 
 export const wordlechainTranslations: TranslationDictionary = {
   project_wordlechain_subject: {
-    en: "Wordle Game (Blockchain Edition)",
-    pt: "Jogo Wordle (Edição Blockchain)",
+    en: "Wordle Game - Blockchain Edition",
+    pt: "Jogo Wordle - Edição Blockchain",
   },
   project_wordlechain_description: {
     en: "A blockchain-based Wordle game built as a first introduction to Web3 development.",

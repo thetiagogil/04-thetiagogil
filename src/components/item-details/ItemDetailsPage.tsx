@@ -54,9 +54,7 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
       });
   const details = tv(item.detailsKey);
   const imageAlt = `${org || title} preview`;
-  const hasDetailsContent = Boolean(
-    item.subjectKey || item.descriptionKey || details,
-  );
+  const hasDetailsContent = Boolean(item.descriptionKey || details);
   const hasMedia = isProjectItem(item)
     ? projectImages.length > 0
     : Boolean(item.img && !hasImageError);
@@ -124,6 +122,12 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
           <h1 className="font-display text-2xl tracking-tight text-balance md:text-5xl">
             {title}
           </h1>
+
+          {item.subjectKey && (
+            <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground text-pretty md:text-lg">
+              {tr(item.subjectKey)}
+            </p>
+          )}
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <span className="font-mono text-[10px] text-muted-foreground md:text-[11px]">
@@ -194,12 +198,6 @@ export const ItemDetailsPage = ({ category }: { category: Category }) => {
 
           {hasDetailsContent && (
             <section className={cn(articleSectionClassName, "space-y-6")}>
-              {item.subjectKey && (
-                <p className="font-display text-lg leading-snug text-balance md:text-2xl">
-                  {tr(item.subjectKey)}
-                </p>
-              )}
-
               {details ? (
                 <ItemDetailsContent value={details} />
               ) : item.descriptionKey ? (

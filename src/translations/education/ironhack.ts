@@ -89,8 +89,12 @@ export const ironhackTranslations: TranslationDictionary = {
               },
               {
                 text: [
-                  { text: "House of Legends", bold: true },
-                  " - full-stack application with CRUD features for managing custom League of Legends Champions builds",
+                  {
+                    text: "House of Legends",
+                    bold: true,
+                    itemId: "proj-house-of-legends",
+                  },
+                  " - React application for managing custom League of Legends champion builds",
                 ],
               },
               {
@@ -214,8 +218,12 @@ export const ironhackTranslations: TranslationDictionary = {
               },
               {
                 text: [
-                  { text: "House of Legends", bold: true },
-                  " - aplicação full-stack com funcionalidades CRUD para gerir builds personalizadas de Champions do League of Legends",
+                  {
+                    text: "House of Legends",
+                    bold: true,
+                    itemId: "proj-house-of-legends",
+                  },
+                  " - aplicação em React para gerir builds personalizadas de campeões de League of Legends",
                 ],
               },
               {
