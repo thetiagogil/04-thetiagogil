@@ -1,5 +1,5 @@
 import { App } from "@/app";
-import "@/index.css";
+import "@/main.css";
 import { I18nProvider } from "@/providers/I18nProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { StrictMode } from "react";
