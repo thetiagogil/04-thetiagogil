@@ -19,10 +19,10 @@ export const wordlechainTranslations: TranslationDictionary = {
             type: "paragraphs",
             paragraphs: [
               [
-                "Wordlechain is a blockchain-based version of the Wordle game, built as my first project in a Web3 setting.",
+                "Wordlechain is a blockchain-based version of the Wordle game, built as my first project in a Web3 environment during my time at Subvisual.",
               ],
               [
-                "The goal was to explore how smart contracts and wallet interactions can be connected to a traditional web interface.",
+                "The goal was to explore how smart contracts, tokens, and wallet interactions can be integrated into a web application.",
               ],
             ],
           },
@@ -33,18 +33,16 @@ export const wordlechainTranslations: TranslationDictionary = {
             type: "list",
             items: [
               {
-                text: ["Built a simple game connected to a custom ERC20 token"],
+                text: ["First experience working in a Web3 setting"],
               },
               {
                 text: ["Integrated wallet interaction using Web3 tools"],
               },
               {
-                text: ["Worked with smart contracts as the backend logic"],
+                text: ["Used smart contracts as the core application logic"],
               },
               {
-                text: [
-                  "Combined blockchain concepts with a React-based frontend",
-                ],
+                text: ["Connected on-chain data with a React-based frontend"],
               },
             ],
           },
@@ -56,22 +54,25 @@ export const wordlechainTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "First experience working in a Web3 environment, requiring a shift in how application state and interactions are handled",
+                  "Understanding how blockchain state and transactions differ from traditional applications",
+                ],
+              },
+              {
+                text: ["Working with smart contracts as a backend alternative"],
+              },
+              {
+                text: [
+                  "Integrating wallet interactions into the frontend flow",
                 ],
               },
               {
                 text: [
-                  "Understanding how blockchain transactions differ from traditional request/response flows",
+                  "Adapting to new tools and concepts with little prior experience",
                 ],
               },
               {
                 text: [
-                  "Integrating wallet interactions into the frontend experience",
-                ],
-              },
-              {
-                text: [
-                  "Working with new tools and concepts with limited prior experience",
+                  "Debugging across both frontend and smart contract layers",
                 ],
               },
             ],
@@ -88,10 +89,10 @@ export const wordlechainTranslations: TranslationDictionary = {
             type: "paragraphs",
             paragraphs: [
               [
-                "O Wordlechain é uma versão em blockchain do jogo Wordle, desenvolvido como o meu primeiro projeto num contexto Web3.",
+                "O Wordlechain é uma versão em blockchain do jogo Wordle, desenvolvido como o meu primeiro projeto num ambiente Web3 durante a minha experiência na Subvisual.",
               ],
               [
-                "O objetivo foi explorar como smart contracts e interações com carteiras podem ser ligadas a uma interface web tradicional.",
+                "O objetivo foi explorar como smart contracts, tokens e interações com carteiras podem ser integrados numa aplicação web.",
               ],
             ],
           },
@@ -102,9 +103,7 @@ export const wordlechainTranslations: TranslationDictionary = {
             type: "list",
             items: [
               {
-                text: [
-                  "Desenvolvimento de um jogo simples ligado a um token ERC20",
-                ],
+                text: ["Primeira experiência num contexto Web3"],
               },
               {
                 text: [
@@ -117,9 +116,7 @@ export const wordlechainTranslations: TranslationDictionary = {
                 ],
               },
               {
-                text: [
-                  "Combinação de conceitos de blockchain com um frontend em React",
-                ],
+                text: ["Ligação entre dados on-chain e um frontend em React"],
               },
             ],
           },
@@ -131,12 +128,12 @@ export const wordlechainTranslations: TranslationDictionary = {
             items: [
               {
                 text: [
-                  "Primeira experiência num ambiente Web3, exigindo uma mudança na forma de pensar estado e interações da aplicação",
+                  "Compreender as diferenças entre estado e transações em blockchain e aplicações tradicionais",
                 ],
               },
               {
                 text: [
-                  "Compreender as diferenças entre transações em blockchain e aplicações tradicionais",
+                  "Trabalhar com smart contracts como alternativa a backend",
                 ],
               },
               {
@@ -144,8 +141,11 @@ export const wordlechainTranslations: TranslationDictionary = {
               },
               {
                 text: [
-                  "Trabalhar com novas ferramentas e conceitos com pouca experiência prévia",
+                  "Adaptar-me a novas ferramentas e conceitos com pouca experiência prévia",
                 ],
+              },
+              {
+                text: ["Resolver problemas entre frontend e smart contracts"],
               },
             ],
           },
