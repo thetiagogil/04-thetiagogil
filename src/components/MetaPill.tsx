@@ -4,8 +4,18 @@ import { useI18n } from "@/providers/i18n-context";
 import type { ItemStatus } from "@/types/common";
 import type { ProjectType } from "@/types/data";
 
+type MetaPillProps =
+  | {
+      kind: "project";
+      value: ProjectType;
+    }
+  | {
+      kind: "status";
+      value: ItemStatus;
+    };
+
 const metaPillClassName =
-  "inline-flex items-center rounded-full border px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.15em]";
+  "inline-flex items-center rounded-full font-mono text-[10px] uppercase tracking-[0.15em]";
 
 const statusClassName = "border-border/70 bg-muted/40 text-muted-foreground";
 
@@ -20,16 +30,6 @@ const projectTypeClassName: Record<ProjectType, string> = {
   design:
     "border-project-type-design/25 bg-project-type-design/12 text-project-type-design",
 };
-
-type MetaPillProps =
-  | {
-      kind: "project";
-      value: ProjectType;
-    }
-  | {
-      kind: "status";
-      value: ItemStatus;
-    };
 
 export const MetaPill = ({ kind, value }: MetaPillProps) => {
   const { t } = useI18n();
