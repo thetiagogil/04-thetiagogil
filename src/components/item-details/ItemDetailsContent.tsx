@@ -1,4 +1,4 @@
-import { getItemById } from "@/database";
+import { getItemById } from "@/data";
 import { getItemHref } from "@/lib/details";
 import { cn } from "@/lib/utils";
 import type {

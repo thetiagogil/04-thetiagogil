@@ -4,7 +4,7 @@ import { LoadableImage } from "@/components/LoadableImage";
 import { MetaPill } from "@/components/MetaPill";
 import { ProjectImage } from "@/components/project/ProjectImage";
 import { TechBadge } from "@/components/TechBadge";
-import { getDetailItemByCategoryAndSlug } from "@/database";
+import { getDetailItemByCategoryAndSlug } from "@/data";
 import { getItemOrg, getItemTitle } from "@/lib/data-helpers";
 import { formatMonthYearRange, formatProjectOriginDate } from "@/lib/date";
 import { isProjectItem } from "@/lib/details";

@@ -8,7 +8,7 @@ export const education: EducationItem[] = [
     orgKey: "education_faul_place",
     descriptionKey: "education_faul_description",
     detailsKey: "education_faul_details",
-    link: "https://www.fa.ulisboa.pt/index.php/en/",
+    link: "https://www.fa.ulisboa.pt/index.php/en",
     techs: ["Revit", "AutoCAD", "Adobe Photoshop"],
     dateStart: new Date("2014-09-01"),
     dateEnd: new Date("2022-07-31"),

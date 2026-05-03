@@ -1,16 +1,16 @@
-import { certifications } from "@/database/certifications";
-import { education } from "@/database/education";
-import { experience } from "@/database/experience";
-import { projects } from "@/database/projects";
+import { certifications } from "@/data/certifications";
+import { education } from "@/data/education";
+import { experience } from "@/data/experience";
+import { projects } from "@/data/projects";
 import { getItemSlug } from "@/lib/details";
 import type { Category } from "@/types/common";
 import type { DataItem, DetailItem } from "@/types/data";
 
-export { certifications } from "@/database/certifications";
-export { education } from "@/database/education";
-export { experience } from "@/database/experience";
-export { person } from "@/database/person";
-export { projects } from "@/database/projects";
+export { certifications } from "@/data/certifications";
+export { education } from "@/data/education";
+export { experience } from "@/data/experience";
+export { person } from "@/data/person";
+export { projects } from "@/data/projects";
 
 export const allItems: DataItem[] = [
   ...experience,

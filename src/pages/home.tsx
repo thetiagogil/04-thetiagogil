@@ -1,7 +1,7 @@
 import portrait from "@/assets/tg.png";
 import { HomeFeaturedSection } from "@/components/home/HomeFeaturedSection";
 import { ItemDetailsContent } from "@/components/item-details/ItemDetailsContent";
-import { person } from "@/database";
+import { person } from "@/data";
 import { useI18n } from "@/providers/i18n-context";
 import type { Category } from "@/types/common";
 import { ArrowRight, Download, ExternalLink } from "lucide-react";

@@ -1,5 +1,5 @@
 import { CategoryGlyph } from "@/components/CategoryGlyph";
-import { allItems, getSorted } from "@/database";
+import { allItems, getSorted } from "@/data";
 import { isVisibleItem } from "@/lib/projects";
 import { useI18n } from "@/providers/i18n-context";
 import type { Category } from "@/types/common";
@@ -12,9 +12,7 @@ export const HomeFeaturedSection = ({ category }: { category: Category }) => {
   const items = getSorted(
     allItems.filter(
       (item) =>
-        item.category === category &&
-        item.featured &&
-        isVisibleItem(item),
+        item.category === category && item.featured && isVisibleItem(item),
     ),
   ).slice(0, category === "projects" ? 4 : undefined);
 
