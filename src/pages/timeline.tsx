@@ -1,16 +1,41 @@
-import {
-  TimelineFilters,
-  type TimelineFilter,
-} from "@/components/timeline/TimelineFilters";
+import { TimelineFilters } from "@/components/timeline/TimelineFilters";
 import { TimelineItem } from "@/components/timeline/TimelineItem";
 import { allItems, getSorted } from "@/data";
 import { isVisibleItem } from "@/lib/projects";
+import { isTimelineFilter, type TimelineFilter } from "@/lib/timeline-filters";
 import { useI18n } from "@/providers/i18n-context";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
+
+const timelineFilterParam = "filter";
 
 export const TimelinePage = () => {
   const { t } = useI18n();
-  const [filter, setFilter] = useState<TimelineFilter>("all");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const filterParam = searchParams.get(timelineFilterParam);
+  const filter = isTimelineFilter(filterParam) ? filterParam : "all";
+
+  useEffect(() => {
+    if (!filterParam || (filterParam !== "all" && isTimelineFilter(filterParam))) {
+      return;
+    }
+
+    const nextSearchParams = new URLSearchParams(searchParams);
+    nextSearchParams.delete(timelineFilterParam);
+    setSearchParams(nextSearchParams, { replace: true });
+  }, [filterParam, searchParams, setSearchParams]);
+
+  const setFilter = (nextFilter: TimelineFilter) => {
+    const nextSearchParams = new URLSearchParams(searchParams);
+
+    if (nextFilter === "all") {
+      nextSearchParams.delete(timelineFilterParam);
+    } else {
+      nextSearchParams.set(timelineFilterParam, nextFilter);
+    }
+
+    setSearchParams(nextSearchParams, { replace: true });
+  };
 
   const sorted = useMemo(() => {
     const visibleItems = allItems.filter(isVisibleItem);

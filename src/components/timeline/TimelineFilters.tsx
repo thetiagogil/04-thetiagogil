@@ -1,17 +1,7 @@
 import { Badge } from "@/components/ui/badge";
+import { timelineFilters, type TimelineFilter } from "@/lib/timeline-filters";
 import { useI18n } from "@/providers/i18n-context";
-import type { Category } from "@/types/common";
 import { SlidersHorizontal } from "lucide-react";
-
-export type TimelineFilter = "all" | Category;
-
-const filters: TimelineFilter[] = [
-  "all",
-  "experience",
-  "projects",
-  "education",
-  "certifications",
-];
 
 export const TimelineFilters = ({
   value,
@@ -27,10 +17,12 @@ export const TimelineFilters = ({
   return (
     <div className="grid grid-cols-1 items-start gap-3 md:grid-cols-[minmax(0,1fr)_auto]">
       <div className="hidden min-w-0 flex-wrap gap-1 md:flex">
-        {filters.map((filter) => (
+        {timelineFilters.map((filter) => (
           <button
             key={filter}
+            type="button"
             onClick={() => onChange(filter)}
+            aria-pressed={value === filter}
             className={`cursor-pointer px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.15em] transition-colors duration-300 ${
               value === filter
                 ? "bg-foreground text-background"
